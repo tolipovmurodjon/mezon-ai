@@ -91,9 +91,14 @@ Mezon qoidalari: 9 ta tekshiruv, 1 ta belgi      deterministic rule engine (no A
 Mezon-LM xulosa yozmoqda…                        our model writes a 3333-format conclusion
 ```
 
-| Screen | |
-|---|---|
-| ![Audit screen](docs/img/product_audit.png) | ![Home](docs/img/product_home.png) |
+**Home: real counts from 446,859 decisions**
+![Home](docs/img/platform_home.jpg)
+
+**So'rovlar: paste an E-qaror link, upload a PDF/DOCX or paste text; every row is a real decision**
+![So'rovlar](docs/img/platform_list.jpg)
+
+**A decision: law cards checked as of the decision date, flags with the article and a highlighted quote**
+![Decision](docs/img/platform_decision.jpg)
 
 **What the expert sees, and where it comes from:**
 
@@ -128,7 +133,7 @@ Mezon-LM vs Opus on right answers: McNemar **z = 2.58** (p < 0.05). On **186 sec
 
 ![Closed book](docs/img/results_closed_book.png)
 
-**2. With our law tools, 118 questions (MezonBench v1):**
+**2. With our law tools, 118 questions (MezonBench v1).** Here the model is the *base* Qwen (not Mezon-LM): this measures what our law tools add.
 
 | Model | Alone | + Mezon law tools |
 |---|---:|---:|
