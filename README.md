@@ -2,6 +2,8 @@
 
 <h3 align="center">Mezon: an AI auditor for local government decisions in Uzbekistan</h3>
 
+<p align="center"><a href="https://drive.google.com/drive/folders/1vlvdWLO9li2ta54eF_KZQzbrpsEaUt0m?usp=sharing"><img alt="Presentation" height="44" src="https://img.shields.io/badge/%F0%9F%93%BD%20Presentation-open%20the%20folder-1a73e8?style=for-the-badge"></a></p>
+
 <p align="center">
 <img alt="lex.uz" src="https://img.shields.io/badge/lex.uz%20documents-166%2C705-111">
 <img alt="E-qaror" src="https://img.shields.io/badge/E--qaror%20decisions-446%2C859%20in%20the%20platform-111">
@@ -35,6 +37,8 @@
 ---
 
 ## 🎤 Presentations
+
+**All slides (Google Drive): [open the presentation folder](https://drive.google.com/drive/folders/1vlvdWLO9li2ta54eF_KZQzbrpsEaUt0m?usp=sharing)**
 
 | Deck | For | File |
 |---|---|---|
