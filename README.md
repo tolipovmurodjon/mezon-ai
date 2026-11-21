@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-<b><a href="#-presentations">Presentations</a></b> ·
+<b><a href="https://drive.google.com/drive/folders/1vlvdWLO9li2ta54eF_KZQzbrpsEaUt0m?usp=sharing">Presentations</a></b> ·
 <b><a href="#-the-problem">Problem</a></b> ·
 <b><a href="#-the-product">Product</a></b> ·
 <b><a href="#-results">Results</a></b> ·
