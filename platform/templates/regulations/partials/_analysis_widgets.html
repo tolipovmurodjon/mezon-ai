@@ -1,0 +1,42 @@
+{% load mezon %}
+{% with findings=analysis.findings.all %}
+<div class="widget-stack" data-widgets>
+  <div class="widget w-verdict" data-tone="{{ analysis.tone }}">
+    <div class="widget-head">
+      <span class="widget-title">Xulosa</span>
+      <span class="widget-head-end"><span class="badge" data-tone="{{ analysis.tone }}">{{ analysis.get_verdict_display }}</span></span>
+    </div>
+    <div class="widget-body">
+      <div class="verdict-main">
+        <div class="verdict-fig num">{{ analysis.checks_passed }}<small>/{{ analysis.checks|length }}</small></div>
+        <div class="verdict-text">
+          <span class="label">Tekshiruvlardan o‘tdi</span>
+          <p><b>{{ analysis.get_recommendation_display }}.</b></p>
+        </div>
+      </div>
+      <div class="tick-meter-row" data-meter="{{ analysis.score }}" data-count="56" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  {% if findings %}
+  <div class="widget">
+    <div class="widget-head">
+      <span class="widget-title">Aniqlangan muammolar</span>
+      <span class="widget-head-end"><span class="count count-soft">{{ findings|length }}</span></span>
+    </div>
+    <div class="widget-body">
+      {% for f in findings %}
+      <article class="finding cause" {% if f.tone %}data-tone="{{ f.tone }}"{% endif %}>
+        <span class="label">{{ f.category }} · {{ f.get_severity_display }}</span>
+        <h4 class="cause-title">{{ f.title }}</h4>
+        {% if f.explanation %}<p class="cause-text">{{ f.explanation }}</p>{% endif %}
+        {% if f.quote %}<button type="button" class="finding-quote" data-open-quote="{{ f.quote }}" title="Hujjatda ko‘rish">“{{ f.quote|truncatechars:220 }}”</button>{% endif %}
+        {% if f.law_ref %}<p class="finding-law">{% icon "scale" "icon icon-xs" %}{{ f.law_ref }}</p>{% endif %}
+        {% if f.suggestion %}<p class="finding-fix"><b>Tavsiya:</b> {{ f.suggestion }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endwith %}

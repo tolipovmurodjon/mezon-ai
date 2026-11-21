@@ -1,0 +1,149 @@
+{% extends "layouts/app.html" %}
+{% load mezon %}
+{% block title %}{{ req.number }} · Tekshirish{% endblock %}
+{% block page_class %}page-review{% endblock %}
+{% block crumbs %}<a href="{% url 'requests' %}">So‘rovlar</a>{% icon "chevron-right" %}<span aria-current="page">{{ req.number }}</span>{% endblock %}
+
+{% block content %}
+<div class="review">
+  <section class="ai-panel review-chat" aria-label="Mezon AI tahlili" data-review
+           data-analyze-url="{% url 'analyze' req.pk %}" data-chat-url="{% url 'chat' req.pk %}" data-clear-url="{% url 'chat_clear' req.pk %}"
+           data-autostart="{{ autostart|yesno:'1,0' }}">
+    <header class="ai-head">
+      <span class="mz-matrix" data-m style="--s:26px" data-head-mark></span>
+      <span class="ai-head-title">Mezon AI</span>
+      <select class="badge badge-outline model-select" data-model aria-label="Model"><option value="qwen">Qwen + qonun vositalari</option><option value="mezon-lm">Mezon-LM (bizning model)</option><option value="demo">Demo</option></select>
+      <button type="button" class="btn btn-ghost btn-sm" data-new-chat style="margin-left:auto">{% icon "plus" "icon icon-sm" %}Yangi suhbat</button>
+    </header>
+
+    <div class="ai-body" data-log>
+      <div class="msg msg-user">
+        <div class="bubble bubble-wide">
+          {{ auto_prompt }}
+          <div class="bubble-attach">
+            {% for d in documents %}<button type="button" class="ctx-chip" data-open-doc="{{ d.pk }}">{% icon "file-text" %}{{ d.title }}</button>{% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="msg msg-ai" data-analysis-msg>
+        <span class="mz-matrix {% if autostart %}is-thinking{% endif %}" data-m></span>
+        <div class="msg-main" data-analysis-main>
+          <div class="msg-meta">Mezon AI</div>
+          {% if analysis %}
+            <details class="trace">
+              <summary>{% icon "circle-check" "icon icon-sm" %}<span>{{ analysis.steps|length }} qadam</span>{% icon "chevron-down" "icon icon-sm chev" %}</summary>
+              <div class="trace-steps">
+                {% for s in analysis.steps %}
+                <div class="trace-step {% if s.status == 'warn' %}is-warn{% else %}is-done{% endif %}">
+                  {% if s.status == "warn" %}{% icon "triangle-alert" %}{% else %}{% icon "check" %}{% endif %}
+                  <span>{{ s.label }}{% if s.detail %} <span class="trace-detail">· {{ s.detail }}</span>{% endif %}</span>
+                </div>
+                {% endfor %}
+              </div>
+            </details>
+            <div class="msg-text">{{ analysis.summary|ai_format }}</div>
+            {% include "regulations/partials/_analysis_widgets.html" %}
+          {% elif failed %}
+            <div class="msg-error" role="alert">{% icon "circle-alert" %}<span>{{ failed.error|truncatechars:200 }}</span><button class="btn btn-secondary btn-sm" type="button" data-reanalyze>Qayta urinish</button></div>
+          {% elif req.is_open %}
+            <div class="thinking">Tahlil boshlanmoqda</div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% for m in chat %}
+        {% if m.role == "user" %}
+        <div class="msg msg-user"><div class="bubble">{{ m.content|linebreaksbr }}</div></div>
+        {% else %}
+        <div class="msg msg-ai"><span class="mz-matrix" data-m></span><div class="msg-main"><div class="msg-meta">Mezon AI</div><div class="msg-text">{{ m.content|ai_format }}</div></div></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-foot">
+      <form class="composer" data-composer>
+        {% csrf_token %}
+        <textarea class="composer-input" name="message" rows="1" placeholder="Savol bering…" aria-label="Mezon AI uchun savol" {% if autostart %}disabled{% endif %}></textarea>
+        <div class="composer-bar">
+          <div class="composer-end"><button type="submit" class="send" aria-label="Yuborish" disabled>{% icon "arrow-up" %}</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <aside class="review-side" aria-label="So‘rov">
+    <section class="panel">
+      <div class="panel-body">
+        <div class="dossier-top">
+          <span class="badge" {% if req.status|status_tone %}data-tone="{{ req.status|status_tone }}"{% endif %}>{{ req.get_status_display }}</span>
+          <span class="mono muted dossier-no">{{ req.number }}</span>
+        </div>
+        <h1 class="dossier-title" title="{{ req.title }}" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere">{{ req.title }}</h1>
+        <dl class="meta-list">
+          <dt>Kimdan</dt><dd>{{ req.region.name }}{% if req.district %}, {{ req.district }}{% endif %}</dd>
+          <dt>Hokim</dt><dd>{{ req.issuer_name }}<span class="meta-sub">{{ req.issuer_title }}</span></dd>
+          <dt>Yuborilgan</dt><dd class="mono">{{ req.submitted_at|uzdate }}</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2 class="panel-title">{% icon "paperclip" %}Hujjatlar · {{ documents|length }}</h2></div>
+      <div class="panel-body flush">
+        <ul class="doc-list">
+          {% for d in documents %}
+          <li><button type="button" class="doc-row" data-open-doc="{{ d.pk }}">{% icon "file-text" "icon icon-sm" %}<span class="doc-row-body"><span class="attach-name">{{ d.title }}</span><span class="attach-meta">{{ d.pages }} bet</span></span></button></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="decisionTitle">
+      <div class="panel-head"><h2 class="panel-title" id="decisionTitle">{% icon "scale" %}Qaror</h2></div>
+      <div class="panel-body">
+        {% if decision %}
+          <div class="decision-done" data-outcome="{{ decision.outcome }}">
+            <span class="decision-ic">{% if decision.outcome == "accept" %}{% icon "check" %}{% else %}{% icon "x" %}{% endif %}</span>
+            <div><div class="decision-title">{{ decision.get_outcome_display }}</div><div class="decision-meta"><span class="mono">{{ decision.decided_at|uzdatetime }}</span> · {{ decision.decided_by|short_name }}</div></div>
+          </div>
+          {% if decision.comment %}<p class="decision-comment">{{ decision.comment }}</p>{% endif %}
+        {% else %}
+          <div data-ai-rec>{% include "regulations/partials/_ai_recommendation.html" %}</div>
+          <form method="post" action="{% url 'decide' req.pk %}" class="decision-form" data-decision-form
+                data-number="{{ req.number }}" data-ai="{{ analysis.recommendation|default:'' }}">
+            {% csrf_token %}
+            <div class="field">
+              <textarea class="textarea" name="comment" rows="3" aria-label="Izoh" placeholder="Izoh (rad etishda majburiy)"></textarea>
+              <span class="field-help" data-comment-help hidden>{% icon "circle-alert" "icon icon-xs" %}Rad etish sababini yozing.</span>
+            </div>
+            <div class="decision-actions">
+              <button class="btn btn-primary" type="submit" name="outcome" value="accept">{% icon "check" %}Qabul qilish</button>
+              <button class="btn btn-secondary btn-reject" type="submit" name="outcome" value="reject">{% icon "x" %}Rad etish</button>
+            </div>
+          </form>
+        {% endif %}
+      </div>
+    </section>
+  </aside>
+</div>
+
+<dialog class="dialog doc-dialog" id="docDialog" aria-labelledby="docDialogTitle">
+  <div class="doc-dialog-head">
+    <h2 class="dialog-title" id="docDialogTitle" data-doc-title></h2>
+    <a class="btn btn-ghost btn-icon btn-sm" href="#" data-doc-download aria-label="Yuklab olish">{% icon "download" %}</a>
+    <button class="btn btn-ghost btn-icon btn-sm" type="button" data-close aria-label="Yopish">{% icon "x" %}</button>
+  </div>
+  <div class="doc-dialog-body"><div class="doc-paper" data-doc-body></div></div>
+</dialog>
+{% for d in documents %}<template id="doc-{{ d.pk }}" data-title="{{ d.title }}" data-download="{% url 'document_download' d.pk %}">{{ d.text }}</template>{% endfor %}
+
+<dialog class="dialog" id="decisionDialog" aria-labelledby="dlgTitle">
+  <h2 class="dialog-title" id="dlgTitle" data-dlg-title></h2>
+  <p class="dialog-text" data-dlg-text></p>
+  <div class="dialog-actions">
+    <button class="btn btn-secondary" type="button" data-close>Bekor qilish</button>
+    <button class="btn btn-primary" type="button" data-dlg-confirm></button>
+  </div>
+</dialog>
+{% endblock %}

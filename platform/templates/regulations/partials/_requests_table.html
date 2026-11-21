@@ -1,0 +1,40 @@
+{% load mezon %}
+<div class="table-wrap">
+  <table class="table req-table">
+    <thead>
+      <tr>
+        <th scope="col" class="hide-xs">Kimdan</th>
+        <th scope="col" class="hide-md">Hokim</th>
+        <th scope="col">Qaror loyihasi</th>
+        <th scope="col" class="num hide-sm">Hujjatlar</th>
+        <th scope="col" class="hide-sm">Yuborilgan</th>
+        <th scope="col">Holat</th>
+        <th scope="col" class="td-cta"><span class="sr-only">Amal</span></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td class="td-from hide-xs"><span class="td-main">{{ r.region.short }}</span><span class="td-sub">{{ r.district|default:"Viloyat" }}</span></td>
+        <td class="hide-md"><span class="td-main">{{ r.issuer_name }}</span><span class="td-sub">{{ r.issuer_title }}</span></td>
+        <td class="td-title">
+          <a class="td-main title-link" href="{% url 'review' r.pk %}">{{ r.title }}</a>
+          <span class="td-sub"><span class="show-xs">{{ r.region.short }} · </span><span class="mono">{{ r.number }}</span></span>
+        </td>
+        <td class="num hide-sm td-num">{{ r.doc_count }}</td>
+        <td class="hide-sm td-when"><span class="td-num" style="display:block">{{ r.submitted_at|uzdate }}</span></td>
+        <td><span class="badge" {% if r.status|status_tone %}data-tone="{{ r.status|status_tone }}"{% endif %}>{{ r.get_status_display }}</span></td>
+        <td class="td-cta">
+          {% if r.is_open %}
+            <a class="btn btn-secondary btn-sm btn-ask" href="{% url 'review' r.pk %}" aria-label="Tekshirish: {{ r.number }}"><span class="mz-matrix" data-m></span><span class="cta-label">Tekshirish</span></a>
+          {% else %}
+            <a class="btn btn-ghost btn-sm" href="{% url 'review' r.pk %}" aria-label="Ko‘rish: {{ r.number }}"><span class="cta-label">Ko‘rish</span>{% icon "arrow-right" %}</a>
+          {% endif %}
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="7"><div class="empty"><div class="empty-title">So‘rov topilmadi</div></div></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

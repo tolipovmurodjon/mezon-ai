@@ -1,0 +1,68 @@
+{% extends "layouts/app.html" %}
+{% load mezon %}
+{% block title %}Mezon AI suhbat{% endblock %}
+{% block page_class %}page-review{% endblock %}
+{% block crumbs %}<span aria-current="page">Mezon AI suhbat</span>{% endblock %}
+{% block content %}
+<div class="review" style="grid-template-columns:minmax(0,1fr)">
+  <section class="ai-panel review-chat" aria-label="Mezon AI suhbat" id="free" data-url="{% url 'ai_chat_api' %}">
+    <header class="ai-head">
+      <span class="mz-matrix" data-m style="--s:26px"></span>
+      <span class="ai-head-title">Mezon AI</span>
+      <select class="badge badge-outline model-select" id="fm" aria-label="Model"><option value="mezon-lm">Mezon-LM (bizning model)</option><option value="qwen">Qwen + qonun vositalari</option></select>
+      <button type="button" class="btn btn-ghost btn-sm" id="fnew" style="margin-left:auto">{% icon "plus" "icon icon-sm" %}Yangi suhbat</button>
+    </header>
+    <div class="ai-body" id="flog">
+      <p class="muted" style="margin:0 0 12px">Mezon-LM: 38 ta asosiy qonun bo‘yicha o‘qitilgan (tajriba). Javoblar qonun vositalari bilan tekshiriladi.</p>
+      <div id="chips" style="display:flex;flex-wrap:wrap;gap:8px">
+        {% for q in chips %}<button type="button" class="btn btn-secondary btn-sm chip-q">{{ q }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="ai-foot">
+      <form class="composer" id="fform">
+        {% csrf_token %}
+        <textarea class="composer-input" name="message" rows="1" placeholder="Savol bering…" aria-label="Savol"></textarea>
+        <div class="composer-bar"><div class="composer-end"><button type="submit" class="send" aria-label="Yuborish" disabled>{% icon "arrow-up" %}</button></div></div>
+      </form>
+    </div>
+  </section>
+</div>
+<script>
+(function(){
+  var root=document.getElementById('free'),log=document.getElementById('flog'),form=document.getElementById('fform'),
+      inp=form.querySelector('textarea'),btn=form.querySelector('.send'),sel=document.getElementById('fm'),
+      csrf=form.querySelector('[name=csrfmiddlewaretoken]').value,hist=[],busy=false;
+  function icon(n){var ns='http://www.w3.org/2000/svg',v=document.createElementNS(ns,'svg');v.setAttribute('class','icon');v.setAttribute('aria-hidden','true');var u=document.createElementNS(ns,'use');u.setAttribute('href','#i-'+n);v.appendChild(u);return v;}
+  function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  sel.onchange=function(){try{localStorage.setItem('mezonFreeModel2',sel.value);}catch(e){}};
+  inp.oninput=function(){btn.disabled=busy||!inp.value.trim();};
+  inp.onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit();}};
+  document.getElementById('fnew').onclick=function(){if(busy)return;hist=[];Array.prototype.slice.call(log.querySelectorAll('.msg')).forEach(function(n){n.remove();});document.getElementById('chips').style.display='flex';};
+  Array.prototype.forEach.call(document.querySelectorAll('.chip-q'),function(b){b.onclick=function(){inp.value=b.textContent;inp.oninput();form.requestSubmit();};});
+  form.onsubmit=function(e){e.preventDefault();var q=inp.value.trim();if(!q||busy)return;inp.value='';ask(q);};
+  function ask(q){
+    busy=true;btn.disabled=true;document.getElementById('chips').style.display='none';
+    var u=el('div','msg msg-user');u.appendChild(el('div','bubble',q));
+    var m=el('div','msg msg-ai'),main=el('div','msg-main');main.appendChild(el('div','msg-meta','Mezon AI'));m.appendChild(main);log.append(u,m);
+    var steps=el('div','trace-steps'),trace=el('details','trace');trace.open=true;var sum=el('summary');sum.appendChild(el('span',null,'Javob tayyorlanmoqda…'));trace.append(sum,steps);main.appendChild(trace);
+    var rows={},text='',box=el('div','msg-text');
+    var fd=new FormData();fd.append('message',q);fd.append('model',sel.value);fd.append('history',JSON.stringify(hist.slice(-6)));
+    fetch(root.dataset.url,{method:'POST',body:fd,headers:{'X-CSRFToken':csrf}}).then(function(r){
+      var rd=r.body.getReader(),dec=new TextDecoder(),buf='';
+      function pump(){return rd.read().then(function(x){
+        if(x.done)return;buf+=dec.decode(x.value,{stream:true});var parts=buf.split('\n\n');buf=parts.pop();
+        parts.forEach(function(p){if(p.indexOf('data: ')!==0)return;var ev=JSON.parse(p.slice(6));
+          if(ev.type==='step'){var row=rows[ev.id];if(!row){row=el('div','trace-step is-run');row.appendChild(el('span','spinner'));row.appendChild(el('span'));steps.appendChild(row);rows[ev.id]=row;}
+            var lab=row.children[1];lab.textContent=ev.label||'';if(ev.detail)lab.appendChild(el('span','trace-detail',' · '+ev.detail));
+            if(ev.status&&ev.status!=='run'){row.className='trace-step '+(ev.status==='warn'?'is-warn':'is-done');row.replaceChild(icon(ev.status==='warn'?'triangle-alert':'check'),row.firstChild);}}
+          else if(ev.type==='token'){text+=ev.text;box.innerHTML=fmt(text);if(!box.parentNode)main.appendChild(box);}
+          else if(ev.type==='error'){main.appendChild(el('div','msg-error',ev.message));}
+          else if(ev.type==='result'){trace.open=false;sum.textContent=Object.keys(rows).length+' qadam';if(ev.badge){var d=el('div');d.style.cssText='margin-top:8px';d.innerHTML='<span class="badge" style="background:#fff1e0;color:#a14a00;border:1px solid #f0a53a">'+ev.badge.text.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span> <span class="muted" style="font-size:12px">'+ev.badge.tools+'</span>';main.appendChild(d);}else if(ev.model)main.appendChild(el('div','msg-meta',ev.model));}
+        });log.scrollTo({top:log.scrollHeight});return pump();});}
+      return pump();
+    }).catch(function(e){main.appendChild(el('div','msg-error',e.message));}).finally(function(){hist.push({role:'user',content:q});if(text)hist.push({role:'assistant',content:text});busy=false;btn.disabled=!inp.value.trim();});
+  }
+})();
+</script>
+{% endblock %}

@@ -27,7 +27,7 @@
 | | |
 |---|---|
 | **Who uses it** | Adliya (Ministry of Justice) experts, hokimlik lawyers, advocates |
-| **Live platform** | [e-mezon.uz](https://e-mezon.uz) (demo login on request) |
+| **Live platform** | [e-mezon.uz](https://e-mezon.uz) (demo login on request) · source in [`platform/`](platform/) |
 | **Our model** | Mezon-LM: Qwen3.8-27B + LoRA, trained on our own GPU (RTX PRO 6000, 96 GB) |
 | **Hugging Face** | [model](https://huggingface.co/murodjontolipov/mezon-lm-small-v0.1) · [MezonBench v2.2](https://huggingface.co/datasets/murodjontolipov/mezonbench-v2.2) · [corpus](https://huggingface.co/datasets/murodjontolipov/mezon-corpus) |
 | **Data stays in Uzbekistan** | the product never sends decision text to a cloud AI |
@@ -38,7 +38,7 @@
 
 | Deck | For | File |
 |---|---|---|
-| **Technical** (15 slides, English) | technical mentors: data, cleaning, LoRA, training ladder, benchmark, results | [`presentations/technical.html`](presentations/technical.html) |
+| **Technical** (18 slides, English) | data, cleaning, LoRA, training ladder, live training, benchmark, results | [**PDF**](presentations/Mezon_Technical_Presentation.pdf) · [HTML](presentations/technical.html) |
 | **Legal** | legal mentors: validity rules, real cases, 3333-format conclusion | [`presentations/legal.html`](presentations/legal.html) |
 | **Business** (14 slides, Uzbek) | business mentors: problem, customer, model, cost, plan | [`presentations/business.html`](presentations/business.html) |
 | Business appendix | extra slides: competitors, scale, phases | [`presentations/business-appendix.html`](presentations/business-appendix.html) |

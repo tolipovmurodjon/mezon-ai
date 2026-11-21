@@ -1,0 +1,110 @@
+{% extends "layouts/app.html" %}
+{% load mezon %}
+{% block title %}So‘rovlar{% endblock %}
+{% block crumbs %}<span aria-current="page">So‘rovlar</span>{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">So‘rovlar <span class="page-count mono">{{ total }}</span></h1>
+</div>
+{% include "regulations/_check_card.html" with show_link=True file_action=upload_url %}
+
+<form class="filter-bar" method="get">
+  <nav class="pills" aria-label="Holat">
+    {% for key, label, n in tabs %}<a href="{% query holat=key page=None %}" {% if f.holat == key %}aria-current="page"{% endif %}>{{ label }} <span class="mono">{{ n }}</span></a>{% endfor %}
+  </nav>
+  <input type="hidden" name="holat" value="{{ f.holat }}">
+  <div class="filter-controls" style="flex-wrap:wrap;gap:8px">
+    <div class="input-wrap filter-search">
+      {% icon "search" "icon icon-sm" %}
+      <input class="input input-sm" type="search" name="q" value="{{ f.q }}" placeholder="Raqam, organ yoki nom" aria-label="Qidirish">
+    </div>
+    <div class="select-wrap">
+      <select class="select input-sm" name="hudud" aria-label="Hudud" data-autosubmit>
+        <option value="">Barcha hududlar</option>
+        {% for k, n, c in regions %}<option value="{{ k }}" {% if f.hudud == k %}selected{% endif %}>{{ n }} ({{ c }})</option>{% endfor %}
+      </select>{% icon "chevron-down" "icon icon-sm" %}
+    </div>
+    {% if districts %}
+    <div class="select-wrap">
+      <select class="select input-sm" name="tuman" aria-label="Tuman" data-autosubmit>
+        <option value="">Barcha tumanlar</option>
+        {% for k, n in districts %}<option value="{{ k }}" {% if f.tuman == k %}selected{% endif %}>{{ n }}</option>{% endfor %}
+      </select>{% icon "chevron-down" "icon icon-sm" %}
+    </div>
+    {% endif %}
+    <div class="select-wrap">
+      <select class="select input-sm" name="tur" aria-label="Turi" data-autosubmit>
+        <option value="">Barcha turlar</option>
+        {% for n in types %}<option value="{{ n }}" {% if f.tur == n %}selected{% endif %}>{{ n }}</option>{% endfor %}
+      </select>{% icon "chevron-down" "icon icon-sm" %}
+    </div>
+    <input class="input input-sm" type="date" name="dan" value="{{ f.dan }}" aria-label="Sanadan" style="width:140px">
+    <input class="input input-sm" type="date" name="gacha" value="{{ f.gacha }}" aria-label="Sanagacha" style="width:140px">
+    <div class="select-wrap">
+      <select class="select input-sm" name="sort" aria-label="Tartib" data-autosubmit>
+        <option value="new" {% if f.sort != "old" %}selected{% endif %}>Eng yangi birinchi</option>
+        <option value="old" {% if f.sort == "old" %}selected{% endif %}>Eng eski birinchi</option>
+      </select>{% icon "chevron-down" "icon icon-sm" %}
+    </div>
+    <button class="btn btn-secondary btn-sm" type="submit">Qidirish</button>
+  </div>
+</form>
+
+<section class="panel" aria-label="So‘rovlar ro‘yxati">
+  <div class="panel-body flush">
+    <div class="table-wrap">
+      <table class="table req-table">
+        <thead>
+          <tr>
+            <th scope="col" class="hide-xs">Kimdan</th>
+            <th scope="col">Qaror</th>
+            <th scope="col" class="hide-sm">Manba</th>
+            <th scope="col" class="hide-sm">Sana</th>
+            <th scope="col">Holat</th>
+            <th scope="col" class="td-cta"><span class="sr-only">Amal</span></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for r in page.object_list %}
+          <tr style="cursor:pointer" onclick="location.href='{% url 'eqaror_detail' r.code %}'">
+            <td class="td-from hide-xs"><span class="td-main">{{ r.o }}</span><span class="td-sub">{{ r.region }}</span></td>
+            <td class="td-title">
+              <a class="td-main title-link" href="{% url 'eqaror_detail' r.code %}">{% if r.h %}Yashirilgan hujjat (shaxsga doir ma’lumot){% else %}{{ r.t }}{% endif %}</a>
+              <span class="td-sub"><span class="mono">{{ r.n }}</span> · {{ r.ty }}</span>
+            </td>
+            <td class="hide-sm"><span class="badge badge-outline">{{ r.src }}</span></td>
+            <td class="hide-sm td-when"><span class="td-num" style="display:block">{{ r.d }}</span></td>
+            <td>
+              {% if r.st == 1 %}<span class="badge" data-tone="critical">Ehtimoliy buzilish ({{ r.flags }})</span>
+              {% elif r.st == 3 %}<span class="badge" data-tone="warning">Ekspert tekshiradi ({{ r.flags }})</span>
+              {% elif r.st == 2 %}<span class="badge" data-tone="good">Muammo topilmadi</span>
+              {% else %}<span class="badge badge-outline">Matn yo‘q — faqat E-qaror ma’lumoti</span>{% endif %}
+              {% if r.checks and r.st != 2 %}<span class="td-sub" style="display:block;margin-top:4px">{{ r.checks|checks_uz }}</span>{% endif %}
+              <span class="td-sub" style="display:block;margin-top:4px">{% if r.lost or r.canc %}<span style="color:var(--critical-ink,#b3261e)">Lex.uz: kuchini yo‘qotgan{% if r.lost %}, {{ r.lost|isodmy }} dan{% endif %}</span>{% elif r.has_text %}<span style="color:var(--good-ink,#1b7a3a)">Lex.uz: kuchda</span>{% else %}Lex.uz holati: ma’lumot yo‘q{% endif %}</span>
+            </td>
+            <td class="td-cta"><a class="btn btn-secondary btn-sm btn-ask" href="{% url 'eqaror_detail' r.code %}"><span class="mz-matrix" data-m></span><span class="cta-label">Tekshirish</span></a></td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="6"><div class="empty"><div class="empty-title">Hech narsa topilmadi</div></div></td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% if page.paginator.num_pages > 1 %}
+  <div class="panel-foot list-foot">
+    <span>{{ page.start_index }}–{{ page.end_index }} / {{ total }}</span>
+    <nav class="pager" aria-label="Sahifalar">
+      {% if page.has_previous %}<a href="{% query page=page.previous_page_number %}" aria-label="Oldingi">{% icon "chevron-left" "icon icon-sm" %}</a>{% endif %}
+      <span class="pager-pos mono">{{ page.number }} / {{ page.paginator.num_pages }}</span>
+      {% if page.has_next %}<a href="{% query page=page.next_page_number %}" aria-label="Keyingi">{% icon "chevron-right" "icon icon-sm" %}</a>{% endif %}
+    </nav>
+  </div>
+  {% endif %}
+</section>
+<script>(function(){var busy=document.getElementById('busy');function go(){busy.style.display='flex';}
+document.querySelectorAll('.check-form,#uploadForm').forEach(function(x){x.addEventListener('submit',go);});
+var dlg=document.getElementById('pasteDlg');document.getElementById('pasteBtn').onclick=function(){dlg.showModal();};document.getElementById('pasteCancel').onclick=function(){dlg.close();};
+var f=document.querySelector('#uploadForm input');['dragover','drop'].forEach(function(e){document.addEventListener(e,function(ev){ev.preventDefault();if(e==='drop'&&ev.dataTransfer.files.length){f.files=ev.dataTransfer.files;f.form.submit();}});});})();</script>
+{% endblock %}

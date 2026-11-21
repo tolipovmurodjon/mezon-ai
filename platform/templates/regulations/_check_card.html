@@ -1,0 +1,31 @@
+{% load mezon %}
+<section class="panel check-card" aria-label="Qarorni tekshirish" style="margin:0 0 16px">
+  <div class="panel-head"><h2 class="panel-title">{% icon "scale" %}Qarorni tekshirish</h2></div>
+  <div class="panel-body">
+    {% if request.GET.xato %}<div class="msg-error" role="alert" style="margin:0 0 12px">{% icon "circle-alert" %}<span>{{ request.GET.xato }}</span></div>{% endif %}
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start">
+      {% if show_link %}
+      <form method="get" action="{% url 'eqaror_find' %}" style="display:grid;gap:8px">
+        <span class="label">E-qaror havolasi</span>
+        <input class="input" type="text" name="havola" placeholder="https://e-qaror.gov.uz/doc/…" aria-label="E-qaror havolasi">
+        <button class="btn btn-secondary btn-sm" type="submit" style="justify-self:start">Ochish</button>
+      </form>
+      {% endif %}
+      <form method="post" action="{{ file_action }}" enctype="multipart/form-data" class="check-form" style="display:grid;gap:8px">{% csrf_token %}
+        <span class="label">Fayl yuklash (PDF, DOCX)</span>
+        <label class="check-drop" style="border:1.5px dashed var(--line,#bbb);border-radius:12px;padding:16px;text-align:center;cursor:pointer;display:block">
+          Faylni shu yerga tashlang yoki tanlang
+          <input type="file" name="file" accept=".pdf,.docx,.txt" hidden onchange="this.form.submit()">
+        </label>
+      </form>
+      <form method="post" action="{{ file_action }}" class="check-form" style="display:grid;gap:8px">{% csrf_token %}
+        <span class="label">Matnni qo‘ying</span>
+        <textarea class="textarea" name="matn" rows="3" placeholder="Qaror matni…"></textarea>
+        <button class="btn btn-primary btn-sm" type="submit" style="justify-self:start">Tekshirish</button>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="check-busy" hidden style="position:fixed;inset:0;background:rgba(255,255,255,.85);display:none;align-items:center;justify-content:center;z-index:50"><div class="thinking">Qaror tekshirilmoqda… (20–60 soniya)</div></div>
+<script>(function(){var b=document.querySelector('.check-busy');document.querySelectorAll('.check-form').forEach(function(f){f.addEventListener('submit',function(){b.style.display='flex';});});
+document.querySelectorAll('.check-drop').forEach(function(d){var i=d.querySelector('input');['dragover','drop'].forEach(function(e){d.addEventListener(e,function(ev){ev.preventDefault();if(e==='drop'&&ev.dataTransfer.files.length){i.files=ev.dataTransfer.files;i.form.submit();}});});});})();</script>

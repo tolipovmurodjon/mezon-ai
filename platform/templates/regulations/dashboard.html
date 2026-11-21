@@ -1,0 +1,85 @@
+{% extends "layouts/app.html" %}
+{% load mezon %}
+{% block title %}Bosh sahifa{% endblock %}
+{% block crumbs %}<span aria-current="page">Bosh sahifa</span>{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title two-tone">{{ greeting }}, {{ user.first_name|default:user.username }}.
+    <span class="soft">{{ kpis.1.value }} ta qaror ehtimoliy buzilish belgisi bilan topildi.</span></h1>
+  {% if flagged %}<a class="btn btn-primary btn-sm btn-ask" href="{% url 'eqaror_detail' flagged.0.code %}"><span class="mz-matrix" data-m></span>Eng yangisini tekshirish</a>{% endif %}
+</div>
+
+<div class="kpi-row">
+  {% for k in kpis %}
+  <article class="kpi">
+    <div class="kpi-main">
+      <span class="label kpi-label">{{ k.label }} · jami</span>
+      <div class="kpi-value num">{{ k.value|uznum }}</div>
+      <div class="tick-spark" data-values="{{ k.spark|spark }}" aria-hidden="true"></div>
+    </div>
+    <div class="kpi-foot">
+      <span class="delta">{% if k.new %}{% icon "arrow-up-right" %}+{{ k.new|uznum }} ta{% else %}0 ta{% endif %}<span class="delta-ctx">so‘nggi 7 kunda ({{ newest }} gacha)</span></span>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+<div class="app-row">
+  <section class="panel" aria-labelledby="dailyTitle">
+    <div class="panel-head">
+      <h2 class="panel-title" id="dailyTitle">{% icon "chart-column" %}Kunlik qarorlar · 30 kun</h2>
+      <div class="panel-actions legend">
+        <span class="legend-item"><span class="legend-sw"></span>Muammo topilmadi</span>
+        <span class="legend-item"><span class="legend-sw" data-k="2"></span>Matnsiz</span>
+        <span class="legend-item"><span class="legend-sw" data-k="critical"></span>Ehtimoliy buzilish</span>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="pixel-chart" id="dailyChart" role="img" aria-label="So‘nggi 30 kunda E-qarorda qabul qilingan qarorlar, Mezon natijasi bo‘yicha"></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="aiTitle">
+    <div class="panel-head">
+      <h2 class="panel-title" id="aiTitle"><span class="mz-matrix" data-m style="--s:16px"></span>Mezon natijasi · matni bor qarorlar</h2>
+    </div>
+    <div class="panel-body ai-summary">
+      <div class="fig-row"><span class="fig num">{{ analysed|uznum }}</span><span class="muted">ta qaror qoidalar bilan tekshirildi</span></div>
+      <div class="share-bar" role="img" aria-label="{% for v in verdicts %}{{ v.label }}: {{ v.n }}. {% endfor %}">
+        {% for v in verdicts %}{% if v.n %}<span {% if v.key == "conflict" %}data-tone="critical"{% elif v.key == "minor" %}data-s="3"{% else %}data-s="5"{% endif %} style="flex:{{ v.n }}">{{ v.pct }}%</span>{% endif %}{% endfor %}
+      </div>
+      <ul class="verdict-legend">
+        {% for v in verdicts %}<li><span class="legend-sw" {% if v.key == "conflict" %}data-k="critical"{% elif v.key == "minor" %}style="background:var(--seq-3)"{% endif %}></span>{{ v.label }}<span class="mono">{{ v.n }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+
+<section class="panel" aria-labelledby="tableTitle">
+  <div class="panel-head">
+    <h2 class="panel-title" id="tableTitle">{% icon "inbox" %}Eng yangi belgilangan qarorlar</h2>
+    <div class="panel-actions"><a class="btn btn-secondary btn-sm" href="{% url 'requests' %}?holat=1">Barchasi</a></div>
+  </div>
+  <div class="panel-body flush"><div class="table-wrap"><table class="table req-table"><tbody>
+    {% for r in flagged %}
+    <tr style="cursor:pointer" onclick="location.href='{% url 'eqaror_detail' r.code %}'">
+      <td class="td-from hide-xs"><span class="td-main">{{ r.o }}</span><span class="td-sub">{{ r.region }}</span></td>
+      <td class="td-title"><a class="td-main title-link" href="{% url 'eqaror_detail' r.code %}">{{ r.t }}</a><span class="td-sub"><span class="mono">{{ r.n }}</span> · {{ r.ty }}</span></td>
+      <td class="hide-sm td-when"><span class="td-num">{{ r.d }}</span></td>
+      <td><span class="badge" data-tone="critical">Ehtimoliy buzilish ({{ r.flags }})</span>{% if r.checks %}<span class="td-sub" style="display:block;margin-top:4px">{{ r.checks|checks_uz }}</span>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </tbody></table></div></div>
+</section>
+
+<section class="panel" aria-labelledby="regTitle" style="margin-top:16px">
+  <div class="panel-head"><h2 class="panel-title" id="regTitle">{% icon "map" %}Hududlar bo‘yicha belgilangan qarorlar</h2></div>
+  <div class="panel-body flush"><div class="table-wrap"><table class="table"><thead><tr><th>Hudud</th><th class="num">Ehtimoliy buzilish</th><th class="num">Ekspert tekshiradi</th><th class="num">Muammo topilmadi</th><th class="num">Matnsiz</th></tr></thead><tbody>
+    {% for g in regions %}
+    <tr style="cursor:pointer" onclick="location.href='{% url 'requests' %}?hudud={{ g.r }}&holat=1'"><td>{{ g.name }}</td><td class="num mono">{{ g.flag }}</td><td class="num mono">{{ g.unclear }}</td><td class="num mono">{{ g.clean }}</td><td class="num mono">{{ g.none }}</td></tr>
+    {% endfor %}
+  </tbody></table></div></div>
+</section>
+{{ chart|json_script:"chart-data" }}
+{% endblock %}

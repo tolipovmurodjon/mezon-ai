@@ -1,0 +1,12 @@
+{% if analysis %}
+<div class="ai-rec" data-tone="{{ analysis.tone }}">
+  <span class="label">AI tavsiyasi</span>
+  <div class="ai-rec-title">{{ analysis.get_recommendation_display }}</div>
+  <div class="ai-rec-meta mono">{{ analysis.get_verdict_display }} · {{ analysis.checks|length }} tekshiruvdan {{ analysis.checks_passed }} tasi o‘tdi</div>
+</div>
+{% else %}
+<div class="ai-rec">
+  <span class="label">AI tavsiyasi</span>
+  <div class="ai-rec-title muted">Tahlil tugagach chiqadi</div>
+</div>
+{% endif %}

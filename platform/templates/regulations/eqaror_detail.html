@@ -1,0 +1,220 @@
+{% extends "layouts/app.html" %}
+{% load mezon %}
+{% block title %}{{ row.n }} · E-qaror{% endblock %}
+{% block page_class %}page-review{% endblock %}
+{% block crumbs %}<a href="{% url 'eqaror' %}">E-qaror reestri</a>{% icon "chevron-right" %}<span aria-current="page">{{ row.n }}</span>{% endblock %}
+
+{% block content %}
+{% if not lex %}{% url 'eqaror_attach' row.code as att_url %}{% include "regulations/_check_card.html" with show_link=False file_action=att_url %}{% endif %}
+<div class="review">
+  <section class="ai-panel review-chat" aria-label="Mezon AI bilan tekshirish" id="free" data-agent="{% if not is_upload %}{% url 'eqaror_agent' row.code %}{% endif %}" data-attach="{% if not is_upload %}{% url 'eqaror_attach' row.code %}{% endif %}" data-url="{% if chat_url %}{{ chat_url }}{% else %}{% url 'eqaror_chat' row.code %}{% endif %}">
+    <header class="ai-head">
+      <span class="mz-matrix" data-m style="--s:26px"></span>
+      <span class="ai-head-title">Mezon AI bilan tekshirish</span>
+      <select class="badge badge-outline model-select" id="fm" aria-label="Model"><option value="mezon-lm">Mezon-LM (bizning model)</option><option value="qwen">Qwen + qonun vositalari</option></select>
+      <button type="button" class="btn btn-ghost btn-sm" id="fnew" style="margin-left:auto">{% icon "plus" "icon icon-sm" %}Yangi suhbat</button>
+    </header>
+    <div class="ai-body" id="flog">
+      {% if request.GET.xato %}<div class="msg-error" role="alert" style="margin:0 0 12px">{% icon "circle-alert" %}<span>{{ request.GET.xato }}</span></div>{% endif %}
+      {% if pending %}
+      <div class="msg-error" role="alert" style="margin:0 0 12px;background:#fff4e5;border:1px solid #f0a53a;color:#7a4300;display:block">
+        <b>Diqqat: yuklangan matn raqami ({{ pending.reg }}) bu qaror raqamiga ({{ pending.row }}) mos emas.</b> Baribir tekshirish?
+        <form method="post" action="{% url 'eqaror_confirm' row.code pending.uid %}" style="display:inline">{% csrf_token %}<button class="btn btn-primary btn-sm" type="submit">Ha, tekshirish</button></form>
+        <a class="btn btn-secondary btn-sm" href="{% url 'eqaror_detail' row.code %}">Bekor qilish</a>
+      </div>
+      {% endif %}
+      {% if mismatch %}
+      <div style="margin:0 0 12px;padding:10px 12px;border-radius:10px;background:#fff4e5;border:1px solid #f0a53a;color:#7a4300">
+        Diqqat: yuklangan matn raqami ({{ mismatch.0 }}) bu qaror raqamiga ({{ mismatch.1 }}) mos emas.</div>
+      {% endif %}
+      {% if info %}
+      <div class="widget-stack" style="margin:0 0 12px"><div class="widget"><div class="widget-head"><span class="widget-title">Aniqlangan ma’lumot</span></div>
+        <div class="widget-body"><dl class="meta-list">
+          <dt>Raqam</dt><dd class="mono">{{ info.reg|default:"aniqlanmadi" }}</dd>
+          <dt>Sana</dt><dd class="mono">{{ info.date|default:"aniqlanmadi" }}</dd>
+          <dt>Organ</dt><dd>{{ info.organ|default:"aniqlanmadi" }}</dd>
+          <dt>Hudud</dt><dd>{{ info.region|default:"aniqlanmadi" }}</dd>
+          <dt>Turi</dt><dd>{{ info.typ|default:"aniqlanmadi" }}</dd>
+          <dt>Normativmi</dt><dd>{{ info.norm|default:"aniqlanmadi" }}</dd>
+          <dt>Asos</dt><dd>{% for c in info.chips %}<span class="badge badge-outline" style="margin:0 6px 6px 0">{{ c }}</span>{% empty %}aniqlanmadi{% endfor %}</dd>
+          {% if matched %}<dt>Bazada</dt><dd>Bazadagi qaror bilan mos: <span class="mono">{{ matched.reg }}</span>{% if matched.url %} · <a href="{{ matched.url }}" target="_blank" rel="noopener">lex.uz</a>{% endif %}</dd>{% endif %}
+          <dt>Hajmi</dt><dd>{% if info.words %}{{ info.words }} so‘z{% if info.pages %}, {{ info.pages }} bet{% endif %}{% else %}matn yo‘q{% endif %}</dd>
+        </dl></div></div></div>
+      {% endif %}
+      {% if is_upload %}
+      <div class="msg msg-ai">
+        <span class="mz-matrix" data-m></span>
+        <div class="msg-main">
+          <div class="msg-meta">Mezon AI</div>
+          <div class="msg-text">
+            {% if lex %}
+              <p>Qaror matni bizda bor. Mezon qoidalari {{ checks.total }} ta tekshiruvni bajardi, <b>{{ checks.flags }} ta belgi</b> topildi{% if flags %} (har birini ekspert ko‘rib chiqadi):{% else %}.{% endif %}</p>
+            {% else %}
+              <p><b>Qaror matni bizda yo‘q.</b> E-qaror’dan PDF yuklab oling va shu yerga tashlang yoki matnni qo‘ying — Mezon qoidalari, qonun kartalari va AI shu matn bilan ishlaydi. Matnsiz ham savol bersangiz, model faqat E-qaror ma’lumotlari (sarlavha, organ, sana, raqam, tur) bilan tekshiradi.</p>
+              <p><a class="btn btn-secondary btn-sm" href="https://e-qaror.gov.uz/doc/{{ row.code }}" target="_blank" rel="noopener">E-qaror’da ochish</a></p>
+            {% endif %}
+          </div>
+          {% if flags %}
+          <div class="widget-stack"><div class="widget"><div class="widget-head"><span class="widget-title">Aniqlangan muammolar</span><span class="widget-head-end"><span class="count count-soft">{{ flags|length }}</span></span></div>
+            <div class="widget-body">
+              {% for f in flags %}
+              <article class="finding cause" data-tone="{% if f.status == 'unclear_needs_expert' %}warning{% elif f.severity == 'high' %}critical{% else %}serious{% endif %}">
+                <div style="margin:0 0 8px"><span style="display:inline-block;font-size:11px;line-height:1.4;padding:3px 10px;border-radius:999px;background:#eceae6;color:#5f5c55;border:1px solid #d9d6cf">Qoidalar mexanizmi · lex.uz bazasi (AI emas, deterministik)</span></div>
+                <span class="label" style="display:block">{% if f.status == 'unclear_needs_expert' %}Ekspert tekshirishi kerak{% else %}Ehtimoliy buzilish belgisi{% endif %}</span>
+                <h3 class="finding-title">{{ f.title }}</h3>
+                <p>{{ f.explanation }}</p>
+                {% if f.quote_html %}<blockquote class="quote" style="white-space:normal;margin:8px 0;padding:8px 12px;border-left:3px solid #c9a227"><span class="label" style="display:block;margin-bottom:4px">Qaror matnidan iqtibos:</span>{{ f.quote_html|safe }}</blockquote>{% endif %}
+                <p class="muted">{{ f.law_ref }}</p>
+              </article>
+              {% endfor %}
+            </div></div></div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="msg msg-ai"><span class="mz-matrix" data-m></span><div class="msg-main">
+        <div class="msg-meta">Qonunlar · asos: {{ basis_source }}</div>
+        {% if laws %}
+        <div class="widget-stack"><div class="widget"><div class="widget-head"><span class="widget-title">Keltirilgan qonun moddalari</span><span class="widget-head-end"><span class="count count-soft">{{ laws|length }}</span></span></div>
+          <div class="widget-body">
+            {% for c in laws %}
+            <article class="finding cause" data-tone="{% if c.in_force %}good{% else %}critical{% endif %}">
+              <div style="margin:0 0 8px"><span style="display:inline-block;font-size:11px;line-height:1.4;padding:3px 10px;border-radius:999px;background:#eceae6;color:#5f5c55;border:1px solid #d9d6cf">Qoidalar mexanizmi · lex.uz bazasi (AI emas, deterministik)</span></div>
+              <span class="label" style="display:block">{{ c.act_title }} · {{ c.article }}-modda
+                <span class="badge" data-tone="{% if c.in_force %}good{% else %}critical{% endif %}" style="margin-left:6px">{% if c.in_force %}kuchda{% elif c.removed_in %}kuchsiz, {{ c.removed_in }} dan{% else %}kuchsiz yoki topilmadi{% endif %}</span></span>
+              {% if c.text %}<p style="white-space:pre-wrap">{{ c.text|truncatechars:700 }}</p>
+              {% else %}<p class="muted">{{ c.article }}-modda {{ row.d }} holatidagi tahrirda yo‘q.{% if c.note %} {{ c.note }}{% endif %}</p>{% if c.last_text %}<p class="muted" style="margin-top:6px;font-size:12px">So‘nggi amaldagi matni ({{ c.last_seen }} tahriri){% if c.last_heading %} — {{ c.last_heading }}{% endif %}:</p><p style="white-space:pre-wrap;opacity:.75;border-left:2px solid #ccc;padding-left:10px">{{ c.last_text }}</p>{% endif %}{% endif %}
+              {% if c.url %}<p><a href="{{ c.url }}" target="_blank" rel="noopener">lex.uz</a></p>{% endif %}
+            </article>
+            {% endfor %}
+          </div></div></div>
+        {% else %}
+        <div class="msg-text"><p>Qarorning huquqiy asosidan qonun moddalari aniqlanmadi{% if not lex %} (matn yo‘q, faqat E-qaror sarlavhasi bor){% endif %}.</p></div>
+        {% endif %}
+      </div></div>
+      {% endif %}
+      <div id="chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+        <button type="button" class="btn btn-secondary btn-sm chip-q">Ushbu qarorni tekshiring</button>
+        <button type="button" class="btn btn-secondary btn-sm chip-q">Bu qaror normativmi yoki individual?</button>
+        <button type="button" class="btn btn-secondary btn-sm chip-q">Hokim shu masalada vakolatlimi?</button>
+      </div>
+    </div>
+    <div class="ai-foot">
+      <form class="composer" id="fform">
+        {% csrf_token %}
+        <textarea class="composer-input" name="message" rows="1" placeholder="Savol bering…" aria-label="Savol"></textarea>
+        <div class="composer-bar"><div class="composer-end"><button type="submit" class="send" aria-label="Yuborish" disabled>{% icon "arrow-up" %}</button></div></div>
+      </form>
+    </div>
+  </section>
+
+  <aside class="review-side" aria-label="Qaror">
+    <section class="panel">
+      <div class="panel-body">
+        <div class="dossier-top">
+          <span class="badge badge-outline">{{ row.ty }}</span>
+          <span class="mono muted dossier-no">{{ row.n }}</span>
+        </div>
+        <h1 class="dossier-title" title="{% if row.h %}Yashirilgan hujjat{% else %}{{ row.t }}{% endif %}" style="display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere">{% if row.h %}Yashirilgan hujjat (shaxsga doir ma’lumot){% else %}{{ row.t }}{% endif %}</h1>
+        <dl class="meta-list">
+          <dt>Kimdan</dt><dd>{{ row.organ_full }}</dd>
+          <dt>Hudud</dt><dd>{{ row.region }}</dd>
+          <dt>Sana</dt><dd class="mono">{{ row.d }}</dd>
+          <dt>Normativ</dt><dd>{% if row.nm %}Ha{% else %}Yo‘q{% endif %}</dd>
+          <dt>Bo‘lim</dt><dd>{{ slice_label }}</dd>
+          <dt>E-qaror ko‘rinishi</dt><dd>{% if row.rel == 200 %}Haqiqiy emas deb topilgan{% elif row.h %}Matn yashirilgan{% else %}Ochiq{% endif %}</dd>
+          <dt>Lex.uz holati</dt><dd>{% if row.lost or row.canc %}<span class="badge" data-tone="critical">Kuchini yo‘qotgan{% if row.lost %}, {{ row.lost|isodmy }} dan{% endif %}</span>{% if row.canc %}<span class="meta-sub">Bekor qilgan: {% if row.canc_url %}<a href="{{ row.canc_url }}" target="_blank" rel="noopener">{{ row.canc }}</a>{% else %}{{ row.canc }}{% endif %}{% if row.canc_date %} ({{ row.canc_date|isodmy }}){% endif %}</span>{% if row.canc_why %}<span class="meta-sub" style="display:block">Asos: {{ row.canc_why }}</span>{% endif %}{% endif %}{% elif row.has_text %}<span class="badge" data-tone="good">Kuchda</span>{% else %}ma’lumot yo‘q{% endif %}</dd>
+        </dl>
+        <p style="margin-top:12px">{% if row.src != "lex.uz" %}{% if not is_upload %}<a class="btn btn-primary btn-sm" href="https://e-qaror.gov.uz/doc/{{ row.code }}" target="_blank" rel="noopener">E-qaror’da ochish {% icon "arrow-right" "icon icon-sm" %}</a>{% endif %}{% endif %}
+        {% if lex and lex.url %}<a class="btn btn-secondary btn-sm" href="{{ lex.url }}" target="_blank" rel="noopener">lex.uz</a>{% endif %}</p>
+      </div>
+    </section>
+    {% if lexid or orig_url %}
+    <section class="panel">
+      <div class="panel-head"><h2 class="panel-title">{% icon "file-text" %}{% if orig_url %}Yuklangan asl fayl{% else %}Asl hujjat (lex.uz){% endif %}</h2></div>
+      <div class="panel-body" style="display:flex;flex-wrap:wrap;gap:8px">
+        <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="{% if orig_url %}{{ orig_url }}{% else %}{% url 'original_doc' lexid %}{% endif %}#view=FitH">{% icon "arrow-right" "icon icon-sm" %}To‘liq ekranda ochish</a>
+        <a class="btn btn-secondary btn-sm" href="{% if orig_url %}{{ orig_url }}?dl=1{% else %}{% url 'original_doc' lexid %}?dl=1&n={{ row.n|urlencode }}{% endif %}">{% icon "download" "icon icon-sm" %}Asl hujjatni yuklab olish (PDF)</a>
+      </div>
+      <div class="panel-body flush"><iframe src="{% if orig_url %}{{ orig_url }}{% else %}{% url 'original_doc' lexid %}{% endif %}#view=FitH&zoom=page-width" title="Asl hujjat" style="width:100%;height:760px;border:0;display:block;background:#fff"></iframe></div>
+    </section>
+    {% endif %}
+    {% if lex and lex.text %}
+    <section class="panel">
+      <div class="panel-head"><h2 class="panel-title">{% icon "file-text" %}Hujjat matni</h2></div>
+      <div class="panel-body"><details open><summary>Matnni yig‘ish / ochish</summary>
+        <div style="white-space:pre-wrap;font-size:15px;line-height:1.6;max-height:520px;overflow:auto;margin-top:8px">{{ lex.text }}</div></details></div>
+    </section>
+    {% endif %}
+  </aside>
+</div>
+<script>
+(function(){
+  var root=document.getElementById('free'),log=document.getElementById('flog'),form=document.getElementById('fform'),
+      inp=form.querySelector('textarea'),btn=form.querySelector('.send'),sel=document.getElementById('fm'),
+      csrf=form.querySelector('[name=csrfmiddlewaretoken]').value,hist=[],busy=false;
+  function icon(n){var ns='http://www.w3.org/2000/svg',v=document.createElementNS(ns,'svg');v.setAttribute('class','icon');v.setAttribute('aria-hidden','true');var u=document.createElementNS(ns,'use');u.setAttribute('href','#i-'+n);v.appendChild(u);return v;}
+  var busyEl=null;
+  function showBusy(){if(!busyEl){busyEl=el('div','thinking','Qaror tekshirilmoqda… (20–60 soniya)');busyEl.style.cssText='position:fixed;inset:0;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;z-index:50';document.body.appendChild(busyEl);}}
+  function sendAttach(file,text){var u=root.dataset.attach;if(!u)return;showBusy();var fd=new FormData();if(file)fd.append('file',file);if(text)fd.append('matn',text);fd.append('csrfmiddlewaretoken',csrf);
+    fetch(u,{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){location.href=r.url;});}
+  var dz=document.getElementById('dz'),dzf=document.getElementById('dzf');
+  if(dz){dz.addEventListener('click',function(){dzf.click();});dzf.onchange=function(){if(dzf.files[0])sendAttach(dzf.files[0]);};
+    dz.addEventListener('dragover',function(e){e.preventDefault();});dz.addEventListener('drop',function(e){e.preventDefault();if(e.dataTransfer.files[0])sendAttach(e.dataTransfer.files[0]);});}
+  var af=document.querySelector('.attach-form');if(af)af.addEventListener("submit",showBusy);
+  root.addEventListener('dragover',function(e){if(root.dataset.attach)e.preventDefault();});
+  root.addEventListener('drop',function(e){if(root.dataset.attach&&e.dataTransfer.files[0]&&e.target.closest('#dz')===null){e.preventDefault();sendAttach(e.dataTransfer.files[0]);}});
+  inp.addEventListener('paste',function(e){var t=(e.clipboardData||window.clipboardData).getData('text');
+    if(t&&t.length>500&&root.dataset.attach){e.preventDefault();if(confirm('Uzun matn qo‘yildi ('+t.length+' belgi). Bu matnni shu qaror uchun tekshiraymi?'))sendAttach(null,t);else{inp.value=t;inp.oninput();}}});
+  function aiBadge(b){var d=el('div');d.style.cssText='margin-top:8px';d.innerHTML='<span style="display:inline-block;font-size:12px;line-height:1.4;padding:3px 10px;border-radius:999px;background:#fff1e0;color:#a14a00;border:1px solid #f0a53a">'+esc(b.text)+'</span>'+(b.tools?' <span class="muted" style="font-size:12px">'+esc(b.tools)+'</span>':'');return d;}
+  var tracePanel=null;
+  function traceEl(ev,main,before){if(!tracePanel||tracePanel.parentNode!==main){tracePanel=el('div');tracePanel.style.cssText='margin:8px 0;padding:10px 12px;border-radius:12px;background:#fff7ec;border:1px solid #f0a53a';tracePanel.innerHTML='<div style="font-size:12px;font-weight:600;color:#a14a00;margin-bottom:6px">Mezon-LM fikrlash jarayoni (haqiqiy vosita chaqiruvlari)</div>';main.insertBefore(tracePanel,before);}
+    var r=el('div');r.style.cssText='font-size:13px;line-height:1.5;margin:3px 0';var a=[];for(var k in ev.args){a.push(String(ev.args[k]));}
+    r.innerHTML='<code>'+esc(ev.name)+'('+esc(a.join(', '))+')</code> \u2192 '+esc(ev.result);tracePanel.appendChild(r);}
+  function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function srcBadge(){return '<div style="margin:0 0 8px"><span style="display:inline-block;font-size:11px;line-height:1.4;padding:3px 10px;border-radius:999px;background:#eceae6;color:#5f5c55;border:1px solid #d9d6cf">Qoidalar mexanizmi · lex.uz bazasi (AI emas, deterministik)</span></div>';}
+  function lawEl(c){var a=el('article','finding cause');a.setAttribute('data-tone',c.in_force?'good':'critical');
+    var badge=c.in_force?'kuchda':(c.removed_in?'kuchsiz, '+c.removed_in+' dan':'kuchsiz yoki topilmadi');
+    a.innerHTML=srcBadge()+'<span class="label" style="display:block">'+esc(c.act_title)+' · '+esc(c.article)+'-modda <span class="badge" data-tone="'+(c.in_force?'good':'critical')+'" style="margin-left:6px">'+badge+'</span></span>'+
+      (c.text?'<p style="white-space:pre-wrap">'+esc(c.text.length>700?c.text.slice(0,700)+'…':c.text)+'</p>':'<p class="muted">'+esc(c.article)+'-modda tahrirda yo‘q.'+(c.note?' '+esc(c.note):'')+'</p>'+(c.last_text?'<p class="muted" style="margin-top:6px;font-size:12px">So‘nggi amaldagi matni ('+esc(c.last_seen||'')+' tahriri)'+(c.last_heading?' — '+esc(c.last_heading):'')+':</p><p style="white-space:pre-wrap;opacity:.75;border-left:2px solid #ccc;padding-left:10px">'+esc(c.last_text)+'</p>':''))+(c.url?'<p><a href="'+esc(c.url)+'" target="_blank" rel="noopener">lex.uz</a></p>':'');
+    var w=el('div','widget-stack');w.style.margin='8px 0';w.appendChild(a);return w;}
+  function flagsEl(fl){var w=el('div','widget-stack');w.style.margin='8px 0';var h='';fl.forEach(function(f){var un=f.status==='unclear_needs_expert';var tone=un?'warning':(f.severity==='high'?'critical':'serious');
+    h+='<article class="finding cause" data-tone="'+tone+'">'+srcBadge()+'<span class="label" style="display:block">'+(un?'Ekspert tekshirishi kerak':'Ehtimoliy buzilish belgisi')+'</span><h3 class="finding-title">'+esc(f.title)+'</h3><p>'+esc(f.explanation)+'</p>'+
+      (f.quote_html?'<blockquote class="quote" style="white-space:normal;margin:8px 0;padding:8px 12px;border-left:3px solid #c9a227"><span class="label" style="display:block;margin-bottom:4px">Qaror matnidan iqtibos:</span>'+f.quote_html+'</blockquote>':'')+'<p class="muted">'+esc(f.law_ref)+'</p></article>';});
+    w.innerHTML=h;return w;}
+  function fmt(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  sel.onchange=function(){try{localStorage.setItem('mezonFreeModel2',sel.value);}catch(e){}};
+  inp.oninput=function(){btn.disabled=busy||!inp.value.trim();};
+  inp.onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit();}};
+  document.getElementById('fnew').onclick=function(){if(busy)return;hist=[];Array.prototype.slice.call(log.querySelectorAll('.msg')).slice(1).forEach(function(n){n.remove();});};
+  Array.prototype.forEach.call(document.querySelectorAll('.chip-q'),function(b){b.onclick=function(){if(root.dataset.agent&&/Ushbu qarorni tekshiring/i.test(b.textContent)){if(!busy)ask(b.textContent,true);return;}inp.value=b.textContent;inp.oninput();form.requestSubmit();};});
+  form.onsubmit=function(e){e.preventDefault();var q=inp.value.trim();if(!q||busy)return;inp.value='';ask(q,!!root.dataset.agent&&/Ushbu qarorni tekshiring/i.test(q));};
+  function ask(q,useAgent,silent){
+    busy=true;btn.disabled=true;
+    var u=el('div','msg msg-user');if(!silent)u.appendChild(el('div','bubble',q));
+    var m=el('div','msg msg-ai'),main=el('div','msg-main');main.appendChild(el('div','msg-meta','Mezon AI'));m.appendChild(main);if(silent)log.append(m);else log.append(u,m);
+    var steps=el('div','trace-steps'),trace=el('details','trace');trace.open=true;var sum=el('summary');sum.appendChild(el('span',null,'Javob tayyorlanmoqda…'));trace.append(sum,steps);main.appendChild(trace);
+    var rows={},text='',box=el('div','msg-text'),failed=false;tracePanel=null;
+    var fd=new FormData();fd.append('message',q);fd.append('model',sel.value);fd.append('history',JSON.stringify(hist.slice(-6)));
+    fetch(useAgent?root.dataset.agent:root.dataset.url,{method:'POST',body:fd,headers:{'X-CSRFToken':csrf}}).then(function(r){
+      var rd=r.body.getReader(),dec=new TextDecoder(),buf='';
+      function pump(){return rd.read().then(function(x){
+        if(x.done)return;buf+=dec.decode(x.value,{stream:true});var parts=buf.split('\n\n');buf=parts.pop();
+        parts.forEach(function(p){if(p.indexOf('data: ')!==0)return;var ev=JSON.parse(p.slice(6));
+          if(ev.type==='step'){var row=rows[ev.id];if(!row){row=el('div','trace-step is-run');row.appendChild(el('span','spinner'));row.appendChild(el('span'));steps.appendChild(row);rows[ev.id]=row;}
+            var lab=row.children[1];lab.textContent=ev.label||'';if(ev.detail)lab.appendChild(el('span','trace-detail',' · '+ev.detail));
+            if(ev.status&&ev.status!=='run'){row.className='trace-step '+(ev.status==='warn'?'is-warn':'is-done');row.replaceChild(icon(ev.status==='warn'?'triangle-alert':'check'),row.firstChild);}}
+          else if(ev.type==='trace'){traceEl(ev,main,box.parentNode?box:null);}
+          else if(ev.type==='law_card'){main.insertBefore(lawEl(ev.card),box.parentNode?box:null);}
+          else if(ev.type==='flags'){if(ev.flags.length)main.insertBefore(flagsEl(ev.flags),box.parentNode?box:null);}
+          else if(ev.type==='token'){text+=ev.text;box.innerHTML=fmt(text);if(!box.parentNode)main.appendChild(box);}
+          else if(ev.type==='error'){failed=true;if(ev.badge)main.appendChild(aiBadge(ev.badge));var eb=el('div','msg-error',ev.message+' ');var rb=el('button','btn btn-secondary btn-sm','Qayta urinish');rb.type='button';rb.onclick=function(){if(!busy){m.remove();ask(q,useAgent,true);}};eb.appendChild(rb);main.appendChild(eb);}
+          else if(ev.type==='result'){sum.textContent=Object.keys(rows).length+' qadam';if(ev.badge)main.appendChild(aiBadge(ev.badge));else if(ev.model)main.appendChild(el('div','msg-meta',ev.model));}
+        });log.scrollTo({top:log.scrollHeight});return pump();});}
+      return pump();
+    }).catch(function(e){var eb=el('div','msg-error','Internet aloqasi uzildi — qayta urinib ko‘ring ');var rb=el('button','btn btn-secondary btn-sm','Qayta urinish');rb.type='button';rb.onclick=function(){if(!busy){m.remove();ask(q,useAgent,true);}};eb.appendChild(rb);main.appendChild(eb);}).finally(function(){hist.push({role:'user',content:q});if(text)hist.push({role:'assistant',content:text});busy=false;btn.disabled=!inp.value.trim();});
+  }
+  if(root.dataset.agent){setTimeout(function(){ask('Ushbu qarorni tekshiring',true,true);},200);}
+})();
+</script>
+{% endblock %}

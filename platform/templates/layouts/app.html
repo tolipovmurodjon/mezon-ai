@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load mezon %}
+{% block body %}
+<div class="shell">
+  <aside class="sidebar shell-side" id="sidebar" aria-label="Asosiy navigatsiya">
+    <a class="org" href="{% url 'dashboard' %}">
+      <span class="mz-tile" style="--s:32px"><svg aria-hidden="true"><use href="#mz-logo"/></svg></span>
+      <span><span class="org-name" style="display:block">Mezon</span><span class="org-sub">Huquqiy ekspertiza</span></span>
+    </a>
+    <nav class="side-nav">
+      <a class="nav-item" href="{% url 'dashboard' %}" {% if nav == "dashboard" %}aria-current="page"{% endif %}>{% icon "layout-dashboard" %}Bosh sahifa</a>
+      <a class="nav-item" href="{% url 'requests' %}" {% if nav == "requests" %}aria-current="page"{% endif %}>{% icon "inbox" %}So‘rovlar{% if nav_open_count %}<span class="count">{{ nav_open_count }}</span>{% endif %}</a>
+      <a class="nav-item" href="{% url 'ai_chat' %}" {% if nav == "aichat" %}aria-current="page"{% endif %}>{% icon "message-circle" %}Mezon AI suhbat</a>
+      <a class="nav-item" href="{% url 'eqaror' %}" {% if nav == "eqaror" %}aria-current="page"{% endif %}>{% icon "database" %}E-qaror reestri</a>
+    </nav>
+    <div class="side-foot">
+      {% if user.is_staff %}<a class="nav-item" href="{% url 'admin:index' %}">{% icon "settings" %}Boshqaruv</a>{% endif %}
+      <div class="side-user">
+        <span class="avatar" data-tint="3">{{ user|initials }}</span>
+        <span style="min-width:0;flex:1"><span class="person-name" style="display:block">{{ user|display_name }}</span><span class="person-sub" style="display:block">Ekspert</span></span>
+        <form method="post" action="{% url 'logout' %}">{% csrf_token %}
+          <button class="btn btn-ghost btn-icon btn-sm" type="submit" aria-label="Chiqish" title="Chiqish">{% icon "log-out" %}</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+  <div class="scrim" data-scrim hidden></div>
+
+  <div class="shell-main">
+    <header class="topbar">
+      <button class="btn btn-ghost btn-icon btn-sm side-toggle" type="button" aria-label="Menyu" aria-controls="sidebar" aria-expanded="false" data-side-toggle>{% icon "panel-left" %}</button>
+      <nav class="crumbs" aria-label="Breadcrumb">{% block crumbs %}{% endblock %}</nav>
+      <div class="topbar-end">
+        {% if ai_is_demo %}<span class="badge badge-outline hide-narrow">Namuna ma’lumotlar</span>{% else %}<span class="badge badge-outline hide-narrow">Haqiqiy ma’lumotlar</span>{% endif %}
+        <button class="btn btn-ghost btn-icon btn-sm" id="themeToggle" type="button" aria-label="Tungi rejim">
+          <svg class="icon icon-sm theme-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sm theme-sun" aria-hidden="true" style="display:none"><use href="#i-sun"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main" class="page {% block page_class %}{% endblock %}">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+{% endblock %}
