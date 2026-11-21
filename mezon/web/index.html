@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mezon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<style>
+/* Mezon UI. Fonts chosen for Uzbek coverage (the modifier letter apostrophe U+02BB): Onest (UI), Geist Mono (registration
+   numbers, dates, quotes, the agent trace; IBM Plex Mono fills the glyphs Geist Mono lacks, such as U+02BB), Source
+   Serif 4 (document titles, answers, big numerals). */
+:root{
+ --paper:#f6f5f0;--paper-2:#efede6;--paper-3:#e8e5dc;--surface:#fffefb;--hover:#faf9f4;
+ --line:#e4e1d7;--line-2:#d5d1c4;
+ --ink:#0d0e14;--ink-2:#45474f;--ink-3:#7b7e88;--ink-4:#a7a9b0;
+ --teal:#0b5c54;--teal-2:#11786d;--teal-s:#e3efeb;--teal-l:#b9d8d1;
+ --ember:#d2391a;--ember-hi:#ff4a24;--ember-s:#fcece6;--ember-l:#f3c4b5;
+ --amber:#9a5700;--amber-s:#f8eedb;--amber-l:#e7d3a6;
+ --violet:#5a3fe0;--violet-s:#efebfd;--violet-l:#d3cbf8;
+ --sans:"Onest",system-ui,"Segoe UI",sans-serif;--mono:"Geist Mono","IBM Plex Mono",ui-monospace,Consolas,monospace;
+ --serif:"Source Serif 4",Georgia,serif;
+ --r-s:6px;--r:10px;--r-l:14px;
+ --sh:0 1px 0 rgba(13,14,20,.03),0 1px 2px rgba(13,14,20,.04);
+ --sh-l:0 1px 2px rgba(13,14,20,.04),0 18px 40px -22px rgba(13,14,20,.22);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 14px/1.55 var(--sans);-webkit-font-smoothing:antialiased;
+ font-feature-settings:"ss01","cv11";text-rendering:optimizeLegibility}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teal-2);outline-offset:2px;border-radius:4px}
+.mono{font-family:var(--mono);font-feature-settings:"zero" 0}
+.num{font-variant-numeric:tabular-nums}
+svg.i{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(246,245,240,.86);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1440px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{width:28px;height:28px;display:block}
+.brand .wm{font:600 17px/1 var(--sans);letter-spacing:-.02em}
+.brand .sub{font:500 11px/1 var(--mono);color:var(--ink-3);padding:4px 7px;border:1px solid var(--line-2);border-radius:5px;white-space:nowrap}
+.tabs{display:flex;gap:2px;height:100%;align-items:stretch;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{all:unset;cursor:pointer;display:flex;align-items:center;gap:7px;padding:0 12px;font-weight:500;font-size:13.5px;color:var(--ink-3);
+ position:relative;white-space:nowrap;transition:color .15s}
+.tabs button:hover{color:var(--ink)}
+.tabs button.on{color:var(--ink)}
+.tabs button.on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:var(--ink);border-radius:2px}
+.tabs button:focus-visible{outline:2px solid var(--teal-2);outline-offset:-6px}
+.tabs .ai-dot{width:6px;height:6px;border-radius:50%;background:var(--violet)}
+.top-r{margin-left:auto;display:flex;align-items:center;gap:12px;flex:none}
+.rule{display:inline-flex;align-items:center;gap:7px;font:500 12px/1 var(--sans);color:var(--ink-2);padding:7px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.rule b{font-weight:700;color:var(--ember)}
+.today{font:500 12px/1 var(--mono);color:var(--ink-3)}
+
+/* ---------- page ---------- */
+main{max-width:1440px;margin:0 auto;padding:36px 32px 64px}
+section.tab{display:none;animation:fade .25s ease}
+section.tab.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.eyebrow{font:500 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.eyebrow .live{width:7px;height:7px;border-radius:50%;background:var(--ember-hi);box-shadow:0 0 0 3px rgba(255,74,36,.16);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(255,74,36,0)}}
+h1.t{font:500 36px/1.1 var(--serif);letter-spacing:-.02em;margin:0}
+.ph p.s{margin:10px 0 0;color:var(--ink-2);font-size:15px;max-width:640px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--sh)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.card-h h2{font:600 15px/1.3 var(--sans);margin:0;letter-spacing:-.01em}
+.card-h .h-sub{color:var(--ink-3);font-size:13px;margin-top:2px}
+.muted{color:var(--ink-2)}
+.faint{color:var(--ink-3)}
+
+/* ---------- buttons, pills, tags ---------- */
+.btn{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface);
+ font-weight:500;font-size:13px;color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.btn:hover{background:var(--paper-2);border-color:var(--ink-4)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:#262833}
+.btn.sm{height:28px;padding:0 10px;font-size:12.5px;border-radius:7px}
+.btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.link{display:inline-flex;align-items:center;gap:4px;color:var(--teal-2);text-decoration:none;font-weight:500}
+.link:hover{text-decoration:underline;text-underline-offset:3px}
+.link svg.i{width:13px;height:13px}
+.pill{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:999px;font:500 12px/1 var(--sans);white-space:nowrap;
+ border:1px solid var(--line-2);background:var(--paper);color:var(--ink-2)}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.85}
+.pill.nodot::before{display:none}
+.pill.ember{background:var(--ember-s);border-color:var(--ember-l);color:var(--ember)}
+.pill.amber{background:var(--amber-s);border-color:var(--amber-l);color:var(--amber)}
+.pill.teal{background:var(--teal-s);border-color:var(--teal-l);color:var(--teal)}
+.pill.violet{background:var(--violet-s);border-color:var(--violet-l);color:var(--violet)}
+.pill.outline{background:transparent}
+.pill.lg{height:28px;padding:0 12px;font-size:13px}
+.tag{display:inline-flex;align-items:center;height:22px;padding:0 7px;border-radius:5px;background:var(--paper-2);border:1px solid var(--line);
+ font:500 11.5px/1 var(--sans);color:var(--ink-2);white-space:nowrap;margin:0 4px 4px 0}
+
+/* ---------- tables ---------- */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font:500 10.5px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:11px 16px;
+ background:var(--paper);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+tbody tr:last-child td{border-bottom:0}
+tbody tr{transition:background .12s}
+tbody tr:hover{background:var(--hover)}
+tr.clickable{cursor:pointer}
+td.n,th.n{text-align:right}
+td.n{font:500 13px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td .reg{font:500 13px var(--mono);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+td a.reg:hover{color:var(--teal-2);text-decoration:underline;text-underline-offset:3px}
+td .ttl{color:var(--ink-2);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:620px;line-height:1.45}
+td .meta{font:400 12px var(--sans);color:var(--ink-3);margin-top:4px}
+td.date{font:400 12.5px var(--mono);color:var(--ink-2);white-space:nowrap}
+
+.skel{height:12px;border-radius:4px;background:linear-gradient(90deg,var(--paper-2),var(--paper-3),var(--paper-2));background-size:200% 100%;animation:sh 1.3s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.show-sm{display:none!important}
+.empty{padding:40px 24px;text-align:center;color:var(--ink-3);font-size:13.5px}
+
+/* ---------- live ---------- */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.stat{padding:30px 32px;display:flex;flex-direction:column}
+.big{font:500 92px/.9 var(--serif);letter-spacing:-.04em;color:var(--ember);font-variant-numeric:lining-nums tabular-nums;display:flex;align-items:baseline;gap:12px}
+.big small{font:400 30px/1 var(--serif);color:var(--ink-4);letter-spacing:-.02em}
+.stat h2{font:500 22px/1.3 var(--serif);letter-spacing:-.01em;margin:18px 0 0;max-width:520px}
+.stat p{color:var(--ink-2);margin:12px 0 0;font-size:13.5px;max-width:640px}
+.lawcard{padding:30px 32px;display:flex;flex-direction:column;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.lawcard .eyebrow{color:#9b9da6}
+.lawcard .ref{font:500 12.5px/1.5 var(--mono);color:#cfd0d4}
+.lawcard blockquote{margin:16px 0 22px;font:400 19px/1.5 var(--serif);color:#fbfaf6;flex:1}
+.lawcard blockquote::before{content:"\201C";display:block;font:400 54px/.6 var(--serif);color:var(--ember-hi);margin-bottom:6px}
+.lawcard .link{color:#7fd6c7}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:auto 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.stat p+.strip{margin-top:auto}
+.stat>p#liveSub{margin-bottom:28px}
+.strip>div{padding:0 18px;border-right:1px solid var(--line)}
+.strip>div:first-child{padding-left:0}
+.strip>div:last-child{border-right:0}
+.strip b{display:block;font:500 26px/1.1 var(--serif);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.strip span{font-size:12.5px;color:var(--ink-3)}
+.track{display:flex;gap:2px;margin-top:7px}
+.track i{width:6px;height:10px;border-radius:2px;background:var(--ink-2)}
+.track i.miss{background:var(--ember-s);box-shadow:inset 0 0 0 1px var(--ember-l)}
+.left-days{font:500 12px var(--sans);white-space:nowrap}
+.left-days.urgent{color:var(--ember)}
+
+/* ---------- queue ---------- */
+.select{appearance:none;-webkit-appearance:none;height:38px;padding:0 38px 0 14px;border-radius:9px;border:1px solid var(--line-2);font:500 13.5px var(--sans);
+ color:var(--ink);background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237b7e88' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;cursor:pointer;min-width:220px}
+.ph-r{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.qsum{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
+.qsum .tot{font:500 30px/1 var(--serif);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.qsum .lbl{color:var(--ink-3);font-size:13px}
+.qsum .mix{display:flex;gap:8px;flex-wrap:wrap}
+.sev{display:flex;align-items:center;gap:10px}
+.sev .m{display:flex;align-items:flex-end;gap:2px;height:14px}
+.sev .m i{width:4px;border-radius:1px;background:var(--paper-3)}
+.sev .m i:nth-child(1){height:6px}.sev .m i:nth-child(2){height:10px}.sev .m i:nth-child(3){height:14px}
+.sev.l3 .m i{background:var(--ember-hi)}.sev.l2 .m i.f{background:#d99a1e}.sev.l1 .m i.f{background:var(--ink-3)}
+.sev .st{font:500 12.5px var(--sans);white-space:nowrap}.sev.l3 .st{color:var(--ember)}.sev.l2 .st{color:var(--amber)}
+.sev-n{font:400 12px var(--sans);color:var(--ink-3);margin-top:3px;white-space:nowrap}
+
+.lc{margin-bottom:20px}
+.lcr{display:grid;grid-template-columns:minmax(150px,190px) minmax(0,1fr) auto auto;gap:6px 18px;align-items:center;padding:12px 22px;border-bottom:1px solid var(--line);font-size:13px}
+.lcr:last-child{border-bottom:0}
+.lcr .lcw{color:var(--ink-2)}.lcr .lcw b{font-weight:500;color:var(--ink)}
+.lcr .when{font:400 12px var(--mono);color:var(--ink-3);white-space:nowrap}
+.lcr .pill{justify-self:start}
+.lc-more{padding:10px 22px;border-top:1px solid var(--line)}
+/* ---------- audit ---------- */
+.audit-grid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:start}
+.side{position:sticky;top:84px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 110px)}
+.searchbox{display:flex;align-items:center;gap:10px;height:46px;padding:0 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line-2);box-shadow:var(--sh)}
+.searchbox:focus-within{border-color:var(--teal-2);box-shadow:0 0 0 3px var(--teal-s)}
+.searchbox svg{color:var(--ink-3)}
+.searchbox input{all:unset;flex:1;font:400 14px var(--sans);color:var(--ink)}
+.searchbox input::placeholder{color:var(--ink-4)}
+.results{overflow:auto;padding:6px}
+.results .grp{font:500 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);padding:10px 10px 8px}
+.res{all:unset;display:block;width:100%;box-sizing:border-box;cursor:pointer;padding:11px 12px;border-radius:9px;border:1px solid transparent;margin-bottom:2px}
+.res:hover{background:var(--hover)}
+.res.on{background:var(--paper);border-color:var(--line-2)}
+.res .r1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.res b{font:500 13px var(--mono)}
+.res .d{font:400 11.5px var(--mono);color:var(--ink-3)}
+.res .b{display:block;font-size:12.5px;color:var(--ink-2);margin-top:3px}
+.res .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12.5px;color:var(--ink-3);margin-top:2px;line-height:1.4}
+.res .why{display:block;font-size:12.5px;color:var(--ink-2);margin-top:4px}
+
+.doc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--sh-l);min-height:420px}
+.doc-in{padding:40px 48px 44px;max-width:980px}
+.doc-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:14px}
+.doc-meta .regn{color:var(--ink)}
+.doc h2.dt{font:500 27px/1.28 var(--serif);letter-spacing:-.015em;margin:0;max-width:820px}
+.doc-body{font-size:13.5px;color:var(--ink-2);margin-top:10px}
+.verdict{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;margin:28px 0 8px;padding:18px 20px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+.verdict .vbar{width:4px;align-self:stretch;border-radius:2px;background:var(--ink-4)}
+.verdict.v-negative .vbar{background:var(--ember-hi)}.verdict.v-positive_with_fixable_defects .vbar{background:#d99a1e}.verdict.v-positive .vbar{background:var(--teal-2)}
+.verdict .vk{font:500 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.verdict .vv{font:600 19px/1.25 var(--sans);letter-spacing:-.01em;margin:6px 0 4px}
+.verdict .vn{font-size:13px;color:var(--ink-2)}
+.verdict .vact{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.disclaimer{font-size:12.5px;color:var(--ink-3);margin:0 0 28px;display:flex;gap:8px;align-items:flex-start}
+.disclaimer svg{width:14px;height:14px;margin-top:2px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:34px 0 14px;padding-top:22px;border-top:1px solid var(--line)}
+.sec-h h3{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0;color:var(--ink)}
+.sec-h span{font-size:12.5px;color:var(--ink-3)}
+.matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px}
+.mx{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border-radius:9px;border:1px solid var(--line);background:var(--surface);font-size:13px;line-height:1.4}
+.mx .dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex:none;background:var(--teal-2)}
+.mx.flag{border-color:var(--ember-l);background:var(--ember-s)}.mx.flag .dot{background:var(--ember-hi)}
+.mx.unc{border-color:var(--amber-l);background:var(--amber-s)}.mx.unc .dot{background:#d99a1e}
+.mx.na .dot{background:var(--ink-4)}
+.mx small{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+
+.flag-c{border:1px solid var(--line);border-radius:12px;margin-bottom:16px;background:var(--surface);overflow:hidden}
+.flag-c .fh{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 20px 0}
+.flag-c .fno{font:600 12px var(--mono);color:var(--ink-3)}
+.flag-c .fcode{margin-left:auto;font:400 11.5px var(--mono);color:var(--ink-4)}
+.flag-c h4{font:500 19px/1.35 var(--serif);letter-spacing:-.01em;margin:10px 20px 0}
+.flag-c .fb{padding:14px 20px 18px}
+.plain{display:flex;gap:10px;padding:12px 14px;border-radius:9px;background:var(--teal-s);color:#0a3f3a;font-size:13.5px;margin:0 0 14px}
+.plain b{font-weight:600;white-space:nowrap}
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sbs.one{grid-template-columns:1fr}
+.sbs .col{display:flex;flex-direction:column;gap:10px;min-width:0}
+.sbs .colh{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:6px}
+.sbs .colh::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--ember-hi)}
+.sbs .col.law .colh::before{background:var(--teal-2)}
+.qt{border:1px solid var(--line);border-radius:9px;background:var(--paper);padding:12px 14px;min-width:0}
+.col.dec .qt{border-left:3px solid var(--ember-hi)}
+.col.law .qt,.qt.law-q{border-left:3px solid var(--teal-2)}
+.qt .src{display:block;font:500 11.5px/1.4 var(--sans);color:var(--ink-3);margin-bottom:6px}
+.qt .tx{font:400 12.5px/1.65 var(--mono);color:var(--ink);overflow-wrap:anywhere}
+.qt .qa{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;align-items:center;font-size:12.5px}
+.tt{margin-top:10px;display:grid;gap:8px}
+.tt .ed{font:500 11.5px var(--sans);color:var(--ink-3);margin-top:4px}
+.tt .tx{font:400 12.5px/1.6 var(--mono)}
+details.more{margin-top:12px}
+details.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font:500 12.5px var(--sans);color:var(--ink-2);padding:4px 0}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary svg{width:13px;height:13px;transition:transform .15s}
+details.more[open]>summary svg{transform:rotate(90deg)}
+details.more>summary:hover{color:var(--ink)}
+.tech{font-size:13px;color:var(--ink-2);margin:8px 0 0;max-width:760px}
+.route{margin-top:16px;padding:16px;border-radius:10px;background:var(--paper);border:1px dashed var(--line-2)}
+.route .rh{font:600 13px var(--sans);margin-bottom:10px}
+.chans{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.chan{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:11px 13px;border-radius:9px;background:var(--surface);border:1px solid var(--line);text-decoration:none}
+.chan:hover{border-color:var(--ink-4)}
+.chan b{display:block;font-weight:600;font-size:13px}
+.chan span{display:block;font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.chan svg{color:var(--ink-3);margin-top:2px}
+.appeal{white-space:pre-wrap;font:400 12.5px/1.65 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px;margin:10px 0;max-height:280px;overflow:auto}
+.fine{display:block;font-size:12px;color:var(--ink-3);margin-top:10px}
+.review{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 20px;border-top:1px solid var(--line);background:var(--paper)}
+.review .rl{font:500 12px var(--sans);color:var(--ink-3);margin-right:4px}
+.review button.on[data-v=correct]{background:var(--teal);border-color:var(--teal);color:#fff}
+.review button.on[data-v=wrong]{background:var(--ink);border-color:var(--ink);color:#fff}
+.review button.on[data-v=unclear]{background:var(--amber-s);border-color:var(--amber-l);color:var(--amber)}
+.panel{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--surface)}
+.panel>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:15px 18px;font-weight:500;font-size:14px}
+.panel>summary::-webkit-details-marker{display:none}
+.panel>summary .chev{color:var(--ink-3);transition:transform .15s}
+.panel[open]>summary .chev{transform:rotate(90deg)}
+.panel>summary .ps{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.panel .pb{padding:0 18px 18px}
+.panel table td,.panel table th{padding:10px 12px}
+.nb{display:grid;grid-template-columns:minmax(200px,1fr) 1.2fr;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+.nb:last-child{border-bottom:0}
+.nb b{font-weight:500}
+.nb span{color:var(--ink-2)}
+
+/* ---------- linguistic expertise (VMQ-662) ---------- */
+.ling{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.ling .lh{padding:16px 20px;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.ling .lh b{color:var(--ink);font-weight:600}
+.lw{display:grid;grid-template-columns:minmax(150px,auto) 20px minmax(150px,auto) minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 20px;border-bottom:1px solid var(--line)}
+.lw:last-of-type{border-bottom:0}
+.lw .w{font:500 14px var(--mono);color:var(--ember);text-decoration:line-through;text-decoration-color:var(--ember-l)}
+.lw .w mark{background:var(--ember-s);color:var(--ember);border-radius:2px;box-shadow:0 0 0 1px var(--ember-l)}
+.lw .arr{color:var(--ink-4)}
+.lw .f{font:500 14px var(--mono);color:var(--teal)}
+.lw .cx{font:400 12px/1.5 var(--mono);color:var(--ink-3);overflow-wrap:anywhere}
+.lw .cx mark{background:var(--amber-s);color:var(--ink);border-radius:2px}
+.ling .ln{padding:14px 20px;background:var(--paper);border-top:1px solid var(--line)}
+/* ---------- agent timeline ---------- */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl li{position:relative;display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:0 0 14px}
+.tl li::before{content:"";position:absolute;left:10px;top:20px;bottom:0;width:1px;background:var(--line-2)}
+.tl li:last-child::before{display:none}
+.tl .nd{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:var(--violet-s);color:var(--violet);border:1px solid var(--violet-l);margin-top:-1px}
+.tl .nd svg{width:12px;height:12px;stroke-width:2.4}
+.tl li.warn .nd{background:var(--amber-s);color:var(--amber);border-color:var(--amber-l)}
+.tl .lb{font-weight:500;font-size:13.5px;line-height:1.35}
+.tl .ar{font:400 12px/1.5 var(--mono);color:var(--ink-3);margin-top:2px;overflow-wrap:anywhere}
+.tl .rs{font-size:13px;color:var(--ink-2);margin-top:2px;overflow-wrap:anywhere}
+.tl li.warn .rs{color:var(--amber)}
+.tl .raw{font:400 11px var(--mono);color:var(--ink-4);margin-left:6px}
+.tl li.pending{opacity:0;transform:translateY(4px)}
+.tl li{transition:opacity .3s,transform .3s}
+
+/* ---------- ask ---------- */
+.ask{max-width:820px;margin:0 auto;display:flex;flex-direction:column}
+.ask-hero{text-align:center;padding:36px 0 26px;order:1}
+.ask-hero h1{font:500 50px/1.06 var(--serif);letter-spacing:-.03em;margin:0}
+.ask-hero h1 em{font-style:italic;color:var(--teal)}
+.ask-hero .lede{color:var(--ink-2);font-size:15.5px;max-width:560px;margin:14px auto 0}
+.who{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:14px;order:2;flex-wrap:wrap}
+.who .wl{font-size:12.5px;color:var(--ink-3)}
+.seg{display:inline-flex;padding:3px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line)}
+.seg button{all:unset;cursor:pointer;padding:7px 15px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2);transition:background .15s,color .15s}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(13,14,20,.1),0 0 0 1px var(--line)}
+.seg button:focus-visible{outline:2px solid var(--teal-2)}
+.thread{display:flex;flex-direction:column;gap:18px;order:3}
+.composer{order:4;position:relative;background:var(--surface);border:1px solid var(--line-2);border-radius:18px;box-shadow:var(--sh-l);padding:16px 64px 12px 20px;transition:border-color .15s,box-shadow .15s}
+.composer:focus-within{border-color:var(--teal-l);box-shadow:var(--sh-l),0 0 0 4px var(--teal-s)}
+.composer input{all:unset;display:block;width:100%;font:400 16px/1.5 var(--sans);color:var(--ink)}
+.composer input::placeholder{color:var(--ink-4)}
+.composer .hint{font:400 11.5px var(--sans);color:var(--ink-4);margin-top:12px}
+.composer button{all:unset;cursor:pointer;position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
+ background:var(--ink);color:var(--paper);display:grid;place-items:center;transition:background .15s}
+.composer button:hover{background:var(--teal)}
+.composer button svg{width:18px;height:18px;stroke-width:2}
+.chips{order:5;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips:empty{display:none}
+.chips button{all:unset;cursor:pointer;padding:7px 13px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);font:400 13px var(--sans);color:var(--ink-2)}
+.chips button:hover{border-color:var(--ink-4);color:var(--ink)}
+.starters{order:6;margin-top:30px}
+.starters .sh{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;display:flex;justify-content:space-between}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.case{all:unset;cursor:pointer;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);
+ box-shadow:var(--sh);transition:border-color .15s,transform .15s,box-shadow .15s}
+.case:hover{border-color:var(--ink-4);transform:translateY(-2px);box-shadow:var(--sh-l)}
+.case .cr{font:500 12.5px var(--mono);color:var(--ink)}
+.case h3{font:500 17px/1.3 var(--serif);margin:0;letter-spacing:-.01em}
+.case p{margin:0;font-size:12.5px;color:var(--ink-2);line-height:1.5;flex:1}
+.case .go{display:flex;align-items:center;justify-content:space-between;font:500 12.5px var(--sans);color:var(--teal-2);margin-top:4px}
+.what{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.what div{padding:16px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.what div:nth-child(3n){border-right:0}
+.what div:nth-last-child(-n+3){border-bottom:0}
+.what b{display:block;font-weight:600;font-size:13px;margin-bottom:3px}
+.what span{font-size:12.5px;color:var(--ink-3);line-height:1.45;display:block}
+.ask-fine{order:7;text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px}
+.ask.asked .ask-hero{padding:4px 0 18px;text-align:left}
+.ask.asked .ask-hero h1{font-size:28px}
+.ask.asked .ask-hero .lede,.ask.asked .ask-hero .eyebrow{display:none}
+.ask.asked .who{justify-content:flex-start}
+.ask.asked .starters{display:none}
+.ask.asked .composer{margin-top:20px;position:sticky;bottom:16px;z-index:5}
+.msg-me{align-self:flex-end;max-width:80%;background:var(--ink);color:var(--paper);padding:11px 16px;border-radius:16px 16px 4px 16px;font-size:14.5px}
+.msg-ai{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px}
+.av{width:32px;height:32px;border-radius:9px;background:var(--violet);display:grid;place-items:center}
+.av svg{width:20px;height:20px}
+.ans{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ans .am{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:12.5px;color:var(--ink-3);padding-top:6px}
+.ans .am .regn{font:500 13px var(--mono);color:var(--ink)}
+.think{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.think .th{display:flex;align-items:center;gap:10px;font:500 13px var(--sans);color:var(--violet);margin-bottom:14px}
+.spin{width:14px;height:14px;border-radius:50%;border:2px solid var(--violet-l);border-top-color:var(--violet);animation:rot .8s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.lead{font:500 26px/1.32 var(--serif);letter-spacing:-.015em;margin:0;color:var(--ink)}
+.lead-sub{margin:-6px 0 0;font-size:15px;color:var(--ink-2);line-height:1.5}
+.status{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+.cta{border-radius:14px;background:var(--ink);color:var(--paper);padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.cta .ck{font:500 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9b9da6}
+.cta .cw{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.cta .cn{font:600 17px/1.3 var(--sans);letter-spacing:-.01em}
+.cta .cy{font-size:13px;color:#c4c5cb;margin-top:3px}
+.cta .cb{display:flex;gap:8px;flex-wrap:wrap}
+.cta .btn{background:transparent;border-color:#3a3c47;color:var(--paper)}
+.cta .btn:hover{background:#1e2029}
+.cta .btn.primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.cta .btn.primary:hover{background:#fff}
+.cta .appeal{background:#16171f;border-color:#2c2e38;color:#e9e8e2;margin:0}
+.cta .fine{color:#8d8f99;margin:0}
+.cta .also{display:flex;flex-wrap:wrap;gap:8px}
+.cta .also a{font-size:12.5px;color:#c4c5cb;text-decoration:none;border:1px solid #3a3c47;border-radius:999px;padding:5px 11px}
+.cta .also a:hover{color:#fff;border-color:#6a6c77}
+.finding{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:16px 18px}
+.finding .fr{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.finding h4{font:600 15px/1.4 var(--sans);margin:0;letter-spacing:-.005em}
+.finding p{margin:6px 0 0;font-size:13.5px;color:var(--ink-2)}
+.finding .basis{font:400 12px/1.5 var(--mono);color:var(--ink-3);margin-top:8px}
+.ans-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:12.5px;color:var(--ink-3);padding-top:4px}
+.matches{display:grid;gap:8px}
+.match{all:unset;cursor:pointer;box-sizing:border-box;display:block;padding:13px 15px;border-radius:11px;border:1px solid var(--line);background:var(--surface)}
+.match:hover{border-color:var(--ink-4)}
+.match .r1{display:flex;justify-content:space-between;gap:10px}
+.match b{font:500 13px var(--mono)}.match .d{font:400 12px var(--mono);color:var(--ink-3)}
+.match .t{font-size:13px;color:var(--ink-2);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.match .b{font-size:12px;color:var(--ink-3);margin-top:2px}
+
+/* ---------- numbers ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;min-height:220px}
+.kpi .kv{font:500 46px/1 var(--serif);letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+.kpi .kv small{font-size:22px;color:var(--ink-4);letter-spacing:-.01em}
+.kpi .kl{font-size:13.5px;color:var(--ink-2);line-height:1.45;flex:1}
+.kpi .ks{font:400 11.5px/1.4 var(--mono);color:var(--ink-3);border-top:1px solid var(--line);padding-top:10px}
+.share{display:flex;align-items:center;gap:10px;font:500 12px var(--mono);color:var(--ink-2)}
+.share .bar{flex:1;height:5px;border-radius:3px;background:var(--paper-3);overflow:hidden}
+.share .bar i{display:block;height:100%;background:var(--ember-hi)}
+.reps{margin-top:20px}
+
+footer{max-width:1440px;margin:0 auto;padding:22px 32px 40px;border-top:1px solid var(--line);display:flex;gap:10px 28px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3)}
+footer b{font-weight:600;color:var(--ink-2)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1200px){.kpis{grid-template-columns:repeat(2,1fr)}.rule{display:none}}
+@media (max-width:980px){
+ .audit-grid{grid-template-columns:minmax(0,1fr)}.side{position:static;max-height:none}.results{max-height:340px}
+ .hero{grid-template-columns:minmax(0,1fr)}.cases{grid-template-columns:1fr}.what{grid-template-columns:1fr 1fr}
+ .what div:nth-child(3n){border-right:1px solid var(--line)}.what div:nth-child(2n){border-right:0}
+ .what div:nth-last-child(-n+3){border-bottom:1px solid var(--line)}.what div:nth-last-child(-n+2){border-bottom:0}
+}
+@media (max-width:760px){
+ .lw{grid-template-columns:auto 16px auto;gap:6px 10px}.lw .cx{grid-column:1/-1}
+ .plain{flex-direction:column;gap:4px}
+ .show-sm{display:inline-flex!important}
+ #queue .sev-n{display:none}
+ .lcr{grid-template-columns:1fr auto;padding:12px 16px}.lcr .lcw{grid-column:1/-1}
+ .lc .seg{width:100%}.lc .seg button{flex:1;text-align:center}
+ #queue th:first-child{width:76px!important}
+ #live td .date{white-space:normal!important;font-size:11.5px!important}
+ #live .track i{width:5px}
+ .top-in{padding:0 16px;gap:14px;height:auto;flex-wrap:wrap;padding-top:10px}
+ .brand .sub,.today{display:none}
+ .tabs{order:3;width:100%;height:44px;margin:0 -4px}
+ .tabs button{padding:0 10px}
+ main{padding:22px 16px 48px}
+ h1.t{font-size:28px}
+ .ph{margin-bottom:20px}
+ .stat,.lawcard{padding:22px}
+ .big{font-size:68px}
+ .strip>div{padding:0 10px}.strip b{font-size:21px}
+ .hide-sm{display:none}
+ td,th{padding-left:12px;padding-right:12px}
+ .doc-in{padding:24px 18px 28px}
+ .doc h2.dt{font-size:22px}
+ .verdict{grid-template-columns:auto 1fr;gap:14px}.verdict .vact{grid-column:1/-1;justify-content:flex-start}
+ .sbs{grid-template-columns:1fr}
+ .nb{grid-template-columns:1fr;gap:4px}
+ .ask-hero{padding:16px 0 18px}.ask-hero h1{font-size:36px}
+ .what{grid-template-columns:1fr}.what div{border-right:0!important;border-bottom:1px solid var(--line)!important}.what div:last-child{border-bottom:0!important}
+ .msg-ai{grid-template-columns:1fr}.av{display:none}
+ .lead{font-size:22px}
+ .kpis{grid-template-columns:1fr}.kpi{min-height:0}
+ .select{min-width:0;width:100%}
+ .ph-r{width:100%}
+ footer{padding:20px 16px 32px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="top-in">
+  <a class="brand" href="#live" aria-label="Mezon">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0d0e14"/>
+    <path d="M16 7.5v15.5M8.5 11h15M12.5 24h7" stroke="#f6f5f0" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M5.8 17.2h5.4a2.7 2.7 0 0 1-5.4 0Z" fill="#2fb7a4"/><path d="M20.8 17.2h5.4a2.7 2.7 0 0 1-5.4 0Z" fill="#ff4a24"/>
+    <path d="M8.5 11 6 17M8.5 11 11 17M23.5 11 21 17M23.5 11 26 17" stroke="#f6f5f0" stroke-width=".9" opacity=".7"/></svg>
+   <span class="wm">Mezon</span><span class="sub">Mahalliy qarorlar auditi</span>
+  </a>
+  <nav class="tabs" aria-label="Bo'limlar">
+   <button data-tab="live" class="on">Jonli nazorat</button>
+   <button data-tab="queue">Adliya navbati</button>
+   <button data-tab="audit">Qaror auditi</button>
+   <button data-tab="ask"><span class="ai-dot" aria-hidden="true"></span>Mezon AI</button>
+   <button data-tab="numbers">Raqamlar</button>
+  </nav>
+  <div class="top-r"><span class="rule">Belgilangan <b>≠</b> noqonuniy</span><span class="today" id="today"></span></div>
+ </div>
+</header>
+
+<main>
+ <!-- ================= Jonli nazorat ================= -->
+ <section id="live" class="tab on">
+  <div class="ph"><div>
+   <p class="eyebrow"><span class="live"></span>regulation.gov.uz · hozir muhokamada</p>
+   <h1 class="t">Jonli nazorat</h1>
+   <p class="s">Jamoatchilik muhokamasidagi mahalliy loyihalar qonundagi 15 kunlik muddat bilan solishtiriladi: kamchilik qaror qabul qilinmasdan oldin ko'rinadi.</p>
+  </div></div>
+  <div class="hero">
+   <div class="card stat">
+    <p class="eyebrow">Hozir ochiq mahalliy loyihalar</p>
+    <div class="big" id="liveShort"><span class="skel" style="width:160px;height:70px"></span></div>
+    <h2>loyiha qonunda belgilangan 15 kundan qisqa muhokamada</h2>
+    <p id="liveSub"></p>
+    <div class="strip" id="liveStrip">
+     <div><b class="num" id="sOpen">&nbsp;</b><span>ochiq mahalliy loyiha</span></div>
+     <div><b class="num" id="sNorm">&nbsp;</b><span>budjet taqsimotidan boshqa</span></div>
+     <div><b class="num" id="sBudget">&nbsp;</b><span id="sBudgetL">budjet mablag'larini taqsimlash</span></div>
+    </div>
+   </div>
+   <div class="card lawcard">
+    <p class="eyebrow">Qonun matni, aynan</p>
+    <div class="ref" id="lawRef"></div>
+    <blockquote id="lawQuote"></blockquote>
+    <a class="link" id="lawLink" target="_blank" rel="noopener">lex.uz da ochish</a>
+   </div>
+  </div>
+  <div class="card" style="margin-top:20px">
+   <div class="card-h"><div><h2>Muhokama muddati qisqa bo'lgan ochiq loyihalar</h2><div class="h-sub">Eng yaqin tugaydiganlari birinchi. Shkala: qonundagi 15 kun, qizil kataklar yetishmagan kunlar.</div></div>
+    <span class="pill ember" id="liveCount">…</span></div>
+   <div class="tbl-wrap"><table>
+    <thead><tr><th>Loyiha</th><th class="hide-sm">Ishlab chiquvchi</th><th>Muhokama</th><th class="hide-sm">Tugashiga</th><th class="n">Takliflar</th></tr></thead>
+    <tbody id="liveRows"></tbody></table></div>
+  </div>
+ </section>
+
+ <!-- ================= Adliya navbati ================= -->
+ <section id="queue" class="tab">
+  <div class="ph"><div>
+   <p class="eyebrow">Hududiy adliya uchun</p>
+   <h1 class="t">Ko'rib chiqish navbati</h1>
+   <p class="s">Belgilangan qarorlar: eng xavflisi va eng yangisi birinchi. Qatorni bosing: to'liq audit va xulosa loyihasi ochiladi.</p>
+  </div>
+  <div class="ph-r"><select id="region" class="select" aria-label="Hudud"><option value="">Barcha hududlar</option></select>
+   <a class="btn" id="regionReport" target="_blank" rel="noopener" aria-disabled="true">Hudud hisoboti</a></div>
+  </div>
+  <div class="card lc" id="lawChanges">
+   <div class="card-h"><div><h2>Qonun o'zgardi: qayta tekshirish</h2><div class="h-sub">Amaldagi qarorlar tayangan modda keyinroq o'zgargan yoki chiqarilgan. Bu qoidabuzarlik emas: qaror yangi tahrir bilan qayta tekshirilishi kerak.</div></div>
+    <div class="seg" role="group" aria-label="Davr"><button type="button" data-since="30" class="on">Oxirgi 30 kun</button><button type="button" data-since="2024-01-01">2024-yildan</button></div></div>
+   <div id="lawChangeRows"></div>
+  </div>
+  <div class="card">
+   <div class="card-h" id="queueHead"><div class="qsum"><span class="tot skel" style="width:120px;height:28px"></span></div></div>
+   <div class="tbl-wrap"><table>
+    <thead><tr><th style="width:130px">Daraja</th><th>Qaror</th><th class="hide-sm" style="width:120px">Qabul qilingan</th><th class="hide-sm" style="width:250px">Xulosa loyihasi</th><th class="hide-sm" style="width:230px">Belgilar</th></tr></thead>
+    <tbody id="queueRows"></tbody></table></div>
+  </div>
+ </section>
+
+ <!-- ================= Qaror auditi ================= -->
+ <section id="audit" class="tab">
+  <div class="ph"><div>
+   <p class="eyebrow">Adliya buyrug'i 3333 · huquqiy ekspertiza tartibi</p>
+   <h1 class="t">Qaror auditi</h1>
+   <p class="s">Qaror qabul qilingan kundagi qonun bilan tekshiriladi. Har bir belgi: modda, iqtibos va lex.uz manbasi.</p>
+  </div></div>
+  <div class="audit-grid">
+   <aside class="side">
+    <label class="searchbox"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+     <input id="q" placeholder="Qaror raqami yoki nomi, masalan 231-4-59-Q/24" aria-label="Qidiruv" autocomplete="off"></label>
+    <div class="card results" id="results"></div>
+   </aside>
+   <div class="doc" id="report"></div>
+  </div>
+ </section>
+
+ <!-- ================= Mezon AI ================= -->
+ <section id="ask" class="tab">
+  <div class="ask" id="askWrap">
+   <div class="ask-hero">
+    <p class="eyebrow" style="justify-content:center"><span class="ai-dot" style="width:7px;height:7px;border-radius:50%;background:var(--violet)"></span>Mezon AI · javob qonundan iqtibos bilan</p>
+    <h1>Qaror haqida <em>soʻrang</em></h1>
+    <p class="lede">Qaror raqamini yoki joy va mavzuni yozing. Mezon qarorni qabul qilingan kundagi qonun bilan tekshiradi va har bir qadamini ko'rsatadi.</p>
+   </div>
+   <div class="who"><span class="wl">Javob kim uchun:</span>
+    <div class="seg" role="group" aria-label="Kim uchun javob">
+     <button type="button" data-who="citizen" class="on">Fuqaro</button><button type="button" data-who="business">Tadbirkor</button><button type="button" data-who="expert">Adliya eksperti</button>
+    </div>
+   </div>
+   <div id="thread" class="thread" aria-live="polite"></div>
+   <form id="askForm" class="composer">
+    <input id="askInput" autocomplete="off" placeholder="Masalan: 355-4-68-Q/25 menga nima degani?" aria-label="Savol">
+    <div class="hint">Enter: yuborish · raqam lotin yoki kirill yozuvida</div>
+    <button type="submit" aria-label="Yuborish"><svg class="i" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+   </form>
+   <div id="chips" class="chips"></div>
+   <div class="starters">
+    <p class="sh"><span>Haqiqiy qarorlar: bosing va ko'ring</span></p>
+    <div class="cases" id="askCases"></div>
+    <p class="sh" style="margin-top:30px"><span>Mezon nimani tekshiradi</span><span>har bir belgi modda va iqtibos bilan</span></p>
+    <div class="what" id="askWhat"></div>
+   </div>
+   <p class="ask-fine">Belgilangan ≠ noqonuniy. Har bir belgini ekspert hal qiladi. Qaror matni tashqi AI xizmatiga yuborilmaydi.</p>
+  </div>
+ </section>
+
+ <!-- ================= Raqamlar ================= -->
+ <section id="numbers" class="tab">
+  <div class="ph"><div>
+   <p class="eyebrow">O'lchangan, taxmin emas</p>
+   <h1 class="t">Raqamlar</h1>
+   <p class="s">Barcha raqamlar ochiq manbalardan skript orqali hisoblangan. Belgilangan ≠ noqonuniy: har bir belgini ekspert hal qiladi (AI etikasi qoidalari, 3787-son).</p>
+  </div></div>
+  <div class="kpis" id="kpis"></div>
+  <div id="repeats"></div>
+ </section>
+</main>
+
+<footer>
+ <span><b>Ehtimoliy qoidabuzarlik — ekspert ko'rib chiqishi uchun belgilandi.</b> Qarorni inson qabul qiladi.</span>
+ <span>Qaror matni tashqi AI xizmatiga yuborilmaydi.</span>
+ <span>Manbalar: lex.uz · regulation.gov.uz · E-qaror · stat.sud.uz</span>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const fmt = n => Number(n).toLocaleString("uz-UZ").replace(/[, ]/g, " ");
+const fmtDate = s => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? `${m[3]}.${m[2]}.${m[1]}` : (s || ""); };
+const ext = (a, url) => { a.href = url; a.target = "_blank"; a.rel = "noopener"; return a; };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+const SVG = "http://www.w3.org/2000/svg";
+const ICONS = {
+  ext: '<path d="M7 17 17 7M9 7h8v8"/>', copy: '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>',
+  doc: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+  check: '<path d="M5 12.5 10 17 19 7"/>', down: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>', warn: '<path d="M12 8v5M12 16.5v.01"/>', chev: '<path d="m9 6 6 6-6 6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/>', arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M6.3 17.7l2.8-2.8M14.9 9.1l2.8-2.8"/>',
+};
+function icon(name) { const s = document.createElementNS(SVG, "svg"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("class", "i"); s.innerHTML = ICONS[name]; return s; }
+
+const VERDICT = {negative:["Salbiy xulosa","ember"], positive_with_fixable_defects:["Tuzatiladigan kamchiliklar bilan ijobiy","amber"], positive:["Ijobiy","teal"], not_checked:["Tekshirilmagan",""]};
+const SEV = {high:["Yuqori","ember"], medium:["O'rta","amber"], low:["Past",""]};
+const STATUS = {possible_violation:["Ehtimoliy qoidabuzarlik","ember outline nodot"], unclear_needs_expert:["Noaniq — ekspert kerak","outline nodot"]};
+const pill = (text, cls) => el("span", "pill " + (cls || ""), text);
+const vPill = (v, big) => { const x = VERDICT[v] || [v, ""]; return pill(x[0], x[1] + (big ? " lg" : "")); };
+const UNIT = {art:"modda", part:"qism", cl:"band", annex:"ilova", para:"xatboshi", sub:"kichik band", ch:"bob", pre:"xatboshi"};
+const fmtPath = p => (p || "").split("/").map(s => { const [k, v] = s.split(":"); return UNIT[k] ? `${v}-${UNIT[k]}` : s; }).join(", ");
+const fmtLoc = l => { l = l || "";
+  if (l.startsWith("lex:")) return `taqqoslangan qaror, lex.uz ${l.slice(4)}`;
+  if (l === "repeal clause") return "bekor qilish bandi";
+  if (l === "preamble") return "muqaddima";
+  if (l === "entry into force") return "kuchga kirish bandi";
+  const m = l.match(/^clause (\d+)$/); return m ? `${m[1]}-band` : l; };
+const CHECK_UZ = {R_corruption_factor:"korrupsiya omili", R_tax_timing:"soliq muddati", R_business_3m:"3 oylik muddat", R_retroactive:"orqaga qaytish", R_discussion:"muhokama yo'q", R_discussion_short:"qisqa muhokama",
+  R_draft_window:"muhokamadan oldin kuchga kirish", R_adopted_before_end:"muhokama tugamasdan", R_expertise:"ekspertiza yo'q", R_duplicate:"takroriy qaror",
+  R_double_repeal:"qayta bekor qilish", R_form:"farmoyish shakli", R_competence_land:"yer vakolati", R_basis:"asos hujjat"};
+const CHECK_LONG = {R_corruption_factor:"Korrupsiyaviy omillar (O'RQ-860)", R_tax_timing:"Soliq stavkasi kuchga kirish muddati", R_business_3m:"Tadbirkorga yangi majburiyat: 3 oylik muddat",
+  R_retroactive:"Orqaga qaytish kuchi", R_discussion:"Jamoatchilik muhokamasi", R_discussion_short:"Muhokama muddati (15 kun)", R_draft_window:"Muhokamadan oldin kuchga kirish",
+  R_adopted_before_end:"Muhokama tugamasdan qabul qilish", R_expertise:"Adliya huquqiy ekspertizasi", R_duplicate:"Amaldagi qarorning nusxasi", R_double_repeal:"Takroriy bekor qilish",
+  R_form:"Qaror yoki farmoyish shakli", R_competence_land:"Yer bo'yicha vakolat", R_basis:"Asos hujjat qaror kuni amalda bo'lgani"};
+const ACT = {constitution:"Konstitutsiya", nla:"Normativ-huquqiy hujjatlar to'g'risida Qonun", lsp:"Mahalliy davlat hokimiyati to'g'risida Qonun",
+  adminproc:"Ma'muriy tartib-taomillar to'g'risida Qonun", landtaking:"Yer uchastkalarini jamoat ehtiyojlari uchun olib qo'yish to'g'risida Qonun", budgetcode:"Budjet kodeksi",
+  ombudsman:"Biznes-ombudsman to'g'risida Qonun", publiccontrol:"Jamoatchilik nazorati to'g'risida Qonun", eqaror390:"VMQ-390 (E-qaror)", order3333:"Adliya vazirligining 3333-son buyrug'i",
+  ai3787:"Adliya vazirligining 3787-son buyrug'i", landcode:"Yer kodeksi", taxcode:"Soliq kodeksi", education:"Ta'lim to'g'risida Qonun", geonames:"Geografik obyektlar nomlari to'g'risida Qonun",
+  employment:"Aholini ish bilan ta'minlash to'g'risida Qonun", advertising:"Reklama to'g'risida Qonun", appeals:"Murojaatlar to'g'risida Qonun", prosecutor:"Prokuratura to'g'risida Qonun",
+  anticorruption860:"Korrupsiyaga qarshi ekspertiza to'g'risida Qonun (O'RQ-860)", linguistic662:"VMQ-662 (lingvistik ekspertiza)"};
+const actName = k => ACT[k] || (/^(pf|pq|vmq)(\d+)$/i.test(k) ? k.replace(/^(pf|pq|vmq)(\d+)$/i, (_, a, b) => a.toUpperCase() + "-" + b) : k);
+// Turn the agent's machine text into words a person can read: act keys, article paths, rule codes, dates, verdicts.
+function human(s) {
+  return String(s || "")
+    .replace(/\b([a-z]+\d*)\s+((?:(?:art|part|cl|annex|para|sub|ch|pre):[\w.-]+\/?)+)/g, (m, k, p) => (ACT[k] || /^(pf|pq|vmq)\d+$/.test(k) ? actName(k) + ", " : k + " ") + fmtPath(p.replace(/\/$/, "")))
+    .replace(/(?:\b(?:art|part|cl|annex|para|sub|ch|pre):[\w.-]+\/?)+/g, m => fmtPath(m.replace(/\/$/, "")))
+    .replace(/\bR_[a-z0-9_]+/g, c => CHECK_UZ[c] || c)
+    .replace(/\b(positive_with_fixable_defects|negative|positive|not_checked)\b/g, v => (VERDICT[v] || [v])[0].toLowerCase())
+    .replace(/(^|[\s(])([a-z]+\d*)(?=\s·|\s*$)/g, (m, a, k) => a + (ACT[k] || /^(pf|pq|vmq)\d+$/.test(k) ? actName(k) : k))
+    .replace(/\b(\d{4})-(\d{2})-(\d{2})\b/g, "$3.$2.$1").replace(/^\s*·\s*/, "");
+}
+const TOOL_UZ = {decision_text:"Qaror matni o'qildi", rules:"Qoidalar bo'yicha tekshirildi", basis:"Asos hujjat o'sha kuni amalda edimi?", law:"Qonun moddasi o'sha kuni amalda edimi?",
+  verify_quote:"Iqtibos qonundan aynan tekshirildi", search_law:"Tegishli normalar qidirildi", llm:"Mahalliy til modeli", conclusion:"Xulosa"};
+function timeline(steps, opts = {}) {
+  const ol = el("ol", "tl");
+  const add = s => { const li = el("li", (s.ok ? "" : "warn") + (opts.pending ? " pending" : "")); const nd = el("span", "nd"); nd.append(icon(s.ok ? "check" : "warn"));
+    const body = el("div"); const lb = el("div", "lb", TOOL_UZ[s.tool] || s.tool); if (opts.raw) lb.append(el("span", "raw", s.tool));
+    body.append(lb); if (s.args) body.append(el("div", "ar", human(s.args))); if (s.result) body.append(el("div", "rs", human(s.result)));
+    li.append(nd, body); ol.append(li); return li; };
+  if (!opts.pending) steps.forEach(add);
+  return {ol, add};
+}
+
+/* ---------------- routing ---------------- */
+const TABS = ["live", "queue", "audit", "ask", "numbers"];
+let currentAudit = null;
+function showTab(name) {
+  document.querySelectorAll(".tabs button").forEach(x => x.classList.toggle("on", x.dataset.tab === name));
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === name));
+}
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1)); const i = h.indexOf("/");
+  const tab = i < 0 ? h : h.slice(0, i), rest = i < 0 ? "" : h.slice(i + 1);
+  const name = TABS.includes(tab) ? tab : "live"; showTab(name);
+  if (name === "audit" && rest && rest !== currentAudit) { $("#q").value = rest; search(rest); openAudit(rest); }
+  if (name === "audit" && !rest && !currentAudit) auditEmpty();
+}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { if (location.hash.slice(1).split("/")[0] !== b.dataset.tab) location.hash = b.dataset.tab; window.scrollTo(0, 0); });
+window.addEventListener("hashchange", () => { route(); window.scrollTo(0, 0); });
+const goAudit = reg => { location.hash = "audit/" + reg; };
+
+/* ---------------- live ---------------- */
+async function loadLive() {
+  const tb = $("#liveRows"); tb.replaceChildren();
+  for (let i = 0; i < 6; i++) { const tr = el("tr"); [260, 160, 120, 70, 30].forEach((w, j) => { const td = el("td", j === 1 || j === 3 ? "hide-sm" : ""); const s = el("div", "skel"); s.style.width = w + "px"; td.append(s); tr.append(td); }); tb.append(tr); }
+  const d = await (await fetch("/api/live-drafts")).json();
+  $("#today").textContent = fmtDate(d.today);
+  $("#liveShort").replaceChildren(document.createTextNode(fmt(d.short.length)), el("small", null, "/ " + fmt(d.open_normative_candidates)));
+  $("#liveSub").textContent = `Bugun ${fmtDate(d.today)}: budjet mablag'larini taqsimlashdan boshqa ${fmt(d.open_normative_candidates)} ta ochiq mahalliy loyihadan ${fmt(d.short.length)} tasi 15 kundan kam muhokamaga qo'yilgan. Budjet mablag'larini taqsimlash loyihalari (${fmt(d.budget_allocations)} ta, ${fmt(d.budget_short)} tasi qisqa) hisobga olinmadi: ular normativmi, buni ekspert hal qiladi.`;
+  $("#sOpen").textContent = fmt(d.open_local); $("#sNorm").textContent = fmt(d.open_normative_candidates);
+  $("#sBudget").textContent = fmt(d.budget_allocations); $("#sBudgetL").textContent = `budjet taqsimoti (${fmt(d.budget_short)} tasi qisqa)`;
+  $("#lawRef").textContent = `${d.law.act} · ${d.law.article}`;
+  $("#lawQuote").textContent = d.law.quote;
+  if (d.law.url) $("#lawLink").href = d.law.url;
+  $("#liveCount").textContent = fmt(d.short.length) + " ta loyiha";
+  const today = new Date(d.today + "T00:00:00");
+  tb.replaceChildren();
+  if (!d.short.length) { const tr = el("tr"); const td = el("td", "empty", "Hozir muddati qisqa ochiq loyiha yo'q"); td.colSpan = 5; tr.append(td); tb.append(tr); }
+  d.short.slice(0, 60).forEach(r => {
+    const tr = el("tr"); const t1 = el("td");
+    t1.append(ext(el("a", "reg", "regulation.gov.uz/" + r.id), r.url), el("div", "ttl", r.title || ""));
+    const t3 = el("td"); const dd = el("div", "date", `${fmtDate(r.start)} – ${fmtDate(r.end)}`); dd.style.cssText = "font:400 12.5px var(--mono);color:var(--ink-2);white-space:nowrap";
+    const tr15 = el("div", "track"); for (let i = 0; i < 15; i++) tr15.append(el("i", i < r.days ? "" : "miss"));
+    const lbl = el("div"); lbl.style.cssText = "display:flex;align-items:center;gap:8px;margin-top:6px"; lbl.append(tr15, pill(r.days + " kun", "ember"));
+    tr15.style.marginTop = "0"; t3.append(dd, lbl);
+    const left = Math.round((new Date(r.end + "T00:00:00") - today) / 864e5);
+    const t4 = el("td", "hide-sm"); t4.append(el("span", "left-days" + (left <= 2 ? " urgent" : ""), left > 0 ? `${left} kun qoldi` : left === 0 ? "bugun tugaydi" : "tugagan"));
+    tr.append(t1, el("td", "hide-sm muted", r.creator), t3, t4, el("td", "n", String(r.proposals ?? 0)));
+    tb.append(tr);
+  });
+}
+
+/* ---------------- queue ---------------- */
+async function loadQueue() {
+  const reg = $("#region").value;
+  const rr = $("#regionReport");
+  if (reg) { rr.href = "/api/region-report/" + reg; rr.removeAttribute("aria-disabled"); } else { rr.removeAttribute("href"); rr.setAttribute("aria-disabled", "true"); }
+  const tb = $("#queueRows"); tb.replaceChildren();
+  for (let i = 0; i < 6; i++) { const tr = el("tr"); [40, 300, 80, 140, 160].forEach((w, j) => { const td = el("td", j === 2 || j === 4 ? "hide-sm" : ""); const s = el("div", "skel"); s.style.width = w + "px"; td.append(s); tr.append(td); }); tb.append(tr); }
+  const d = await (await fetch("/api/queue" + (reg ? "?region=" + reg : ""))).json();
+  const head = $("#queueHead"); head.replaceChildren();
+  const sum = el("div", "qsum"); const a = el("div"); a.append(el("span", "tot", fmt(d.total)), el("span", "lbl", ` ta qaror belgilangan · ${d.region}`));
+  const counts = {}; d.items.forEach(r => counts[r.verdict] = (counts[r.verdict] || 0) + 1);
+  const mix = el("div", "mix"); Object.keys(VERDICT).filter(k => counts[k]).forEach(k => { const p = vPill(k); p.textContent = `${VERDICT[k][0]}: ${counts[k]}`; mix.append(p); });
+  sum.append(a, mix); head.append(sum, el("span", "faint", `Ro'yxatda birinchi ${d.items.length} tasi`));
+  tb.replaceChildren();
+  if (!d.items.length) { const tr = el("tr"); const td = el("td", "empty", "Bu hududda belgilangan qaror yo'q"); td.colSpan = 5; tr.append(td); tb.append(tr); return; }
+  d.items.forEach(r => {
+    const tr = el("tr", "clickable"); tr.tabIndex = 0;
+    const open = () => goAudit(r.reg_number || r.id); tr.onclick = open; tr.onkeydown = e => { if (e.key === "Enter") open(); };
+    // score = highest severity of the possible violations x 10 + their count (an ordering key, not a probability)
+    const lv = Math.min(3, Math.floor((r.score || 0) / 10)); const t0 = el("td"); const sv = el("div", "sev l" + lv); const m = el("span", "m");
+    for (let i = 1; i <= 3; i++) m.append(el("i", i <= lv ? "f" : "")); sv.append(m, el("span", "st", ["Noaniq", "Past", "O'rta", "Yuqori"][lv]));
+    t0.append(sv, el("div", "sev-n", `${r.n_hard ?? 0} ta ehtimoliy / ${r.n_flags ?? r.checks.length} ta belgi`));
+    const t1 = el("td"); const a = el("a", "reg", r.reg_number || r.id); a.href = "#audit/" + (r.reg_number || r.id); a.onclick = e => e.stopPropagation();
+    t1.append(a, el("div", "meta", r.body), el("div", "ttl", r.title || ""));
+    t1.append(el("div", "meta", r.lexuz_checked ? `lex.uz holati tekshirilgan: ${fmtDate(r.lexuz_checked)}` : "lex.uz holati qayta tekshirilmagan"));
+    const t3 = el("td", "hide-sm"); t3.append(vPill(r.verdict));
+    const vs = vPill(r.verdict); vs.classList.add("show-sm"); vs.style.marginTop = "8px"; t1.append(vs);
+    const t4 = el("td", "hide-sm"); r.checks.forEach(c => t4.append(el("span", "tag", CHECK_UZ[c] || c)));
+    tr.append(t0, t1, el("td", "date hide-sm", fmtDate(r.adopted)), t3, t4); tb.append(tr);
+  });
+}
+// Decisions whose cited article was reworded or removed later: "re-check", never a violation.
+let lcSince = "30";
+async function loadLawChanges() {
+  const box = $("#lawChangeRows"); box.replaceChildren(el("div", "empty", "Yuklanmoqda…"));
+  let since = lcSince; if (/^\d+$/.test(since)) { const d = new Date(Date.now() - (+since) * 864e5); since = d.toISOString().slice(0, 10); }
+  let d; try { const res = await fetch("/api/law-changes?since=" + since); if (!res.ok) throw new Error(res.status); d = await res.json(); }
+  catch (e) { $("#lawChanges").style.display = "none"; return; }
+  $("#lawChanges").style.display = ""; box.replaceChildren();
+  if (!d.items.length) { box.append(el("div", "empty", "Bu davrda tayangan moddasi o'zgargan amaldagi qaror yo'q")); return; }
+  const SHOW = 4; const rows = d.items.map(x => { const r = el("div", "lcr");
+    const a = el("a", "reg mono", x.reg_number); a.href = "#audit/" + x.reg_number; a.style.cssText = "font:500 13px var(--mono);color:var(--ink);text-decoration:none";
+    const left = el("div"); left.append(a, el("div", "meta", [x.body, fmtDate(x.adopted)].filter(Boolean).join(" · "))); left.querySelector(".meta").style.cssText = "font-size:12px;color:var(--ink-3);margin-top:2px";
+    const what = el("div", "lcw"); what.append(el("b", null, `${x.act}, ${x.articles}`), document.createTextNode(` · ${fmtDate(x.changed_on)} dan`));
+    const lk = ext(el("a", "link"), x.url); lk.append("lex.uz", icon("ext"));
+    r.append(left, what, pill(x.status_uz || x.status, "amber"), lk); return r; });
+  rows.forEach((r, i) => { if (i >= SHOW) r.style.display = "none"; box.append(r); });
+  const more = el("div", "lc-more"); const info = el("span", "faint", `Jami ${fmt(d.total)} ta qaror` + (d.items.length < d.total ? `, ro'yxatda ${d.items.length} tasi` : ""));
+  more.append(info);
+  if (rows.length > SHOW) { const b = el("button", "btn sm", `Hammasini ko'rsatish (${rows.length})`); b.type = "button"; b.style.marginLeft = "12px";
+    b.onclick = () => { rows.forEach(r => r.style.display = ""); b.remove(); }; more.append(b); }
+  box.append(more);
+}
+document.querySelectorAll("#lawChanges .seg button").forEach(b => b.onclick = () => { lcSince = b.dataset.since;
+  document.querySelectorAll("#lawChanges .seg button").forEach(x => x.classList.toggle("on", x === b)); loadLawChanges(); });
+
+async function loadRegions() {
+  const sel = $("#region");
+  (await (await fetch("/api/regions")).json()).forEach(r => { const o = el("option", null, r.name); o.value = r.code; sel.append(o); });
+  sel.onchange = loadQueue; loadQueue();
+}
+
+/* ---------------- audit ---------------- */
+const SAMPLES = [["231-4-59-Q/24", "Qarshi: amaldagi qarorning nusxasi"], ["355-4-68-Q/25", "Yakkabog': kuchini yo'qotgan moddaga tayanadi"],
+  ["VII-3-1-5-77-K/25", "Xatirchi: majburiyat orqaga qaytib kuchga kiradi"], ["265-4-60-Q/25", "Koson: korrupsiyaviy omil bo'lishi mumkin"]];
+let timer, REVIEWS = {};
+$("#q").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => search(), 250); });
+function samplesList(box) {
+  box.append(el("div", "grp", "Namunaviy holatlar"));
+  SAMPLES.forEach(([reg, why]) => { const b = el("button", "res"); const r1 = el("span", "r1"); r1.append(el("b", null, reg)); b.append(r1, el("span", "why", why));
+    b.onclick = () => goAudit(reg); box.append(b); });
+}
+function auditEmpty() {
+  const box = $("#results"); box.replaceChildren(); samplesList(box);
+  const rep = $("#report"); rep.replaceChildren();
+  const e = el("div", "doc-in"); e.style.cssText = "display:flex;flex-direction:column;justify-content:center;min-height:420px";
+  e.append(el("p", "eyebrow", "Audit hisoboti"), el("h2", "dt", "Qarorni tanlang: Mezon uni har bir qoida bo'yicha tekshiradi"));
+  const p = el("p", "doc-body", "Hisobot adliya xulosasi shaklida tuziladi: ijobiy · tuzatiladigan kamchiliklar bilan ijobiy · salbiy. Har bir kamchilik modda va iqtibos bilan; manba bo'lmasa, belgi chiqmaydi."); p.style.maxWidth = "600px";
+  e.append(p); rep.append(e);
+}
+async function search(q) {
+  q = (q ?? $("#q").value).trim(); const box = $("#results");
+  if (!q) { box.replaceChildren(); samplesList(box); return; }
+  const rows = await (await fetch("/api/decisions?q=" + encodeURIComponent(q))).json();
+  box.replaceChildren();
+  if (!rows.length) { box.append(el("div", "empty", "Topilmadi")); samplesList(box); return; }
+  box.append(el("div", "grp", `${rows.length} ta natija`));
+  rows.forEach(r => { const b = el("button", "res"); b.dataset.reg = r.reg_number || r.id; b.dataset.id = r.id;
+    const r1 = el("span", "r1"); r1.append(el("b", null, r.reg_number || r.id), el("span", "d", fmtDate(r.adopted)));
+    b.append(r1, el("span", "b", r.body || ""), el("span", "t", r.title || ""));
+    b.classList.toggle("on", currentAudit === b.dataset.reg || currentAudit === r.id);
+    b.onclick = () => goAudit(r.reg_number || r.id); box.append(b); });
+}
+function secH(title, note) { const h = el("div", "sec-h"); h.append(el("h3", null, title)); if (note) h.append(el("span", null, note)); return h; }
+function quoteCard(src, text, url, linkText) {
+  const q = el("div", "qt"); q.append(el("span", "src", src), el("div", "tx", text || ""));
+  if (url) { const qa = el("div", "qa"); const a = ext(el("a", "link", linkText || "lex.uz da ochish"), url); a.append(icon("ext")); qa.append(a); q.append(qa); }
+  return q;
+}
+async function openAudit(id) {
+  currentAudit = id;
+  document.querySelectorAll("#results .res").forEach(x => x.classList.toggle("on", x.dataset.reg === id || x.dataset.id === id));
+  const box = $("#report"); const wait = el("div", "doc-in"); wait.append(el("p", "eyebrow", "Tekshirilmoqda…"));
+  [70, 90, 60, 100, 80].forEach(w => { const s = el("div", "skel"); s.style.cssText = `width:${w}%;margin:14px 0;height:14px`; wait.append(s); });
+  box.replaceChildren(wait);
+  const res = await fetch("/api/audit/" + encodeURIComponent(id));
+  if (!res.ok) { const e = el("div", "doc-in"); e.append(el("div", "empty", "Xatolik: qaror topilmadi")); box.replaceChildren(e); return; }
+  const r = await res.json();
+  REVIEWS = (await (await fetch("/api/reviews")).json()).verdicts || {};
+  if (currentAudit !== id) return;
+  const d = el("div", "doc-in"); box.replaceChildren(d);
+  const meta = el("div", "doc-meta"); meta.append(el("span", "regn", r.reg_number), el("span", null, fmtDate(r.date)), el("span", null, r.gate_uz || r.gate));
+  if (r.lexuz_checked) meta.append(el("span", null, `lex.uz holati: ${fmtDate(r.lexuz_checked)}${r.lexuz_status ? " · " + r.lexuz_status : ""}`));
+  d.append(meta, el("h2", "dt", r.title)); if (r.body) d.append(el("div", "doc-body", r.body));
+  const nPossible = r.flags.filter(f => f.status === "possible_violation").length;
+  const v = VERDICT[r.verdict] || [r.verdict, ""]; const vd = el("div", "verdict v-" + r.verdict);
+  const vm = el("div"); vm.append(el("div", "vk", "Xulosa loyihasi"), el("div", "vv", v[0]),
+    el("div", "vn", `${r.flags.length} ta belgi (${nPossible} tasi ehtimoliy qoidabuzarlik) · ${r.checks_run.length} ta tekshiruv`));
+  const va = el("div", "vact");
+  if (r.url) { const a = ext(el("a", "btn"), r.url); a.append("Manba", icon("ext")); va.append(a); }
+  const cl = ext(el("a", "btn"), "/api/conclusion/" + encodeURIComponent(r.decision_id)); cl.append(icon("doc"), "Xulosa loyihasi"); va.append(cl);
+  const wd = el("a", "btn primary"); wd.href = "/api/conclusion-word/" + encodeURIComponent(r.reg_number || r.decision_id); wd.append(icon("down"), "Word'da ochish"); va.append(wd);
+  vd.append(el("span", "vbar"), vm, va); d.append(vd);
+  const disc = el("p", "disclaimer"); disc.append(icon("info"), document.createTextNode("Ehtimoliy qoidabuzarlik — ekspert ko'rib chiqishi uchun belgilandi. Belgilangan ≠ noqonuniy: har bir belgini ekspert hal qiladi.")); d.append(disc);
+
+  // What was checked: one tile per rule group
+  d.append(secH("Tekshiruvlar", `${r.checks_run.length} ta qoida`));
+  const mx = el("div", "matrix");
+  r.checks_run.forEach(g => { const keys = g.split("+"); const fl = r.flags.filter(f => keys.includes(f.check)); const ck = (r.checked_uz || []).find(x => x.check === g);
+    const na = ck && /^Faqat /.test(ck.why_uz || "");
+    const cls = fl.length ? (fl.some(f => f.status === "possible_violation") ? "flag" : "unc") : na ? "na" : "";
+    const t = el("div", "mx " + cls); t.append(el("span", "dot")); const body = el("div");
+    body.append(document.createTextNode(ck && ck.what_uz && !/^R_/.test(ck.what_uz) ? ck.what_uz : keys.map(k => CHECK_LONG[k] || k).join("; ")));
+    body.append(el("small", null, fl.length ? (cls === "flag" ? "Belgi: ehtimoliy qoidabuzarlik" : "Belgi: noaniq, ekspert kerak") : na ? "Bu qarorga taalluqli emas" : "Kamchilik topilmadi"));
+    t.append(body); mx.append(t); });
+  d.append(mx);
+
+  d.append(secH("Belgilar", r.flags.length ? "har biri: modda, iqtibos, manba" : ""));
+  if (!r.flags.length) d.append(el("div", "empty", "Hech bir qoida bo'yicha kamchilik topilmadi"));
+  r.flags.forEach((f, i) => d.append(flagCard(f, i, r)));
+
+  const lg = r.linguistic_662;
+  if (lg && lg.findings && lg.findings.length) d.append(...lingSection(lg));
+  d.append(secH("Ekspert uchun", "tafsilotlar"));
+  if (r.checklist_860 && r.checklist_860.length) {
+    const found = r.checklist_860.filter(x => x.answer.startsWith("bor")).length;
+    const ck = el("details", "panel"); ck.open = found > 0;
+    const sm = el("summary"); const ch = icon("chev"); ch.classList.add("chev");
+    const ps = el("span", "ps"); const cnt = {}; r.checklist_860.forEach(x => cnt[x.answer] = (cnt[x.answer] || 0) + 1);
+    Object.entries(cnt).forEach(([k, n]) => ps.append(pill(`${k}: ${n}`, k.startsWith("bor") ? "ember" : k === "aniqlanmadi" ? "" : k.startsWith("AI") ? "violet" : "amber")));
+    sm.append(ch, document.createTextNode(`Korrupsiyaga qarshi ekspertiza cheklisti (O'RQ-860): ${found} ta ehtimoliy omil, ${r.checklist_860.length} ta omildan`), ps);
+    const pb = el("div", "pb tbl-wrap"); const tb = el("table"); const hd = el("tr"); ["№", "Omil (O'RQ-860)", "Javob", "Izoh"].forEach((h, j) => hd.append(el("th", j === 0 ? "n" : j === 3 ? "hide-sm" : "", h)));
+    const th = el("thead"); th.append(hd); const tbody = el("tbody"); tb.append(th, tbody);
+    r.checklist_860.forEach(x => { const tr = el("tr"); const p = pill(x.answer, x.answer.startsWith("bor") ? "ember" : x.answer === "aniqlanmadi" ? "" : x.answer.startsWith("AI") ? "violet" : "amber");
+      const tdp = el("td"); tdp.append(p); tr.append(el("td", "n", String(x.n)), el("td", null, x.factor_uz), tdp, el("td", "muted hide-sm", x.note)); tbody.append(tr); });
+    pb.append(tb); ck.append(sm, pb); d.append(ck);
+  }
+  if (r.checked_uz && r.checked_uz.length) {
+    const nb = el("details", "panel"); nb.open = !r.flags.length;
+    const sm = el("summary"); const ch = icon("chev"); ch.classList.add("chev"); sm.append(ch, document.createTextNode(`Nega belgilanmadi? ${r.checked_uz.length} ta tekshiruv kamchiliksiz`));
+    const pb = el("div", "pb"); r.checked_uz.forEach(x => { const row = el("div", "nb"); row.append(el("b", null, /^R_/.test(x.what_uz || "") ? (CHECK_LONG[x.what_uz] || x.what_uz) : x.what_uz), el("span", null, human(x.why_uz))); pb.append(row); });
+    nb.append(sm, pb); d.append(nb);
+  }
+  { // The agent's path: every tool it called and what came back (loaded when opened)
+    const ag = el("details", "panel"); const sm = el("summary"); const ch = icon("chev"); ch.classList.add("chev");
+    sm.append(ch, document.createTextNode("Agent yo'li: qaysi vositalarni chaqirdi va nima topdi"), (() => { const s = el("span", "ps"); s.append(pill("agent", "violet")); return s; })());
+    const pb = el("div", "pb"); ag.append(sm, pb);
+    ag.addEventListener("toggle", async () => {
+      if (!ag.open || ag.dataset.loaded) return; ag.dataset.loaded = "1";
+      const wait = el("div", "muted", "Agent ishlamoqda..."); pb.append(wait);
+      try {
+        const a = await (await fetch("/api/agent/" + encodeURIComponent(r.reg_number))).json(); wait.remove();
+        pb.append(timeline(a.steps, {raw: true}).ol, el("div", "fine", a.llm === "on" ? "Mahalliy til modeli (Qwen) ishladi; har bir javob iqtibos bilan tekshirildi."
+          : "Mahalliy til modeli hozir o'chiq: ochiq savollar ekspertga berildi. Qoidalar va tekshiruvchi to'liq ishladi."));
+      } catch (e) { wait.textContent = "Agent javob bermadi: " + e.message; }
+    });
+    d.append(ag);
+  }
+}
+// Linguistic expertise (VMQ-662): spelling, not legality, so it sits in its own section and never counts as a flag.
+const LAT = /[A-Za-z]/, CYR = /[А-Яа-яЁёЎўҚқҒғҲҳ]/;
+function markMixed(word) {
+  const box = el("span", "w"); const chars = [...word];
+  const nLat = chars.filter(c => LAT.test(c)).length, nCyr = chars.filter(c => CYR.test(c)).length;
+  const odd = nLat >= nCyr ? CYR : LAT;
+  chars.forEach(c => box.append(odd.test(c) ? el("mark", null, c) : document.createTextNode(c)));
+  return box;
+}
+function lingSection(lg) {
+  const card = el("div", "ling");
+  const lh = el("div", "lh"); lh.append(el("b", null, `${lg.findings.length} ta so'zda lotin va kirill harflari aralashgan. `),
+    document.createTextNode("Ko'rinishi bir xil, lekin harflar boshqa yozuvdan: bunday so'z lex.uz va E-qaror qidiruvida topilmaydi. Belgilangan harf boshqa yozuvdan."));
+  card.append(lh);
+  lg.findings.forEach(x => { const row = el("div", "lw"); const cx = el("div", "cx"); const ctx = x.context || ""; const at = ctx.indexOf(x.word);
+    if (at >= 0) cx.append(document.createTextNode("…" + ctx.slice(0, at)), el("mark", null, x.word), document.createTextNode(ctx.slice(at + x.word.length) + "…")); else cx.textContent = ctx;
+    row.append(markMixed(x.word), el("span", "arr", "→"), el("span", "f", x.fixed), cx); card.append(row); });
+  if (lg.norm) { const n = el("div", "ln"); const q = quoteCard(`${lg.norm.act} · ${lg.norm.clause}`, lg.norm.quote, lg.norm.url); q.classList.add("law-q"); n.append(q); card.append(n); }
+  return [secH("Lingvistik ekspertiza (VMQ-662)", "imlo: huquqiy belgi emas"), card];
+}
+function flagCard(f, i, r) {
+  const c = el("article", "flag-c"); const s = SEV[f.severity] || [f.severity, ""]; const st = STATUS[f.status] || [f.status, "outline nodot"];
+  const head = el("div", "fh"); head.append(el("span", "fno", String(i + 1).padStart(2, "0")), pill(s[0] + " daraja", s[1]), pill(st[0], st[1]), el("span", "fcode", f.check));
+  c.append(head, el("h4", null, f.title_uz || f.title));
+  const fb = el("div", "fb"); c.append(fb);
+  if (f.plain_uz) { const p = el("div", "plain"); p.append(el("b", null, "Siz uchun nima degani:"), el("span", null, f.plain_uz)); fb.append(p); }
+  const dec = el("div", "col dec"), law = el("div", "col law");
+  dec.append(el("div", "colh", "Qarorda")); law.append(el("div", "colh", "Qonunda · lex.uz"));
+  f.evidence.forEach(e => {
+    if (e.source === "lexuz") law.append(quoteCard(e.locator || "lex.uz", e.quote, e.url));
+    else { const src = e.source === "eqaror_stages" ? "E-qaror bosqichi · " + (e.locator || "") : e.source === "related_decision" ? "Taqqoslangan qaror · " + fmtLoc(e.locator) : "Qarordan · " + fmtLoc(e.locator || e.source);
+      dec.append(quoteCard(src, e.quote, e.source === "decision" ? null : e.url, "Ochish")); }
+  });
+  f.citations.forEach(ct => {
+    const q = quoteCard(`${ct.act_title} · ${fmtPath(ct.article)} · ${fmtDate(ct.on_date)} holatiga`, ct.quote || "", ct.url);
+    const tt = el("button", "btn sm", "Bugungi tahrir bilan solishtirish"); tt.type = "button"; const out = el("div", "tt");
+    tt.onclick = () => timeTravel(ct, out, tt); (q.querySelector(".qa") || q.appendChild(el("div", "qa"))).append(tt); q.append(out); law.append(q);
+  });
+  const sbs = el("div", "sbs"); const hasDec = dec.children.length > 1, hasLaw = law.children.length > 1;
+  if (hasDec) sbs.append(dec); if (hasLaw) sbs.append(law); if (!(hasDec && hasLaw)) sbs.classList.add("one"); if (hasDec || hasLaw) fb.append(sbs);
+  const tech = el("details", "more"); const ts = el("summary"); ts.append(icon("chev"), "Texnik izoh"); tech.append(ts, el("p", "tech", f.explanation)); fb.append(tech);
+  if (f.channels && f.channels.length) {
+    const route = el("div", "route"); route.append(el("div", "rh", "Qayerga murojaat qilish mumkin"));
+    const chans = el("div", "chans"); f.channels.forEach(ch => { const a = ext(el("a", "chan"), ch.url); const t = el("div"); t.append(el("b", null, ch.name), el("span", null, ch.why)); a.append(t, icon("ext")); chans.append(a); });
+    route.append(chans);
+    if (f.appeal_uz) {
+      const det = el("details", "more"); const sm = el("summary"); sm.append(icon("chev"), "Tayyor murojaat matni");
+      const pre = el("pre", "appeal", f.appeal_uz); const cp = el("button", "btn sm"); cp.type = "button"; cp.append(icon("copy"), "Nusxa olish");
+      cp.onclick = async () => { try { await navigator.clipboard.writeText(f.appeal_uz); cp.lastChild.textContent = "Nusxa olindi"; } catch { cp.lastChild.textContent = "Belgilab, Ctrl+C bosing"; } };
+      det.append(sm, pre, cp); route.append(det);
+    }
+    route.append(el("span", "fine", "Murojaatni o'zingiz yuborasiz. Mezon hech narsani avtomatik yubormaydi."));
+    fb.append(route);
+  }
+  const act = el("div", "review"); act.append(el("span", "rl", "Ekspert xulosasi:"));
+  const btns = [["correct", "To'g'ri"], ["wrong", "Noto'g'ri"], ["unclear", "Noaniq"]].map(([v, label]) => {
+    const b = el("button", "btn sm", label); b.type = "button"; b.dataset.v = v;
+    b.onclick = async () => {
+      const res = await fetch("/api/reviews", {method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({decision_id: r.decision_id, check: f.check, verdict: v})});
+      if (res.ok) btns.forEach(x => x.classList.toggle("on", x === b)); else b.textContent = "Saqlanmadi";
+    };
+    return b; });
+  const saved = REVIEWS[`${r.decision_id}|${f.check}`];
+  btns.forEach(b => b.classList.toggle("on", b.dataset.v === saved));
+  act.append(...btns); c.append(act);
+  return c;
+}
+async function timeTravel(ct, out, btn) {
+  btn.textContent = "Yuklanmoqda…";
+  const res = await fetch(`/api/law?act=${encodeURIComponent(ct.act_id)}&path=${encodeURIComponent(ct.article)}&on=${encodeURIComponent(ct.on_date)}`);
+  if (!res.ok) { btn.textContent = "Tahrirlar topilmadi"; return; }
+  const d = await res.json(); out.replaceChildren();
+  const chip = d.repealed_since ? ["Bugun bu norma amalda emas", "ember"] : d.new_since ? ["Bu norma o'sha kuni hali mavjud emas edi", "amber"] : d.changed ? ["Norma o'shandan beri o'zgargan", "amber"] : ["Norma o'zgarmagan", "teal"];
+  const cw = el("div"); cw.append(pill(chip[0], chip[1])); out.append(cw);
+  if (d.then) out.append(el("div", "ed", `${fmtDate(ct.on_date)} holatiga (tahrir ${d.then.edition})`), el("div", "tx", d.then.text));
+  if (d.now && (d.changed || !d.then)) out.append(el("div", "ed", `Bugungi tahrir (${d.now.edition})${d.now.provisional ? " · o'zgartirish kiritilmoqda" : ""}`), el("div", "tx", d.now.text));
+  btn.textContent = "Tahrirlar solishtirildi";
+}
+
+/* ---------------- numbers ---------------- */
+async function loadNumbers() {
+  const s = await (await fetch("/api/stats")).json(); const k = $("#kpis"); k.replaceChildren();
+  const add = (val, of, label, src, share) => { const c = el("div", "card kpi"); const kv = el("div", "kv", val); if (of) kv.append(el("small", null, " / " + of)); c.append(kv);
+    if (share != null) { const sh = el("div", "share"); const b = el("span", "bar"); const i = el("i"); i.style.width = Math.min(100, share * 100).toFixed(1) + "%"; b.append(i); sh.append(b, el("span", null, Math.round(share * 100) + " %")); c.append(sh); }
+    c.append(el("div", "kl", label), el("div", "ks", src)); k.append(c); return c; };
+  add(fmt(s.court.satisfied), fmt(s.court.heard), "hokimlik qarorlari ustidan qanoatlantirilgan da'volar, 2023 – 2026 I yarim", "stat.sud.uz · ma'muriy sudlar", s.court.heard ? s.court.satisfied / s.court.heard : null);
+  add(fmt(s.kengash_short), fmt(s.kengash_drafts), "Kengash loyihalari 15 kundan qisqa muhokamada", `regulation.gov.uz · bizning skanerlash, ${fmt(s.drafts_scanned)} ta loyiha`, s.kengash_drafts ? s.kengash_short / s.kengash_drafts : null);
+  add(fmt(s.decisions_in_store), null, "tekshirish uchun to'liq matnli mahalliy qarorlar", "lex.uz · Mezon qonun bazasi");
+  const rv = await (await fetch("/api/reviews")).json(); const n = rv.total.correct + rv.total.wrong;
+  add(rv.precision == null ? "—" : Math.round(rv.precision * 100) + " %", null, n ? `belgilar aniqligi: ekspert ${n} ta belgini ko'rib chiqdi (${rv.total.correct} to'g'ri, ${rv.total.wrong} noto'g'ri, ${rv.total.unclear} noaniq)` : "belgilar aniqligi: ekspert hali ko'rib chiqmagan",
+    "Ekspert xulosalari · Qaror auditi sahifasidan");
+  const reps = await (await fetch("/api/repeats")).json(); const box = $("#repeats"); box.replaceChildren();
+  if (reps.length) {
+    const c = el("div", "card reps"); const h = el("div", "card-h"); const hh = el("div");
+    hh.append(el("h2", null, "Takrorlangan kamchilik"), el("div", "h-sub", "Bekor qilingandan keyin o'sha organ yana xuddi shunday qaror qabul qilgan"));
+    h.append(hh, pill(reps.length + " ta holat", "ember")); c.append(h);
+    const w = el("div", "tbl-wrap"); const tb = el("table"); const th = el("thead"); const hr = el("tr");
+    ["Bekor qilingan qaror", "Qabul / kuchini yo'qotgan", "Keyin qabul qilingan", "Sana", "Umumiy belgilar"].forEach((t, j) => hr.append(el("th", j === 1 || j === 3 ? "hide-sm" : "", t)));
+    th.append(hr); const tbody = el("tbody"); tb.append(th, tbody);
+    reps.forEach(r => { const tr = el("tr");
+      const a = el("td"); a.append(ext(el("a", "reg", r.cancelled), r.cancelled_url), el("div", "ttl", r.title || ""));
+      const b = el("td"); b.append(ext(el("a", "reg", r.later), r.later_url));
+      const f = el("td"); r.shared_flags.split(" ").filter(Boolean).forEach(x => f.append(el("span", "tag", CHECK_UZ[x] || x)));
+      tr.append(a, el("td", "date hide-sm", `${fmtDate(r.cancelled_adopted)}${r.cancelled_lost_force ? " / " + fmtDate(r.cancelled_lost_force) : ""}`), b, el("td", "date hide-sm", fmtDate(r.later_adopted)), f);
+      tbody.append(tr); });
+    w.append(tb); c.append(w); box.append(c);
+  }
+}
+
+/* ---------------- Mezon AI ---------------- */
+let askWho = "citizen", lastQ = "";
+const CASES = [
+  {reg: "355-4-68-Q/25", q: "355-4-68-Q/25 nega belgilandi?", who: "citizen", title: "Kuchini yo'qotgan moddaga tayanadi",
+   text: "Yakkabog' tumani hokimi qarori Mahalliy davlat hokimiyati to'g'risidagi Qonunning 25-moddasiga tayanadi; bu modda qaror kunida amalda emas edi."},
+  {reg: "VII-3-1-5-77-K/25", q: "VII-3-1-5-77-K/25 menga nima degani?", who: "business", title: "Majburiyat orqaga qaytib kuchga kiradi",
+   text: "Xatirchi tuman Kengashi qarori. Tuman adliya bo'limi taqdimnomasidan keyin uning 2-ilovasi qonunga muvofiqlashtirildi."},
+  {reg: "265-4-60-Q/25", q: "265-4-60-Q/25 tadbirkorga ta'siri", who: "business", title: "Korrupsiyaviy omil bo'lishi mumkin",
+   text: "Koson tumani hokimi qarorining 4-bandi O'RQ-860 cheklistidagi omilga o'xshaydi. Noaniq: ekspert hal qiladi."},
+];
+const WHAT = [["Asos hujjat", "Qaror tayangan modda o'sha kuni amalda bo'lganmi"], ["Muddatlar", "15 kunlik muhokama, tadbirkorga 3 oy, orqaga qaytish taqiqi"],
+  ["Tartib", "Muhokama, adliya ekspertizasi, qaror yoki farmoyish shakli"], ["Vakolat", "Hokim yoki Kengash bu masalani hal qila oladimi"],
+  ["Takror va bekor qilish", "Amaldagi qarorning nusxasi, bekor qilingan qarorni qayta bekor qilish"], ["Korrupsiya omillari", "O'RQ-860 cheklisti: noaniq vakolat, ochiq ro'yxat"]];
+function buildStarters() {
+  const cs = $("#askCases"); cs.replaceChildren();
+  CASES.forEach(c => { const b = el("button", "case"); b.type = "button"; const go = el("span", "go"); go.append(el("span", null, "Mezon javobini ko'rish"), icon("arrow"));
+    b.append(el("span", "cr", c.reg), el("h3", null, c.title), el("p", null, c.text), go);
+    b.onclick = () => { setWho(c.who); $("#askInput").value = c.q; askSend(); }; cs.append(b); });
+  const w = $("#askWhat"); w.replaceChildren(); WHAT.forEach(([t, s]) => { const d = el("div"); d.append(el("b", null, t), el("span", null, s)); w.append(d); });
+}
+function setWho(w) { askWho = w; document.querySelectorAll("#ask .seg button").forEach(x => x.classList.toggle("on", x.dataset.who === w)); }
+document.querySelectorAll("#ask .seg button").forEach(b => b.onclick = () => { const changed = askWho !== b.dataset.who; setWho(b.dataset.who); if (changed && lastQ) { $("#askInput").value = lastQ; askSend(); } });
+function askChips(list) { const c = $("#chips"); c.replaceChildren(); (list || []).forEach(s => { const b = el("button", null, s); b.type = "button"; b.onclick = () => { $("#askInput").value = s; askSend(); }; c.append(b); }); }
+const WHO_UZ = {citizen: "fuqaro uchun", business: "tadbirkor uchun", expert: "adliya eksperti uchun"};
+
+async function askSend() {
+  const q = $("#askInput").value.trim(); if (!q) return; $("#askInput").value = ""; lastQ = q;
+  $("#askWrap").classList.add("asked"); askChips([]);
+  const th = $("#thread"); th.append(el("div", "msg-me", q));
+  const ai = el("div", "msg-ai"); const av = el("div", "av"); av.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M6 8h12M9.5 19h5"/><path d="M4.2 13h3.6a1.8 1.8 0 0 1-3.6 0ZM16.2 13h3.6a1.8 1.8 0 0 1-3.6 0Z" fill="#fff" stroke="none"/></svg>';
+  const ans = el("div", "ans"); ai.append(av, ans); th.append(ai);
+  const think = el("div", "think"); const tht = el("div", "th"); tht.append(el("span", "spin"), el("span", null, "Mezon qarorni o'qimoqda…")); think.append(tht); ans.append(think);
+  ai.scrollIntoView({behavior: "smooth", block: "start"});
+  const who = askWho;
+  let r; try { r = await (await fetch("/api/ask?q=" + encodeURIComponent(q) + "&who=" + who)).json(); } catch (e) { tht.lastChild.textContent = "Server javob bermadi: " + e.message; tht.firstChild.remove(); return; }
+  if (!r.found) {
+    think.remove(); ans.append(el("p", "lead", r.message));
+    if (r.matches && r.matches.length) { const ms = el("div", "matches");
+      r.matches.forEach(m => { const b = el("button", "match"); b.type = "button"; const r1 = el("div", "r1"); r1.append(el("b", null, m.reg_number), el("span", "d", fmtDate(m.adopted)));
+        b.append(r1, el("div", "t", m.title || ""), el("div", "b", m.body || "")); b.onclick = () => { $("#askInput").value = m.reg_number + " menga nima degani?"; askSend(); }; ms.append(b); });
+      ans.append(ms); }
+    else askChips(r.suggestions);
+    return;
+  }
+  // The audit gives the law's own words for the side-by-side view (the ask answer carries only the decision quote).
+  const auditP = fetch("/api/audit/" + encodeURIComponent(r.found)).then(x => x.ok ? x.json() : null).catch(() => null);
+  tht.lastChild.textContent = `Mezon tekshirmoqda: ${r.found}`;
+  const tl = timeline([], {pending: true}); think.append(tl.ol);
+  for (const s of r.steps) { const li = tl.add(s); await sleep(40); li.classList.remove("pending"); await sleep(170); }
+  const audit = await auditP;
+  think.remove();
+  const meta = el("div", "am"); meta.append(el("span", "regn", r.found), el("span", null, r.body || ""));
+  if (audit && audit.date) meta.append(el("span", null, fmtDate(audit.date))); meta.append(pill(WHO_UZ[who] || who, "violet nodot"));
+  ans.append(meta);
+  const blocks = r.blocks || [];
+  const lead = r.lead || (!blocks.length ? "Avtomatik tekshiruvlarda kamchilik topilmadi; ekspert qolgan masalalarni ko'radi."
+    : who === "expert" ? `${blocks[0].title}. Asos: ${human(blocks[0].basis)}.` : (blocks[0].plain || blocks[0].title));
+  ans.append(el("p", "lead", human(lead)));
+  if (blocks.length) { const nP = blocks.filter(b => b.status === "possible_violation").length;
+    const sum = nP ? `Mezon ${nP} ta ehtimoliy kamchilik topdi` : `Mezon ${blocks.length} ta noaniq masalani ekspertga belgiladi`;
+    const t0 = blocks[0].title; if (!lead.includes(t0)) ans.append(el("p", "lead-sub", `${sum}: ${t0.charAt(0).toLowerCase() + t0.slice(1)}${blocks.length > 1 ? ` va yana ${blocks.length - 1} ta` : ""}.`)); }
+  const st = el("div", "status"); st.append(vPill(r.verdict));
+  const anyP = blocks.some(b => b.status === "possible_violation");
+  st.append(el("span", null, !blocks.length ? `${r.checked} ta tekshiruv izohlangan. Ekspert qolgan masalalarni ko'radi.`
+    : anyP ? "Ehtimoliy kamchilik — ekspert ko'rib chiqishi uchun belgilandi. Bu qaror noqonuniy degani emas."
+    : "Noaniq masala — ekspert hal qiladi. Bu qaror noqonuniy degani emas."));
+  ans.append(st);
+
+  // Call to action for citizens and businesses: where to go and the ready appeal
+  const first = blocks.find(b => (b.channels || []).length || b.appeal);
+  if (who !== "expert" && first) {
+    const cta = el("div", "cta"); cta.append(el("div", "ck", "Nima qilsangiz bo'ladi"));
+    const ch = (first.channels || [])[0];
+    const cw = el("div", "cw"); const ct = el("div");
+    ct.append(el("div", "cn", ch ? ch.name : "Murojaat"), el("div", "cy", ch ? `${ch.why}. Murojaat matni tayyor: nusxa oling va o'zingiz yuboring.` : "Murojaat matni tayyor: nusxa oling va o'zingiz yuboring."));
+    const cb = el("div", "cb");
+    if (first.appeal) { const cp = el("button", "btn primary"); cp.type = "button"; cp.append(icon("copy"), "Murojaat matnini nusxalash");
+      cp.onclick = async () => { try { await navigator.clipboard.writeText(first.appeal); cp.lastChild.textContent = "Nusxalandi"; } catch (e) { cp.lastChild.textContent = "Nusxalab bo'lmadi"; } }; cb.append(cp); }
+    if (ch && ch.url) { const a = ext(el("a", "btn"), ch.url); a.append("Yuborish joyi", icon("ext")); cb.append(a); }
+    cw.append(ct, cb); cta.append(cw);
+    const others = (first.channels || []).slice(1); if (others.length) { const al = el("div", "also"); others.forEach(o => { const a = ext(el("a"), o.url); a.textContent = o.name; a.title = o.why; al.append(a); }); cta.append(al); }
+    if (first.appeal) { const det = el("details", "more"); const sm = el("summary"); sm.style.color = "#c4c5cb"; sm.append(icon("chev"), "Murojaat matnini ko'rish"); det.append(sm, el("pre", "appeal", first.appeal)); cta.append(det); }
+    cta.append(el("span", "fine", "Murojaatni o'zingiz yuborasiz. Mezon hech narsani avtomatik yubormaydi."));
+    ans.append(cta);
+  }
+  // Findings, each with the decision and the law side by side
+  blocks.forEach((b, i) => {
+    const f = audit && audit.flags ? audit.flags[i] : null;
+    const card = el("div", "finding"); const fr = el("div", "fr"); fr.append(el("h4", null, b.title), pill(b.status === "possible_violation" ? "Ehtimoliy" : "Noaniq", b.status === "possible_violation" ? "ember" : ""));
+    card.append(fr);
+    if (who !== "expert" && b.plain && b.plain !== lead) card.append(el("p", null, b.plain));
+    const lawQ = f ? ((f.citations || []).find(c => c.quote) || null) : null;
+    const lexQ = f ? (f.evidence || []).find(e => e.source === "lexuz") : null;
+    const sbs = el("div", "sbs"); const dec = el("div", "col dec"), law = el("div", "col law");
+    dec.append(el("div", "colh", "Qarorda")); law.append(el("div", "colh", "Qonunda"));
+    if (b.quote) dec.append(quoteCard(f && f.evidence[0] ? "Qarordan · " + fmtLoc(f.evidence[0].locator || "") : "Qarordan", b.quote));
+    if (lexQ) law.append(quoteCard(lexQ.locator || "lex.uz", lexQ.quote, lexQ.url));
+    if (lawQ) law.append(quoteCard(`${lawQ.act_title} · ${fmtPath(lawQ.article)} · ${fmtDate(lawQ.on_date)} holatiga`, lawQ.quote, lawQ.url));
+    else if (b.basis) law.append(quoteCard("Asos", human(b.basis)));
+    const hasD = dec.children.length > 1, hasL = law.children.length > 1;
+    if (hasD) sbs.append(dec); if (hasL) sbs.append(law); if (!(hasD && hasL)) sbs.classList.add("one");
+    if (who === "expert") { if (b.basis) card.append(el("div", "basis", "Asos: " + human(b.basis))); if (hasD || hasL) { sbs.style.marginTop = "12px"; card.append(sbs); } }
+    else if (hasD || hasL) { const det = el("details", "more"); const sm = el("summary"); sm.append(icon("chev"), "Qaror va qonun matni yonma-yon"); sbs.style.marginTop = "8px"; det.append(sm, sbs); card.append(det); }
+    ans.append(card);
+  });
+  // How Mezon checked it: the agent's steps, collapsed
+  const how = el("details", "panel"); const hs = el("summary"); const ch = icon("chev"); ch.classList.add("chev");
+  const nWarn = r.steps.filter(s => !s.ok).length; const ps = el("span", "ps"); ps.append(pill(`${r.steps.length} qadam`, "violet nodot")); if (nWarn) ps.append(pill(`${nWarn} ta ogohlantirish`, "amber nodot"));
+  hs.append(ch, document.createTextNode("Mezon qanday tekshirdi"), ps); const pb = el("div", "pb"); pb.append(timeline(r.steps, {raw: who === "expert"}).ol); how.append(hs, pb); how.style.margin = "0";
+  how.open = who === "expert"; ans.append(how);
+  const foot = el("div", "ans-foot");
+  if (r.url) { const a1 = ext(el("a", "link"), r.url); a1.append("lex.uz da ochish", icon("ext")); foot.append(a1); }
+  const a3 = el("a", "link", "To'liq audit"); a3.href = "#audit/" + r.found; foot.append(a3);
+  if (who === "expert" && r.conclusion) { const a2 = ext(el("a", "link"), r.conclusion); a2.append("Xulosa loyihasi", icon("ext"));
+    const wd = el("a", "btn primary sm"); wd.href = "/api/conclusion-word/" + encodeURIComponent(r.found); wd.append(icon("down"), "Word'da ochish"); foot.append(a2, wd); }
+  foot.append(el("span", null, r.llm === "on" ? "Mahalliy til modeli ishladi; har bir javob iqtibos bilan tekshirildi." : "Javob qoidalar va qonun bazasidan; mahalliy til modeli hozir o'chiq."));
+  ans.append(foot);
+}
+$("#askForm").onsubmit = e => { e.preventDefault(); askSend(); };
+
+/* ---------------- start ---------------- */
+buildStarters();
+route();
+loadLive(); loadNumbers(); loadRegions(); loadLawChanges();
+{ const p = new URLSearchParams(location.search); const q = p.get("ask");
+  if (q) { if (["citizen", "business", "expert"].includes(p.get("who"))) setWho(p.get("who")); if (location.hash !== "#ask") location.hash = "ask"; showTab("ask"); $("#askInput").value = q; askSend(); } }
+</script>
+</body>
+</html>

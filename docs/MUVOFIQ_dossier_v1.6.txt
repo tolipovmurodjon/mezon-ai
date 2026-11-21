@@ -1,0 +1,1454 @@
+PAGES=25
+
+===== PAGE 1 =====
+MUVOFIQ
+AI legality check for local government decisions
+— for Adliya experts, hokimlik lawyers and citizens
+LexHackathon 2026  ·  Track 1: Huquqiy xizmatlarni ko‘rsatish
+Ministry of Justice  ·  TDYU, Tashkent  ·  20–22 November 2026
+Team dossier: problem, product, build plan, pitch, funding ask
+Version 1.6  ·  17 November 2026  ·  Internal — do not distribute
+“MUVOFIQ” = compliant / consistent. Working name — rename freely.
+
+
+===== PAGE 2 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+2
+0 · ELI5: the whole idea in simple words
+Read this first if you are new to the project, or before explaining it to anyone.
+The problem, like you are five
+Real world
+Simple picture
+Laws, PQ/PF decrees
+The big rulebook for the whole country.
+Hokim decision
+A local rule one district boss writes, like a school principal writing rules for one
+school.
+The law says
+A principal may NOT write a rule that breaks the big rulebook.
+What goes wrong
+Sometimes the local rule goes too far. The big rule says “keep the streets clean”;
+the local rule says “we will enter your house with a camera to check it is clean”.
+That second part is in no rulebook.
+Who checks today
+Adliya checks local rules — but by hand, against 34,000+ laws, with little time.
+Some bad rules slip through.
+What happens then
+People lose land, money or peace. Much later a court says “this rule was illegal”
+and cancels it (933 times in 2024 alone). Too late for the people already hurt.
+The solution, like you are five
+MUVOFIQ is a spell-checker for laws. Grammarly underlines mistakes in your English.
+MUVOFIQ underlines the parts of a local decision that do not match the big rulebook — and
+shows the exact page of the rulebook.
+How it works, step by step
+Step
+What MUVOFIQ does
+Simple picture
+1
+A new decision arrives (a draft, or a published one)
+The teacher receives a student’s homework
+2
+Reads it and splits it into clauses
+Reads it sentence by sentence
+3
+Finds the big rule it says it follows (the parent
+decree)
+“Which textbook chapter is this homework
+about?”
+4
+Opens that rule exactly as it was on that date
+Uses the right edition of the textbook
+5
+Compares line by line: added? changed? missing?
+broken?
+Checks each answer against the textbook
+6
+Colors each clause: green = fine, yellow = unsure,
+red = problem + page number
+Red pen with a reference, not just a cross
+7
+A human lawyer clicks yes or no on each red mark;
+the system learns
+The head teacher has the final word
+For citizens
+The app is a translator + a safe door. It turns legal text into plain Uzbek (“this decision means
+you must …”), and if something looks wrong, it helps you write a proper complaint to the right
+office — instead of being afraid or shouting on social media.
+
+
+===== PAGE 3 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+3
+Why our own computers
+Government drafts are like private letters. We read them at home (our own server) and never
+send them to foreign AI services.
+How we prove it works
+Like checking homework with the answers at the back of the book: we test MUVOFIQ on old
+decisions where a court already said “illegal”. If MUVOFIQ finds the same problem the court
+found, it works. We show that score honestly.
+Why they should fund us
+Like planting a seed: give us one region for 90 days. We show real numbers (decisions checked,
+time saved, errors caught). If it grows, plant it in every region through E-qaror, the system Adliya
+already runs.
+The whole pitch in three sentences
+1. Local decisions sometimes break the law, and today they are checked by hand, so many are
+caught only in court.
+2. MUVOFIQ compares each decision with the decree it claims to follow and the law in force that
+day, and marks every problem with its source.
+3. A human lawyer decides; we make them faster (we measure exactly how much) and catch
+problems before anyone is hurt.
+
+
+===== PAGE 4 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+4
+1 · Read this first: five fixes to our pitch plan
+These five changes decide whether we win or get disqualified. The jury is the Ministry of Justice,
+TDYU law professors, IT Park and AI Alliance. They are lawyers and officials who check every
+claim.
+FIX 1 — Never invent traction
+ Do NOT say “we tested and found 3,000 illegal decisions, approved by top lawyers” unless it
+really happened. In two days it cannot happen. One question from a professor (“which lawyers?
+show the list”) ends the pitch.
+ Say the honest, still-strong version: “On a test set of N decisions, we caught X of Y that courts
+later cancelled. A lawyer reviewed Z of our flags; P% were correct.” Real small numbers beat fake
+big ones.
+ Also: we have not “already built it”. The rules require the core to be built by the team at the
+event.
+FIX 2 — No photos of arrested hokims
+ Arrest photos: presumption of innocence, defamation and copyright risk. Officials of the same
+government sit on the jury. A pitch that looks like an attack on hokims gets rejected politely.
+ Do not claim “the higher hokim is really responsible but hides it”. That is an accusation we
+cannot prove.
+ Use public court statistics instead (Section 2). Facts hit harder than photos.
+FIX 3 — “Legality”, not “corruption”
+ Corruption is for prosecutors and the Anti-Corruption Agency. Our job: does this decision match
+the law?
+ Our message: “We help hokimliks adopt lawful decisions the first time, and help Adliya catch
+the rest before they hurt anyone.” This makes hokimlik lawyers our users, not our enemies.
+FIX 4 — Not just a percentage
+ A bare “73%” is useless to a lawyer and breaks the Ministry’s own AI ethics rules (No. 3787,
+14.03.2026): decisions may not rely only on AI conclusions.
+ Show a review-priority score plus every reason, with the lex.uz article and a quote, plus
+approve/reject by a human expert.
+FIX 5 — The money is support, not equity
+ Official terms: winners get funds after forming an MChJ, paid in at least two tranches over the
+year against performance indicators, disbursed by IT Park.
+ So we pitch like a startup raising money: budget, milestones per tranche, KPIs, and what comes
+after (Section 13). We also ask for something worth more than money: a pilot and data access.
+
+
+===== PAGE 5 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+5
+1b · Office hours: the hard questions (Paul
+Graham drill)
+Questions a top YC partner would ask us, with honest answers and the fix. Re-read before every
+rehearsal.
+Question
+Honest answer today
+Fix before Friday
+Who have you talked
+to?
+No adliya expert or hokimlik lawyer
+yet. This is our biggest risk, bigger
+than the tech.
+Talk to 1 district adliya expert + 1 hokimlik
+lawyer. Ask: “Show me the last draft you
+rejected. Why? How long did it take?”
+What exactly is
+broken?
+District orders that implement a
+PQ/PF decree add, distort or drop
+things. Found late, often only in
+court.
+Prove it with 10 real decision →
+parent-decree pairs.
+Three products in 29
+hours?
+Too much.
+Build ONE thing deep: mandate-drift +
+legality check in expert mode. Citizen app =
+3 read-only screens on the same API.
+What is the one
+number?
+Undefined.
+Share of decisions later declared
+invalid that MUVOFIQ flags before
+signing. Every other metric is secondary.
+Why won’t Adliya
+build this itself?
+They own E-qaror and the data; they
+could.
+Pitch as the AI layer on their system: “we
+ship in weeks, you keep control.” Partner,
+not competitor.
+Where is the hard
+work (the schlep)?
+Labels, not the model.
+30 declared-invalid decisions with the
+reason written by our lawyer, by Thursday
+night.
+What do you know
+that others don’t?
+Most hokim decisions are orders to
+implement higher acts, so “compare
+child to parent” finds problems a
+generic chatbot cannot.
+Make the side-by-side view the hero of the
+demo.
+Will this still exist in a
+year?
+Only if Adliya pilots it.
+Ask for a pilot + data access, not just
+money.
+Verdict
+ Strong problem, real data, a sharp insight (mandate drift). Weak on user contact and labels.
+ If we fix only two things: talk to one adliya expert and label 30 invalid decisions. Those
+two moves decide the result more than any model choice.
+
+
+===== PAGE 6 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+6
+2 · The problem
+One sentence: good decisions are made at the top, but at district level hokim decisions are
+often written against the law, and today they are checked mostly by hand, so many illegal
+decisions reach citizens and are only cancelled later in court.
+The numbers (all public)
+Fact
+Source
+In 2024, administrative courts cancelled 933 decisions signed by regional,
+district and city hokims as unlawful. Leaders: Tashkent region 143, Samarkand
+128, Jizzakh 113.
+Supreme Court press
+service via Daryo
+In 2023, courts cancelled 1,371 hokimlik decisions.
+Daryo
+2025, by department: courts found 611 of 2,043 challenged hokimlik
+decisions, 743 of 1,593 tax-authority decisions and 449 of 1,594 Cadastre
+Agency decisions unlawful.
+Supreme Court via Anhor
+(2026)
+Over 2.5 years, 10,250 illegal decisions were cancelled on adliya
+representations, 2,000+ of them hokimlik decisions. The Minister asked
+publicly: “Where is the lawyer looking?”
+Kun.uz, 2020
+2,541 hokim land-allocation decisions cancelled in 2.5 years → rights to
+101,358 ha ended without a court decision.
+Kun.uz, 2022
+On adliya representations: 1,752 local decisions cancelled in 2019, 982 in the
+first 9 months of 2020.
+Yuz.uz
+55% of appeals to the Virtual and People’s Receptions last year were not
+resolved positively; the most social-media complaints concern law
+enforcement, courts and hokimliks.
+Daryo (President’s
+meeting)
+Why it happens (our insight)
+• Mandate drift. A President’s decree or Cabinet decision sets a good goal. A district hokim
+turns it into a local order that goes further than the law allows: extra duties, inspections
+without legal grounds, land actions without a court. The decision cites the decree, but the
+content does not match it.
+• Thin legal capacity. Hokimlik lawyers and district adliya staff check drafts by hand against
+34,000+ acts in force on lex.uz, under time pressure.
+• Citizens are afraid and uninformed. A person affected by a local order rarely knows
+whether it is lawful or where to complain.
+Illustrative scenario (verify with our lawyer before using on stage): a district order, issued “to implement” a national
+cleanliness campaign, sends officials with cameras into private homes without consent. Our citizen mode would explain
+the relevant rights and draft a complaint to the district adliya office. Only present this as a real case if we find a
+published one.
+Why Adliya owns this problem
+• Law on Normative Legal Acts, art. 22: draft decisions of local government are given legal
+expertise by the relevant adliya bodies.
+• Where a positive conclusion from the regional adliya body is required, the decision may not be
+adopted without it.
+• The Ministry monitors local law-making and reports to the Presidential Administration every
+quarter.
+• Infrastructure exists to plug into: E-qaror, the single electronic system for drafting, agreeing
+and registering local government decisions.
+
+
+===== PAGE 7 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+7
+2b · What a bad decision looks like, and how we
+know
+A decision is “bad” only when an official body said so: a court declared it invalid, or it was
+cancelled on an adliya representation or a prosecutor’s protest. Everything else is a suspicion we
+flag for an expert.
+Ground truth
+Where to find it
+Declared invalid by an administrative court
+E-qaror status filter “Haqiqiy emas deb topilgan”; court
+news
+Cancelled on an adliya representation
+Adliya and regional adliya press releases
+Cancelled on a prosecutor’s protest
+News; Law on the Prosecutor’s Office, art. 38
+Patterns from real public cases
+Pattern
+Public example
+Adopted “closed” / hidden
+against the law
+Andijan district hokim’s decision; regional adliya filed a representation
+and it was set to be cancelled
+Land actions without a court
+2,541 land-allocation decisions cancelled in 2.5 years; 101,358 ha
+Allocation contrary to law, found
+years later
+Tashkent: an LLC built a car park on a plot allocated by a hokim decision
+that contradicted the law
+Built on a repealed act
+Kun.uz reporting on cancelled decisions refers to a regulation that lost
+force on 16 Nov 2019
+Mandate drift
+Order cites a PQ/PF decree but adds duties, inspections, fees or bans the
+decree does not contain
+What Adliya’s own E-qaror monitoring found (press conference,
+19 Dec 2022)
+Finding
+Number
+MUVOFIQ check
+Orders issued in the wrong form (farmoyish where a qaror was
+required) — the leading violation
+986
+3 · form (pure rules, easy
+win)
+District hokims exceeded their powers in land matters
+(allocation, reservation, cancelling plot rights)
+304
+2 · competence + land
+focus
+Violations in public discussion of documents on additional local
+budget sources
+2,206
+3 · procedure
+Documents unreasonably kept open (as of 14 Dec 2022)
+~2,800
+3 · open/closed status
+Region with the most shortcomings: Surxondaryo
+1,686
+Dashboard heatmap
+Volume: documents adopted open / closed
+230,266 /
+40,000+
+Base rate: the bad class is
+small
+These numbers come from the Ministry itself, so they make the strongest slide: we automate what their monitors
+already look for. Updated figures: ask Adliya; this was the latest public breakdown we found.
+Red flags MUVOFIQ looks for (confirm each with our lawyer)
+• Cites a PQ/PF, Cabinet or ministry act that was repealed or amended on the decision date.
+• Takes or reallocates land or property without a court decision or the required procedure.
+• Imposes duties or sanctions on citizens or businesses that no higher act provides.
+
+
+===== PAGE 8 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+8
+• Acts outside the hokim’s powers under the Law on Local State Power.
+• No adliya conclusion where one is required; “hidden” status on a decision that affects the
+public.
+• Vague discretion (“as needed”, “other measures”): a classic corruption-risk factor in legal
+expertise.
+• Named beneficiaries (a company receiving land or privileges) with no stated legal basis.
+Do not assume “20% are bad”
+ Courts cancelled 933 hokim decisions in 2024 out of many thousands adopted. The bad class is
+small.
+ Get the real base rate from E-qaror’s statistics page. Report recall on the bad class, never
+plain accuracy.
+
+
+===== PAGE 9 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+9
+3 · The product: one engine, three faces
+Mode
+User
+What it does
+Why they care
+Expert mode
+(web)
+Regional and
+district adliya
+experts; hokimlik
+lawyers
+Upload a draft or published decision →
+structured report: each issue with the
+lex.uz article, a quote, severity and
+reasoning. Expert approves or rejects
+each flag.
+Faster expertise, fewer
+misses, fewer decisions
+later cancelled in court.
+Citizen mode
+(Android app)
+Citizens and small
+businesses
+Browse your district’s published
+decisions in plain Uzbek. “Is this lawful
+for me?” → explanation with sources.
+“Report” → drafts a formal appeal to the
+district adliya office or a claim via
+my.sud.uz.
+A safe, legal channel
+instead of fear or
+social-media outrage.
+Ministry
+dashboard
+(web)
+Adliya leadership
+Map of flagged issues by region and
+type, trends, time-to-review, expert
+agreement rate.
+Ready data for the
+quarterly report to the
+Presidential
+Administration.
+The six checks (the core, built at the event)
+#
+Check
+How
+Output
+1
+Legal basis valid
+Extract every act the decision cites; resolve on lex.uz;
+check that it was in force on the decision date
+“Cites PQ-xxxx, repealed
+on …”
+2
+Competence
+Compare operative clauses with the hokim’s powers
+under the Law on Local State Power
+“Clause 3 is outside the
+hokim’s powers”
+3
+Procedure &
+form
+Checklist: right document form (qaror vs farmoyish —
+the #1 violation Adliya found), required adliya
+conclusion, public discussion (e.g. local budget
+decisions), correct open/closed status
+“No adliya conclusion
+recorded”
+4
+Conflict with
+higher law
+For each clause, retrieve the top related higher norms
+(time-aware) → local LLM judges conflict / no conflict /
+unclear, with a quote
+“Conflicts with Land Code
+art. …”
+5
+Mandate drift
+(our signature)
+Compare the decision with the higher act it claims to
+implement: does it add duties, rights limits or
+sanctions the parent act does not contain?
+“Adds home inspections
+not present in the parent
+decree”
+6
+Review priority
+Calibrated model on flag features → which drafts
+experts should read first
+Score 0–100 + the top 3
+reasons
+7
+Duplicate /
+repeal errors
+Same hokimlik, near-identical title and text (similarity
+> 0.95) while the older act is not repealed; repealing
+an act that is already repealed (lex.uz status)
+“231 copies 207; 207 still
+in force”
+Rule: no flag without a source. If the engine cannot cite an article, it says “unclear — needs
+expert”, never a guess. The AI suggests; the expert decides.
+
+
+===== PAGE 10 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+10
+Hackathon scope
+Decisions that implement a PQ/PF decree, Cabinet decision or ministry order, starting with land
+and property decisions (most harm, clearest law, best-documented cancellations). Checks 1, 5
+and the citation validator are the must-haves; 2–4 and 6 come after they work.
+The hero flow: parent vs child
+Step
+What the engine does
+1 · Find the
+parent
+Extract cited acts from the preamble: “PQ-xxxx”, “PF-xxxx”, “VMQ xxx-son”, “…ijrosini
+ta’minlash maqsadida”. Regex first, LLM for the rest.
+2 · Right version
+Fetch the parent text from lex.uz (or e-qaror-respublika for ministry orders) as it read on
+the decision date.
+3 · Action lists
+Turn both into lists: who must do what, by when, to whom, with what sanction.
+4 · Compare
+Every child action must trace to the parent. Flag additions (new duties, inspections,
+fees, bans), distortions (stricter, different target), omissions (skipped protections:
+consent, compensation, deadlines).
+5 · Parent alive?
+If the parent was repealed or amended, the decision rests on nothing.
+6 · Show
+Side-by-side view: parent clause left, child clause right, the drift highlighted in red with
+the source.
+Demo line: “The decree says X. The district order says X plus Y. Y appears in no law. MUVOFIQ
+marks Y in red and shows both texts.” The jury understands in five seconds, and we accuse no
+one.
+
+
+===== PAGE 11 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+11
+4 · Architecture and stack
+Everything runs on our own GPU server. Government drafts and citizen data never leave the
+country or our servers.
+Layer
+Choice
+Notes
+Law store
+PostgreSQL + pgvector
+Article-level chunks with: act ID, article, hierarchy
+level, valid-from / valid-to dates, amendment links. This
+time-aware graph is our moat.
+Sync
+Daily lex.uz crawler
+Not truly “real-time”: no public lex.uz API confirmed.
+Respect lex.uz terms of use; slow, polite crawling.
+Decision ingest
+gov.uz “Hokim qarorlari” pages →
+HTML / PDF / DOCX → Tesseract
+OCR (uzb, uzb_cyrl, rus)
+Parser splits preamble, legal basis, operative clauses.
+LLM
+Open-weight instruct model on
+vLLM (Qwen / Llama family)
+Pick on Day 0: test 2–3 models on 20 Uzbek legal
+questions; keep the best one that fits the GPU.
+Embeddings
+bge-m3 vs multilingual-e5-large
+Benchmark both on Uzbek retrieval before Friday.
+Risk model
+Logistic regression or LightGBM
+Small labeled set → simple, calibrated, explainable. Not
+deep learning.
+Voice (citizen)
+Whisper large-v3 (Uzbek)
+ISSAI Uzbek Speech Corpus (105 h, CC BY 4.0) for
+evaluation later.
+API
+FastAPI (Python)
+Python because the ML stack lives there; Firebase is
+not needed for this project.
+Web
+Next.js
+Expert mode + dashboard.
+Mobile
+Kotlin + Jetpack Compose,
+MVVM, Hilt
+Thin client, 3 screens, same API.
+Request flow
+Step
+What happens
+1
+Decision uploaded or picked from the district feed
+2
+OCR + parsing → legal basis list + operative clauses
+3
+Checks 1–3: deterministic rules (fast, no LLM)
+4
+Checks 4–5: time-aware retrieval → local LLM judgment with quotes
+5
+Citation validator: every cited article must exist and be in force — or the flag is dropped
+6
+Check 6: review-priority score + reasons
+7
+Expert approves / rejects → feedback stored → improves the model
+
+
+===== PAGE 12 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+12
+5 · Data plan
+#
+Source
+Use
+Status
+1
+lex.uz (incl. “Mahalliy hokimiyat”, “Sud
+amaliyoti”, “Sud qarorlari” filters)
+Core law corpus, court practice
+Open; check terms
+2
+sharh.lex.uz
+Official commentary →
+plain-language explanations
+Open
+3
+gov.uz regional pages “Hokim qarorlari”
+(e.g. /toshvil/sections/hokim-qarorlari)
+Real decisions to test on (personal
+data already hidden)
+Open; scrape 2–3
+regions
+4
+regulation.gov.uz
+Draft acts under discussion →
+pre-adoption tests
+Open
+5
+data.egov.uz (10,000+ datasets, API)
+Region stats, registries
+Open; API key
+6
+Adliya open data registry and statistics
+page
+Ministry KPIs for the pitch
+Open
+7
+Adliya annual reports (back.minjust.uz
+PDFs)
+Expertise volumes, objections
+Open
+8
+HF: AsrorAsr/lexuz-legal-documents
+(~27.1k rows), uzbek-legal-dataset
+(~1.22k)
+Quick-start corpus; check freshness
+Open
+9
+Mendeley Uzbek NER (2,000 sentences,
+mostly lex.uz); UzThemeLex
+Entity extraction, term normalization
+Open
+10
+ISSAI Uzbek Speech Corpus
+Voice input evaluation
+Open, CC BY 4.0
+11
+News + adliya press releases about
+cancelled decisions
+Our positive labels (cancelled
+cases)
+Collect by hand
+12
+pm.gov.uz appeal statistics
+Pain heatmap for slides
+Open
+13
+e-qaror.gov.uz: every hokim decision
+since July 2021, with status filter incl.
+“declared invalid”
+Main dataset + labels
+Open in Chrome;
+ask for export
+14
+jadval2.sud.uz: public court hearing
+schedules by region and district (criminal,
+civil, administrative, economic)
+Upcoming cases against hokimliks
+and agencies; future labels
+Open in Chrome
+15
+e-qaror-respublika.gov.uz: orders and
+decisions of ministries and agencies;
+appeal council decisions
+Parent acts (ministry orders);
+possible extra labels
+Open in Chrome
+The hard part: labels
+ We need decisions that were cancelled (positive) and decisions still in force (assumed
+negative).
+ Positive: collect 30+ publicly reported cancelled decisions with the decision text (news, adliya
+press, court news).
+ A bulk open source of administrative-court rulings is not confirmed. Search sud.uz; do not
+plan on it.
+ Ask the Ministry for a labeled set in the pilot (Section 13). That data access is part of our ask.
+
+
+===== PAGE 13 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+13
+6 · How we prove it works (our real traction)
+Metric
+How we measure
+Target to show
+Recall on cancelled
+decisions
+Run the engine on the 30 known-cancelled decisions;
+did it flag the reason the court used?
+≥ 70% (report the real
+number)
+Flag precision
+Our lawyer reviews 50 random flags: correct / wrong /
+unclear
+≥ 80%
+Citation validity
+Automatic: every cited article exists and was in force
+on the decision date
+100% (enforced by the
+validator)
+Time per review
+Lawyer reviews 5 decisions by hand vs. with the tool
+(stopwatch)
+Real ratio, e.g. 4×
+Retrospective scan
+Run on all published decisions of one region for one
+year
+“X decisions flagged for
+expert review”
+How to say it on stage: “On 30 decisions that courts later cancelled, MUVOFIQ found the
+court’s reason in 22. Our lawyer checked 50 flags; 41 were correct. Every citation points to a
+valid lex.uz article. A review that takes our lawyer 40 minutes takes 9 with MUVOFIQ.” —
+numbers are examples; use what we measure.
+Never say “we found 3,000 illegal decisions”. Say “3,000 decisions were flagged for expert
+review”. Flagged ≠ illegal. Only an expert or a court decides.
+7 · Citizen app (Android, 3 screens)
+Screen
+Content
+1 · My district
+Feed of published decisions for the chosen district, in plain Uzbek (Latin/Cyrillic
+toggle), with a short summary of each.
+2 · Check
+Open a decision or paste/photo one → “What does this mean for me?” → explanation
++ sources + “needs expert” note where unclear. Voice question in Uzbek.
+3 · Report
+Guided form → generates a formal appeal to the district adliya office, or a claim draft
+for my.sud.uz. The user reviews and sends it themselves.
+Guardrails for the app
+ No public “bad hokim” ranking. Reports go to the official channel, not a public wall.
+ Explanations, not verdicts: “this clause may conflict with … — you can ask adliya to check it”.
+ No account data leaves our servers; reports are sent only by the user.
+
+
+===== PAGE 14 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+14
+8 · Team roles (4 people)
+No lawyer yet? Recruit one today (a TDYU student or a Lexion expert). Without one we cannot
+produce honest precision numbers.
+Who
+Owns
+Done when
+Murodjon (lead)
+Law store, lex.uz sync, time-aware retrieval, checks
+4–5
+Correct article returned for 20
+test clauses
+Dev 2
+Ingest + OCR + parser, checks 1–3, citation
+validator, risk model
+End-to-end report on 30 decisions
+Dev 3
+Web expert mode + dashboard, Android app (3
+screens)
+Live demo runs on stage
+hardware
+Lawyer / pitch
+Golden set labels, flag review, demo case, slides,
+KPIs, Q&A;
+Eval table filled; pitch rehearsed
+5×
+
+
+===== PAGE 15 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+15
+9 · Timeline
+Before the event (Tue 17 – Thu 19 Nov): data and environment
+only
+Day
+Tasks
+Tue 17
+Email info@lexlab.uz: “May we prepare datasets and environment before the event?” · Recruit
+lawyer · Start lex.uz crawler (polite, check terms) · Read the eventflow materials
+Wed 18
+Scrape hokim decisions from 2–3 regions · Collect 30 cancelled cases · Set up vLLM, pick LLM +
+embeddings · 5 interviews: an adliya expert, a hokimlik lawyer, our reception-office contact, 2
+citizens/business owners (get quotes)
+Thu 19
+Lawyer labels golden set · Slide template · Demo hardware test · Sleep
+Note: the core logic (the six checks) is built at the event, per the rules. Data collection and setup are preparation.
+Day 1 — Fri 20 Nov
+Time
+Action
+Morning
+Registration, opening, rules and track seminars. Listen for the problem statements.
+12:00–12:30
+Register for a problem. Pick the one closest to local decisions/legality. If none fits, map our
+engine to the closest one in 15 minutes.
+12:30–14:00
+Freeze architecture and API contract. Load prepared data.
+14:00–18:00
+Checks 1–3 + parser + law store. Web skeleton. App skeleton.
+18:00–21:00
+Checks 4–5. First end-to-end report on 1 decision.
+Night (rotate)
+Run on 30 decisions; lawyer reviews flags; risk model v1.
+Day 2 — Sat 21 Nov (deadline 17:55)
+Time
+Action
+08:00–10:00
+Fix the worst errors. App screens 2–3. Dashboard.
+10:00
+FEATURE FREEZE. Only bug fixes after this.
+10:00–12:00
+Final eval numbers. Record backup demo video. Slides done.
+12:00–14:00
+Rehearse the pitch 3× with a timer. Q&A; drill.
+14:00–17:00
+Mentor interim evaluation — show the live demo + numbers.
+17:55
+Project deadline.
+19:00 → 22:00
+Results. If finalist: polish the pitch with mentor feedback.
+Day 3 — Sun 22 Nov: final presentations 10:00–13:00 · awards
+15:00–16:00
+
+
+===== PAGE 16 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+16
+10 · Pitch: 5 minutes
+Time
+Beat
+What we say / show
+0:00–0:40
+Hook
+“In 2024, courts cancelled 933 hokim decisions as unlawful. Each one had
+already hurt someone: land, a business, a family. And those are only the ones
+that reached court.”
+0:40–1:20
+Why
+Mandate drift: a good decree at the top, a distorted order at district level.
+Checked by hand against 34,000+ acts.
+1:20–3:00
+Live demo
+Open a real (already invalidated) decision → MUVOFIQ finds its parent decree →
+side-by-side view with the drift in red + lex.uz sources → expert approves →
+phone shows the same decision in plain Uzbek → “Report”.
+3:00–3:40
+Proof
+Eval table: recall on cancelled cases, flag precision, 100% valid citations,
+review-time ratio.
+3:40–4:30
+Plan + ask
+90-day pilot in one region, KPIs per tranche, budget, data access.
+4:30–5:00
+Team +
+close
+“Adliya already catches thousands of illegal decisions. MUVOFIQ helps it catch
+them before they are signed.”
+Slides (10)
+#
+Slide
+1
+MUVOFIQ — one line: “Every local decision, checked against the law before it is signed.”
+2
+The numbers: 933 · 1,371 · 101,358 ha (one big number per slide area, sources in small print)
+3
+Mandate drift: decree → district order, one real example side by side
+4
+The solution: three faces, one engine
+5
+LIVE DEMO (backup video ready)
+6
+How it works: parent vs child + six checks + “no flag without a source”
+7
+Proof: our measured numbers
+8
+Citizen app: 3 screens
+9
+Pilot, KPIs, budget, the ask · Roadmap: hokims (E-qaror) → ministries (E-qaror-respublika)
+10
+Team + contacts
+Demo script (rehearse until boring)
+• Use a decision that was already cancelled and publicly reported, so we are not accusing
+anyone new.
+• Show the parent decree found automatically, then the side-by-side drift view; the court’s
+reason should be our top flag.
+• Have the expert click “approve”; show the dashboard counter update.
+• Switch to the phone: same decision, plain-Uzbek explanation, “Report” → appeal draft.
+• If anything fails: switch to the backup video without comment.
+
+
+===== PAGE 17 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+17
+10b · Drill sheet: practise until it is boring
+Rapid-fire answers (≤ 15 words each)
+Question
+Answer
+What is it, in one line?
+A legality checker for local decisions, before they are signed.
+Who uses it?
+Adliya experts and hokimlik lawyers. Citizens get a plain-language app.
+What does it compare?
+Each decision with its parent decree and the law in force that day.
+What is “mandate drift”?
+A local order adding, changing or dropping what its parent decree says.
+Is the AI the judge?
+No. It flags with sources; a human lawyer decides every flag.
+How accurate?
+Say only the measured number: “X of Y invalid decisions caught on our
+test set.”
+Where is data processed?
+On our own servers with open-weight models. Nothing leaves the
+country.
+Where does data come from?
+E-qaror, lex.uz, E-qaror-respublika — all Adliya systems.
+Biggest risk?
+Wrong flags. Fixed by citation validation, “unclear” status and human
+review.
+Why not LexAI?
+LexAI answers questions. We check documents clause by clause.
+Who pays?
+Adliya license per region; hokimlik and law-firm subscriptions; citizens
+free.
+What do you want?
+One region pilot for 90 days, data access, and the tranche funding.
+What happens in 12 months?
+3 regions live, E-qaror integration, then ministries via E-qaror-respublika.
+Is this political?
+No. Legality, not corruption. We help hokimliks get it right first time.
+Why your team?
+We ship Uzbek AI products; we run Lexion with TDYU law experts.
+Rehearsal protocol
+Round
+Format
+Rule
+1 · Elevator
+60-second pitch, each teammate
+Everyone must be able to give it alone.
+2 · Full pitch
+5 minutes with live demo, timer on
+Stop at 5:00 exactly. Cut, don’t speed up.
+3 · Hostile Q&A;
+10 minutes, one teammate plays a
+sceptical Adliya official
+Answer in ≤ 20 seconds; no “we will figure
+it out”.
+4 · Failure drill
+Kill the Wi-Fi mid-demo
+Switch to the backup video in under 5
+seconds, no apology.
+5 · Review
+Record on a phone, watch once together
+Fix the 3 worst moments only.
+
+
+===== PAGE 18 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+18
+11 · Jury questions — prepared answers
+Question
+Answer
+How is this different from
+LexAI?
+LexAI answers questions. MUVOFIQ checks documents: clause by clause,
+against the version of the law in force on that date, and detects mandate drift.
+It can sit next to LexAI.
+What if the AI is wrong?
+It never decides. No flag without a valid source; unclear cases are marked
+“needs expert”. The expert approves every flag, as rule No. 3787 requires. We
+measure precision and show it.
+Where does the data go?
+Our own servers, open-weight models, nothing sent abroad. Public decisions
+already have personal data hidden.
+Won’t hokimliks resist?
+Hokimlik lawyers are users: fewer of their decisions get cancelled in court. It
+protects the hokim from mistakes in his own name.
+How do you keep up with
+law changes?
+Daily lex.uz sync; every article stores valid-from / valid-to dates.
+Who pays after the grant?
+Adliya license per region via E-qaror; subscriptions for hokimlik legal services,
+law firms and businesses. Citizens: free.
+Uzbek and Cyrillic?
+Latin and Cyrillic in, both out; OCR for scans; Russian supported.
+Why you?
+Our team runs Lexion (1,000+ users, law experts from TDYU) and builds Uzbek
+AI products. We ship.
+12 · Business model
+Customer
+Product
+Model
+Ministry of Justice / regional
+adliya
+Expert mode + dashboard, E-qaror integration
+Annual license per region
+Hokimlik legal services
+Pre-check before sending a draft to adliya
+Per-seat subscription
+Law firms, businesses
+Monitoring of local decisions affecting them;
+alerts
+Subscription
+Citizens
+App: explain + report
+Free (public-interest
+channel)
+
+
+===== PAGE 19 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+19
+13 · The ask: money, milestones, proof
+We pitch like a startup raising its first round. The 1st-place support is 60 mln so‘m, paid after we
+form an MChJ, in at least two tranches tied to performance indicators. We propose those
+indicators ourselves, so the jury sees we already know how to spend it.
+Use of funds — draft, 12 months (adjust before the pitch)
+Item
+mln so‘m
+Why
+GPU / server capacity hosted in Uzbekistan
+18
+On-prem models, data stays in the
+country
+Expert labeling (TDYU lawyers, ~1,000 decisions)
+15
+Precision ↑, trains the risk model
+App + web hardening, security audit
+10
+Government-grade reliability
+Pilot operations (training adliya staff, travel)
+7
+Adoption in the pilot region
+MChJ registration, accounting, legal
+4
+Required to receive funds
+Reserve
+6
+~10% buffer
+Total
+60
+Milestones and KPIs per tranche — our proposal
+Tranche
+Unlocks when
+KPIs
+1 (≈50%)
+MChJ registered + pilot agreement with
+one regional adliya directorate
+Pilot live in 60 days · 300+ decisions checked ·
+flag precision ≥ 80% on expert review
+2 (≈50%)
+End of a 90-day pilot
+1,000+ decisions checked · review time ↓ ≥ 50%
+(measured) · expert approval rate reported ·
+E-qaror integration plan signed
+What we ask for besides money
+ A pilot: one regional adliya directorate for 90 days.
+ Data access: anonymized records of decisions cancelled on adliya representations, with
+reasons, for training.
+ A technical contact for E-qaror integration.
+These three are worth more than the money. They turn a hackathon project into a government
+product.
+After the pilot
+• Expand to 3 regions, then national rollout through E-qaror.
+• Then ministries and agencies: their orders are published on e-qaror-respublika.gov.uz, which
+also publishes appeal council decisions. Same engine, national scale.
+• Then collegial bodies (e-qaror-collegial.gov.uz): check commission decisions and minutes
+before they turn into hokim decisions.
+• Then other departments with the same problem: in 2025 courts found 743 of 1,593
+tax-authority and 449 of 1,594 Cadastre Agency decisions unlawful. Same engine, new
+rulebooks.
+• Next raise: incubation and acceleration access (winners get this), IT Park residency, then a
+seed round or a B2G contract.
+• Product: alerts for businesses, mandate-drift reports for the quarterly Presidential
+Administration report.
+
+
+===== PAGE 20 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+20
+14 · Risks and guardrails
+Risk
+Mitigation
+Wrong legal flag in front of
+lawyers
+Citation validator; “unclear” state; lawyer on the team reviews the demo
+case.
+Political sensitivity
+Legality, not corruption; prevention framing; only already-public cancelled
+cases on stage.
+Fabricated or overstated
+numbers
+Report only what we measured, with N. Flagged ≠ illegal.
+lex.uz access/terms
+Read the terms; polite crawl; HF dump as backup; ask Adliya for official
+access in the pilot.
+Assigned problem differs on
+Day 1
+The engine (law store + citations + eval) is reusable for any legal-document
+problem.
+Demo failure
+Backup video; offline mode with cached results; test on venue Wi-Fi on Day
+1.
+Too much scope in 29 hours
+Feature freeze 10:00 Day 2; the mobile app is a thin client; cut the risk
+model first if late.
+Personal data
+Only public, already-redacted decisions; no citizen data in training; on-prem
+processing.
+
+
+===== PAGE 21 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+21
+14b · Worked example and dataset reality
+Qarshi district: a real decision cancelled after an adliya
+representation
+Date
+Decision (lex.uz ID)
+Status on lex.uz
+06.06.2024
+207-4-59-Q/24 (-6961952): school micro-districts
+No “lost force” mark
+21.06.2024
+231-4-59-Q/24 (-6986157): same title, same text, same 70
+schools
+Lost force 16.07.2024
+15.07.2024
+261-4-59-Q/24 (-7026714): cancels 231, citing adliya
+representation №27-7/1-34 of 03.07.2024
+—
+21.07.2024
+269-4-59-Q/24 (-7033819): same title again
+Lost force 31.07.2024
+30.07.2024
+311-4-59-Q/24 (-7041752): same title again, repeals 269
+Lost force 21.11.2025
+What our audit found in 231: word-for-word copy of 207 adopted 15 days earlier; 207 not
+repealed, so two acts governed the same matter; clause 4 repeals 161-4-59-Q/23, which 207 had
+already repealed. Check 7 catches this from public lex.uz data alone. The adliya representation is
+not published, so we say “flagged a defect consistent with the representation”, never “found the
+exact reason”.
+Labeled sample (25 cancellation decisions from lex.uz)
+Trigger
+Count
+Use
+Adliya representation
+10
+Positive
+Prosecutor’s protest
+1
+Positive
+Routine clean-up of outdated acts (PF-6075)
+8
+Exclude — not illegal
+Citizen / company / department request
+6
+Lawyer review
+Dataset reality
+ No bulk open dataset of “illegal decisions + reasons” exists. lex.uz title search returns only 20
+results per phrase; E-qaror and court portals work only in a browser; court rulings are not
+bulk-downloadable.
+ We do not train a big model: labels are the exam, not the textbook. 100 well-labeled positives
++ 100 in-force decisions are enough to prove the checks.
+ Fastest route: E-qaror “Haqiqiy emas deb topilgan” list (Chrome) + lex.uz adliya/prosecutor
+cancellations + an official export from Adliya.
+
+
+===== PAGE 22 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+22
+15 · Source test results (tested 17 Nov 2026
+from our server)
+Each source was opened and checked by script. “Chrome” means a plain download did not work;
+open it in a browser.
+Source
+Result
+What it means for us
+lex.uz search
+“hokimining qarori”
+Works. Returns hokim decisions (20 per
+page) with ID, title, date, number: e.g.
+Tashkent city, Kitob, Yakkabog‘, Marhamat,
+Zarafshon decisions from 2011–2026.
+Main source of hokim decision texts
+and metadata.
+lex.uz document page
+(e.g. /uz/docs/7987284)
+Partly. Header metadata comes through:
+issuing body, number, date,
+entry-into-force date, links to previous and
+next versions, “Korrespondentlar /
+Respondentlar” (which acts it cites and
+which cite it). The full body did not appear
+in a plain download.
+The version links + citation links
+are a ready-made law graph. Check
+full-text access in Chrome; ask the
+Adolat center for official access.
+gov.uz regional “Hokim
+qarorlari” section
+Chrome needed. The list loads by
+JavaScript; a plain download gets only the
+menu.
+Use the browser or official access.
+We did not use any private API.
+gov.uz Andijan post
+“Viloyat hokimining
+qarorlari”
+Works. Table of 104 regional decisions, 10
+Jan – 30 Jul 2026: title, date, registration
+number (e.g. 121-1-0-Q/26). 2 hidden for
+personal data. No full texts.
+Good for counting volume and
+matching numbers to lex.uz texts.
+HF AsrorAsr/lexuz-legal-d
+ocuments
+Index only. Fields: id, title, url, metadata,
+category. No text. No license stated.
+Updated 17 Feb 2026.
+Use as a crawl list, not as a corpus.
+HF AsrorAsr/uzbek-legal-
+dataset
+Works. Fields: source, content (code
+articles, e.g. Criminal Code, Russian).
+Small; useful for quick retrieval
+tests.
+regulation.gov.uz
+Reachable.
+Draft acts for pre-adoption demos.
+sharh.lex.uz
+Reachable.
+Plain-language commentary.
+data.egov.uz
+Chrome needed. Connection reset from
+our server.
+Check API key access in the
+browser.
+ISSAI Uzbek ASR
+(GitHub)
+Chrome needed. Blocked from our server.
+Download from a laptop.
+Biggest finding
+ lex.uz already stores, for every act, its previous and next versions and the acts it cites. That is
+exactly the time-aware law graph our checks 1, 4 and 5 need. Build on it instead of reinventing it.
+ Open question for Day 0: can we get full texts of hokim decisions in bulk? Ask info@lexlab.uz
+and the Adolat center; meanwhile test full-text access in Chrome.
+
+
+===== PAGE 23 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+23
+E-qaror (e-qaror.gov.uz) — the most important source
+Since 1 July 2021, regional, city and district hokimliks must prepare and adopt decisions only
+through E-qaror; a decision adopted outside it has no legal force. Each decision gets a unique
+number and is published automatically. Adliya bodies monitor the whole process, from draft to
+adoption. The system holds about 100 template decisions already checked by ministries.
+What we saw on the public site (17 Nov 2026)
+Why it matters
+Search filter “Hujjat holati”: Amalda (in force) ·
+O‘zgartirish kiritilgan (amended) · Bekor qilingan
+(cancelled) · Haqiqiy emas deb topilgan (declared
+invalid)
+This is our label. “Declared invalid” =
+positive class. Careful: “cancelled” can also
+mean replaced or expired, so it is not
+automatically illegal.
+Filter “Hujjat oshkoraligi”: Ochiq (open) · Yashirilgan
+(hidden) · XDFU (official use only)
+Hidden status is now monitored by the
+Anti-Corruption Agency for abuse. We work
+only with open documents.
+Filters: normative / non-normative, language (Latin, Cyrillic,
+Russian), region, date, full-text search
+Lets us build a balanced, region-specific test
+set.
+Registration number format, e.g. 94-9-0-F/21 = order no. 94
+· region 9 · district 0 · type F (farmoyish) · year 21; council
+decisions add convocation and session numbers
+We can parse region, type and year straight
+from the number.
+/statistics page: counts per hokimlik and document type
+Real base rates; do not assume “20% are
+bad”.
+e-qaror-respublika.gov.uz (checked): the single system
+for publishing orders and decisions of national executive
+bodies; sections for local bodies and appeal council
+decisions; counts of open vs hidden documents. Laws and
+PQ/PF are NOT here (they are on lex.uz).
+Parent acts for ministry orders, possible
+labeled disputes, and our national roadmap.
+Data loads in the browser; a plain download returns empty
+tables
+Use it in Chrome, and ask Adliya / LexLab for
+an official export. We did not and will not use
+any private API.
+
+
+===== PAGE 24 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+24
+The E-qaror family: three Adliya systems
+System
+What it is
+Public access (checked 17
+Nov 2026)
+Use for us
+e-qaror.gov.uz
+Drafting, agreeing, registering
+and publishing decisions of
+hokims and local councils.
+Mandatory since 1 July 2021;
+adopted documents are also
+published automatically on
+hokimlik sites and lex.uz
+(unless restricted).
+Public search with status,
+openness, type, region and
+full-text filters; statistics.
+Main dataset + labels;
+full texts also via lex.uz
+e-qaror-respub
+lika.gov.uz
+Single system for publishing
+orders and decisions of
+national executive bodies
+(ministries, agencies); appeal
+council decisions.
+Public list and statistics (open
+vs hidden counts).
+Parent acts (ministry
+orders); appeal
+decisions as possible
+labels; roadmap
+e-qaror-collegi
+al.gov.uz
+System for drafting and
+adopting orders, decisions
+and minutes
+(bayonnomalar) of collegial
+bodies (councils,
+commissions), for local bodies
+and ministries.
+Closed workspace. Login via
+id.egov.uz; the organization
+registers a responsible officer
+(moderator) with a letter to
+UZINFOCOM (template on the
+site). Public page shows only
+statistics: regions,
+organizations, staff,
+documents.
+Not a dataset for us. It
+is a future integration
+point: collegial
+decisions (e.g.
+commissions on land or
+procurement) are
+where many local
+decisions are prepared.
+All three are operated by UZINFOCOM for the Ministry of Justice. Pitch line: “MUVOFIQ plugs into
+the E-qaror family you already run: first hokim decisions, then ministry orders, then collegial
+decisions.”
+Related: the Ijro system (execution discipline)
+System
+What it is
+Status of our check
+Use for us
+ijro.gov.uz
+Inter-agency electronic system for
+execution discipline: the Cabinet
+of Ministers and the Accounts
+Chamber monitor execution of
+2,800+ presidential decisions and
+assignments through it. Document
+flow, deadlines, control of
+execution.
+Known from lex.uz and
+app-store descriptions;
+internal government
+system.
+It tracks HOW each PQ/PF
+is being carried out — the
+parent → child chain we
+check. Strong future
+integration: check a
+hokim’s implementing
+decision the moment the
+assignment arrives.
+edo.ijro.uz
+Electronic document flow module
+built on Ijro.gov.uz; central
+executive apparatus moved to it
+from 1 Sep 2023.
+Internal.
+Where drafts and letters
+circulate before they
+become decisions.
+check.ijro.uz
+Most likely the public page to verify
+that a document from the Ijro/EDO
+system is genuine (e.g. by its
+number or QR code).
+Not verified:
+unreachable from our
+server; no public
+description found. Open
+in Chrome and confirm.
+If confirmed: the citizen
+app adds “Is this letter
+real?” before checking “Is
+it lawful?”
+
+
+===== PAGE 25 =====
+MUVOFIQ · LexHackathon 2026 dossier
+Internal team document
+25
+16 · Checklist before Friday
+□ Lawyer confirmed on the team
+□ Organizers’ answer on preparation rules
+□ lex.uz corpus loaded with dates
+□ 300+ hokim decisions scraped (2–3 regions)
+□ 30 cancelled cases with texts and reasons
+□ LLM + embeddings chosen on a 20-question Uzbek test
+□ 5 interviews done, 3 quotes for slides
+□ Slide template + backup-video plan
+□ Everyone knows their role and the 10:00 Day-2 freeze
+Sources
+– LexLab / eventflow.uz — LexHackathon 2026 rules, schedule, prizes, funding terms (lexlab.uz)
+– Daryo — 933 hokim decisions cancelled in 2024 (daryo.uz/rx97rLsU); 1,371 in 2023 (daryo.uz/nhDAB4iq); appeals
+55% (daryo.uz/9rgwHg4t)
+– Kun.uz — 10,250 illegal decisions, Minister’s remarks (25.11.2020); 2,541 land decisions, 101,358 ha (27.09.2022)
+– Yuz.uz — legal expertise of local government decisions; 1,752 (2019) and 982 (9M 2020) cancellations
+– president.uz/oz/lists/view/5061 — Adliya conclusion requirement; quarterly monitoring report
+– lex.uz/acts/-5470461 — E-qaror electronic system for local government decisions
+– advice.uz/oz/news/3070 — AI ethics rules, registration No. 3787, 14.03.2026
+– Spot.uz — LexAI; ISSAI — Uzbek Speech Corpus; e-qaror.gov.uz, e-qaror-respublika.gov.uz, e-qaror-collegial.gov.uz
+(checked 17 Nov 2026)
+– lex.uz/mact/-3932374 and lex.uz/acts/-5439350 — Ijro.gov.uz execution-discipline system; App Store listing
+IJRO.GOV.UZ
+– Anhor, 2026 — Supreme Court: 2025 administrative-court results by department
+(anhor.uz/uzl/news/2025-yilda-mansabdor-shaxslarning/)
+– Kun.uz, 19.12.2022 — Ministry of Justice E-qaror monitoring statistics (986 wrong-form orders, 304 land overreach,
+etc.)
+

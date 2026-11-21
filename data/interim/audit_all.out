@@ -1,0 +1,25 @@
+law store: loaded
+
+flags per rule (status):
+  R_business_3m            possible_violation     114
+  R_business_3m            unclear_needs_expert   94
+  R_competence_land        possible_violation     1
+  R_discussion             unclear_needs_expert   13
+  R_discussion_short       unclear_needs_expert   15
+  R_double_repeal          possible_violation     1
+  R_draft_window           possible_violation     1
+  R_duplicate              possible_violation     1
+  R_expertise              possible_violation     8
+  R_expertise              unclear_needs_expert   1
+  R_retroactive            possible_violation     5
+
+per role/label: decisions · any flag · any possible_violation
+  adopted/POSITIVE               288 ·   13 (5%) ·    8
+  adopted/none                   998 ·  204 (20%) ·  114
+  cancelling/EXCLUDE              78 ·    1 (1%) ·    1
+  cancelling/POSITIVE             35 ·    1 (3%) ·    1
+  cancelling/REVIEW               31 ·    3 (10%) ·    2
+  cancelling/none                  7 ·    0 (0%) ·    0
+  draft/none                     497 ·   16 (3%) ·    1
+
+254 flags -> D:\10_projects\mezon\data\interim\rule_flags.csv

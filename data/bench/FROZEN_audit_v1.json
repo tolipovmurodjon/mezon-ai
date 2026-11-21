@@ -1,0 +1,105 @@
+{
+ "frozen": "2026-11-21 Tashkent",
+ "version": "audit_v1",
+ "splits": {
+  "real": {
+   "n": 11,
+   "public": 7,
+   "private": 4,
+   "families": {
+    "real": 11
+   }
+  },
+  "smith": {
+   "n": 141,
+   "public": 98,
+   "private": 43,
+   "families": {
+    "form_farmoyish": 34,
+    "business_3m": 3,
+    "dead_citation": 34,
+    "duplicate_clause": 34,
+    "retroactive": 2,
+    "double_repeal": 34
+   }
+  },
+  "clean": {
+   "n": 22,
+   "public": 20,
+   "private": 2,
+   "families": {
+    "clean": 22
+   }
+  },
+  "live": {
+   "n": 0,
+   "public": 0,
+   "private": 0,
+   "families": {}
+  }
+ },
+ "files": {
+  "clean.jsonl": {
+   "bytes": 173795,
+   "sha256_16": "ed835bafc2288c68"
+  },
+  "gold_clean.jsonl": {
+   "bytes": 4240,
+   "sha256_16": "9346caff6b74e1a6"
+  },
+  "gold_live.jsonl": {
+   "bytes": 0,
+   "sha256_16": "e3b0c44298fc1c14"
+  },
+  "gold_real.jsonl": {
+   "bytes": 1533,
+   "sha256_16": "e3138606d2abf185"
+  },
+  "gold_smith.jsonl": {
+   "bytes": 46214,
+   "sha256_16": "b401e6b8dd7c3455"
+  },
+  "live.jsonl": {
+   "bytes": 0,
+   "sha256_16": "e3b0c44298fc1c14"
+  },
+  "real.jsonl": {
+   "bytes": 134199,
+   "sha256_16": "e02fbf3a3834542b"
+  },
+  "smith.jsonl": {
+   "bytes": 593631,
+   "sha256_16": "b02060df63f97396"
+  }
+ },
+ "private_manifest_sha256_16": "2ea932b1e4a2f91a",
+ "private_items": 49,
+ "code_sha256_16": {
+  "research/audit_bench/instances.py": "b3006992aebd05aa",
+  "research/audit_bench/grade.py": "4649f9f518925729",
+  "research/audit_bench/harness.py": "aabf1c960cfe94ff",
+  "mezon/tools.py": "1da350e0a5037576",
+  "mezon/lawstore/store.py": "6a081a85adfe4f6a",
+  "mezon/verify.py": "4f24badbc80bf448"
+ },
+ "law_store_sha256_16": "e43b39606c7b49ce",
+ "decision_store_sha256_16": "88931e7d0a1290f4",
+ "eye_audit": {
+  "date": "2026-11-21",
+  "read": "REAL 7 of 7 public, SMITH 10 (spread over families) plus the insertion context of 2 per family, CLEAN 10",
+  "found_and_fixed": [
+   "business_3m / retroactive bases included budget acts and street renamings (the rule engine's burden detector is loose): now a base needs a money burden outside budget, naming and implementing-act titles",
+   "duplicate_clause copied clauses between unrelated acts: now needs the same topic (title similarity 0.25-0.9)",
+   "inserted clauses were appended after the signature and footer (a visible tell); then they split the last clause at 'viloyat hokimining': now they go after the last clause's own sentence end",
+   "one CLEAN text was 627 000 characters (annex tables): texts over 45 000 characters and texts with leaked lex.uz page code are excluded from every split except REAL",
+   "form_farmoyish gold span carried a label that is not in the text: now the new registration number only"
+  ],
+  "known_weaknesses": [
+   "business_3m N and retroactive N are tiny (the engine finds few genuine burdens without a stated entry into force)",
+   "SMITH is Latin-script only; REAL and CLEAN also hold Cyrillic texts, a possible shortcut",
+   "an inserted clause is a stylistic tell for a model that compares with real decisions",
+   "double_repeal reuses a few repealed targets; CLEAN is small because few old decisions survive the filters"
+  ]
+ },
+ "rules": "Never train on audit_v1. Changing an instance, the grader, a tool or either store = v1.1 and every model re-runs. SMITH is synthetic and always reported as such. Private items are in data/bench/private/ (never published, never given to a model that is being trained). Flagged means possible violation."
+}

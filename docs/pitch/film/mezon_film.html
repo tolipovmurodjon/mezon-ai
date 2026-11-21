@@ -1,0 +1,1228 @@
+<!doctype html>
+<!--
+================================================================================================
+MEZON · 56-second kinetic-type film · synced by hand to music.mp3 (mrclaps "stomp and clap", 148 BPM)
+Grid: beat = 60/148 = 0.4054 s, bar = 1.6216 s, bar n starts at 0.296 + n*1.6216 s.  bt(n,k) = beat k of bar n.
+Stage 1920x1080, paper #f6f5f0, ink type. Accents: ember = defect, teal = Mezon, violet = the agent.
+Fonts: Martian Mono (display, width 75-100, weights 500-800) · Geist Mono (captions/kickers) ·
+       Instrument Serif italic (only for HUMAN lines: signed, by hand, who sees, expert, a person decides).
+Rule: one idea per frame, hard cuts on beats, a different typographic move in every scene.
+
+SCENE PLAN (times to the downbeat; the code's SCENES table below is the single source of truth). Round 2, 19.11.
+ #  time (s)        bars        music                    typographic idea
+ 1  0.00 - 6.78     0-3         claps, build at bar 2    HOOK. The decision's own words typed letter by letter on the claps:
+                                                         "...Qonunining / 6 va 25-moddalariga / asosan" (140 px); "6" slams on bar
+                                                         1; source "Yakkabog' · 355-4-68-Q/25 · 13.11.2025" wipes in (ink, 44 px)
+                                                         and STAYS while the citation dims. On the FIRST FULL DOWNBEAT (5.16) an
+                                                         ember strike snaps across "25-moddalariga". Kicker: BITTA QAROR.
+ 2  6.78 - 8.41     4           full beat                MASK RISE per beat: "Bu modda / bir yil oldin / kuchini yo'qotgan.";
+                                                         caption: Law on Local State Power · 25-modda · 19.10.2024-yildan.
+ 3  8.41 - 10.03    5           full beat                TRACKING COLLAPSE "Qaror esa" + SIGNATURE STAMP "imzolangan." (serif).
+ -- 10.03 hard break: kicker switches to BUTUN TIZIM (the system, not this decision) --
+ 4  10.03 - 11.65   6           full beat                907 624: rolling-digit flood accordions into the figure; "hujjat" and the
+                                                         E-qaror caption centred under it.
+ 5  11.65 - 13.27   7           full beat                WORKLOAD: "har bir loyiha: / 2-5 ish kuni" drops per character; five day
+                                                         bars fill one per beat (neutral ink); "qo'lda." serif.
+ 6  13.27 - 14.89   8           BREAK starts             611 bigger than the screen; court caption (2025) on a paper band.
+ 7  14.89 - 16.52   9           BREAK, stillness         "Buni kim ko'radi?" serif, nothing moves.
+ 8  16.52 - 19.76   10-11       build -> DROP (18.13)    Four real registration numbers line up, shed character particles on beat 3
+                                                         and SNAP into solid MEZON exactly on the drop; tagline collapses in.
+ 9  19.76 - 21.38   12          peak                     01 KUZATUV: lex.uz / E-qaror / regulation.gov.uz slam per beat; teal scan;
+                                                         "har bir yangi qaror, avtomatik".
+10  21.38 - 23.00   13          peak                     Slot-reel clock 00:00 -> 23:59 lands on beat 4; "har kuni".
+11  23.00 - 26.25   14-15       peak                     LAW-VERSION TIMELINE: the Law on Local State Power, art. 25, as an ink
+                                                         strip that breaks in ember at 19.10.2024; real decisions drop onto their
+                                                         dates one per two beats; 355-4-68-Q/25 lands right of the break (25.44),
+                                                         turns ember, and a 120 px "belgilandi" holds 0.8 s.
+12  26.25 - 32.74   16-19       dip, build at 19         02 AGENT: "Nega bu qaror belgilandi?" typed, then leaves. Five plain steps,
+                                                         a giant violet step digit 1-5 on the left: Qaror matnini o'qidi · 14 ta
+                                                         tekshiruv · 6-modda, 13.11.2025: amalda · 25-modda, 13.11.2025: kuchini
+                                                         yo'qotgan (ember hit) · Iqtibos qonundan aynan tekshirildi: the flag's
+                                                         real citation (NHH Qonuni 18-modda) ticks teal one chunk per eighth note.
+13  32.74 - 35.98   20-21       high                     03 EKSPERT: decision quote vs lex.uz on 13.11.2025, side by side;
+                                                         "25-modda" underlined in both (sized to the word) on bar 21.
+14  35.98 - 39.22   22-23       high                     ADLIYA'S OWN VERDICT: a reel of "ijobiy / kamchiliklar bilan ijobiy /
+                                                         salbiy" slot-selects the middle one on beat 2; "25-modda -> amaldagi
+                                                         moddani keltiring" on beat 3; "EKSPERT IMZOLAYDI" stamp on beat 4; hold.
+15  39.22 - 42.47   24-25       high                     04 ADLIYA UCHUN: queue re-sorts one move per beat; each climbing row gets
+                                                         a big ember reason tag on that beat.
+16  42.47 - 44.09   26          high                     The list flies into ONE PAGE: "Viloyat hisoboti: dushanba, bir sahifa."
+17  44.09 - 45.71   27          high                     "LexAI javob beradi." (mask rise) / "Mezon tekshiradi." (teal, per-char
+                                                         rise landing on beat 3).
+18  45.71 - 47.33   28          high                     05 ISBOT: "354" and "/354" slide in, hold apart, slam together on beat 2.
+19  47.33 - 49.77   29-30       high                     The 20 real cancelled decisions (eval set) as a grid; the 10 Mezon
+                                                         flagged flip teal one per eighth note while a counter climbs to 10/20;
+                                                         "bekor qilingan qaror · javobni bilmasdan belgilandi".
+20  49.77 - 52.20   30-31       high                     Real cases, defect as the headline: two copies of "AYNAN NUSXA" (207 and
+                                                         231) slide together and lock on beat 4 (Qarshi, taqdimnoma 27-7/1-34);
+                                                         "ORQAGA KUCH" types in backwards onto the bar-31 downbeat (Xatirchi, 6/3-1).
+21  52.20 - end     32-tail     quiet tail, silence      "AI taklif qiladi." / "Inson hal qiladi." break into particles that
+                                53.82                    re-form MEZON exactly when the music stops; then "mahalliy qarorlar
+                                                         auditori · Adliya uchun" and "Belgilangan != noqonuniy". Hold.
+================================================================================================
+-->
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mezon Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&family=Geist+Mono:wght@300..700&family=Instrument+Serif:ital@0;1&display=block" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f5f0; --ink:#121210; --mute:#a3a095; --faint:#e2dfd5;
+  --ember:#e0461a; --teal:#08876f; --violet:#5b3cf0; --sheet:#fffefa;
+}
+html,body{margin:0;height:100%;background:var(--paper);overflow:hidden}
+body{color:var(--ink);-webkit-font-smoothing:antialiased;cursor:default}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%);
+  background:var(--paper);overflow:hidden;color:var(--ink)}
+#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1}
+.scene{position:absolute;inset:0;display:none;z-index:2}
+.L{position:absolute;white-space:pre;line-height:1;transform-origin:0 0;will-change:transform}
+.mono{font-family:'Martian Mono',monospace;font-stretch:75%;font-weight:700;letter-spacing:-0.01em}
+.w100{font-stretch:100%}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.005em}
+.cap{font-family:'Geist Mono',monospace;font-weight:400;color:var(--mute);letter-spacing:0.01em}
+.ch{display:inline-block;white-space:pre}
+.mask{position:absolute;overflow:hidden;white-space:pre}
+.mask>.L{position:relative;display:block}
+.ember{color:var(--ember)} .teal{color:var(--teal)} .violet{color:var(--violet)} .muted{color:var(--mute)}
+.block{position:absolute;background:var(--ink)}
+.reel{display:inline-block;overflow:hidden;height:1.1em;vertical-align:top;position:relative;width:0.59em}
+.reel .strip{display:block;will-change:transform}
+.reel .strip div{height:1.1em;line-height:1.1em;text-align:center}
+.reelrow{position:absolute;white-space:nowrap;line-height:1.1;display:flex}
+svg.g{display:inline-block;overflow:visible}
+#kicker{position:absolute;left:160px;top:104px;z-index:3;font-family:'Geist Mono',monospace;font-size:32px;
+  letter-spacing:0.16em;white-space:pre;color:var(--ink)}
+#kicker b{font-weight:600}
+/* controls: hidden by default, small, bottom-right */
+#ui{position:fixed;right:14px;bottom:12px;display:flex;gap:6px;z-index:20;opacity:0;pointer-events:none;
+  transition:opacity .25s;font:12px 'Geist Mono',monospace}
+#ui.show{opacity:.92;pointer-events:auto}
+#ui button{font:inherit;color:var(--ink);background:var(--paper);border:1px solid #c9c6bb;border-radius:3px;
+  padding:4px 8px;cursor:pointer}
+#ui button:hover{border-color:var(--ink)}
+#start{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:21;font:600 22px 'Geist Mono',monospace;
+  letter-spacing:.12em;color:var(--paper);background:var(--ink);border:0;border-radius:4px;padding:18px 34px;cursor:pointer}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:22;font:13px 'Geist Mono',monospace;
+  background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:3px;display:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="fx" width="1920" height="1080"></canvas>
+  <div id="kicker"></div>
+</div>
+<audio id="music" src="music.mp3" preload="auto"></audio>
+<button id="start">BOSHLASH</button>
+<div id="ui">
+  <button id="bPlay">pauza</button><button id="bRe">boshidan</button><button id="bFs">to'liq ekran</button>
+  <button id="bClean">toza (H)</button><button id="bRec">yozish</button>
+</div>
+<div id="toast"></div>
+<script>
+'use strict';
+/* =============================================================================================
+   TIME GRID (measured from music.mp3)
+   ============================================================================================= */
+const BEAT = 60 / 148, BAR = 4 * BEAT, T0 = 0.296;
+const bar = n => T0 + n * BAR;            // downbeat of bar n
+const bt = (n, k = 0) => bar(n) + k * BEAT; // beat k (0-3, may be fractional) of bar n
+const END = 56.27;
+
+/* Named musical cues, for reading the timeline */
+const CUES = {
+  claps: bar(0), build1: bar(2), firstDownbeat: bar(3), breakStart: bar(8), breakStill: bar(9),
+  build2: bar(10), DROP: bar(11), dip: bar(16), build3: bar(19), high: bar(20), tail: bar(32), silence: bar(33)
+};
+
+/* =============================================================================================
+   SCENES: one row per scene. from/to are hard cuts on beats. fx = drawing code below.
+   ============================================================================================= */
+const SCENES = [
+  { id: 'hook',    from: 0,         to: bt(4),     music: 'claps; build bar 2; strike on first full downbeat (bar 3)', idea: 'typed citation, ember strike' },
+  { id: 'dead',    from: bt(4),     to: bt(5),     music: 'full beat',            idea: 'mask rise, one line per beat' },
+  { id: 'signed',  from: bt(5),     to: bt(6),     music: 'full beat',            idea: 'tracking collapse + signature stamp' },
+  { id: 'flood',   from: bt(6),     to: bt(7),     music: 'full beat',            idea: '907 624: digit flood accordions into the figure' },
+  { id: 'days',    from: bt(7),     to: bt(8),     music: 'full beat',            idea: 'workload: 2-5 ish kuni per draft, day bars tick per beat' },
+  { id: 'court',   from: bt(8),     to: bt(9),     music: 'BREAK begins',         idea: '611 bigger than the screen, near still' },
+  { id: 'who',     from: bt(9),     to: bt(10),    music: 'BREAK stillness',      idea: 'serif question, nothing moves' },
+  { id: 'drop',    from: bt(10),    to: bt(12),    music: 'build -> DROP 18.13',  idea: 'line up -> particles -> MEZON on the drop' },
+  { id: 'sources', from: bt(12),    to: bt(13),    music: 'peak',                 idea: 'three sources slam per beat, teal scan' },
+  { id: 'clock',   from: bt(13),    to: bt(14),    music: 'peak',                 idea: 'slot-reel clock 00:00 -> 23:59' },
+  { id: 'timeline', from: bt(14),   to: bt(16),    music: 'peak',                 idea: 'law-version strip breaks at 19.10.2024; decisions drop on their dates' },
+  { id: 'agent',   from: bt(16),    to: bt(20),    music: 'dip; build at bar 19', idea: 'typed question, steps one at a time' },
+  { id: 'compare', from: bt(20),    to: bt(22),    music: 'high',                 idea: 'side-by-side quotes, shared highlight' },
+  { id: 'verdict', from: bt(22),    to: bt(24),    music: 'high',                 idea: "Adliya's own verdict: slot-select, fix line, expert stamp" },
+  { id: 'queue',   from: bt(24),    to: bt(26),    music: 'high',                 idea: 'list re-sorts one move per beat, reason tag per climb' },
+  { id: 'report',  from: bt(26),    to: bt(27),    music: 'high',                 idea: 'the list flies into one page' },
+  { id: 'lexai',   from: bt(27),    to: bt(28),    music: 'high',                 idea: 'LexAI javob beradi. / Mezon tekshiradi.' },
+  { id: 'quotes',  from: bt(28),    to: bt(29),    music: 'high',                 idea: '354/354 halves slam together' },
+  { id: 'grid',    from: bt(29),    to: bt(30, 2), music: 'high',                 idea: '20 real numbers, ten flip teal per eighth note -> 10/20' },
+  { id: 'cases',   from: bt(30, 2), to: bt(32),    music: 'high; bar 31 downbeat', idea: 'AYNAN NUSXA locks; ORQAGA KUCH types backwards onto bar 31' },
+  { id: 'end',     from: bt(32),    to: 1e9,       music: 'quiet tail; silence 53.82', idea: 'lines -> particles -> MEZON in silence' },
+];
+
+/* Use-case kicker (persistent top-left label) */
+const KICKERS = [
+  { from: bt(3),  to: bt(6),  n: '',   label: 'BITTA QAROR',  color: 'var(--ink)' },   // chapter A: this one decision
+  { from: bt(6),  to: bt(9),  n: '',   label: 'BUTUN TIZIM',  color: 'var(--ink)' },   // hard break: chapter B, the system
+  { from: bt(12), to: bt(16), n: '01', label: 'KUZATUV',     color: 'var(--teal)' },
+  { from: bt(16), to: bt(20), n: '02', label: 'AGENT',       color: 'var(--violet)' },
+  { from: bt(20), to: bt(24), n: '03', label: 'EKSPERT',     color: 'var(--ink)' },
+  { from: bt(24), to: bt(27), n: '04', label: 'ADLIYA UCHUN', color: 'var(--ember)' },
+  { from: bt(28), to: bt(32), n: '05', label: 'ISBOT',       color: 'var(--teal)' },
+];
+
+/* =============================================================================================
+   EASING + HELPERS
+   ============================================================================================= */
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, u) => a + (b - a) * u;
+const P = (t, a, d) => d <= 0 ? (t >= a ? 1 : 0) : clamp((t - a) / d);
+const E = {
+  cubicOut: u => 1 - Math.pow(1 - u, 3),
+  cubicIn: u => u * u * u,
+  cubicInOut: u => u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2,
+  expoOut: u => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u),
+  expoIn: u => u <= 0 ? 0 : Math.pow(2, 10 * u - 10),
+  expoInOut: u => u <= 0 ? 0 : u >= 1 ? 1 : u < .5 ? Math.pow(2, 20 * u - 10) / 2 : (2 - Math.pow(2, -20 * u + 10)) / 2,
+  backOut: (u, s = 1.70158) => 1 + (s + 1) * Math.pow(u - 1, 3) + s * Math.pow(u - 1, 2),
+};
+const spring = (dt, amp, f = 20, d = 8) => dt < 0 ? 0 : amp * Math.exp(-d * dt) * Math.cos(f * dt);
+const shake = (dt, amp, f = 55, d = 11) => dt < 0 ? 0 : amp * Math.exp(-d * dt) * Math.sin(f * dt);
+const rnd = i => { const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return x - Math.floor(x); };
+
+const stage = document.getElementById('stage');
+const cv = document.getElementById('fx');
+const ctx = cv.getContext('2d');
+let K = 1; // canvas resolution factor
+
+function mk(parent, cls, text = '', o = {}) {
+  const e = document.createElement(o.tag || 'div');
+  e.className = cls;
+  if (text) e.textContent = text;
+  if (o.left !== undefined) e.style.left = o.left + 'px';
+  if (o.top !== undefined) e.style.top = o.top + 'px';
+  if (o.size) e.style.fontSize = o.size + 'px';
+  if (o.width) e.style.width = o.width + 'px';
+  if (o.color) e.style.color = o.color;
+  if (o.align) e.style.textAlign = o.align;
+  parent.appendChild(e);
+  return e;
+}
+function chars(el) {
+  const t = el.textContent; el.textContent = '';
+  return [...t].map(c => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; el.appendChild(s); return s; });
+}
+// masked line: text rises from behind its own baseline
+function mline(parent, text, cls, x, y, size) {
+  const w = mk(parent, 'mask', '', { left: x, top: y - 0.12 * size });
+  w.style.fontSize = size + 'px'; w.style.padding = '0.12em 0.04em 0.2em 0';
+  const i = mk(w, 'L ' + cls, text); i.style.fontSize = size + 'px';
+  return { w, i };
+}
+function tf(el, x = 0, y = 0, sx = 1, sy = sx, r = 0) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${sx},${sy})`;
+}
+const op = (el, v) => { el.style.opacity = v; };
+const clipR = (el, u) => { el.style.clipPath = `inset(-20% ${(1 - u) * 100}% -20% -2%)`; }; // reveal left -> right
+const SVGNS = 'http://www.w3.org/2000/svg';
+function svg(parent, w, h, inner, cls = 'g') {
+  const s = document.createElementNS(SVGNS, 'svg');
+  s.setAttribute('class', cls); s.setAttribute('viewBox', `0 0 ${w} ${h}`); s.innerHTML = inner;
+  parent.appendChild(s); return s;
+}
+// drawn glyphs (the fonts have no arrow / not-equal glyphs)
+const ARROW = '<path d="M2 20H94M74 4 96 20 74 36" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square" pathLength="1"/>';
+const NEQ_BOLD = '<path d="M2 21H58M2 41H58M45 2 15 58" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square"/>';
+const NEQ = '<path d="M4 20H56M4 40H56M42 4 18 56" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>';
+
+/* reels (slot-roll digits) */
+function reel(parent, seq) {
+  const r = document.createElement('span'); r.className = 'reel';
+  const s = document.createElement('span'); s.className = 'strip';
+  seq.forEach(d => { const c = document.createElement('div'); c.textContent = d; s.appendChild(c); });
+  r.appendChild(s); parent.appendChild(r); r._s = s; return r;
+}
+function setReel(r, idx, stretch = 1) {
+  r._s.style.transform = `translateY(${-idx * 1.1}em)`;
+  r.style.transform = stretch !== 1 ? `scaleY(${stretch})` : '';
+}
+
+/* canvas text layout + glyph drawing */
+const FONT = {
+  monoC: w => `condensed ${w} 100px "Martian Mono"`,
+  mono: w => `${w} 100px "Martian Mono"`,
+  serif: 'italic 400 100px "Instrument Serif"',
+};
+const meas = document.createElement('canvas').getContext('2d');
+function layoutLine(text, f100, size, x, yMid, align = 'left') {
+  meas.font = f100;
+  const W = i => meas.measureText(text.slice(0, i)).width * size / 100;
+  const total = W(text.length);
+  const x0 = align === 'center' ? x - total / 2 : x;
+  const out = [];
+  [...text].forEach((ch, i) => { if (ch !== ' ') out.push({ ch, x: x0 + (W(i) + W(i + 1)) / 2, y: yMid, size, f: f100 }); });
+  return out;
+}
+let curFont = '';
+function glyph(ch, x, y, size, f, color, alpha = 1, ang = 0, st = 1) {
+  if (f !== curFont) { ctx.font = f; curFont = f; }
+  const sc = size / 100, c = Math.cos(ang), s = Math.sin(ang), q = 1 / Math.pow(st, 0.25);
+  const a00 = (c * c * st + s * s * q) * sc, a01 = (c * s * (st - q)) * sc, a11 = (s * s * st + c * c * q) * sc;
+  ctx.setTransform(K * a00, K * a01, K * a01, K * a11, K * x, K * y);
+  ctx.globalAlpha = alpha; ctx.fillStyle = color;
+  ctx.fillText(ch, 0, 0);
+}
+function sampleWord(word, font, cx, cy, step) {
+  const c = document.createElement('canvas'); c.width = 1920; c.height = 1080;
+  const g = c.getContext('2d'); g.font = font; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+  const m = g.measureText(word);
+  const by = cy + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
+  g.fillText(word, cx, by);
+  const d = g.getImageData(0, 0, 1920, 1080).data, pts = [];
+  for (let y = 0; y < 1080; y += step) for (let x = (y / step) % 2 ? step / 2 : 0; x < 1920; x += step)
+    if (d[(y * 1920 + (x | 0)) * 4 + 3] > 140) pts.push({ x, y });
+  return { pts, by };
+}
+const COL = { ink: '#121210', mute: '#a3a095', ember: '#e0461a', teal: '#08876f', violet: '#5b3cf0' };
+
+/* MEZON word (shared by the drop and the end) */
+const WORD = { text: 'MEZON', font: '800 330px "Martian Mono"', cx: 960, cy: 450 };
+function drawWord(t, scale = 1, alpha = 1, color = COL.ink) {
+  ctx.setTransform(K * scale, 0, 0, K * scale, K * WORD.cx * (1 - scale), K * WORD.cy * (1 - scale));
+  ctx.font = WORD.font; curFont = WORD.font; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.globalAlpha = alpha; ctx.fillStyle = color;
+  ctx.fillText(WORD.text, WORD.cx, WORD.by);
+  ctx.textBaseline = 'middle';
+}
+
+/* particle morph: source characters -> word outline */
+function makeMorph(src, tBreak, tArrive, opt = {}) {
+  const S = sampleWord(WORD.text, WORD.font, WORD.cx, WORD.cy, opt.step || 9);
+  WORD.by = S.by;
+  // ordered mapping: sources sorted left->right feed matching vertical slices of the word,
+  // so the burst reads as the lines stretching into the word, not as noise
+  const tg = S.pts.map((p, i) => ({ ...p, k: p.x + (rnd(i * 3.7 + 1) - 0.5) * 90 })).sort((a, b) => a.k - b.k);
+  const order = src.map((s, j) => j).sort((a, b) => src[a].x - src[b].x);
+  const parts = tg.map((p, i) => {
+    const j = order[Math.min(src.length - 1, Math.floor(i / tg.length * src.length))]; const s = src[j];
+    const d = (opt.stagger ?? 0.22) * clamp(s.x / 1920) + rnd(i + 11) * 0.08;
+    const dx = p.x - s.x, dy = p.y - s.y, L = Math.hypot(dx, dy) || 1;
+    return { s, tx: p.x, ty: p.y, d, dur: Math.max(0.12, tArrive - tBreak - d), nx: -dy / L, ny: dx / L, ux: dx / L, uy: dy / L,
+      arc: (rnd(i + 5) - 0.5) * (opt.arc ?? 260), spark: rnd(i + 999) < 0.055 };
+  });
+  parts.sort((a, b) => (a.s.f < b.s.f ? -1 : a.s.f > b.s.f ? 1 : 0));
+  return { src, parts, tBreak, tArrive, tgtSize: opt.tgtSize || 15, stagger: opt.stagger ?? 0.22 };
+}
+function pathAt(p, u) {
+  const e = E.expoInOut(u);
+  const ant = u < 0.3 ? Math.sin(Math.PI * u / 0.3) * 22 : 0;            // anticipation: pull back first
+  const a = p.arc * Math.sin(Math.PI * e);
+  return [lerp(p.s.x, p.tx, e) + p.nx * a - p.ux * ant, lerp(p.s.y, p.ty, e) + p.ny * a - p.uy * ant];
+}
+function drawMorph(M, t, srcDraw) {
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  if (t < M.tBreak) { srcDraw(t); return; }
+  // the lined-up text sheds its particles: each source glyph fades as its swarm leaves (left to right)
+  for (const s of M.src) {
+    const a = 1 - E.cubicIn(P(t, M.tBreak + M.stagger * clamp(s.x / 1920), 0.3));
+    if (a > 0) glyph(s.ch, s.x, s.y, s.size, s.f, s.color, a);
+  }
+  for (const p of M.parts) {
+    const u = P(t, M.tBreak + p.d, p.dur);
+    if (u <= 0) continue;
+    const [x, y] = pathAt(p, u);
+    const [x2, y2] = pathAt(p, Math.min(1, u + 0.03));
+    const v = Math.hypot(x2 - x, y2 - y);
+    const st = 1 + Math.min(0.8, v / 36);
+    const size = lerp(p.s.size * 0.4, M.tgtSize, E.expoOut(Math.min(1, u * 1.6))) * (1 - 0.4 * Math.sin(Math.PI * u)); // smaller in flight: a swarm, not a blob
+    const color = u > 0.5 ? COL.ink : p.s.color;
+    glyph(p.s.ch, x, y, size, p.s.f, color, Math.min(1, u * 7), Math.atan2(y2 - y, x2 - x), st);
+  }
+}
+function drawSparks(M, t, tSnap) {
+  const dt = t - tSnap; if (dt < 0 || dt > 0.55) return;
+  const a = 1 - E.cubicOut(dt / 0.55);
+  for (const p of M.parts) {
+    if (!p.spark) continue;
+    const dx = p.tx - WORD.cx, dy = p.ty - WORD.cy, L = Math.hypot(dx, dy) || 1;
+    const dist = 460 * E.expoOut(dt / 0.55) * (0.6 + rnd(p.tx + p.ty) * 0.8);
+    glyph(p.s.ch, p.tx + dx / L * dist, p.ty + dy / L * dist * 0.8, 18, p.s.f, COL.teal, a * 0.9, Math.atan2(dy, dx), 1 + 1.6 * a);
+  }
+}
+
+/* =============================================================================================
+   SCENE FX  (each: build(root) -> state, draw(t, state); t is absolute film time)
+   ============================================================================================= */
+const FX = {};
+
+/* 1 HOOK ------------------------------------------------------------------------------------- */
+FX.hook = {
+  build(r) {
+    const s = {};
+    const L = [{ t: '...Qonunining', y: 250 }, { t: '6 va 25-moddalariga', y: 410 }, { t: 'asosan', y: 570 }];
+    s.lines = L.map(l => { const e = mk(r, 'L mono', l.t, { left: 160, top: l.y, size: 140 }); return { e, c: chars(e) }; });
+    // typing schedule: [line, fromChar, toChar, start, secondsPerChar]
+    const W = [[0, 0, 3, bt(0, 0), 0.06], [0, 3, 13, bt(0, 1), 0.09], [1, 0, 1, bt(1, 0), 0], [1, 2, 4, bt(1, 1), 0.07],
+               [1, 5, 19, bt(1, 2), 0.048], [2, 0, 6, bt(2, 0), 0.05]];
+    s.times = s.lines.map(l => l.c.map(() => 99));
+    s.order = [];
+    W.forEach(([li, a, b, st, r]) => { for (let i = a; i < b; i++) { s.times[li][i] = st + (i - a) * r; s.order.push([li, i]); } });
+    s.times[1][1] = s.times[1][0]; s.times[1][4] = s.times[1][3];
+    s.lastType = Math.max(...s.order.map(([l, i]) => s.times[l][i]));
+    s.caret = mk(r, 'block'); s.caret.style.width = '10px'; s.caret.style.height = '108px';
+    s.cap = mk(r, 'L cap', "Yakkabog' tumani hokimi  ·  355-4-68-Q/25  ·  13.11.2025", { left: 160, top: 786, size: 44 });
+    s.cap.style.color = 'var(--ink)'; s.cap.style.fontWeight = 500;
+    s.strike = mk(r, 'block'); s.strike.style.background = 'var(--ember)'; s.strike.style.height = '18px';
+    return s;
+  },
+  draw(t, s) {
+    const tS = bt(3, 0);
+    const dim = E.cubicInOut(P(t, bt(2, 3), 0.35));
+    const fall = E.cubicOut(P(t, bt(3, 2), 0.7));
+    s.lines.forEach((l, li) => {
+      const isTarget = i => li === 1 && i >= 5;
+      if (li === 1) tf(l.e, shake(t - tS, 18), 0);
+      l.c.forEach((c, i) => {
+        const ta = s.times[li][i];
+        if (t < ta) { op(c, 0); return; }
+        let y = -0.12 * 140 * (1 - E.expoOut(P(t, ta, 0.14)));
+        let sc = 1;
+        if (li === 1 && i === 0) sc = lerp(1.9, 1, E.backOut(P(t, ta, 0.3), 2.4)); // "6" slams on bar 1
+        if (isTarget(i)) {
+          c.style.color = t >= tS ? 'var(--ember)' : '';
+          const crouch = t < tS ? 1 - 0.07 * E.cubicIn(P(t, tS - 0.22, 0.22)) : 1 + spring(t - tS, 0.06, 26, 10);
+          c.style.transformOrigin = '50% 80%';
+          tf(c, 0, y, sc, crouch); op(c, 1);
+        } else {
+          tf(c, 0, y + fall * 18, sc); op(c, 1 - 0.7 * dim - 0.12 * fall);
+        }
+      });
+    });
+    // caret: after the last typed character, blinks on the beat when idle
+    let last = null;
+    for (const [li, i] of s.order) if (t >= s.times[li][i]) last = [li, i];
+    const idle = last === null || t > s.lastType + 0.15;
+    const blink = ((t - T0 + 10 * BEAT) / BEAT) % 1 < 0.55;
+    const showCaret = t < bt(2, 2) && (!idle || blink);
+    if (last === null) { s.caret.style.left = '160px'; s.caret.style.top = (250 + 16) + 'px'; }
+    else {
+      const [li, i] = last, c = s.lines[li].c[i];
+      s.caret.style.left = (160 + c.offsetLeft + c.offsetWidth + 6) + 'px';
+      s.caret.style.top = (s.lines[li].e.offsetTop + 16) + 'px';
+    }
+    op(s.caret, showCaret ? 1 : 0);
+    clipR(s.cap, E.cubicOut(P(t, bt(2, 1), 0.45)));
+    op(s.cap, 1); // the source stays in ink while the citation dims
+    // the strike: on the first full downbeat
+    const a = s.lines[1].c[5], b = s.lines[1].c[18];
+    const w = b.offsetLeft + b.offsetWidth - a.offsetLeft + 16;
+    const u = P(t, tS, 0.16);
+    s.strike.style.left = (160 + a.offsetLeft - 8 + shake(t - tS, 18)) + 'px';
+    s.strike.style.top = (410 + 0.47 * 140) + 'px';
+    s.strike.style.width = (w * clamp(E.backOut(u, 1.4), 0, 1.04)) + 'px';
+    op(s.strike, t >= tS ? 1 : 0);
+  }
+};
+
+/* 2 DEAD ARTICLE ----------------------------------------------------------------------------- */
+FX.dead = {
+  build(r) {
+    const s = {};
+    s.l = [['Bu modda', 230, ''], ['bir yil oldin', 400, ''], ["kuchini yo'qotgan.", 570, 'ember']]
+      .map(([tx, y, c]) => mline(r, tx, 'mono ' + c, 160, y, 150));
+    s.cap = mk(r, 'L cap', "Mahalliy davlat hokimiyati to'g'risidagi Qonun  ·  25-modda  ·  19.10.2024-yildan", { left: 160, top: 790, size: 36 });
+    return s;
+  },
+  draw(t, s) {
+    s.l.forEach((m, k) => { const u = E.expoOut(P(t, bt(4, k), 0.42)); m.i.style.transform = `translateY(${(1 - u) * 140}%)`; });
+    const u = E.cubicOut(P(t, bt(4, 3), 0.3)); op(s.cap, u); tf(s.cap, 0, (1 - u) * 16);
+  }
+};
+
+/* 3 SIGNED ----------------------------------------------------------------------------------- */
+FX.signed = {
+  build(r) {
+    const s = {};
+    s.q = mk(r, 'L mono', 'Qaror esa', { left: 160, top: 290, size: 150 });
+    s.sig = mk(r, 'L serif', 'imzolangan.', { left: 150, top: 430, size: 310 });
+    s.sig.style.transformOrigin = '10% 80%';
+    const sw = svg(r, 1920, 1080, '<path d="M190 815 C 520 770, 860 790, 1080 800 S 1330 812, 1420 772" fill="none" stroke="#121210" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1"/>');
+    sw.style.cssText = 'position:absolute;left:0;top:0;width:1920px;height:1080px'; s.sw = sw.firstChild;
+    return s;
+  },
+  draw(t, s) {
+    const u = E.expoOut(P(t, bt(5, 0), 0.55));
+    s.q.style.letterSpacing = lerp(0.9, -0.01, u) + 'em'; op(s.q, P(t, bt(5, 0), 0.12));
+    const v = P(t, bt(5, 1), 0.34);
+    tf(s.sig, 0, 0, lerp(1.5, 1, E.backOut(v, 1.9)), lerp(1.5, 1, E.backOut(v, 1.9)), -2); op(s.sig, P(t, bt(5, 1), 0.05));
+    s.sw.style.strokeDashoffset = 1 - E.cubicInOut(P(t, bt(5, 2), 0.42));
+  }
+};
+
+/* 4 FLOOD: 907 624 ------------------------------------------------------------------------- */
+FX.flood = {
+  build(r) {
+    const s = {};
+    s.word = mline(r, 'hujjat', 'mono', 0, 590, 130); s.word.w.style.width = '1920px'; s.word.i.style.textAlign = 'center';
+    s.cap = mk(r, 'L cap', 'E-qaror  ·  2021-yildan beri', { left: 0, top: 770, size: 36, width: 1920, align: 'center' });
+    return s;
+  },
+  draw(t, s) {
+    const tc = bt(6, 1), cols = 14, rows = 8, cw = 1920 / cols, rh = 1080 / rows;
+    if (!s.g) s.g = layoutLine('907 624', FONT.monoC(800), 320, 960, 420, 'center');
+    const final = s.g, f = FONT.monoC(700), fF = FONT.monoC(800);
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    const done = tc + 0.06 + 0.36;
+    if (t < done) {
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        const i = r * cols + c;
+        const ap = P(t, bt(6, 0) + rnd(i) * 0.2, 0.08);
+        if (ap <= 0) continue;
+        const slot = Math.min(5, Math.floor(c * 6 / cols));
+        const tgt = final[slot];
+        const isLead = r === 3 && c === Math.ceil(slot * cols / 6);
+        const u = P(t, tc + rnd(i + 77) * 0.06, 0.36), e = E.expoInOut(u);
+        const sx = (c + 0.5) * cw, sy = (r + 0.5) * rh;
+        const x = lerp(sx, tgt.x, e), y = lerp(sy, tgt.y, e);
+        const e2 = E.expoInOut(Math.min(1, u + 0.04));
+        const v = Math.abs(lerp(sx, tgt.x, e2) - x) + Math.abs(lerp(sy, tgt.y, e2) - y) * 0.3;
+        const d = u > 0.6 ? tgt.ch : String(Math.floor(rnd(i * 13.1 + Math.floor(t * 26)) * 10));
+        const alpha = isLead ? lerp(0.42, 1, e) : 0.42 * (1 - e) * ap;
+        glyph(d, x, y, lerp(112, 320, e), u > 0.6 ? fF : f, isLead && u > 0.5 ? COL.ink : COL.mute, alpha, 0, 1 + Math.min(2.2, v / 30));
+      }
+    } else {
+      const sx = 1 + spring(t - done, 0.09, 24, 9);
+      for (const g of final) glyph(g.ch, 960 + (g.x - 960) * sx, g.y, 320, fF, COL.ink, 1, 0, 1);
+    }
+    s.word.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(6, 2), 0.4))) * 140}%)`;
+    op(s.cap, E.cubicOut(P(t, bt(6, 3), 0.3)));
+  }
+};
+
+/* 5 DAYS: 2-5 kun ------------------------------------------------------------------------- */
+FX.days = {
+  build(r) {
+    const s = {};
+    s.lab = mk(r, 'L mono', 'har bir loyiha:', { left: 160, top: 196, size: 60 }); s.lab.style.fontWeight = 500;
+    s.big = mk(r, 'L mono', '2-5 ish kuni', { left: 160, top: 280, size: 200 }); s.big.style.fontWeight = 800;
+    s.c = chars(s.big);
+    s.cells = [0, 1, 2, 3, 4].map(i => {
+      const x = 160 + i * 326;
+      const track = mk(r, 'block', '', { left: x, top: 560 }); track.style.cssText += ';width:300px;height:20px;background:var(--faint)';
+      const fill = mk(r, 'block', '', { left: x, top: 560 }); fill.style.cssText += ';width:300px;height:20px;transform-origin:0 0';
+      const lab = mk(r, 'L cap', (i + 1) + '-kun', { left: x, top: 600, size: 34 });
+      return { fill, lab };
+    });
+    s.fillAt = [bt(7, 0) + 0.06, bt(7, 0) + 0.16, bt(7, 1), bt(7, 2), bt(7, 3)];
+    s.hand = mk(r, 'L serif', "qo'lda.", { left: 156, top: 700, size: 190 });
+    return s;
+  },
+  draw(t, s) {
+    op(s.lab, P(t, bt(7, 0), 0.08)); clipR(s.lab, E.expoOut(P(t, bt(7, 0), 0.3)));
+    s.c.forEach((c, i) => {
+      const u = P(t, bt(7, 0) + i * 0.015, 0.25);
+      tf(c, 0, (1 - E.backOut(u, 1.6)) * -150); op(c, P(t, bt(7, 0) + i * 0.015, 0.06));
+    });
+    s.cells.forEach((c, i) => {
+      const u = E.expoOut(P(t, s.fillAt[i], 0.22));
+      c.fill.style.transform = `scaleX(${u})`;
+      c.fill.style.background = 'var(--ink)'; // workload, not blame: neutral ink
+      c.lab.style.color = u > 0.5 ? 'var(--ink)' : '';
+    });
+    clipR(s.hand, E.cubicOut(P(t, bt(7, 0.5), 0.25)));
+  }
+};
+
+/* 6 COURT: 611 (bigger than the frame) --------------------------------------------------- */
+FX.court = {
+  build(r) {
+    const s = {};
+    const band = mk(r, 'block', '', { left: 0, top: 920 }); band.style.cssText += ';width:1920px;height:160px;background:var(--paper)';
+    s.cap = mk(r, 'L', 'hokimlik qarori sudda qonunga zid deb topildi  ·  2025', { left: 160, top: 968, size: 44 });
+    s.cap.style.fontFamily = "'Geist Mono',monospace"; s.cap.style.fontWeight = 500;
+    return s;
+  },
+  draw(t, s) {
+    const dt = t - bt(8, 0);
+    const sc = (1 + 0.06 * Math.exp(-14 * dt)) * (1 + 0.022 * P(t, bt(8, 0), BAR));
+    const f = FONT.monoC(800), size = 1380;
+    if (!s.m) { meas.font = f; const m = meas.measureText('611'); s.m = { a: m.actualBoundingBoxAscent * 13.8, d: m.actualBoundingBoxDescent * 13.8, w: m.width * 13.8 }; }
+    ctx.setTransform(K * sc * size / 100, 0, 0, K * sc * size / 100, K * 960, K * (470 + (s.m.a - s.m.d) / 2 * sc));
+    ctx.font = f; curFont = f; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; ctx.globalAlpha = 1; ctx.fillStyle = COL.ink;
+    ctx.fillText('611', 0, 0); ctx.textBaseline = 'middle';
+    clipR(s.cap, E.cubicOut(P(t, bt(8, 1), 0.5)));
+  }
+};
+
+/* 7 WHO: stillness ------------------------------------------------------------------------- */
+FX.who = {
+  build(r) { mk(r, 'L serif', "Buni kim ko'radi?", { left: 0, top: 410, size: 240, width: 1920, align: 'center' }); return {}; },
+  draw() {}
+};
+
+/* 8 DROP: line up -> particles -> MEZON ---------------------------------------------------- */
+FX.drop = {
+  build(r) {
+    const s = {};
+    s.tag = mk(r, 'L mono teal', 'mahalliy qarorlar auditori', { left: 0, top: 650, size: 66, width: 1920, align: 'center' });
+    s.tag.style.fontWeight = 500;
+    return s;
+  },
+  draw(t, s) {
+    const tB = bt(10, 2), tSnap = bt(11, 0);
+    if (!s.M) {
+      const rows = ['231-4-59-Q/24', 'VI-76-4-10-146-K/24', '207-4-59-Q/24', '355-4-68-Q/25'];
+      const src = [];
+      rows.forEach((tx, ri) => layoutLine(tx, FONT.monoC(600), 66, 960, 380 + ri * 96, 'center')
+        .forEach(g => src.push({ ...g, color: COL.ink, at: bt(10, 0) + ri * BEAT / 2, row: ri })));
+      s.M = makeMorph(src, tB, tSnap - 0.02, { tgtSize: 21, step: 12, arc: 110 });
+    }
+    if (t < tSnap) {
+      drawMorph(s.M, t, tt => {
+        for (const g of s.M.src) {
+          const u = P(tt, g.at, 0.2); if (u <= 0) continue;
+          const e = E.expoOut(u);
+          glyph(g.ch, g.x + (1 - e) * 320, g.y, g.size, g.f, g.color, P(tt, g.at, 0.06), 0, 1 + (1 - e) * 1.8);
+        }
+      });
+    } else {
+      const sc = 1 + spring(t - tSnap, 0.075, 22, 7);
+      drawWord(t, sc);
+      drawSparks(s.M, t, tSnap);
+    }
+    const u = E.expoOut(P(t, bt(11, 1), 0.6));
+    s.tag.style.letterSpacing = lerp(0.7, 0.02, u) + 'em'; op(s.tag, P(t, bt(11, 1), 0.15));
+  }
+};
+
+/* 9 SOURCES -------------------------------------------------------------------------------- */
+FX.sources = {
+  build(r) {
+    const s = {};
+    s.l = [['lex.uz', 280], ['E-qaror', 450], ['regulation.gov.uz', 620]].map(([tx, y]) => {
+      const a = mk(r, 'L mono', tx, { left: 160, top: y, size: 150 });
+      const b = mk(r, 'L mono teal', tx, { left: 160, top: y, size: 150 });
+      return { a, b };
+    });
+    s.cap = mk(r, 'L cap', "har bir yangi qaror, avtomatik", { left: 160, top: 840, size: 36 });
+    return s;
+  },
+  draw(t, s) {
+    s.l.forEach((l, k) => {
+      const t0 = bt(12, k), u = P(t, t0, 0.3), e = E.backOut(u, 1.25);
+      const x = (1 - e) * 760, st = 1 + (1 - E.expoOut(u)) * 1.1;
+      [l.a, l.b].forEach(el => { tf(el, x, 0, st, 1 / Math.sqrt(st)); op(el, P(t, t0, 0.06)); });
+      clipR(l.b, E.cubicInOut(P(t, bt(12, 3) + k * 0.06, 0.3)));
+    });
+    op(s.cap, E.cubicOut(P(t, bt(12, 3) + 0.2, 0.25)));
+  }
+};
+
+/* 10 CLOCK: slot reels 00:00 -> 23:59 ------------------------------------------------------ */
+FX.clock = {
+  build(r) {
+    const s = {};
+    const row = mk(r, 'reelrow mono', '', { left: 0, top: 210, size: 340 });
+    row.style.fontWeight = 700; row.style.width = '1920px'; row.style.justifyContent = 'center';
+    const seq = n => [...Array(n + 1).keys()].map(String).concat('0');
+    s.h1 = reel(row, ['0', '1', '2']); s.h0 = reel(row, seq(9));
+    const colon = document.createElement('span'); colon.textContent = ':'; colon.style.width = '0.59em'; colon.style.textAlign = 'center';
+    row.appendChild(colon); s.colon = colon;
+    s.m1 = reel(row, seq(5)); s.m0 = reel(row, seq(9));
+    s.daily = mline(r, 'har kuni', 'serif', 0, 650, 190); s.daily.w.style.width = '1920px'; s.daily.i.style.textAlign = 'center';
+    s.daily.w.style.left = '0px';
+    return s;
+  },
+  draw(t, s) {
+    const a = bt(13, 0) + 0.06, b = bt(13, 3);
+    const u = P(t, a, b - a), M = 1439 * E.cubicInOut(u);
+    const Mi = Math.min(1439, Math.floor(M)), f = Mi >= 1439 ? 0 : M - Mi, Mn = Math.min(1439, Mi + 1);
+    const dg = m => [Math.floor(m / 600), Math.floor(m / 60) % 10, Math.floor((m % 60) / 10), m % 10];
+    const cur = dg(Mi), nxt = dg(Mn), max = [2, 9, 5, 9];
+    const speed = (1439 * (E.cubicInOut(Math.min(1, u + 0.01)) - E.cubicInOut(u))) / (0.01 * (b - a)); // minutes / s
+    [s.h1, s.h0, s.m1, s.m0].forEach((r, i) => {
+      let idx = cur[i];
+      if (nxt[i] !== cur[i]) idx = cur[i] + f * ((nxt[i] < cur[i] ? max[i] + 1 : nxt[i]) - cur[i]);
+      const st = 1; void speed; // no stretch on clipped reels: it exposes the neighbouring digits in a still
+      setReel(r, idx, st);
+    });
+    const land = t - b; // settle punch when it lands on beat 4
+    s.colon.style.opacity = land > 0 ? 1 : (((t - T0) / BEAT) % 1 < 0.5 ? 1 : 0.25);
+    s.daily.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(13, 1), 0.45))) * 140}%)`;
+  }
+};
+
+/* 11 TIMELINE: the law as a strip in time; it breaks at 19.10.2024 ------------------------- */
+// x position of a date on the strip (01.01.2022 .. 01.07.2026 across 160..1760)
+const TX = (d, m, y) => 160 + ((y + (m - 1) / 12 + (d - 1) / 365) - 2022) * (1600 / 4.5);
+const BREAK_X = TX(19, 10, 2024);
+FX.timeline = {
+  build(r) {
+    const s = {};
+    s.title = mk(r, 'L', "Mahalliy davlat hokimiyati to'g'risidagi Qonun  ·  25-modda", { left: 160, top: 190, size: 40 });
+    s.title.style.fontFamily = "'Geist Mono',monospace"; s.title.style.fontWeight = 500;
+    s.ink = mk(r, 'block', '', { left: 160, top: 552 }); s.ink.style.cssText += `;width:${BREAK_X - 160}px;height:18px;transform-origin:0 0`;
+    s.dead = mk(r, 'block', '', { left: BREAK_X + 16, top: 556 });
+    s.dead.style.cssText += `;width:${1760 - BREAK_X - 16}px;height:10px;transform-origin:0 0;` +
+      'background:repeating-linear-gradient(90deg,var(--ember) 0 28px,transparent 28px 44px)';
+    s.cut = mk(r, 'block', '', { left: BREAK_X - 2, top: 400 }); s.cut.style.cssText += ';width:5px;height:190px;background:var(--ember);transform-origin:0 100%';
+    s.cutLab = mk(r, 'L mono ember', "19.10.2024" + String.fromCharCode(10) + "kuchini yo'qotdi", { left: BREAK_X - 22, top: 380, size: 44 });
+    s.cutLab.style.fontWeight = 600; s.cutLab.style.lineHeight = '1.2'; s.cutLab.style.textAlign = 'right';
+    s.cutLab.style.transform = 'translateX(-100%)'; // left of the cut: the space right of it belongs to "belgilandi"
+    s.years = [2022, 2023, 2024, 2025, 2026].map(y => {
+      const x = TX(1, 1, y);
+      const tk = mk(r, 'block', '', { left: x, top: 522 }); tk.style.cssText += ';width:2px;height:22px;background:var(--mute)';
+      const lb = mk(r, 'L cap', String(y), { left: x + 8, top: 500, size: 30 });
+      return [tk, lb];
+    });
+    // label rows chosen so no stem crosses another label; 355 is right-aligned to its stem
+    const D = [['416-4-57-Q/22', '30.11.2022', TX(30, 11, 2022), 0, 'l'], ['VI-76-4-10-146-K/24', '11.01.2024', TX(11, 1, 2024), 2, 'l'],
+               ['231-4-59-Q/24', '21.06.2024', TX(21, 6, 2024), 1, 'l'], ['355-4-68-Q/25', '13.11.2025', TX(13, 11, 2025), 0, 'r']];
+    s.items = D.map(([n, d, x, row, al], i) => {
+      const top = 640 + row * 112;
+      const dot = mk(r, 'block', '', { left: x - 11, top: 550 }); dot.style.cssText += ';width:22px;height:22px';
+      const stem = mk(r, 'block', '', { left: x - 1, top: 574 }); stem.style.cssText += `;width:3px;height:${top - 574 + 6}px;transform-origin:0 0`;
+      const box = mk(r, 'L', '', { left: al === 'l' ? x + 14 : x - 14, top });
+      const num = mk(box, 'L mono', n, { left: 0, top: 0, size: 44 }); num.style.fontWeight = 600;
+      const dt = mk(box, 'L cap', d, { left: 0, top: 52, size: 30 });
+      if (al === 'r') { num.style.transform = 'translateX(-100%)'; dt.style.transform = 'translateX(-100%)'; }
+      const land = i === 0 ? bt(14, 0) + 0.12 : bt(14, 0) + i * 2 * BEAT;   // one per two beats
+      return { dot, stem, box, num, dt, land };
+    });
+    s.flag = mk(r, 'L mono ember', 'belgilandi', { left: 1760, top: 262, size: 120 }); s.flag.style.fontWeight = 800;
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(14, 0);
+    op(s.title, P(t, t0, 0.1)); clipR(s.title, E.expoOut(P(t, t0, 0.35)));
+    s.ink.style.transform = `scaleX(${E.expoOut(P(t, t0, 0.3))})`;
+    const br = t0 + 0.22;                                   // the break: ember snaps in after the ink line
+    s.dead.style.transform = `scaleX(${E.expoOut(P(t, br, 0.3))})`; op(s.dead, P(t, br, 0.04));
+    s.cut.style.transform = `scaleY(${E.backOut(P(t, br, 0.25), 1.6)})`; op(s.cut, P(t, br, 0.04));
+    clipR(s.cutLab, E.expoOut(P(t, br + 0.08, 0.35)));
+    s.years.forEach(([tk, lb], i) => { const o = P(t, t0 + 0.05 * i, 0.15); op(tk, o); op(lb, o); });
+    s.items.forEach((it, i) => {
+      const a = it.land - 0.2;                               // falls for 0.2 s, lands ON the beat
+      const u = P(t, a, 0.2);
+      const fall = t < it.land ? (1 - E.cubicIn(u)) * -260 : spring(t - it.land, 6, 30, 12);
+      tf(it.dot, 0, fall); op(it.dot, u > 0 ? 1 : 0);
+      it.stem.style.transform = `scaleY(${E.expoOut(P(t, it.land, 0.22))})`;
+      const lu = E.expoOut(P(t, it.land + 0.06, 0.3)); clipR(it.num, lu); clipR(it.dt, lu); // (an empty 0x0 box can't be clipped)
+      const hot = i === 3 && t >= it.land;
+      const c = hot ? 'var(--ember)' : 'var(--ink)';
+      it.dot.style.background = c; it.stem.style.background = c; it.num.style.color = c;
+    });
+    const fl = s.items[3].land, fu = P(t, fl, 0.28);
+    op(s.flag, t >= fl ? 1 : 0);
+    s.flag.style.transformOrigin = '100% 60%';
+    s.flag.style.transform = `translateX(-100%) scale(${lerp(1.5, 1, E.backOut(fu, 2))})`;
+  }
+};
+
+/* 12 AGENT: the question, then five plain steps, one at a time ---------------------------- */
+// the flag's own citation for 355-4-68-Q/25, as the audit returns it (NHH Qonuni 18-modda 3-qism), apostrophes in ASCII
+const LAW_QUOTE = ['“...yuqoriroq yuridik kuchga ega bo\'lgan', 'normativ-huquqiy hujjat qo\'llaniladi.”'];
+FX.agent = {
+  build(r) {
+    const s = {};
+    s.q = mk(r, 'L', '', { left: 160, top: 380 });
+    s.ql = [mk(s.q, 'L mono', 'Nega bu qaror', { left: 0, top: 0, size: 150 }), mk(s.q, 'L mono', 'belgilandi?', { left: 0, top: 170, size: 150 })];
+    s.ql.forEach(l => l.style.fontWeight = 600);
+    s.qc = s.ql.flatMap(chars);
+    s.caret = mk(s.q, 'block'); s.caret.style.cssText += ';width:72px;height:118px;background:var(--violet)';
+    s.steps = [
+      { at: bt(17, 0), a: 'Qaror matnini', b: "o'qidi", cls: '', size: 140 },
+      { at: bt(17, 2), a: '14 ta', b: 'tekshiruv', cls: '', size: 140 },
+      { at: bt(18, 0), a: '6-modda, 13.11.2025:', b: 'amalda', cls: 'teal', size: 150 },
+      { at: bt(18, 2), a: '25-modda, 13.11.2025:', b: "kuchini yo'qotgan", cls: 'ember', size: 110, hit: true },
+      { at: bt(19, 0), a: 'Iqtibos qonundan', b: 'aynan tekshirildi', cls: 'teal', size: 110, quote: true, bAt: bt(19, 3) },
+    ].map((st, i) => {
+      const box = mk(r, 'L', '', { left: 160, top: 0 });
+      const dig = mk(box, 'L mono violet', String(i + 1), { left: -10, top: -40, size: 460 }); dig.style.fontWeight = 800;
+      const a = mk(box, 'L mono', st.a, { left: 470, top: 0, size: 76 }); a.style.fontWeight = 500;
+      const b = mline(box, st.b, 'mono ' + st.cls, 470, 100, st.size); b.i.style.fontWeight = 700;
+      let qc = null, qcap = null;
+      if (st.quote) {
+        qcap = mk(box, 'L cap', "Normativ-huquqiy hujjatlar to'g'risidagi Qonun, 18-modda", { left: 470, top: 250, size: 30 });
+        const l1 = mk(box, 'L mono', LAW_QUOTE[0], { left: 470, top: 300, size: 46 }), l2 = mk(box, 'L mono', LAW_QUOTE[1], { left: 470, top: 360, size: 46 });
+        [l1, l2].forEach(l => { l.style.fontWeight = 500; l.style.color = 'var(--mute)'; });
+        qc = chars(l1).concat(chars(l2));
+      }
+      return { ...st, box, dig, aEl: a, b, qc, qcap };
+    });
+    return s;
+  },
+  draw(t, s) {
+    // typing the question
+    const t0 = bt(16, 0) + 0.1, rate = 0.042;
+    let n = 0;
+    s.qc.forEach((c, i) => { const v = t >= t0 + i * rate; op(c, v ? 1 : 0); if (v) n = i; });
+    const lastC = s.qc[n];
+    const typed = t >= t0 + (s.qc.length - 1) * rate;
+    const blink = ((t - T0) / BEAT) % 1 < 0.55;
+    s.caret.style.left = (lastC.offsetLeft + lastC.offsetWidth + 12) + 'px';
+    s.caret.style.top = (lastC.parentNode.offsetTop + 16) + 'px';
+    if (t < t0) { s.caret.style.left = '0px'; s.caret.style.top = '16px'; }
+    const gone = E.cubicIn(P(t, bt(16, 3), 0.2));          // the question leaves: no small grey copy stays behind
+    op(s.caret, gone > 0 ? 0 : (!typed || blink ? 1 : 0));
+    tf(s.q, 0, -120 * gone); op(s.q, 1 - gone);
+    // steps: the step slides in half a beat early (anticipation), its result lands ON the beat
+    const LEAD = 0.2;
+    s.steps.forEach((st, i) => {
+      const next = s.steps[i + 1];
+      const a = st.at - LEAD;
+      if (t < a) { op(st.box, 0); return; }
+      const out = next ? E.cubicIn(P(t, next.at - LEAD - 0.12, 0.12)) : 0;
+      const inn = E.expoOut(P(t, a, 0.22));
+      tf(st.box, 0, 300 + (1 - inn) * 60 - out * 80); op(st.box, (1 - out) * P(t, a, 0.05));
+      st.dig.style.transformOrigin = '30% 70%';
+      tf(st.dig, 0, (1 - inn) * 120, lerp(0.7, 1, E.backOut(P(t, a, 0.3), 1.8)));
+      clipR(st.aEl, E.expoOut(P(t, a, 0.25)));
+      const bAt = st.bAt || st.at;
+      const ru = E.expoOut(P(t, bAt, 0.26));
+      st.b.i.style.transform = `translateY(${(1 - ru) * 140}%)` + (st.hit ? ` translateX(${shake(t - st.at, 22)}px)` : '');
+      if (st.qc) {
+        op(st.qcap, P(t, st.at, 0.2));
+        const N = st.qc.length;                              // the quote ticks teal, one chunk per eighth note
+        st.qc.forEach((c, k) => {
+          const tick = st.at + Math.floor(k * 8 / N) * BEAT / 2;
+          c.style.color = t >= tick ? 'var(--teal)' : '';
+          op(c, P(t, st.at - 0.1, 0.15));
+        });
+      }
+    });
+  }
+};
+
+/* 13 COMPARE: side by side ------------------------------------------------------------------ */
+FX.compare = {
+  build(r) {
+    const s = {};
+    s.div = mk(r, 'block', '', { left: 958, top: 262 }); s.div.style.cssText += ';width:3px;height:520px;transform-origin:0 0';
+    s.labL = mk(r, 'L cap', 'QAROR  ·  355-4-68-Q/25', { left: 160, top: 270, size: 34 });
+    s.labR = mk(r, 'L cap', 'LEX.UZ  ·  13.11.2025 HOLATIDA', { left: 1040, top: 270, size: 34 });
+    s.L = [['“...6 va', 350], ['25-moddalariga', 460], ['asosan”', 570]].map(([tx, y]) => mline(r, tx, 'mono', 160, y, 86));
+    s.R = [['25-modda', 350, ''], ['kuchini', 460, 'ember'], ["yo'qotgan", 570, 'ember']].map(([tx, y, c]) => mline(r, tx, 'mono ' + c, 1040, y, 90));
+    s.L.concat(s.R).forEach(m => m.i.style.fontWeight = 600);
+    // the shared word gets its own span, so each underline is sized to the word itself
+    s.L[1].i.innerHTML = '<span>25-modda</span>lariga'; s.wL = s.L[1].i.firstChild;
+    s.R[0].i.innerHTML = '<span>25-modda</span>'; s.wR = s.R[0].i.firstChild;
+    s.noteR = mk(r, 'L cap', "O'RQ-976  ·  19.10.2024-yildan", { left: 1040, top: 700, size: 34 });
+    s.hlL = mk(r, 'block', '', { left: 160, top: 460 + 98 }); s.hlL.style.cssText += ';height:10px;background:var(--ember);transform-origin:0 0';
+    s.hlR = mk(r, 'block', '', { left: 1040, top: 350 + 102 }); s.hlR.style.cssText += ';height:10px;background:var(--ember);transform-origin:0 0';
+    s.bottom = mk(r, 'L', "qaror kuni, 13.11.2025, bu modda kuchini yo'qotgan edi", { left: 160, top: 846, size: 44 });
+    s.bottom.style.fontFamily = "'Geist Mono',monospace"; s.bottom.style.fontWeight = 500;
+    return s;
+  },
+  draw(t, s) {
+    s.div.style.transform = `scaleY(${E.expoOut(P(t, bt(20, 0), 0.5))})`;
+    op(s.labL, P(t, bt(20, 0), 0.2)); op(s.labR, P(t, bt(20, 2), 0.2));
+    s.L.forEach((m, i) => m.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(20, 0) + i * 0.08, 0.42))) * 140}%)`);
+    s.R.forEach((m, i) => m.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(20, 2) + i * 0.08, 0.42))) * 140}%)`);
+    op(s.noteR, E.cubicOut(P(t, bt(20, 3), 0.3)));
+    s.hlL.style.width = s.wL.offsetWidth + 'px'; s.hlR.style.width = s.wR.offsetWidth + 'px';
+    const h = E.expoOut(P(t, bt(21, 0), 0.3));
+    s.hlL.style.transform = `scaleX(${h})`; s.hlR.style.transform = `scaleX(${h})`;
+    clipR(s.bottom, E.cubicOut(P(t, bt(21, 2), 0.45)));
+  }
+};
+
+/* 14 VERDICT: Adliya's own conclusion format, pre-filled; the expert signs ------------------ */
+const VERDICTS = ['ijobiy', 'kamchiliklar bilan ijobiy', 'salbiy'];
+const VPITCH = 128;
+FX.verdict = {
+  build(r) {
+    const s = {};
+    s.head = mk(r, 'L cap', 'XULOSA LOYIHASI  ·  355-4-68-Q/25', { left: 160, top: 196, size: 36 }); s.head.style.color = 'var(--ink)';
+    // a reel of the three official verdicts; the window shows three rows, the middle one is the choice
+    s.win = mk(r, 'mask', '', { left: 160, top: 262 }); s.win.style.cssText += `;width:1640px;height:${VPITCH * 3}px`;
+    s.strip = mk(s.win, 'L', '', { left: 0, top: 0 });
+    s.rows = [];
+    for (let k = 0; k < 12; k++) {
+      const e = mk(s.strip, 'L mono', VERDICTS[k % 3], { left: 40, top: k * VPITCH + 14, size: 96 }); e.style.fontWeight = 700;
+      s.rows.push(e);
+    }
+    s.ruleT = mk(r, 'block', '', { left: 160, top: 262 + VPITCH }); s.ruleT.style.cssText += ';width:1600px;height:3px;transform-origin:0 0';
+    s.ruleB = mk(r, 'block', '', { left: 160, top: 262 + VPITCH * 2 }); s.ruleB.style.cssText += ';width:1600px;height:3px;transform-origin:0 0';
+    s.mark = mk(r, 'block', '', { left: 160, top: 262 + VPITCH + 18 }); s.mark.style.cssText += `;width:14px;height:${VPITCH - 36}px;background:var(--teal)`;
+    // the fix, in one line
+    s.fix = mk(r, 'L mono', '', { left: 160, top: 690, size: 64 }); s.fix.style.fontWeight = 600;
+    mk(s.fix, 'ember', '25-modda ', { tag: 'span' });
+    const ar = svg(s.fix, 100, 40, ARROW); ar.style.cssText = 'width:1.6em;height:0.62em;vertical-align:0.08em;margin:0 0.35em 0 0.1em';
+    mk(s.fix, '', 'amaldagi moddani keltiring', { tag: 'span' });
+    // the expert's stamp
+    s.stamp = mk(r, 'L mono', 'EKSPERT IMZOLAYDI', { left: 1050, top: 800, size: 60 });
+    s.stamp.style.cssText += ';font-weight:800;border:7px solid var(--ink);padding:14px 30px 10px;letter-spacing:0.04em;transform-origin:50% 50%';
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(22, 0), lock = bt(22, 1);
+    op(s.head, P(t, t0, 0.12)); clipR(s.head, E.expoOut(P(t, t0, 0.35)));
+    // slot-select: roll six rows and lock on 'kamchiliklar bilan ijobiy' on beat 2 of the bar
+    const FINAL = 7;                                         // row index 7 = middle verdict, third repeat
+    const u = P(t, t0, lock - t0), idx = FINAL - 6 * (1 - E.backOut(u, 1.2));
+    s.strip.style.transform = `translateY(${-(idx - 1) * VPITCH}px)`;
+    s.rows.forEach((e, k) => {
+      const d = Math.abs(k - idx);
+      const chosen = t >= lock && k === FINAL;
+      e.style.color = chosen ? 'var(--ink)' : 'var(--mute)';
+      op(e, t >= lock ? (k === FINAL ? 1 : 0.28) : clamp(1.15 - d * 0.55, 0.25, 1));
+    });
+    const ru = E.expoOut(P(t, t0, 0.35));
+    s.ruleT.style.transform = `scaleX(${ru})`; s.ruleB.style.transform = `scaleX(${ru})`;
+    op(s.mark, t >= lock ? 1 : 0); tf(s.mark, 0, 0, 1, t >= lock ? 1 + spring(t - lock, 0.4, 30, 12) : 1);
+    clipR(s.fix, E.expoOut(P(t, bt(22, 2), 0.35)));
+    const st = bt(22, 3), su = P(t, st, 0.26);
+    op(s.stamp, t >= st ? 1 : 0);
+    tf(s.stamp, shake(t - st, 8), 0, lerp(2.2, 1, E.backOut(su, 1.6)), lerp(2.2, 1, E.backOut(su, 1.6)), -5);
+  }
+};
+
+/* 16 QUEUE: re-sorting ------------------------------------------------------------------------ */
+const QUEUE = ['416-4-57-Q/22', '332-4-64-Q/25', '282-4-64-Q/25', '355-4-68-Q/25', '265-4-60-Q/25']; // final order
+const QROW = i => 318 + i * 124;
+FX.queue = {
+  build(r) {
+    const s = {};
+    s.title = mk(r, 'L mono', 'Adliya navbati', { left: 160, top: 170, size: 80 });
+    s.sub = mk(r, 'L cap', 'eng muhimi tepada', { left: 900, top: 196, size: 36 });
+    s.ranks = [0, 1, 2, 3, 4].map(i => mk(r, 'L cap', String(i + 1), { left: 160, top: QROW(i) + 34, size: 44 }));
+    // each row carries its reason: a big ember tag that slides in on the beat the row climbs
+    const TAGS = ['aynan nusxa · salbiy', 'ikki marta bekor', 'ikki marta bekor', 'kuchsiz modda', 'korrupsiya omili 24'];
+    s.rows = QUEUE.map((n, q) => {
+      const e = mk(r, 'L', '', { left: 260, top: 0 });
+      const num = mk(e, 'L mono', n, { left: 0, top: 0, size: 110 }); num.style.fontWeight = 600;
+      const tag = mk(e, 'L mono ember', TAGS[q], { left: 900, top: 32, size: 52 }); tag.style.fontWeight = 700;
+      return { e, num, tag };
+    });
+    // orders as indices into QUEUE; one move per beat
+    s.orders = [[4, 3, 2, 1, 0], [0, 4, 3, 2, 1], [0, 1, 4, 3, 2], [0, 1, 2, 4, 3], [0, 1, 2, 3, 4]];
+    s.moves = [bt(24, 1), bt(24, 2), bt(24, 3), bt(25, 0)];
+    s.tagAt = [s.moves[0], s.moves[1], s.moves[2], s.moves[3], bt(25, 1)]; // 265 does not climb: its tag lands on the next beat
+    return s;
+  },
+  draw(t, s) {
+    op(s.title, P(t, bt(24, 0), 0.1)); clipR(s.title, E.expoOut(P(t, bt(24, 0), 0.4)));
+    op(s.sub, P(t, bt(24, 0) + 0.2, 0.2));
+    s.ranks.forEach((e, i) => op(e, P(t, bt(24, 0) + i * 0.05, 0.15)));
+    s.rows.forEach((row, q) => {
+      let k = 0; while (k < s.moves.length && t >= s.moves[k] + 0.34) k++;
+      const from = s.orders[k].indexOf(q);
+      let pos = from, lean = 0;
+      if (k < s.moves.length) {
+        const to = s.orders[k + 1].indexOf(q), u = P(t, s.moves[k], 0.34);
+        pos = lerp(from, to, E.backOut(u, 1.3));
+        if (to < from) lean = Math.sin(Math.PI * u) * 70;
+      }
+      const ent = E.expoOut(P(t, bt(24, 0) + from * 0.05, 0.35));
+      tf(row.e, lean + (1 - ent) * 120, QROW(pos)); op(row.e, ent);
+      row.num.style.color = lean > 1 ? 'var(--teal)' : '';
+      const ta = s.tagAt[q], tu = E.expoOut(P(t, ta, 0.3));
+      op(row.tag, t >= ta ? 1 : 0); tf(row.tag, (1 - tu) * 180, 0, 1 + (1 - tu) * 0.5, 1); clipR(row.tag, tu);
+    });
+  }
+};
+
+/* 17 REPORT: the list flies into one page --------------------------------------------------- */
+FX.report = {
+  build(r) {
+    const s = {};
+    s.page = mk(r, 'block', '', { left: 1250, top: 160 });
+    s.page.style.cssText += ';width:480px;height:560px;background:var(--sheet);border:3px solid var(--ink);box-sizing:border-box';
+    s.ph = mk(r, 'L', 'HAFTALIK HISOBOT', { left: 1290, top: 200, size: 30 }); s.ph.style.fontFamily = "'Geist Mono',monospace"; s.ph.style.fontWeight = 600;
+    s.pd = mk(r, 'L cap', 'dushanba  ·  1/1', { left: 1290, top: 244, size: 30 });
+    s.rows = QUEUE.map(n => { const e = mk(r, 'L mono', n, { left: 0, top: 0, size: 110 }); e.style.fontWeight = 600; return e; });
+    s.k = mk(r, 'L mono', 'Viloyat hisoboti:', { left: 160, top: 250, size: 64 }); s.k.style.fontWeight = 500;
+    s.l1 = mline(r, 'dushanba,', 'mono', 160, 380, 150);
+    s.l2 = mline(r, 'bir sahifa.', 'mono', 160, 550, 150);
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(26, 0);
+    const pu = E.backOut(P(t, t0 + 0.12, 0.4), 1.2);
+    tf(s.page, 0, (1 - pu) * -60, lerp(0.92, 1, pu)); op(s.page, P(t, t0 + 0.12, 0.12));
+    op(s.ph, P(t, t0 + 0.35, 0.15)); op(s.pd, P(t, t0 + 0.42, 0.15));
+    s.rows.forEach((e, i) => {
+      const u = E.expoInOut(P(t, t0 + i * 0.03, 0.4));
+      const x = lerp(260, 1290, u), y = lerp(QROW(i), 318 + i * 62, u), sc = lerp(1, 30 / 110, u);
+      tf(e, x, y, sc);
+    });
+    op(s.k, P(t, t0 + 0.05, 0.12)); clipR(s.k, E.expoOut(P(t, t0 + 0.05, 0.4)));
+    s.l1.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(26, 0.5), 0.4))) * 140}%)`;
+    s.l2.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(26, 0.75), 0.4))) * 140}%)`;
+  }
+};
+
+/* 18 LEXAI: the answer and the check are different jobs ----------------------------------- */
+FX.lexai = {
+  build(r) {
+    const s = {};
+    s.a = mline(r, 'LexAI javob beradi.', 'mono', 160, 330, 130); s.a.i.style.fontWeight = 600;
+    const b = mk(r, 'L mono teal', 'Mezon tekshiradi.', { left: 160, top: 540, size: 160 }); b.style.fontWeight = 800;
+    s.bc = chars(b);
+    return s;
+  },
+  draw(t, s) {
+    s.a.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(27, 0), 0.42))) * 140}%)`;
+    s.bc.forEach((c, i) => {                                  // staggered per-character rise, landing on beat 3
+      const a = bt(27, 2) - 0.12 + i * 0.016, u = P(t, a, 0.36);
+      tf(c, 0, (1 - E.backOut(u, 1.4)) * 110); op(c, E.cubicOut(P(t, a, 0.14)));
+    });
+  }
+};
+
+/* 19 QUOTES: 354/354 halves meet ------------------------------------------------------------- */
+FX.quotes = {
+  build(r) {
+    const s = {};
+    const size = 350, cw = 0.59 * size, left = 960 - 3.5 * cw;
+    s.a = mk(r, 'L mono', '354', { left, top: 230, size }); s.a.style.fontWeight = 800;
+    s.b = mk(r, 'L mono', '/354', { left: left + 3 * cw, top: 230, size }); s.b.style.fontWeight = 800;
+    s.b.innerHTML = '<span class="teal">/</span>354';
+    s.sub = mline(r, 'iqtibos aynan', 'mono teal', 0, 650, 120); s.sub.w.style.width = '1920px'; s.sub.i.style.textAlign = 'center';
+    s.cap = mk(r, 'L cap', "354 ta iqtibosning 354 tasi lex.uz matnida so'zma-so'z bor", { left: 0, top: 850, size: 38, width: 1920, align: 'center' });
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(28, 0), tm = bt(28, 1);
+    const inn = E.expoOut(P(t, t0, 0.22));              // fly in from the edges, stop apart (tension)
+    const gap = lerp(1100, 70, inn);
+    const meet = E.expoIn(P(t, tm - 0.1, 0.1));          // snap together on beat 2
+    const g = gap * (1 - meet);
+    const imp = spring(t - tm, 1, 26, 9);                // impact: compress then settle
+    const sx = t >= tm ? 1 - 0.06 * imp : 1 + (1 - inn) * 1.4;
+    s.a.style.transformOrigin = '100% 50%'; s.b.style.transformOrigin = '0 50%';
+    tf(s.a, -g + (t >= tm ? 8 * imp : 0), 0, sx, 1); tf(s.b, g - (t >= tm ? 8 * imp : 0), 0, sx, 1);
+    op(s.a, P(t, t0, 0.05)); op(s.b, P(t, t0, 0.05));
+    s.sub.i.style.transform = `translateY(${(1 - E.expoOut(P(t, bt(28, 2), 0.42))) * 140}%)`;
+    op(s.cap, E.cubicOut(P(t, bt(28, 3), 0.3)));
+  }
+};
+
+/* 20 GRID: the 20 cancelled decisions with text (eval/report.md); the 10 Mezon flagged flip teal */
+// [registration number, flagged by Mezon before knowing the answer] - printed by the eval stores, 19.11.2026
+const EVAL20 = [
+  ['VI-39-2-3-49-K/22', 1], ['161-14-207-Q/21', 1], ['VI-40-46-4-56-K/21', 1], ['VI-79-54-12-174-K/22', 1],
+  ['102-9-131-Q/21', 1], ['VI-37-67-5-73-K/21', 0], ['II-49-2-14-205-K/22', 0], ['II-49-4-14-205-K/22', 0],
+  ['88-11-164-Q/22', 0], ['VI-61-69-4-66-K/22', 1], ['362-2-31-Q/22', 0], ['407-4-57-Q/22', 0],
+  ['VI-79-294-2-33-K/22', 0], ['VI-51-202-13-194-K/22', 0], ['222-10-136-Q/23', 1], ['231-4-59-Q/24', 1],
+  ['VI-51-66-1-27-K/24', 0], ['109-5-75-Q/24', 1], ['VII-3-016-2-40-K/24', 0], ['VII-3-1-5-77-K/25', 1],
+];
+FX.grid = {
+  build(r) {
+    const s = {};
+    s.cells = EVAL20.map(([n, f], i) => {
+      const c = i % 4, row = Math.floor(i / 4);
+      const e = mk(r, 'L mono', n, { left: 160 + c * 408, top: 178 + row * 64, size: 31 }); e.style.fontWeight = 600;
+      return { e, f };
+    });
+    let k = 0; s.cells.forEach(c => { if (c.f) c.tick = bt(29, 0) + 0.06 + (k++) * BEAT / 2; }); // one per eighth note
+    s.count = mk(r, 'L mono', '', { left: 0, top: 530, size: 300, width: 1920, align: 'center' }); s.count.style.fontWeight = 800;
+    s.num = mk(s.count, 'teal', '0', { tag: 'span' }); mk(s.count, '', '/20', { tag: 'span' });
+    s.count.style.transformOrigin = '50% 60%';
+    s.cap = mk(r, 'L mono', 'bekor qilingan qaror  ·  javobni bilmasdan belgilandi', { left: 0, top: 910, size: 44, width: 1920, align: 'center' });
+    s.cap.style.fontWeight = 500;
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(29, 0);
+    let n = 0, last = -9;
+    s.cells.forEach((c, i) => {
+      op(c.e, P(t, t0 + (i % 4) * 0.02 + Math.floor(i / 4) * 0.03, 0.12));
+      const on = c.f && t >= c.tick;
+      if (on) { n++; last = Math.max(last, c.tick); }
+      c.e.style.color = on ? 'var(--teal)' : 'var(--mute)';
+      tf(c.e, 0, on ? -spring(t - c.tick, 10, 30, 12) : 0);
+    });
+    s.num.textContent = String(n);
+    const full = n === 10;
+    tf(s.count, 0, 0, 1 + spring(t - last, full ? 0.1 : 0.04, 26, 10));
+    op(s.cap, E.cubicOut(P(t, t0 + 0.2, 0.3)));
+  }
+};
+
+/* 21 CASES: two real adliya representations; the defect is the headline -------------------- */
+FX.cases = {
+  build(r) {
+    const s = {};
+    s.head = mk(r, 'L cap teal', 'ADLIYA TAQDIMNOMASI BILAN MOS  ·  2 TA HOLAT', { left: 160, top: 196, size: 36 });
+    // Qarshi: two copies of the words slide together and lock into one = the identical copy
+    const mkWord = (txt, top, cls) => { const e = mk(r, 'L mono ' + cls, txt, { left: 160, top, size: 180 }); e.style.fontWeight = 800; return e; };
+    s.qa = mkWord('AYNAN NUSXA', 290, 'ember'); s.qb = mkWord('AYNAN NUSXA', 290, 'ember');
+    s.la = mk(r, 'L cap', '207-4-59-Q/24 · 06.06.2024', { left: 160, top: 488, size: 32 });
+    s.lb = mk(r, 'L cap', '231-4-59-Q/24 · 21.06.2024', { left: 160, top: 488, size: 32 });
+    s.qcap = mk(r, 'L', 'Qarshi tumani  ·  231-4-59-Q/24  ·  adliya taqdimnomasi 27-7/1-34', { left: 160, top: 488, size: 34 });
+    // Xatirchi: the words type in backwards, last letter first, landing on the bar-31 downbeat
+    s.x = mkWord('ORQAGA KUCH', 600, 'ember'); s.xc = chars(s.x);
+    s.xcap = mk(r, 'L', 'Xatirchi tumani  ·  VII-3-1-5-77-K/25  ·  adliya taqdimnomasi 6/3-1', { left: 160, top: 826, size: 34 });
+    [s.qcap, s.xcap].forEach(e => { e.style.fontFamily = "'Geist Mono',monospace"; e.style.fontWeight = 500; });
+    return s;
+  },
+  draw(t, s) {
+    const t0 = bt(30, 2), lock = bt(30, 3), xl = bt(31, 0);
+    op(s.head, P(t, t0, 0.12));
+    const u = P(t, t0, lock - t0), e = E.expoInOut(u);
+    const gap = (1 - e) * 760;
+    const imp = t >= lock ? spring(t - lock, 1, 30, 10) : 0;
+    tf(s.qa, -gap - 10 * imp, 0); tf(s.qb, gap + 10 * imp, 0);
+    op(s.qb, P(t, t0, 0.05));
+    op(s.qa, t < t0 ? 0 : (t >= lock ? 0 : 0.35));            // the ghost copy disappears into the solid one on the beat
+    tf(s.la, -gap, 0); tf(s.lb, gap, 0);
+    const lab = t < lock ? P(t, t0, 0.1) : 1 - P(t, lock, 0.12);
+    op(s.la, lab); op(s.lb, lab);
+    clipR(s.qcap, E.expoOut(P(t, lock + 0.05, 0.35)));
+    s.xc.forEach((c, i) => {
+      const a = xl - 0.1 - i * 0.035;                       // i = 0 (first letter) lands last, on the downbeat
+      const v = P(t, a, 0.2);
+      tf(c, (1 - E.backOut(v, 1.5)) * -90, 0); op(c, P(t, a, 0.05));
+    });
+    clipR(s.xcap, E.expoOut(P(t, bt(31, 0.5), 0.35)));
+  }
+};
+
+/* 22 END: lines -> particles -> MEZON, into silence ------------------------------------------- */
+FX.end = {
+  build(r) {
+    const s = {};
+    s.brand = mk(r, 'L mono teal', 'mahalliy qarorlar auditori  ·  Adliya uchun', { left: 0, top: 650, size: 54, width: 1920, align: 'center' });
+    s.brand.style.fontWeight = 600;
+    s.tag = mk(r, 'L mono', '', { left: 0, top: 760, size: 60, width: 1920, align: 'center' }); s.tag.style.fontWeight = 500;
+    mk(s.tag, '', 'Belgilangan ', { tag: 'span' });
+    const g = svg(s.tag, 60, 60, NEQ_BOLD); g.style.cssText = 'width:0.7em;height:0.7em;vertical-align:-0.08em;color:var(--ember)';
+    mk(s.tag, '', ' noqonuniy', { tag: 'span' });
+    return s;
+  },
+  draw(t, s) {
+    const tB = bt(32, 3), tF = bar(33);
+    if (!s.M) {
+      const a = layoutLine('AI taklif qiladi.', FONT.monoC(600), 140, 960, 390, 'center').map(g => ({ ...g, color: COL.violet, at: bt(32, 0), line: 0 }));
+      const b = layoutLine('Inson hal qiladi.', FONT.serif, 190, 960, 610, 'center').map(g => ({ ...g, color: COL.ink, at: bt(32, 0.5), line: 1 }));
+      a.forEach((g, i) => g.at += i * 0.014); b.forEach((g, i) => g.at += i * 0.014);
+      s.M = makeMorph(a.concat(b), tB, tF - 0.02, { tgtSize: 21, step: 12, arc: 100, stagger: 0.12 });
+    }
+    if (t < tF) {
+      drawMorph(s.M, t, tt => {
+        for (const g of s.M.src) {
+          const u = P(tt, g.at, 0.32); if (u <= 0) continue;
+          const y = g.line === 0 ? 0 : (1 - E.cubicOut(u)) * 50;
+          glyph(g.ch, g.x, g.y + y, g.size, g.f, g.color, g.line === 0 ? 1 : E.cubicOut(u));
+        }
+      });
+    } else {
+      drawWord(t, 1 + spring(t - tF, 0.03, 16, 8));
+    }
+    const ub = E.cubicOut(P(t, bt(33, 0.5), 0.45)); op(s.brand, ub); tf(s.brand, 0, (1 - ub) * 20);
+    const u = E.cubicOut(P(t, bt(33, 1.5), 0.5)); op(s.tag, u); tf(s.tag, 0, (1 - u) * 24);
+  }
+};
+
+/* =============================================================================================
+   KICKER + RENDER
+   ============================================================================================= */
+const kick = document.getElementById('kicker'); let kickNow = null;
+function drawKicker(t) {
+  const k = KICKERS.find(k => t >= k.from && t < k.to);
+  if (k !== kickNow) { kickNow = k; kick.innerHTML = k ? (k.n ? `<b style="color:${k.color}">${k.n}</b>   ${k.label}` : `<span style="color:var(--mute)">${k.label}</span>`) : ''; }
+  if (k) { const u = E.expoOut(P(t, k.from, 0.35)); clipR(kick, u); op(kick, 1); }
+}
+
+let FONTS_OK = false;
+SCENES.forEach(sc => { sc.root = mk(stage, 'scene'); sc.state = FX[sc.id].build(sc.root); sc._on = false; });
+
+function render(t) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.clearRect(0, 0, cv.width, cv.height); curFont = '';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for (const sc of SCENES) {
+    const on = t >= sc.from && t < sc.to;
+    if (on !== sc._on) { sc.root.style.display = on ? 'block' : 'none'; sc._on = on; }
+    if (on && (FONTS_OK || !['flood', 'court', 'drop', 'end'].includes(sc.id))) FX[sc.id].draw(t, sc.state);
+  }
+  drawKicker(t);
+}
+
+/* =============================================================================================
+   STAGE, CLOCK, CONTROLS
+   ============================================================================================= */
+const Q = new URLSearchParams(location.search);
+const FROZEN = Q.has('t') ? parseFloat(Q.get('t')) || 0 : null;
+let CLEAN = Q.has('clean');
+const audio = document.getElementById('music');
+
+function fit() {
+  const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(-50%,-50%) scale(${s})`;
+  K = Math.min(2, Math.max(1, s * (devicePixelRatio || 1)));
+  cv.width = Math.round(1920 * K); cv.height = Math.round(1080 * K);
+}
+addEventListener('resize', fit); fit();
+
+let lastCT = -1, lastPerf = 0;
+function now() {
+  if (FROZEN !== null) return FROZEN;
+  const ct = audio.currentTime, p = performance.now();
+  if (audio.paused) { lastCT = ct; lastPerf = p; return ct; }
+  if (ct !== lastCT) { lastCT = ct; lastPerf = p; }
+  return ct + Math.min(0.1, (p - lastPerf) / 1000);
+}
+function loop() { render(now()); requestAnimationFrame(loop); }
+
+Promise.all([
+  document.fonts.load('condensed 800 100px "Martian Mono"', '0123456789MEZON'),
+  document.fonts.load('800 100px "Martian Mono"', 'MEZON'),
+  document.fonts.load('condensed 600 100px "Martian Mono"', 'AI taklif'),
+  document.fonts.load('italic 400 100px "Instrument Serif"', 'Inson'),
+  document.fonts.load('400 30px "Geist Mono"', 'abc'),
+]).then(() => document.fonts.ready).then(() => { FONTS_OK = true; render(now()); });
+requestAnimationFrame(loop);
+
+const ui = document.getElementById('ui'), startBtn = document.getElementById('start'), toast = document.getElementById('toast');
+function say(msg) { toast.textContent = msg; toast.style.display = 'block'; clearTimeout(say.h); say.h = setTimeout(() => toast.style.display = 'none', 3500); }
+if (FROZEN !== null) startBtn.style.display = 'none';
+function play() { audio.play().then(() => { startBtn.style.display = 'none'; }).catch(e => say('Audio ochilmadi: ' + e.message)); }
+startBtn.onclick = play;
+document.getElementById('bPlay').onclick = () => { if (audio.paused) play(); else audio.pause(); };
+audio.onplay = () => document.getElementById('bPlay').textContent = 'pauza';
+audio.onpause = () => document.getElementById('bPlay').textContent = 'ijro';
+document.getElementById('bRe').onclick = () => { audio.currentTime = 0; play(); };
+document.getElementById('bFs').onclick = () => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => say("To'liq ekran ochilmadi")); };
+const toggleClean = () => { CLEAN = !CLEAN; ui.classList.remove('show'); if (!CLEAN) say('Boshqaruv: sichqonchani qimirlating'); };
+document.getElementById('bClean').onclick = toggleClean;
+let hideT;
+addEventListener('mousemove', () => {
+  if (CLEAN || FROZEN !== null) return;
+  ui.classList.add('show'); clearTimeout(hideT); hideT = setTimeout(() => ui.classList.remove('show'), 2000);
+});
+addEventListener('keydown', e => {
+  if (e.key === 'h' || e.key === 'H') toggleClean();
+  else if (e.key === ' ') { e.preventDefault(); if (audio.paused) play(); else audio.pause(); }
+  else if (e.key === 'f' || e.key === 'F') document.getElementById('bFs').click();
+});
+
+/* optional WebM recording of this tab (getDisplayMedia + MediaRecorder) */
+document.getElementById('bRec').onclick = async () => {
+  try {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia || !window.MediaRecorder) throw new Error('bu brauzer yozishni qo\'llamaydi');
+    const stream = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 60 }, audio: true, preferCurrentTab: true, selfBrowserSurface: 'include' });
+    const types = ['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm'];
+    const mime = types.find(m => MediaRecorder.isTypeSupported(m)) || '';
+    const rec = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: 12e6 } : {});
+    const chunks = []; rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+    rec.onstop = () => {
+      stream.getTracks().forEach(tr => tr.stop());
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(chunks, { type: 'video/webm' }));
+      a.download = 'mezon_film.webm'; a.click(); say('Yozuv saqlandi: mezon_film.webm');
+    };
+    CLEAN = true; ui.classList.remove('show');
+    audio.currentTime = 0; rec.start(); play();
+    audio.onended = () => { setTimeout(() => rec.state !== 'inactive' && rec.stop(), 300); };
+  } catch (e) { say('Yozib bo\'lmadi: ' + (e && e.message ? e.message : e)); }
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{
+ "n": 20,
+ "failed": 0,
+ "results": [
+  {
+   "kind": "verbatim",
+   "bench": "lookup-030",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-047",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-024",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-027",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-105",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-073",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-098",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-117",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-028",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-056",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-049",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-048",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-076",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-006",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-113",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-010",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-035",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "inside_local_decision",
+   "bench": "lookup-026",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "verbatim",
+   "bench": "lookup-012",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  },
+  {
+   "kind": "one_word_changed",
+   "bench": "lookup-065",
+   "survivors_8gram": 0,
+   "unseen_13gram_left": 0
+  }
+ ],
+ "passed": true,
+ "short_unseen_answers_not_coverable_by_13gram": 3,
+ "unseen_items": 167
+}

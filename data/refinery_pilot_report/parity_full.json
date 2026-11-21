@@ -1,0 +1,345 @@
+[
+ {
+  "act": "adminproc",
+  "lex_id": "-3492199",
+  "editions": 5,
+  "store_rows": 534,
+  "refinery_rows": 534,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "advertising",
+  "lex_id": "-6052631",
+  "editions": 7,
+  "store_rows": 456,
+  "refinery_rows": 456,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "ai3787",
+  "lex_id": "-8083233",
+  "editions": 1,
+  "store_rows": 25,
+  "refinery_rows": 25,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "anticorruption860",
+  "lex_id": "-6561894",
+  "editions": 1,
+  "store_rows": 184,
+  "refinery_rows": 184,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "appeals",
+  "lex_id": "-2509996",
+  "editions": 1,
+  "store_rows": 120,
+  "refinery_rows": 120,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "budgetcode",
+  "lex_id": "-2304138",
+  "editions": 41,
+  "store_rows": 3531,
+  "refinery_rows": 3531,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "constitution",
+  "lex_id": "-6445145",
+  "editions": 2,
+  "store_rows": 586,
+  "refinery_rows": 586,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "education",
+  "lex_id": "-5013007",
+  "editions": 13,
+  "store_rows": 941,
+  "refinery_rows": 941,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "eqaror390",
+  "lex_id": "-5470461",
+  "editions": 3,
+  "store_rows": 44,
+  "refinery_rows": 44,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "landcode",
+  "lex_id": "-152653",
+  "editions": 35,
+  "store_rows": 1774,
+  "refinery_rows": 1774,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "landtaking",
+  "lex_id": "-6087433",
+  "editions": 3,
+  "store_rows": 301,
+  "refinery_rows": 301,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "linguistic662",
+  "lex_id": "-5701504",
+  "editions": 2,
+  "store_rows": 38,
+  "refinery_rows": 38,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "lsp",
+  "lex_id": "-112170",
+  "editions": 23,
+  "store_rows": 652,
+  "refinery_rows": 652,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "nla",
+  "lex_id": "-5378966",
+  "editions": 12,
+  "store_rows": 560,
+  "refinery_rows": 560,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "ombudsman",
+  "lex_id": "-3321352",
+  "editions": 5,
+  "store_rows": 207,
+  "refinery_rows": 207,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "order3333",
+  "lex_id": "-5735507",
+  "editions": 1,
+  "store_rows": 118,
+  "refinery_rows": 118,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pf126",
+  "lex_id": "-7675184",
+  "editions": 3,
+  "store_rows": 47,
+  "refinery_rows": 47,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pf6075",
+  "lex_id": "-5019106",
+  "editions": 9,
+  "store_rows": 641,
+  "refinery_rows": 641,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pf6121",
+  "lex_id": "-5138323",
+  "editions": 3,
+  "store_rows": 16,
+  "refinery_rows": 16,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pf6243",
+  "lex_id": "-5450176",
+  "editions": 7,
+  "store_rows": 83,
+  "refinery_rows": 83,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq190",
+  "lex_id": "-7540338",
+  "editions": 1,
+  "store_rows": 35,
+  "refinery_rows": 35,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq236",
+  "lex_id": "-6546421",
+  "editions": 5,
+  "store_rows": 34,
+  "refinery_rows": 34,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq353",
+  "lex_id": "-6159496",
+  "editions": 2,
+  "store_rows": 11,
+  "refinery_rows": 11,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq3666",
+  "lex_id": "-3681790",
+  "editions": 12,
+  "store_rows": 296,
+  "refinery_rows": 296,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq4407",
+  "lex_id": "-4664427",
+  "editions": 1,
+  "store_rows": 15,
+  "refinery_rows": 15,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "pq5",
+  "lex_id": "-6734972",
+  "editions": 6,
+  "store_rows": 84,
+  "refinery_rows": 84,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "publiccontrol",
+  "lex_id": "-3679092",
+  "editions": 3,
+  "store_rows": 160,
+  "refinery_rows": 160,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "taxcode",
+  "lex_id": "-4674902",
+  "editions": 70,
+  "store_rows": 6950,
+  "refinery_rows": 6950,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq1010",
+  "lex_id": "-4104733",
+  "editions": 4,
+  "store_rows": 130,
+  "refinery_rows": 130,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq125",
+  "lex_id": "-5324826",
+  "editions": 8,
+  "store_rows": 193,
+  "refinery_rows": 193,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq140",
+  "lex_id": "-3137130",
+  "editions": 16,
+  "store_rows": 143,
+  "refinery_rows": 143,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq172",
+  "lex_id": "-5953883",
+  "editions": 14,
+  "store_rows": 510,
+  "refinery_rows": 510,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq295",
+  "lex_id": "-6044094",
+  "editions": 7,
+  "store_rows": 415,
+  "refinery_rows": 415,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq299",
+  "lex_id": "-3713560",
+  "editions": 4,
+  "store_rows": 18,
+  "refinery_rows": 18,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq428",
+  "lex_id": "-6591657",
+  "editions": 7,
+  "store_rows": 89,
+  "refinery_rows": 89,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq563",
+  "lex_id": "-8537985",
+  "editions": 1,
+  "store_rows": 135,
+  "refinery_rows": 135,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq82",
+  "lex_id": "-2145601",
+  "editions": 11,
+  "store_rows": 172,
+  "refinery_rows": 172,
+  "equal": true,
+  "mismatches": 0
+ },
+ {
+  "act": "vmq965",
+  "lex_id": "-3448292",
+  "editions": 7,
+  "store_rows": 150,
+  "refinery_rows": 150,
+  "equal": true,
+  "mismatches": 0
+ }
+]
+parity: 38/38 cached core acts identical; rows compared: 20398; core acts listed: 38

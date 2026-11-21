@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Mezon Jamoa Rejasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="plan.css">
+<style>@page { @bottom-left { content: "MEZON  ·  JAMOA REJASI  ·  19.11.2026"; } }</style>
+</head>
+<body>
+
+<!-- ============ MUQOVA ============ -->
+<section class="cover">
+  <div class="band"></div>
+  <div class="inner">
+    <div class="top">
+      <div class="mark">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="7" fill="#14151a"/><path d="M18 8v20M11 28h14M9 12h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 12l-4 8h8zM27 12l-4 8h8z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Mezon</span>
+      </div>
+      <span>LexHackathon 2026 · 1-yo'nalish</span>
+    </div>
+
+    <div class="word">Mezon<span>.</span></div>
+    <h1>Har bir mahalliy qaror o'sha kundagi qonun bilan tekshiriladi</h1>
+    <p class="lead">Hokim va Kengash qarorlarining AI auditori. Mezon lex.uz, E-qaror va regulation.gov.uz ni har kuni kuzatadi, har bir qarorni qabul qilingan sanadagi qonun tahriri bilan solishtiradi, har bir qadamini ko'rsatadi va adliya ekspertiga imzolash uchun tayyor xulosa loyihasini beradi. Fuqaro va tadbirkor uchun bepul. O'z serverimizda ishlaydi.</p>
+
+    <div class="dates">
+      <div><b>20-noyabr</b><span>juma · qurish, 12:30 dan</span></div>
+      <div><b>21-noyabr</b><span>shanba · muzlatish 10:00</span></div>
+      <div><b>21-noyabr</b><span>shanba · topshirish 17:55</span></div>
+      <div><b>22-noyabr</b><span>yakshanba · final</span></div>
+    </div>
+
+    <div class="toc">
+      <div><i>01</i>Muammo</div>
+      <div><i>02</i>Bugun ishlayotgan qism</div>
+      <div><i>03</i>Qanday ishlaydi</div>
+      <div><i>04</i>Qadamma-qadam: ekspert, tadbirkor, fuqaro</div>
+      <div><i>05</i>Xom ma'lumot</div>
+      <div><i>06</i>O'z modelimiz: Mezon-LM</div>
+      <div><i>07</i>LexAI va Tuzuk.ai yonida</div>
+      <div><i>08</i>Vazifalar ro'yxati</div>
+      <div><i>09</i>Buzilmas qoidalar · havolalar</div>
+    </div>
+
+    <div class="keys">
+      <div><b>354/354</b><span>iqtibos o'sha kungi tahrirda aynan bor</span></div>
+      <div><b>10/20</b><span>keyin bekor qilingan qaror javobni bilmasdan belgilandi (5 tasi yuqori ishonch bilan)</span></div>
+      <div><b>68</b><span>ta qaror, 13 viloyat: kuchini yo'qotgan moddaga tayangan</span></div>
+    </div>
+    <p class="status">Jamoa rejasi · holat 19.11.2026 · raqamlar Mezon skriptlaridan va ko'rsatilgan ochiq manbalardan</p>
+  </div>
+</section>
+
+<!-- ============ 1 MUAMMO ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">1</div><div>
+    <div class="eb">Muammo</div>
+    <h2>Mahalliy qarorlar qo'lda tekshiruvdan o'tib ketadi, qonunlar esa ularning ostida o'zgarib turadi</h2>
+    <p class="one">Hokimlar va mahalliy Kengashlar har kuni qaror qabul qiladi. Har birini inson qo'lda, muddat ichida, deyarli har hafta o'zgarib turadigan qonunlar bilan solishtiradi.</p>
+  </div></div>
+
+  <div class="facts">
+    <div class="fact"><b>611</b><p>sudga chiqqan 2 043 ta hokimlik qaroridan 611 tasi 2025-yilda qonunga zid deb topildi.</p><small>Oliy sud yakunlari, anhor.uz 21.01.2026</small></div>
+    <div class="fact"><b>2-5 kun</b><p>adliya eksperti bitta loyihani qo'lda tekshiradi.</p><small>Adliya vazirligining 3333-son buyrug'i</small></div>
+    <div class="fact"><b>~haftada 1</b><p>asosiy 38 qonunimizning yangi tahriri (2023-yildan 193 ta); eski qarorlarni hech kim qayta o'qimaydi.</p><small>Mezon qonun bazasi</small></div>
+    <div class="fact"><b>87/92</b><p>tanlangan loyihaga jamoatchilikdan birorta ham taklif kelmagan.</p><small>bizning tasodifiy tanlovimiz, regulation.gov.uz</small></div>
+  </div>
+
+  <div class="chart">
+    <h4>2025-yil: sudga chiqqan qarorlar va qonunga zid deb topilgan ulush</h4>
+    <p class="small muted" style="margin:0 0 3mm">Ustunlar masshtabda. To'q qismi: sud qonunga zid deb topgani.</p>
+    <svg viewBox="0 0 680 158" role="img" aria-label="2025 sud natijalari: hokimlik 2043 dan 611, soliq organi 1593 dan 743, Kadastr agentligi 1594 dan 449">
+      <g font-size="13" fill="#14151a">
+        <text x="0" y="31" font-weight="600">Hokimlik qarorlari</text>
+        <text x="0" y="81" font-weight="600">Soliq organi</text>
+        <text x="0" y="131" font-weight="600">Kadastr agentligi</text>
+      </g>
+      <g>
+        <rect x="160" y="16" width="360" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="16" width="107.7" height="22" rx="3" fill="#c2361a"/>
+        <rect x="160" y="66" width="280.7" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="66" width="130.9" height="22" rx="3" fill="#c2361a"/>
+        <rect x="160" y="116" width="280.9" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="116" width="79.1" height="22" rx="3" fill="#c2361a"/>
+      </g>
+      <g style="font-family:'Geist Mono',monospace" font-size="12.5" fill="#14151a">
+        <text x="532" y="32">611 / 2 043</text><text x="680" y="32" text-anchor="end" font-weight="600" fill="#c2361a">30%</text>
+        <text x="452" y="82">743 / 1 593</text><text x="680" y="82" text-anchor="end" font-weight="600" fill="#c2361a">47%</text>
+        <text x="452" y="132">449 / 1 594</text><text x="680" y="132" text-anchor="end" font-weight="600" fill="#c2361a">28%</text>
+      </g>
+      <g font-size="10.5" fill="#7a7f8a"><text x="160" y="156">0</text><text x="520" y="156" text-anchor="end">2 043 ta sudga chiqqan</text></g>
+    </svg>
+    <div class="src">Manba: Oliy sudning 2025-yil yakunlari, anhor.uz, 21.01.2026. Foizlar shu sonlardan hisoblangan. Mezon birinchi qatorni tekshiradi; soliq va kadastr yo'l xaritasida.</div>
+  </div>
+
+  <p class="callout t" style="margin-top:6mm">Mezon nimani o'zgartiradi: tekshiruv qaror paydo bo'lgan kuni, o'sha kundagi qonun tahriri bilan bo'ladi, imzoni esa baribir inson qo'yadi. Belgilangan ≠ noqonuniy: belgi ekspert ko'rib chiqishi uchun ehtimoliy qoidabuzarlik.</p>
+</section>
+
+<!-- ============ 2 ISHLAYOTGAN QISM ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">2</div><div>
+    <div class="eb">Bugun ishlayotgan qism</div>
+    <h2>Qurilgan va o'lchangan, haqiqiy holatda</h2>
+    <p class="one">Jadvaldagi hamma narsa bugun noutbukda ishlaydi. O'ng ustun: ko'rsata oladigan isbotimiz.</p>
+  </div></div>
+
+  <table>
+    <thead><tr><th style="width:27%">Qism</th><th>Nima qiladi</th><th style="width:31%">Isbot</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Sana bo'yicha qonun bazasi</td><td>38 ta asosiy hujjat, barcha tahrirlari; "X modda D kuni qanday edi?" savoliga javob</td><td><span class="pill ok">354/354</span> iqtibos o'sha kungi tahrirda aynan bor</td></tr>
+      <tr><td class="k">14 ta tekshiruv</td><td>Asos, shakl, muhokama, ekspertiza, 3 oylik qoida, orqaga qaytish, nusxa, qayta bekor qilish, soliq muddati va boshqalar</td><td><span class="pill ok">10/20</span> bekor qilingan qaror javobni bilmasdan belgilandi (5 tasi yuqori ishonch bilan)</td></tr>
+      <tr><td class="k">O'lik modda qidiruvi</td><td>Kuchini yo'qotgan moddaga tayangan qarorlar</td><td><span class="pill ok">68</span> ta qaror, 13 viloyat, har biri lex.uz izohi bilan</td></tr>
+      <tr><td class="k">Qonun o'zgarishini kuzatish</td><td>Modda o'zgarsa, unga tayangan amaldagi qarorlar ro'yxati</td><td><span class="pill ok">13</span> ta qaror: MDH Qonuni 6-moddasi (12.11.2026 da o'zgardi)</td></tr>
+      <tr><td class="k">Ekspertiza turlari</td><td>Huquqiy + korrupsiyaga qarshi (O'RQ-860, 29 omil) + lingvistik (VMQ-662)</td><td>29 omildan 6 tasi avtomatik; 112 qarorda lotin-kirill aralash so'zlar</td></tr>
+      <tr><td class="k">Qadamlari ko'rinadigan agent</td><td>O'qiydi, vositalarni chaqiradi, har bir iqtibosni tekshiradi; Qwen uchun joy tayyor</td><td>Har bir auditda "Agent yo'li"</td></tr>
+      <tr><td class="k">Adliya uchun</td><td>Viloyat navbati, dushanba hisoboti, Word'da ochiladigan xulosa loyihasi</td><td>Oltin holatlar: Qarshi <span class="reg">231/269</span>, Xatirchi <span class="reg">VII-3-1-5-77-K/25</span></td></tr>
+      <tr><td class="k">Mezon AI</td><td>Fuqaro, tadbirkor va ekspert uchun javob; joy yoki mavzu bo'yicha qidiruv</td><td>114 ta test o'tadi</td></tr>
+    </tbody>
+  </table>
+  <p class="small muted" style="margin-top:2.5mm">MDH Qonuni = "Mahalliy davlat hokimiyati to'g'risida"gi Qonun. O'RQ-860 = korrupsiyaga qarshi ekspertiza qonuni. VMQ-662 = lingvistik ekspertiza bo'yicha Vazirlar Mahkamasi qarori. NHH Qonuni = "Normativ-huquqiy hujjatlar to'g'risida"gi Qonun (O'RQ-682).</p>
+
+  <figure class="fig-narrow" style="margin-top:5mm">
+    <img src="img/08_numbers.jpg" alt="Mezon Raqamlar ekrani">
+    <figcaption><i>EKRAN</i><span>"Raqamlar": har bir raqam ochiq manbadan skript orqali hisoblangan. Belgilar aniqligi ekspert belgilarni ko'rib chiqmaguncha bo'sh turadi.</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 3 QANDAY ISHLAYDI ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">3</div><div>
+    <div class="eb">Qanday ishlaydi</div>
+    <h2>AI taklif qiladi. Tekshiruvchi tasdiqlaydi. Inson imzolaydi.</h2>
+    <p class="one">Ma'lumot yuqoridan pastga oqadi. Tekshiruvchidan o'tmagan hech narsa fuqaro yoki ekspertga yetib bormaydi, imzosiz hech narsa xulosaga aylanmaydi.</p>
+  </div></div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 680 560" role="img" aria-label="Mezon quvuri">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b505c"/></marker>
+        <marker id="av" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5a3fe0"/></marker>
+      </defs>
+      <g font-size="13">
+        <rect x="20" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="95" y="28" text-anchor="middle" font-weight="600">lex.uz</text><text x="95" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">qonunlar, mahalliy qarorlar</text>
+        <rect x="183" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="258" y="28" text-anchor="middle" font-weight="600">E-qaror</text><text x="258" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">qabul qilish bosqichlari</text>
+        <rect x="346" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="421" y="28" text-anchor="middle" font-weight="600">regulation.gov.uz</text><text x="421" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">muhokamadagi loyihalar</text>
+        <rect x="509" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="584" y="28" text-anchor="middle" font-weight="600">Sud ma'lumotlari</text><text x="584" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">stat.sud.uz, sud qarorlari</text>
+      </g>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)">
+        <path d="M95 54 C95 68 250 66 260 84"/><path d="M258 54 L300 84"/><path d="M421 54 L380 84"/><path d="M584 54 C584 68 430 66 420 84"/>
+      </g>
+      <rect x="190" y="86" width="300" height="40" rx="6" fill="#14151a"/>
+      <text x="340" y="104" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="600">Sinxron 24/7</text>
+      <text x="340" y="119" text-anchor="middle" fill="#c9ccd2" font-size="10.5">ehtiyotkor: soniyasiga 1 so'rov, har javob keshda</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M290 126 L215 154"/><path d="M390 126 L465 154"/></g>
+      <rect x="90" y="156" width="240" height="48" rx="6" fill="#e3f0ed" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="210" y="176" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0b5c54">Qonun bazasi</text>
+      <text x="210" y="193" text-anchor="middle" font-size="10.5" fill="#14151a">har bir modda tahriri, sana bilan</text>
+      <rect x="350" y="156" width="240" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <text x="470" y="176" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0b5c54">O'zgarishlar jurnali</text>
+      <text x="470" y="193" text-anchor="middle" font-size="10.5" fill="#14151a">qo'shildi · o'zgardi · chiqarildi, har kuni</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M210 204 L285 236"/><path d="M470 204 L395 236"/></g>
+      <rect x="190" y="238" width="240" height="58" rx="8" fill="#5a3fe0"/>
+      <text x="310" y="259" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Agent</text>
+      <text x="310" y="275" text-anchor="middle" fill="#fff" font-size="10.5">o'qiydi · vosita chaqiradi · iqtibos</text>
+      <text x="310" y="289" text-anchor="middle" fill="#ddd6ff" font-size="10.5">Qwen, o'z GPU imizda (joy tayyor)</text>
+      <rect x="490" y="240" width="170" height="54" rx="6" fill="#ecE8fd" stroke="#5a3fe0" stroke-width="1.2"/>
+      <text x="575" y="261" text-anchor="middle" font-size="13" font-weight="600" fill="#5a3fe0">Vositalar</text>
+      <text x="575" y="277" text-anchor="middle" font-size="10.5">qoidalar · qonun qidiruvi</text>
+      <text x="575" y="290" text-anchor="middle" font-size="10.5">izlash · yuqori hujjat</text>
+      <g stroke="#5a3fe0" stroke-width="1.3" fill="none"><path d="M432 258 L486 258" marker-end="url(#av)"/><path d="M488 278 L434 278" marker-end="url(#av)"/></g>
+      <path d="M310 296 L310 332" stroke="#4b505c" stroke-width="1.2" marker-end="url(#ar)"/>
+      <rect x="190" y="334" width="240" height="50" rx="6" fill="#0b5c54"/>
+      <text x="310" y="355" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Tekshiruvchi</text>
+      <text x="310" y="373" text-anchor="middle" fill="#d6ebe7" font-size="10.5">iqtibos aynan · o'sha kungi tahrir</text>
+      <rect x="470" y="330" width="190" height="60" rx="6" fill="#fbe9e3" stroke="#c2361a" stroke-dasharray="4 3"/>
+      <text x="565" y="350" text-anchor="middle" font-size="11" fill="#c2361a" font-weight="600">manba topilmadimi?</text>
+      <text x="565" y="366" text-anchor="middle" font-size="10.5" fill="#14151a">belgi olib tashlanadi yoki</text>
+      <text x="565" y="380" text-anchor="middle" font-size="10.5" fill="#14151a">"noaniq, ekspert kerak"</text>
+      <path d="M430 359 L466 359" stroke="#c2361a" stroke-width="1.2" marker-end="url(#ar)"/>
+      <path d="M310 384 L310 418" stroke="#4b505c" stroke-width="1.2" marker-end="url(#ar)"/>
+      <rect x="190" y="420" width="240" height="50" rx="6" fill="#14151a"/>
+      <text x="310" y="441" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Ekspert imzolaydi</text>
+      <text x="310" y="459" text-anchor="middle" fill="#c9ccd2" font-size="10.5">3333-son buyruq formatidagi xulosa</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M270 470 L205 502"/><path d="M350 470 L455 502"/></g>
+      <rect x="90" y="504" width="230" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="205" y="524" text-anchor="middle" font-size="13" font-weight="600" fill="#0b5c54">Adliya navbati</text>
+      <text x="205" y="541" text-anchor="middle" font-size="10.5">viloyat hisoboti · xulosa loyihasi</text>
+      <rect x="350" y="504" width="230" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="465" y="524" text-anchor="middle" font-size="13" font-weight="600" fill="#0b5c54">Mezon AI</text>
+      <text x="465" y="541" text-anchor="middle" font-size="10.5">fuqaro · tadbirkor · ekspert</text>
+      <g style="font-family:'Geist Mono',monospace" font-size="10" letter-spacing="1">
+        <text x="20" y="263" fill="#5a3fe0" font-weight="600">AI TAKLIF QILADI</text>
+        <text x="20" y="363" fill="#0b5c54" font-weight="600">TEKSHIRADI</text>
+        <text x="20" y="449" fill="#14151a" font-weight="600">INSON IMZOLAYDI</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#e3f0ed;box-shadow:inset 0 0 0 1.2px #0b5c54"></i>qurilgan va ishlayapti</span>
+      <span><i style="background:#fff;border:1.2px dashed #0b5c54"></i>shu hafta quriladi</span>
+      <span><i style="background:#5a3fe0"></i>agent (model juma kuni ulanadi)</span>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="v"><h4>1 · AI taklif qiladi</h4><p>Agent qarorni o'qiydi va vositalarni chaqiradi: 14 ta qoida tekshiruvi, qaror sanasidagi qonun tahririni topish, qidiruv, yuqori hujjat. Har bir qadam ekspert ochib ko'ra oladigan "yo'l"ga yoziladi.</p></div>
+    <div><h4>2 · Tekshiruvchi tasdiqlaydi</h4><p>Har bir iqtibos o'sha kuni amalda bo'lgan tahrirda aynan bo'lishi shart. Modda, iqtibos va tahrir bo'lmasa, belgi ham yo'q. Hech narsaga tayanib bo'lmasa, holat: "noaniq, ekspert kerak".</p></div>
+    <div class="k"><h4>3 · Inson imzolaydi</h4><p>Ekspert Adliyaning o'z formatidagi xulosa loyihasini oladi (ijobiy · tuzatiladigan kamchiliklar bilan ijobiy · salbiy) va har bir belgini o'zi hal qiladi. Mezon o'zi hech narsa yubormaydi.</p></div>
+  </div>
+</section>
+
+<!-- ============ 4 QADAMMA-QADAM ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">4</div><div>
+    <div class="eb">Qadamma-qadam</div>
+    <h2>Ekspert, tadbirkor va fuqaro nimani ko'radi</h2>
+    <p class="one">Ishlab turgan platformaning haqiqiy ekranlari (http://127.0.0.1:8090), 19.11.2026 da olingan. Izohlar har bir qism nimani anglatishini aytadi.</p>
+  </div></div>
+
+  <table style="margin-bottom:8mm">
+    <thead><tr><th style="width:17%">Kim</th><th style="width:24%">Qayerdan boshlaydi</th><th style="width:33%">Nima oladi</th><th>Keyin</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Adliya eksperti</td><td>"Adliya navbati" va "Qaror auditi"</td><td>ikkala iqtibosli belgilar, agent yo'li, 3333-son buyruq formatidagi xulosa loyihasi</td><td>har bir belgini hal qiladi, tahrir qilib imzolaydi</td></tr>
+      <tr><td class="k">Tadbirkor</td><td>"Mezon AI", Tadbirkor rejimi</td><td>qaror biznes uchun nimani anglatishi va ehtimoliy kamchiliklar</td><td>Biznes ombudsman yoki tuman adliyasi, tayyor murojaat matni bilan</td></tr>
+      <tr><td class="k">Fuqaro</td><td>"Mezon AI", Fuqaro rejimi</td><td>bitta sodda gap, isbot bir bosishda</td><td>tuman (shahar) adliya bo'limi, tayyor murojaat matni bilan</td></tr>
+    </tbody>
+  </table>
+
+  <div class="persona"><b>Adliya eksperti</b><span>bitta viloyat qarorlarini ko'rib chiqadi va xulosalarni imzolaydi</span></div>
+
+  <div class="st"><div class="d">1</div><div>
+    <h4>Hozir muhokamadagi loyihalarni ko'radi</h4>
+    <p>"Jonli nazorat" regulation.gov.uz dagi har bir ochiq mahalliy loyihani qonundagi 15 kunlik eng kam muddat bilan solishtiradi. O'ngda: moddaning o'zi, so'zma-so'z, lex.uz havolasi bilan.</p>
+    <figure><img src="img/01_live.jpg" alt="Jonli nazorat ekrani"><figcaption><i>01</i><span>Budjet taqsimotidan boshqa 94 ta ochiq mahalliy loyihadan 12 tasi qonundagi 15 kundan qisqa muhokamada. O'ngda: 15 kunni belgilagan NHH Qonuni moddasi, lex.uz dan iqtibos.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">2</div><div>
+    <h4>Navbatni ochadi: nima o'zgardi va nima belgilandi</h4>
+    <p>"Adliya navbati". Yuqoridagi "Qonun o'zgardi" paneli amaldagi qarorlar tayangan modda keyinroq o'zgargan holatlarni ko'rsatadi. Bu qoidabuzarlik emas: qarorni yangi tahrir bilan qayta o'qish kerak degani. Pastda belgilangan qarorlar, eng xavflisi va eng yangisi birinchi.</p>
+    <figure><img src="img/02_queue.jpg" alt="Adliya navbati ekrani"><figcaption><i>02</i><span>13 ta qaror MDH Qonunining 6-moddasiga tayanadi, u 12.11.2026 da o'zgardi. Pastda: 279 ta belgilangan qaror, har biri xulosa taklifi va belgilari bilan.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">3</div><div class="side tall">
+    <div>
+      <h4>Bitta qarorni ochadi: o'lik modda belgisi</h4>
+      <p><span class="reg">355-4-68-Q/25</span>, Yakkabog' tumani hokimi, 13.11.2025. Mezon 9 ta tekshiruv o'tkazdi. Yettitasi kamchilik topmadi, bittasi bu qarorga taalluqli emas, bittasi belgi qo'ydi (pushti katak).</p>
+      <p>Qarorda u MDH Qonunining "6 va 25-moddalariga asosan" qabul qilingani yozilgan. 25-modda 17.10.2024 dagi O'RQ-976 bilan kuchini yo'qotgan, ya'ni bir yildan ko'proq oldin.</p>
+      <p>Chapda, qizil: qarordan iqtibos. O'ngda, yashil: lex.uz ning 25-modda haqidagi o'z izohi va qo'llaniladigan qoida (NHH Qonuni O'RQ-682, 18-modda 3-qism, 13.11.2025 holatiga).</p>
+      <p class="callout">Holat: "ehtimoliy qoidabuzarlik, ekspert ko'rib chiqishi uchun". Belgi ostida ekspert To'g'ri / Noto'g'ri / Noaniq tugmasini bosadi.</p>
+    </div>
+    <figure><img src="img/03_audit.jpg" alt="355-4-68-Q/25 auditi"><figcaption><i>03</i><span>Bitta belgi, ikki manba yonma-yon: qaror va o'sha kundagi qonun.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">4</div><div>
+    <h4>Tahrir qilib imzolash uchun xulosa loyihasini oladi</h4>
+    <p>"Xulosa loyihasi" Adliya vazirligining 3333-son buyrug'i formatida yozilgan. Taklif: "bartaraf etiladigan kamchiliklar bilan ijobiy". Har bir kamchilikda qarordan iqtibos, lex.uz holati va huquqiy asos bor; keyin 29 omilli korrupsiyaga qarshi cheklist (O'RQ-860) va ekspert qarori hamda imzosi uchun bo'sh joylar. "Word'da ochish" shu matnni Word'da ochadi.</p>
+    <figure><img src="img/04_conclusion.jpg" alt="Xulosa loyihasi"><figcaption><i>04</i><span>355-4-68-Q/25 bo'yicha xulosa loyihasining boshi. Ekspert har bir kamchilik uchun "tasdiqlanadi" yoki "rad etiladi" ni belgilaydi.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st agent"><div class="d">5</div><div class="side narrow">
+    <div>
+      <h4>Mezon AI dan ekspert sifatida so'raydi va agent qanday tekshirganini ko'radi</h4>
+      <p>"Mezon AI" da ekspert "Adliya eksperti" ni tanlab, qaror haqida so'raydi. Javobda o'sha belgi ikkala iqtibos bilan, "Mezon qanday tekshirdi" bo'limida esa agentning 8 qadami.</p>
+      <p>Har qadam natijasi bilan vosita chaqiruvi: qaror matnini o'qidi, 9 ta qoidani ishlatdi, 6-modda 13.11.2025 da amalda bo'lganini tekshirdi (ha), keyin 25-moddani (yo'q: kuchini yo'qotgan).</p>
+      <p class="callout v">Hozircha javoblar qoidalar va qonun bazasidan; mahalliy til modeli hali o'chiq. Qwen ni ulash juma kungi vazifa.</p>
+    </div>
+    <figure><img src="img/07_expert.jpg" alt="Mezon AI ekspert javobi"><figcaption><i>05</i><span>Ekspert rejimi: javob boshi va agent yo'li. Ularning orasidagi yonma-yon iqtiboslar (3-qadamdagidek) bu yerda kesib olingan.</span></figcaption></figure>
+  </div></div>
+
+  <div class="persona alt" style="margin-top:4mm"><b>Tadbirkor</b><span>qaror biznesiga yangi yuk qo'yadimi, shuni bilmoqchi</span></div>
+
+  <div class="st"><div class="d">1</div><div class="side narrow">
+    <div>
+      <h4>Qaror raqamini yozadi, "Tadbirkor" ni tanlaydi</h4>
+      <p>Misol: <span class="reg">101-14-0-Q/25</span>, Toshkent shahri hokimi, 14.02.2025, shahardagi bozorlar va savdo komplekslari haqida.</p>
+      <h4 style="margin-top:4mm">Biznes uchun nimani anglatishini o'qiydi</h4>
+      <p>Sarlavha sodda aytadi: tadbirkorlarga yangi majburiyat 3 oydan oldin kuchga kiradi, ya'ni biznes qonun bergan 3 oylik tayyorgarlik muddatisiz yangi talab yoki to'lovga duch keladi. Mezon 2 ta ehtimoliy kamchilik topdi.</p>
+      <h4 style="margin-top:4mm">Qayerga borishni biladi</h4>
+      <p>Qora blok kanalni aytadi: Biznes ombudsman (va tuman adliyasi), nusxa olish uchun tayyor murojaat matni bilan. Murojaatni tadbirkor o'zi yuboradi; Mezon hech narsani avtomatik yubormaydi.</p>
+      <p class="callout">Har bir kamchilik "Ehtimoliy" deb belgilangan. Ekranda ochiq yozilgan: bu qaror noqonuniy degani emas.</p>
+    </div>
+    <figure><img src="img/05_business.jpg" alt="Mezon AI tadbirkor javobi"><figcaption><i>06</i><span>Tadbirkor rejimi: nimani anglatadi, ikkita ehtimoliy kamchilik va kanal sifatida Biznes ombudsman.</span></figcaption></figure>
+  </div></div>
+
+  <div class="persona alt2" style="margin-top:4mm"><b>Fuqaro</b><span>qaror haqida eshitdi va u o'ziga nimani anglatishini bilmoqchi</span></div>
+
+  <div class="st"><div class="d">1</div><div class="side narrow">
+    <div>
+      <h4>Oddiy so'zlar bilan so'raydi</h4>
+      <p>"355-4-68-Q/25 menga nima degani", "Fuqaro" tanlangan holda. Lotin yoki kirill, ikkalasi ham ishlaydi.</p>
+      <h4 style="margin-top:4mm">Qisqa, sodda javob oladi</h4>
+      <p>"Bu qaror qonunning 25-moddasiga tayanadi, lekin bu modda 2024-yil 17-oktabrdagi O'RQ-976 bilan kuchini yo'qotgan. Shuning uchun qarorning huquqiy asosini ekspert tekshirishi kerak."</p>
+      <h4 style="margin-top:4mm">Bitta keyingi qadamni oladi</h4>
+      <p>Mahalliy qarorlar qonuniyligini nazorat qiladigan tuman (shahar) adliya bo'limi, nusxa olishga tayyor murojaat matni bilan. Yonma-yon iqtiboslar va agent qadamlari bir bosishda.</p>
+    </div>
+    <figure><img src="img/06_citizen.jpg" alt="Mezon AI fuqaro javobi"><figcaption><i>07</i><span>Fuqaro rejimi: bitta gap, bitta kanal, isbot bir bosishda.</span></figcaption></figure>
+  </div></div>
+</section>
+
+<!-- ============ 5 XOM MA'LUMOT ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">5</div><div>
+    <div class="eb">Xom ma'lumot</div>
+    <h2>Bizda nima bor va yana nima kerak</h2>
+    <p class="one">Barcha manbalar ochiq. Ehtiyotkor yig'amiz (soniyasiga 1 so'rov, keshda), faqat allaqachon anonimlashtirilgan hujjatlar bilan ishlaymiz, yig'ish to'g'ri yo'l bo'lmagan joyda egasidan eksport so'raymiz.</p>
+  </div></div>
+  <table>
+    <thead><tr><th style="width:20%">Manba</th><th style="width:27%">Nima</th><th style="width:27%">Hajm</th><th>Holat</th></tr></thead>
+    <tbody>
+      <tr><td class="k">lex.uz qonunlari</td><td>Asosiy hujjatlar, barcha tahrirlari</td><td class="n">38 hujjat · 2023-yildan 193 tahrir</td><td><span class="pill gap">Soliq kodeksi 2020-25 bo'shliq (disk)</span></td></tr>
+      <tr><td class="k">lex.uz mahalliy qarorlar</td><td>Matni bor hokim va Kengash qarorlari</td><td class="n">1 066 matnli · 1 985 yozuv</td><td><span class="pill plan">~2 727 tasi MDH Qonuniga tayanadi: qolganini yig'amiz</span></td></tr>
+      <tr><td class="k">Bekor qilishlar</td><td>Sababini aytgan bekor qiluvchi hujjatlar (adliya, prokuror, sud)</td><td class="n">287 ijobiy belgi</td><td><span class="pill ok">belgilangan</span></td></tr>
+      <tr><td class="k">regulation.gov.uz</td><td>Loyiha sahifalari, muhokama muddatlari</td><td class="n">40 383 loyiha, 31 390 mahalliy</td><td><span class="pill ok">jonli</span></td></tr>
+      <tr><td class="k">E-qaror</td><td>Qabul qilish bosqichlari, "haqiqiy emas"</td><td class="n">907 624 hujjat</td><td><span class="pill plan">Adliyadan eksport so'raymiz</span></td></tr>
+      <tr><td class="k">Sudlar</td><td>stat.sud.uz hisoblari; public.sud.uz qarorlari</td><td class="n">2023-yildan 9 320 da'vodan 3 182 tasi qanoatlantirilgan</td><td><span class="pill plan">qarorlar uchun eksport kerak</span></td></tr>
+    </tbody>
+  </table>
+  <div class="legend" style="margin-top:3mm">
+    <span><i style="background:#e3f0ed"></i>qo'limizda</span>
+    <span><i style="background:#fbe9e3"></i>biz bilgan bo'shliq</span>
+    <span><i style="background:#fff;box-shadow:inset 0 0 0 1px #9aa0a8"></i>keyingi qadam rejada</span>
+  </div>
+
+  <div class="three" style="margin-top:9mm">
+    <div><h4>Belgilar: imtihon</h4><p>287 ijobiy belgi bekor qiluvchi hujjat matnidan olingan: adliya taqdimnomasi, prokuror protesti, sud qarori yoki E-qaror "haqiqiy emas". Mezonni ular bilan baholaymiz, ularda o'qitmaymiz.</p></div>
+    <div><h4>Recall uchun matn kerak</h4><p>E-qaror dagi ko'p "haqiqiy emas" yozuvlarida bosqichlar bor, matn yo'q. Shuning uchun matn qoidalari faqat matni bor ijobiylarda baholanadi. Har doim ikkala N ni yozamiz.</p></div>
+    <div class="k"><h4>Tanlov: tanlov</h4><p>"92 tadan 87 tasi" yaqindagi loyihalardan bizning tasodifiy tanlovimiz; uni tanlov deb aytamiz, hech qachon rasmiy statistika deb emas.</p></div>
+  </div>
+</section>
+
+<!-- ============ 6 MODEL ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">6</div><div>
+    <div class="eb">O'z modelimiz: Mezon-LM</div>
+    <h2>X sanagacha o'qitamiz, undan keyingisini har kuni jurnaldan olamiz</h2>
+  </div></div>
+
+  <div class="idea">
+    <div class="eb">Asosiy g'oya</div>
+    <p>Model X sanagacha bo'lgan barcha ma'lumotda o'qitiladi va ishlashni o'rganadi. X sanadan keyingi har bir o'zgarish kunlik jurnalga yoziladi; javob berishda agent avval jurnal va lex.uz havolasini tekshiradi, eng so'nggi ma'lumot har doim ustun. Har 2-3 oyda (yoki har oy) jurnal yig'ilib, model qayta o'qitiladi.</p>
+  </div>
+
+  <div class="timeline">
+    <svg viewBox="0 0 680 150" role="img" aria-label="X sanagacha o'qitish, keyin kunlik jurnal, keyin qayta o'qitish">
+      <defs><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c2361a"/></marker></defs>
+      <rect x="0" y="34" width="380" height="30" rx="4" fill="#0b5c54"/>
+      <text x="14" y="54" fill="#fff" font-size="13" font-weight="600">X sanagacha bo'lgan hamma narsada o'qitilgan</text>
+      <line x1="386" y1="20" x2="386" y2="80" stroke="#14151a" stroke-width="2"/>
+      <text x="386" y="14" text-anchor="middle" style="font-family:'Geist Mono',monospace" font-weight="600" font-size="14">X</text>
+      <g fill="#e3f0ed" stroke="#0b5c54" stroke-width="1">
+        <rect x="394" y="34" width="12" height="30" rx="2"/><rect x="410" y="34" width="12" height="30" rx="2"/><rect x="426" y="34" width="12" height="30" rx="2"/><rect x="442" y="34" width="12" height="30" rx="2"/><rect x="458" y="34" width="12" height="30" rx="2"/><rect x="474" y="34" width="12" height="30" rx="2"/><rect x="490" y="34" width="12" height="30" rx="2"/><rect x="506" y="34" width="12" height="30" rx="2"/><rect x="522" y="34" width="12" height="30" rx="2"/><rect x="538" y="34" width="12" height="30" rx="2"/><rect x="554" y="34" width="12" height="30" rx="2"/><rect x="570" y="34" width="12" height="30" rx="2"/><rect x="586" y="34" width="12" height="30" rx="2"/><rect x="602" y="34" width="12" height="30" rx="2"/><rect x="618" y="34" width="12" height="30" rx="2"/>
+      </g>
+      <rect x="634" y="34" width="12" height="30" rx="2" fill="#0b5c54"/>
+      <text x="640" y="26" text-anchor="middle" style="font-family:'Geist Mono',monospace" font-size="11" fill="#0b5c54">bugun</text>
+      <text x="394" y="82" font-size="11.5" fill="#4b505c">kunlik jurnal: qo'shildi · o'zgardi · chiqarildi</text>
+      <path d="M560 92 C 560 132, 386 132, 386 92" fill="none" stroke="#c2361a" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#am)"/>
+      <text x="473" y="146" text-anchor="middle" font-size="11.5" fill="#c2361a" font-weight="600">har 2-3 oyda (yoki har oy) qayta o'qitish: X oldinga suriladi</text>
+      <text x="0" y="96" font-size="11.5" fill="#4b505c">Javob = model + jurnaldagi eng yangi yozuv + lex.uz havolasi.</text>
+      <text x="0" y="112" font-size="11.5" fill="#4b505c">Eng so'nggi ma'lumot har doim ustun.</text>
+    </svg>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div><h4>Avval imtihon</h4><p>Haqiqiy savollardan ochiq benchmark, javoblari yurist tomonidan tekshirilgan: sanadagi modda, bekor qilingan qarorlar, qonun o'zgarishlari. Imtihonni yengmagan model "yaxshiroq" hisoblanmaydi.</p></div></div>
+    <div class="step"><div><h4>O'qitishsiz asos model</h4><p>Qwen 27B + vositalar + tekshiruvchi. Embedding (bge-m3 yoki multilingual-e5) 20 savollik o'zbekcha test bilan tanlanadi.</p></div></div>
+    <div class="step"><div><h4>X sanagacha o'qitish</h4><p>lex.uz qonunlari va qarorlari, sud qarorlari, rasmiy statistika (litsenziyasi tekshirilgan qismlar) bo'yicha LoRA; keyin yurist tasdiqlagan belgilar va imzolangan xulosalar bo'yicha. Faqat imtihonda asos modeldan yaxshi chiqsa saqlanadi.</p></div></div>
+    <div class="step"><div><h4>Kunlik o'zgarishlar jurnali</h4><p>Har kuni tez algoritm lex.uz dagi yangi tahrirlarni solishtiradi: qo'shilgan, o'zgargan, chiqarilgan moddalar tarix bazasiga tushadi. Agent javobdan oldin shu bazani tekshiradi va lex.uz havolasini beradi.</p></div></div>
+    <div class="step"><div><h4>Har 2-3 oyda (yoki har oy) yangilash</h4><p>Jurnaldagi o'zgarishlar bilan qayta o'qitish; imtihon yana o'tkaziladi. X sana suriladi.</p></div></div>
+    <div class="step"><div><h4>Har qanday idora uchun kvantlash</h4><p>4-bit yoki FP8: viloyat serveri ham ishga tushiradi. Qaror matni davlat serveridan chiqmaydi.</p></div></div>
+    <div class="step"><div><h4>Ochiq qilish</h4><p>Og'irliklar va benchmark Hugging Face da: hech qanday yashirin bulut API yo'qligini har kim tekshira oladi. Ma'lumotlar to'plami lex.uz egasi bilan shartlar kelishilgandan keyin.</p></div></div>
+  </div>
+
+  <div class="sub" style="margin-top:9mm"><h3>RTX PRO 6000 (96 GB) da qancha vaqt oladi</h3></div>
+  <table>
+    <thead><tr><th style="width:38%">Ish</th><th style="width:34%">Hajm (taxmin)</th><th>Vaqt (taxmin)</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Oylik qayta o'qitish (QLoRA): oyning yangi hujjatlari</td><td class="n">bir necha million token</td><td class="n"><span class="big">~1-2 soat</span></td></tr>
+      <tr><td class="k">Yo'riqnoma o'qitish (QLoRA), 27B</td><td class="n">10 000 misol × 2 000 token ≈ 20 mln token</td><td class="n"><span class="big">~3-5 soat</span>bir epoxa</td></tr>
+      <tr><td class="k">Davomli o'qitish (QLoRA): butun lex.uz matni</td><td class="n">~250 mln token</td><td class="n"><span class="big">~2-3 kun</span></td></tr>
+      <tr><td class="k">To'liq fine-tune, 27B</td><td class="n">~430 GB xotira kerak</td><td>96 GB ga sig'maydi: faqat LoRA / QLoRA</td></tr>
+      <tr><td class="k">4-bit kvantlash (AWQ / GPTQ)</td><td class="n">bitta model</td><td class="n"><span class="big">~1-2 soat</span></td></tr>
+    </tbody>
+  </table>
+  <p class="note">Raqamlar taxminiy: har bir uzun ishdan oldin ma'lumotning 1% ida sinab, haqiqiy tezlikni o'lchaymiz. GPU chat-model bilan bo'lingan (kartaning ~55%), shuning uchun har bir o'qitish egasining roziligi bilan boshlanadi: uni qachon to'xtatishni Murodjon o'zi hal qiladi.</p>
+
+  <div class="sub" style="margin-top:9mm"><h3>Karpathy retsepti, biz uchun</h3></div>
+  <p class="small muted" style="margin-top:-1mm">Andrej Karpathy, "A Recipe for Training Neural Networks" (2019) asosida.</p>
+  <table>
+    <thead><tr><th style="width:30%">Qadam</th><th>Mezonda nima qilamiz</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Ma'lumot bilan bir bo'ling</td><td>100 ta qaror va ularning bekor qilinish sababini qo'lda o'qiymiz, naqshlarni yozamiz</td></tr>
+      <tr><td class="k">Skelet va oddiy asos</td><td>Uchidan-uchigacha ishlaydigan quvur + imtihon; o'qitishsiz Qwen natijasini yozib qo'yamiz</td></tr>
+      <tr><td class="k">Avval kichik to'plamda overfit</td><td>50 ta misolda model to'liq o'rganishini ko'ramiz: quvur to'g'ri ishlayapti</td></tr>
+      <tr><td class="k">Keyin kattalashtirish</td><td>Ma'lumotni bosqichma-bosqich oshiramiz, har qadamni imtihonda o'lchaymiz</td></tr>
+      <tr><td class="k">Qahramon bo'lmang</td><td>Tayyor model (Qwen), tayyor usul (LoRA), tayyor vosita; yangilikni faqat ma'lumot va baholashda qilamiz</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 7 MAVJUD YECHIMLAR ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">7</div><div>
+    <div class="eb">LexAI va Tuzuk.ai yonida</div>
+    <h2>Turli vazifalar, bir-birini to'ldiradi</h2>
+    <p class="one">LexAI va Tuzuk.ai kimdir so'raganda javob beradi. Mezon o'zi boshlaydi: qaror paydo bo'lgan kuni.</p>
+  </div></div>
+  <table>
+    <thead><tr><th style="width:16%"></th><th style="width:30%">LexAI (Adliya, ai.lex.uz)</th><th style="width:24%">Tuzuk.ai</th><th>Mezon</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Qachon ishlaydi</td><td>kimdir so'raganda</td><td>yurist so'raganda yoki hujjat tuzganda</td><td><strong>qaror paydo bo'lgan kuni, 24/7</strong></td></tr>
+      <tr><td class="k">Qaysi qonun</td><td>lex.uz (19.11 sinovimizda sanadagi tahrirni o'zimiz tekshirishni tavsiya qildi)</td><td>ko'rsatilmagan</td><td><strong>qaror sanasida amalda bo'lgan tahrir</strong></td></tr>
+      <tr><td class="k">Natija</td><td>javob</td><td>hujjat, javob</td><td><strong>Adliya formatidagi xulosa, imzo uchun</strong></td></tr>
+      <tr><td class="k">Narx</td><td>bepul savollardan keyin pullik</td><td>oyiga 390 000-590 000 so'm</td><td><strong>fuqaro uchun bepul; Adliya uchun pilot</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="callout t" style="margin-top:5mm">ai.lex.uz da "Hujjat loyihalari ekspertizasi" jarayonda. Mezon uning hokim va Kengash qarorlari moduli bo'la oladi. LexAI haqida hurmat bilan gapiramiz: bu Adliyaning o'z mahsuloti, yuqoridagi taqqoslash esa faqat sinovimizda ko'rganimiz.</p>
+</section>
+
+<!-- ============ 8 VAZIFALAR ============ -->
+<section class="sec list">
+  <div class="sh"><div class="no">8</div><div>
+    <div class="eb">Vazifalar ro'yxati</div>
+    <h2>Nima qoldi, kim bajaradi</h2>
+    <p class="one small">Bajarilganda katakchani qo'lda belgilang; chiziqqa sana yoki qisqa izoh yozing.</p>
+  </div></div>
+
+  <div class="day"><h3>Bugun kechqurun, 19-noyabr, payshanba <small>4 ta vazifa</small></h3>
+    <div class="taskhead" style="margin-top:1.5mm"><span></span><span>Vazifa</span><span>Mas'ul</span><span>Sana / izoh</span></div>
+    <div class="task"><div class="box"></div><div>Domen sotib olish (mezonlex.com bo'sh; mezonlex.uz ni tekshirish)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>info@adolatmarkazi.uz ga xat yuborish (test kirish + uchrashuv)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Yuristga 60 ta belgi va 5 ta guruh savolini yuborish</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>D: diskni bo'shatish (Soliq kodeksi tahrirlari va yig'ish uchun)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>20-noyabr, juma <small>7 ta vazifa</small></h3>
+    <div class="task"><div class="box"></div><div>Serverni yoqish; 20 savollik o'zbekcha huquqiy test; model va embedding tanlash</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Qwen ni agentga ulash: yuqori qonunga zidlik (4-tekshiruv), vakolatdan chiqish (5-tekshiruv)</div><div class="who">Murodjon<br>Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Kunlik o'zgarishlar jurnalini qurish (qo'shildi / o'zgardi / chiqarildi)</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Belgilangan qarorlarni lex.uz da qayta tekshirish (avval 4-viloyat)</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Yetishmayotgan Soliq kodeksi tahrirlarini yuklash; qayta qurish; qayta audit</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Prezentatsiyani 10 slaydga qisqartirish; domenda landing sahifa</div><div class="who">Dev 3</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Yurist belgilarni ko'rib chiqadi; 5 ta tekshiruvda sekundomer testi</div><div class="who">Yurist</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>21-noyabr, shanba <small>muzlatish 10:00 · topshirish 17:55</small></h3>
+    <div class="task"><div class="box"></div><div>10:00 gacha: demo_check, stage_numbers, eval; muzlatish</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Muzlatilgan raqamlar bilan 60 soniyalik filmni yozish</div><div class="who">Dev 3</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>5 daqiqalik demoni uch marta mashq qilish; 17:55 gacha topshirish</div><div class="who">Jamoa</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>Xakatondan keyin <small>3 ta vazifa</small></h3>
+    <div class="task"><div class="box"></div><div>AWS da butun lex.uz ni ehtiyotkor yig'ish (soniyasiga 1 so'rov); qonun va qarorlarning kunlik sinxroni</div><div class="who">Jamoa</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Benchmark, LoRA o'qitish, kvantlash, Hugging Face ga chiqarish</div><div class="who">Jamoa</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Adliya bilan bitta viloyatda pilot; E-qaror va sud eksportlari</div><div class="who">Murodjon</div><div class="fill"></div></div>
+  </div>
+</section>
+
+<!-- ============ 9 QOIDALAR + HAVOLALAR ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">9</div><div>
+    <div class="eb">Hech qachon buzmaydigan qoidalarimiz</div>
+    <h2>Butun loyihani ushlab turgan olti qator</h2>
+  </div></div>
+  <div class="rules">
+    <div class="rule"><i>01</i><span>Belgilangan ≠ noqonuniy. Biz "ehtimoliy qoidabuzarlik, ekspert ko'rib chiqishi uchun" deymiz.</span></div>
+    <div class="rule"><i>02</i><span>Har bir belgini inson hal qiladi (Adliyaning AI etikasi qoidalari, 3787-son).</span></div>
+    <div class="rule"><i>03</i><span>Modda, aynan iqtibos va o'sha kungi tahrirsiz belgi yo'q.</span></div>
+    <div class="rule"><i>04</i><span>Qaror matni bulut AI ga yuborilmaydi. Hammasi o'z serverlarimizda.</span></div>
+    <div class="rule"><i>05</i><span>Adliya yoki Ombudsman yozma roziligisiz "qo'llab-quvvatlaydi" demaymiz.</span></div>
+    <div class="rule"><i>06</i><span>Faqat ehtiyotkor yig'ish: soniyasiga 1 so'rov, ochiq sahifalar, bot tekshiruvini aylanib o'tmaslik.</span></div>
+  </div>
+
+  <div class="sub" style="margin-top:12mm"><h3>Havolalar</h3></div>
+  <div class="links">
+    <div><b>Tizim xaritasi</b><span>claude.ai/artifact/7Fp9paNzSM77DmehjN4CBo</span></div>
+    <div><b>Sodda tushuntirish</b><span>claude.ai/artifact/G483aFCeZk5pisYxFELY1V</span></div>
+    <div><b>Prezentatsiya</b><span>claude.ai/artifact/J8SVZbZcTxVFy2MSuwn8jL</span></div>
+    <div><b>Shu hujjatning inglizcha versiyasi</b><span>docs/pitch/plan/Mezon_plan_EN.pdf</span></div>
+    <div><b>Demo ekran (noutbukda)</b><span>http://127.0.0.1:8090</span></div>
+    <div><b>Qurish spetsifikatsiyasi va reja</b><span>docs/MEZON_brief_2026-11-18.md · docs/PLAN.md</span></div>
+  </div>
+
+  <p class="endnote">Raqamlar Mezon skriptlaridan (eval/report.md, research/*) va ko'rsatilgan ochiq manbalardan, 19.11.2026 holatiga. Tanlov raqamlari tanlov, rasmiy statistika emas. O'qitish vaqtlari taxminiy. Ekranlar 19.11.2026 da ishlab turgan platformadan olingan; kunlik sinxron ishlagani sari ulardagi raqamlar o'zgaradi.</p>
+</section>
+
+</body>
+</html>

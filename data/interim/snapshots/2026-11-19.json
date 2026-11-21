@@ -1,0 +1,713 @@
+{
+ "1": {
+  "flagged": 16,
+  "possible_violation": 12,
+  "dead_article": 11,
+  "repeats": 1,
+  "corruption_factor": 0,
+  "ids": {
+   "flagged": [
+    "lex:7545426",
+    "lex:7569817",
+    "lex:7572642",
+    "lex:7614566",
+    "lex:7648233",
+    "lex:7711680",
+    "lex:7713813",
+    "lex:7761547",
+    "lex:7763932",
+    "lex:7763961",
+    "lex:7763996",
+    "lex:7764031",
+    "lex:7792694",
+    "lex:7810593",
+    "lex:7814327",
+    "lex:8563128"
+   ],
+   "possible_violation": [
+    "lex:7569817",
+    "lex:7572642",
+    "lex:7614566",
+    "lex:7648233",
+    "lex:7711680",
+    "lex:7713813",
+    "lex:7763932",
+    "lex:7763961",
+    "lex:7763996",
+    "lex:7764031",
+    "lex:7792694",
+    "lex:8563128"
+   ],
+   "dead_article": [
+    "lex:7569817",
+    "lex:7572642",
+    "lex:7614566",
+    "lex:7648233",
+    "lex:7711680",
+    "lex:7713813",
+    "lex:7763932",
+    "lex:7763961",
+    "lex:7763996",
+    "lex:7764031",
+    "lex:8563128"
+   ],
+   "repeats": [
+    "lex:7792694"
+   ],
+   "corruption_factor": []
+  }
+ },
+ "2": {
+  "flagged": 21,
+  "possible_violation": 7,
+  "dead_article": 3,
+  "repeats": 1,
+  "corruption_factor": 0,
+  "ids": {
+   "flagged": [
+    "lex:7546246",
+    "lex:7572466",
+    "lex:7643700",
+    "lex:7645140",
+    "lex:7712241",
+    "lex:7742065",
+    "lex:7744567",
+    "lex:7775307",
+    "lex:7809156",
+    "lex:7814605",
+    "lex:7897322",
+    "lex:7897401",
+    "lex:7897583",
+    "lex:7897632",
+    "lex:7971356",
+    "lex:7990516",
+    "lex:8021981",
+    "lex:8177115",
+    "lex:8177194",
+    "lex:8188113",
+    "lex:8589652"
+   ],
+   "possible_violation": [
+    "lex:7742065",
+    "lex:7744567",
+    "lex:7971356",
+    "lex:8021981",
+    "lex:8177115",
+    "lex:8177194",
+    "lex:8188113"
+   ],
+   "dead_article": [
+    "lex:7971356",
+    "lex:8021981",
+    "lex:8188113"
+   ],
+   "repeats": [
+    "lex:7744567"
+   ],
+   "corruption_factor": []
+  }
+ },
+ "3": {
+  "flagged": 20,
+  "possible_violation": 4,
+  "dead_article": 4,
+  "repeats": 0,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:6348502",
+    "lex:7545403",
+    "lex:7599638",
+    "lex:7701467",
+    "lex:7774947",
+    "lex:7804857",
+    "lex:7808337",
+    "lex:7813907",
+    "lex:7852914",
+    "lex:7852927",
+    "lex:7861661",
+    "lex:7862176",
+    "lex:7964014",
+    "lex:8022518",
+    "lex:8144151",
+    "lex:8144776",
+    "lex:8144805",
+    "lex:8158839",
+    "lex:8243640",
+    "lex:8243690"
+   ],
+   "possible_violation": [
+    "lex:7545403",
+    "lex:7599638",
+    "lex:7701467",
+    "lex:8243640"
+   ],
+   "dead_article": [
+    "lex:7545403",
+    "lex:7599638",
+    "lex:7701467",
+    "lex:8243640"
+   ],
+   "repeats": [],
+   "corruption_factor": [
+    "lex:8144776"
+   ]
+  }
+ },
+ "4": {
+  "flagged": 40,
+  "possible_violation": 15,
+  "dead_article": 14,
+  "repeats": 3,
+  "corruption_factor": 4,
+  "ids": {
+   "flagged": [
+    "lex:6305062",
+    "lex:7254947",
+    "lex:7316654",
+    "lex:7507782",
+    "lex:7546970",
+    "lex:7550584",
+    "lex:7580224",
+    "lex:7601225",
+    "lex:7621919",
+    "lex:7642899",
+    "lex:7671675",
+    "lex:7683183",
+    "lex:7695770",
+    "lex:7696206",
+    "lex:7753239",
+    "lex:7753305",
+    "lex:7805985",
+    "lex:7806357",
+    "lex:7806826",
+    "lex:7807581",
+    "lex:7810852",
+    "lex:7814277",
+    "lex:7817179",
+    "lex:7817681",
+    "lex:7817723",
+    "lex:7953879",
+    "lex:7967155",
+    "lex:7967187",
+    "lex:7967232",
+    "lex:7967404",
+    "lex:7967446",
+    "lex:7967497",
+    "lex:7970323",
+    "lex:7978694",
+    "lex:7978721",
+    "lex:7978748",
+    "lex:7978775",
+    "lex:7978819",
+    "lex:7978846",
+    "lex:7981329"
+   ],
+   "possible_violation": [
+    "lex:6305062",
+    "lex:7254947",
+    "lex:7316654",
+    "lex:7550584",
+    "lex:7601225",
+    "lex:7642899",
+    "lex:7671675",
+    "lex:7683183",
+    "lex:7695770",
+    "lex:7696206",
+    "lex:7753239",
+    "lex:7806826",
+    "lex:7810852",
+    "lex:7970323",
+    "lex:7981329"
+   ],
+   "dead_article": [
+    "lex:7254947",
+    "lex:7316654",
+    "lex:7550584",
+    "lex:7601225",
+    "lex:7642899",
+    "lex:7671675",
+    "lex:7683183",
+    "lex:7695770",
+    "lex:7696206",
+    "lex:7753239",
+    "lex:7806826",
+    "lex:7810852",
+    "lex:7970323",
+    "lex:7981329"
+   ],
+   "repeats": [
+    "lex:6305062",
+    "lex:7671675",
+    "lex:7753239"
+   ],
+   "corruption_factor": [
+    "lex:7507782",
+    "lex:7546970",
+    "lex:7580224",
+    "lex:7753305"
+   ]
+  }
+ },
+ "5": {
+  "flagged": 11,
+  "possible_violation": 3,
+  "dead_article": 1,
+  "repeats": 0,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:5887103",
+    "lex:7569713",
+    "lex:7744590",
+    "lex:7793563",
+    "lex:7807667",
+    "lex:7807936",
+    "lex:7808748",
+    "lex:7815089",
+    "lex:7816459",
+    "lex:7963939",
+    "lex:7973905"
+   ],
+   "possible_violation": [
+    "lex:7569713",
+    "lex:7744590",
+    "lex:7807936"
+   ],
+   "dead_article": [
+    "lex:7569713"
+   ],
+   "repeats": [],
+   "corruption_factor": [
+    "lex:7963939"
+   ]
+  }
+ },
+ "6": {
+  "flagged": 20,
+  "possible_violation": 1,
+  "dead_article": 1,
+  "repeats": 0,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:7512522",
+    "lex:7538323",
+    "lex:7807345",
+    "lex:7808123",
+    "lex:7813879",
+    "lex:7963969",
+    "lex:7970640",
+    "lex:7971464",
+    "lex:7974369",
+    "lex:7974444",
+    "lex:7975821",
+    "lex:7975841",
+    "lex:7975907",
+    "lex:7975941",
+    "lex:7976280",
+    "lex:7976349",
+    "lex:7976393",
+    "lex:7982969",
+    "lex:7983650",
+    "lex:7983908"
+   ],
+   "possible_violation": [
+    "lex:7538323"
+   ],
+   "dead_article": [
+    "lex:7538323"
+   ],
+   "repeats": [],
+   "corruption_factor": [
+    "lex:7983908"
+   ]
+  }
+ },
+ "7": {
+  "flagged": 17,
+  "possible_violation": 3,
+  "dead_article": 1,
+  "repeats": 0,
+  "corruption_factor": 0,
+  "ids": {
+   "flagged": [
+    "lex:5897786",
+    "lex:5911067",
+    "lex:5986576",
+    "lex:7718579",
+    "lex:7727888",
+    "lex:7764160",
+    "lex:7775096",
+    "lex:7795952",
+    "lex:7804738",
+    "lex:7805263",
+    "lex:7805749",
+    "lex:7809960",
+    "lex:7814979",
+    "lex:7815054",
+    "lex:7816389",
+    "lex:7816821",
+    "lex:7980899"
+   ],
+   "possible_violation": [
+    "lex:5911067",
+    "lex:7718579",
+    "lex:7727888"
+   ],
+   "dead_article": [
+    "lex:7718579"
+   ],
+   "repeats": [],
+   "corruption_factor": []
+  }
+ },
+ "8": {
+  "flagged": 39,
+  "possible_violation": 9,
+  "dead_article": 8,
+  "repeats": 0,
+  "corruption_factor": 2,
+  "ids": {
+   "flagged": [
+    "lex:6778367",
+    "lex:6844886",
+    "lex:7546795",
+    "lex:7546995",
+    "lex:7599692",
+    "lex:7615200",
+    "lex:7637422",
+    "lex:7682855",
+    "lex:7716282",
+    "lex:7726024",
+    "lex:7764135",
+    "lex:7775987",
+    "lex:7804964",
+    "lex:7805007",
+    "lex:7807359",
+    "lex:7816579",
+    "lex:7856942",
+    "lex:7959848",
+    "lex:7963877",
+    "lex:7973854",
+    "lex:7974566",
+    "lex:7981499",
+    "lex:7991429",
+    "lex:8003024",
+    "lex:8003048",
+    "lex:8003099",
+    "lex:8007948",
+    "lex:8007977",
+    "lex:8138925",
+    "lex:8144239",
+    "lex:8162477",
+    "lex:8162819",
+    "lex:8231842",
+    "lex:8457833",
+    "lex:8457867",
+    "lex:8458021",
+    "lex:8519448",
+    "lex:8563214",
+    "lex:8573909"
+   ],
+   "possible_violation": [
+    "lex:7615200",
+    "lex:7716282",
+    "lex:7764135",
+    "lex:7856942",
+    "lex:8138925",
+    "lex:8144239",
+    "lex:8162477",
+    "lex:8231842",
+    "lex:8457867"
+   ],
+   "dead_article": [
+    "lex:7615200",
+    "lex:7716282",
+    "lex:7764135",
+    "lex:7856942",
+    "lex:8144239",
+    "lex:8162477",
+    "lex:8231842",
+    "lex:8457867"
+   ],
+   "repeats": [],
+   "corruption_factor": [
+    "lex:7599692",
+    "lex:7726024"
+   ]
+  }
+ },
+ "9": {
+  "flagged": 10,
+  "possible_violation": 2,
+  "dead_article": 1,
+  "repeats": 1,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:6817275",
+    "lex:7603506",
+    "lex:7617958",
+    "lex:7637605",
+    "lex:7735318",
+    "lex:7764066",
+    "lex:7805874",
+    "lex:7806194",
+    "lex:7810045",
+    "lex:7815282"
+   ],
+   "possible_violation": [
+    "lex:7637605",
+    "lex:7735318"
+   ],
+   "dead_article": [
+    "lex:7637605"
+   ],
+   "repeats": [
+    "lex:7735318"
+   ],
+   "corruption_factor": [
+    "lex:7764066"
+   ]
+  }
+ },
+ "10": {
+  "flagged": 15,
+  "possible_violation": 5,
+  "dead_article": 3,
+  "repeats": 1,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:7547360",
+    "lex:7549618",
+    "lex:7597335",
+    "lex:7597950",
+    "lex:7617374",
+    "lex:7617740",
+    "lex:7645229",
+    "lex:7776082",
+    "lex:7809803",
+    "lex:7813834",
+    "lex:7814493",
+    "lex:7815240",
+    "lex:7816569",
+    "lex:8138951",
+    "lex:8343717"
+   ],
+   "possible_violation": [
+    "lex:7547360",
+    "lex:7645229",
+    "lex:7814493",
+    "lex:8138951",
+    "lex:8343717"
+   ],
+   "dead_article": [
+    "lex:7547360",
+    "lex:7814493",
+    "lex:8343717"
+   ],
+   "repeats": [
+    "lex:7645229"
+   ],
+   "corruption_factor": [
+    "lex:7597950"
+   ]
+  }
+ },
+ "11": {
+  "flagged": 24,
+  "possible_violation": 12,
+  "dead_article": 7,
+  "repeats": 4,
+  "corruption_factor": 2,
+  "ids": {
+   "flagged": [
+    "lex:5903727",
+    "lex:5908047",
+    "lex:6036241",
+    "lex:7192263",
+    "lex:7239126",
+    "lex:7531319",
+    "lex:7572667",
+    "lex:7601245",
+    "lex:7646957",
+    "lex:7711586",
+    "lex:7731083",
+    "lex:7733329",
+    "lex:7743281",
+    "lex:7761673",
+    "lex:7773670",
+    "lex:7773714",
+    "lex:7773852",
+    "lex:7805155",
+    "lex:7806057",
+    "lex:7807978",
+    "lex:7808024",
+    "lex:7812993",
+    "lex:7813981",
+    "lex:7815917"
+   ],
+   "possible_violation": [
+    "lex:5903727",
+    "lex:7239126",
+    "lex:7531319",
+    "lex:7572667",
+    "lex:7601245",
+    "lex:7646957",
+    "lex:7731083",
+    "lex:7743281",
+    "lex:7761673",
+    "lex:7773714",
+    "lex:7773852",
+    "lex:7807978"
+   ],
+   "dead_article": [
+    "lex:7239126",
+    "lex:7531319",
+    "lex:7572667",
+    "lex:7601245",
+    "lex:7646957",
+    "lex:7743281",
+    "lex:7761673"
+   ],
+   "repeats": [
+    "lex:7743281",
+    "lex:7773714",
+    "lex:7773852",
+    "lex:7807978"
+   ],
+   "corruption_factor": [
+    "lex:5903727",
+    "lex:7711586"
+   ]
+  }
+ },
+ "12": {
+  "flagged": 19,
+  "possible_violation": 4,
+  "dead_article": 3,
+  "repeats": 1,
+  "corruption_factor": 1,
+  "ids": {
+   "flagged": [
+    "lex:5934123",
+    "lex:7534007",
+    "lex:7546851",
+    "lex:7571149",
+    "lex:7572410",
+    "lex:7586920",
+    "lex:7638204",
+    "lex:7653031",
+    "lex:7736167",
+    "lex:7775397",
+    "lex:7793936",
+    "lex:7808082",
+    "lex:7815134",
+    "lex:7990209",
+    "lex:8007811",
+    "lex:8008054",
+    "lex:8111104",
+    "lex:8498636",
+    "lex:8589325"
+   ],
+   "possible_violation": [
+    "lex:5934123",
+    "lex:7586920",
+    "lex:7638204",
+    "lex:8498636"
+   ],
+   "dead_article": [
+    "lex:7586920",
+    "lex:7638204",
+    "lex:8498636"
+   ],
+   "repeats": [
+    "lex:5934123"
+   ],
+   "corruption_factor": [
+    "lex:7534007"
+   ]
+  }
+ },
+ "13": {
+  "flagged": 7,
+  "possible_violation": 3,
+  "dead_article": 0,
+  "repeats": 1,
+  "corruption_factor": 0,
+  "ids": {
+   "flagged": [
+    "lex:6784040",
+    "lex:7302240",
+    "lex:7793532",
+    "lex:7809462",
+    "lex:7811099",
+    "lex:7811265",
+    "lex:8029716"
+   ],
+   "possible_violation": [
+    "lex:7302240",
+    "lex:7811099",
+    "lex:8029716"
+   ],
+   "dead_article": [],
+   "repeats": [
+    "lex:7811099"
+   ],
+   "corruption_factor": []
+  }
+ },
+ "14": {
+  "flagged": 18,
+  "possible_violation": 8,
+  "dead_article": 3,
+  "repeats": 0,
+  "corruption_factor": 3,
+  "ids": {
+   "flagged": [
+    "eq:e41f554c20df41bc9a07ee0af7051a93",
+    "lex:6747423",
+    "lex:6801207",
+    "lex:6856760",
+    "lex:6866738",
+    "lex:7249287",
+    "lex:7261546",
+    "lex:7282087",
+    "lex:7354201",
+    "lex:7374326",
+    "lex:7385356",
+    "lex:7793838",
+    "lex:7802619",
+    "lex:7802730",
+    "lex:8008015",
+    "lex:8008143",
+    "lex:8022015",
+    "lex:8213072"
+   ],
+   "possible_violation": [
+    "lex:6747423",
+    "lex:6801207",
+    "lex:6856760",
+    "lex:6866738",
+    "lex:7282087",
+    "lex:7354201",
+    "lex:7374326",
+    "lex:7385356"
+   ],
+   "dead_article": [
+    "lex:7354201",
+    "lex:7374326",
+    "lex:7385356"
+   ],
+   "repeats": [],
+   "corruption_factor": [
+    "lex:7282087",
+    "lex:7802730",
+    "lex:8213072"
+   ]
+  }
+ },
+ "_ruleset": "faf3086b (qonun bazasi 2026-11-12)"
+}

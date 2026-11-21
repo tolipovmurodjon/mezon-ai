@@ -1,0 +1,8 @@
+== code + stores + crawl state
+== cached pages on D:
+== cached pages in the extra cache (C:/Users/Murodjon/AppData/Local/Temp/claude/a0fb17fc03dae9db/99028eb2-3054-45ce-aebb-447ce51685f9/scratchpad/mezon_cache)
+== LexUZ oflayn package (4.7 GB, official link from lex.uz/uz/offline) in tmux 'offline'
+== start (uv, then the overnight script in tmux 'mezon')
+mezon: 1 windows (created Thu Nov 19 18:49:41 2026)
+offline: 1 windows (created Thu Nov 19 18:49:37 2026)
+done: watch with  ssh box 'tail -f ~/10_projects/mezon/logs/overnight.log'

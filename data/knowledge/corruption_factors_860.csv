@@ -1,0 +1,30 @@
+n,family,article,factor_uz,method,how
+1,norm stability,art:12,so'zlarning noto'g'ri qo'llanilishi,llm,"linguistic expertise (VMQ-662): wrong or ambiguous words, word play; Qwen with a verbatim quote"
+2,norm stability,art:12,noaniq va asossiz havolalarning qo'llanilishi,rule,"""tegishli qonun hujjatlari"", ""belgilangan tartibda"" with no act named; references to acts not in force (R_basis)"
+3,norm stability,art:12,normativ-huquqiy hujjatlarda qarama-qarshiliklarning mavjudligi,llm,"conflict with higher law and inside the act (checks 4, 13)"
+4,powers,art:13,diskretsion vakolatlarning kengligi,rule,"""zarur hollarda"", ""zarurat bo'lganda"", ""o'z ixtiyoriga ko'ra"", ""boshqa choralar"" given to an official or body"
+5,powers,art:13,vakolatlarning noaniqligi,llm,"a duty with no named executor (""tegishli tashkilotlar"", ""mas'ul idoralar"")"
+6,powers,art:13,davlat organlarining bir-birini takrorlovchi vakolatlari va vazifalari mavjudligi,llm,two bodies given the same task in one act or against higher law
+7,powers,art:13,davlat organi tomonidan o'z vakolatiga kirmaydigan masalalar bo'yicha normativ-huquqiy hujjatlar qabul qilinishi,rule,"existing checks: R_competence_land (PF-6243), R_form (farmoyish), sanctions set by a local act"
+8,powers,art:13,vazifani yoki topshiriqni bajarish uchun ijrochida zarur bo'lgan vakolatlar va resurslarning mavjud emasligi,human,needs knowledge of the executor's powers and budget
+9,powers,art:13,o'z vaqtida tartibga solinmaslik,human,a gap in regulation over time; needs monitoring data
+10,powers,art:13,manfaatlar to'qnashuvi,human,needs facts about officials and entities; Mezon never names people
+11,powers,art:13,afzalliklarning asossiz ravishda belgilanishi,rule,"a named company (MChJ, AJ, XK) given an exclusive right, benefit or ""yagona operator"" status"
+12,powers,art:13,normativ-huquqiy hujjatning kuchga kirishini asossiz ravishda kechiktirish,rule,"entry into force set far later than needed with no reason (kept apart from the NLA art. 40 3-month rule)"
+13,powers,art:13,huquq va majburiyatlarning nomutanosibligi,llm,duties on citizens or business with no matching rights or duties on the body
+14,procedures,art:14,ma'muriy tartib-taomillarning mavjud emasligi yoki to'liq emasligi,llm,"a permit, allocation or approval with no procedure, documents or deadline"
+15,procedures,art:14,belgilangan qoidalardagi istisnolarning asossiz ravishda qo'llanilishi,rule,"""bundan mustasno"", ""alohida hollarda"", ""istisno tariqasida"" with no criterion"
+16,procedures,art:14,ortiqcha va asossiz talablar belgilanishi,llm,requirements beyond what higher law asks
+17,procedures,art:14,vaqt chegaralarining noaniqligi,llm,"""qisqa muddatda"", ""o'z vaqtida"", ""zudlik bilan"", ""muntazam ravishda"" or an assignment with no deadline"
+18,procedures,art:14,to'lovlar miqdorlarining noaniqligi,rule,"a fee or payment with no amount (""belgilangan miqdorda"", ""kelishilgan narxda"")"
+19,procedures,art:14,sanksiyalarning nomutanosibligi,llm,sanctions out of proportion; a local act setting liability is also a competence question
+20,procedures,art:14,davlat organlari va tashkilotlari tomonidan Davlat budjeti mablag'lari hamda budjetdan tashqari mablag'lar sarflanishining aniq va shaffof tartib-taomillari mavjud emasligi,rule,"budget money allocated (""mablag' ajratilsin"") with no recipient, purpose, amount or reporting"
+21,procedures,art:14,soliqlar va yig'imlarni hisoblash hamda undirish tartib-taomillarining murakkabligi yoki noaniqligi,human,needs tax expertise
+22,procedures,art:14,davlat korxonalari va davlat ulushi 50 foiz va undan ortiq bo'lgan yuridik shaxslar tomonidan amalga oshiriladigan davlat xaridlari bo'yicha aniq va shaffof tartib-taomillarning mavjud emasligi,rule,"""to'g'ridan-to'g'ri shartnoma"", ""yagona yetkazib beruvchi"" in procurement"
+23,procedures,art:14,huquq va imtiyozlar beruvchi hamda ma'muriy tartib-taomillarni belgilaydigan tanlov (auksion) tartib-taomillaridan bo'yin tovlash imkoniyatini beruvchi normalarning mavjudligi,rule,"""auksionsiz"", ""tanlovsiz"", ""to'g'ridan-to'g'ri"" allocation of land or rights (links to PF-6243 cl. 4 and 8)"
+24,procedures,art:14,tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,rule,"""qonunchilikda taqiqlanmagan boshqa manbalar"", ""boshqa manbalar hisobidan"" with no source named"
+25,control,art:15,tekshirish va taftish o'tkazish tartibining mavjud emasligi,human,needs the inspection framework
+26,control,art:15,shikoyat qilish tartibining mavjud emasligi,llm,an obligation or sanction with no way to appeal
+27,control,art:15,shaffoflikni va jamoatchilik nazoratini ta'minlashdagi bo'shliqlar,rule,"not published, ""xizmat doirasida foydalanish uchun"", E-qaror is_hidden, no public discussion (R_discussion)"
+28,control,art:15,moliyaviy va boshqa sanksiyalarni qo'llash hamda undirish bilan bog'liq masalalarda aniq va shaffof tartib-taomillarning mavjud emasligi,human,needs the sanctions framework
+29,control,art:15,davlat organlarining faoliyati ustidan nazorat qilish shakllari va turlarining mavjud emasligi,rule,"no control clause (""nazorat ... zimmasiga yuklansin"") in an act that assigns duties"

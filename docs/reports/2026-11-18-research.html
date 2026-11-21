@@ -1,0 +1,250 @@
+<title>Mezon Research Findings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap">
+<style>
+@font-face{font-family:"Departure Mono";src:url("file:///D:/30_library/taste/templates/slides-eye-run/fonts/DepartureMono.woff2") format("woff2");font-display:swap}
+:root{
+  --page:#F2F4F8; --ink:#0F1630; --ink-2:#4B5470; --ink-3:#8A92AA; --line:#E6E9F1;
+  --mint:#1C7E69; --mint-s:rgba(28,126,105,.10);
+  --amber:#B45309; --amber-s:rgba(180,83,9,.10);
+  --blue:#2563EB; --blue-s:rgba(37,99,235,.09);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Departure Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --r:28px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;overflow:hidden;color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1100px 620px at 12% -8%,#D9F0E6 0%,transparent 62%),radial-gradient(900px 560px at 92% 2%,#DDE6FB 0%,transparent 58%),radial-gradient(800px 500px at 60% 115%,#E1F2EC 0%,transparent 60%),var(--page)}
+.stage{position:fixed;left:50%;top:50%;width:1200px;height:675px;transform-origin:center}
+.glass{position:relative;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 1px 1px rgba(15,22,48,.04),0 10px 28px -14px rgba(15,22,48,.22),inset 0 1px 0 rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(22px) saturate(1.35);backdrop-filter:blur(22px) saturate(1.35);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 42%)}
+.glass>*{position:relative}
+.mint-card{background:linear-gradient(150deg,#1C7E69 0%,#23A06C 100%);border-color:rgba(255,255,255,.35);color:#fff;box-shadow:0 18px 36px -16px rgba(28,126,105,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.mint-card::before{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 45%)}
+.slide{position:absolute;inset:0;padding:40px 52px 96px;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1),visibility 0s .4s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1)}
+.slide.back{transform:translateX(-18px)}
+@media (prefers-reduced-motion:reduce){.slide,.slide.on{transition:opacity .15s;transform:none}}
+.eyebrow{font:400 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0}
+h1,h2,h3{font-family:var(--sans);margin:0;text-wrap:balance}
+h1{font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.03em}
+h2{font-weight:800;font-size:36px;line-height:1.08;letter-spacing:-.025em}
+h3{font-weight:800;font-size:20px;line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+.muted{color:var(--ink-2)}
+.big{font:400 84px/.9 var(--mono);letter-spacing:-.045em;color:var(--mint)}
+.kpi{border-radius:18px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 22px -16px rgba(15,22,48,.3),inset 0 1px 0 rgba(255,255,255,.95);padding:15px 17px}
+.kpi b{display:block;font:400 28px/1 var(--mono);letter-spacing:-.03em;color:var(--mint)}
+.kpi span{display:block;font:400 11.5px/1.4 var(--mono);color:var(--ink-2);margin-top:8px}
+.kpi.warn b{color:var(--amber)}
+.chip{display:inline-flex;align-items:center;gap:7px;font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:var(--s-soft,var(--mint-s));color:var(--s,var(--mint));white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s,var(--mint))}
+.c-amber{--s:var(--amber);--s-soft:var(--amber-s)}
+.lab{font:400 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.ul li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.42}
+.ul li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.ul.amber li::before{background:var(--amber)}
+.raw{font:400 12px/1.55 var(--mono);background:rgba(15,22,48,.045);border-radius:14px;padding:12px 14px;color:var(--ink);white-space:pre;overflow:hidden}
+.raw .hl{color:var(--amber)}.raw .ok{color:var(--mint)}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:absolute;left:52px;right:52px;top:170px;height:420px}
+.find>.glass{padding:22px 24px;display:grid;align-content:start;gap:10px}
+.dock{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:7px 9px;border-radius:999px;z-index:5}
+.dock button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.dock button:hover{background:rgba(15,22,48,.05)}
+.dots{display:flex;gap:6px;align-items:center}
+.dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:99px;background:rgba(15,22,48,.16);transition:width .3s cubic-bezier(.23,1,.32,1),background .3s}
+.dots button.on{width:22px;background:var(--mint)}
+.count{font:400 12px/1 var(--mono);color:var(--ink-2);min-width:50px;text-align:center}
+button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.35;vertical-align:top}
+th{font:400 10.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+td.n{font:400 13px/1.35 var(--mono)}
+.stg{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.stg div{border-radius:12px;padding:9px 8px;font:400 10.5px/1.3 var(--mono);text-align:center;min-height:58px;display:grid;place-items:center}
+.stg .y{background:var(--mint-s);color:var(--mint);border:1.5px solid rgba(28,126,105,.45)}
+.stg .n{background:rgba(15,22,48,.04);color:var(--ink-3);border:1.5px dashed rgba(15,22,48,.18)}
+</style>
+
+<main class="stage" id="stage" aria-roledescription="slide deck"></main>
+
+<script>
+const S=[];
+const F=(n,t)=>`<p class="eyebrow">${n}</p><h2 style="margin-top:12px">${t}</h2>`;
+/* 1 cover */
+S.push(`
+ <div style="position:absolute;left:56px;top:56px;width:620px;display:grid;gap:20px">
+  <p class="eyebrow">Mezon · research phase · 18 Nov 2026</p>
+  <h1>Courts satisfied 7,066 claims against hokimlik decisions since 2021. The check that should catch them comes too late.</h1>
+  <p class="muted" style="font-size:16.5px;max-width:50ch">Measured today on public data: lex.uz, regulation.gov.uz, E-qaror, stat.sud.uz and 37 sourced news and official cases. Every number below was printed by a script or carries a source.</p>
+ </div>
+ <div style="position:absolute;left:712px;top:56px;width:436px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+  <div class="kpi"><b>7,066</b><span>claims against hokimlik decisions satisfied by courts, 2021 - 2026 H1 (stat.sud.uz)</span></div>
+  <div class="kpi"><b>37.2 %</b><span>of 18,976 claims heard were satisfied</span></div>
+  <div class="kpi warn"><b>3,228</b><span>businesses hit by the Tashkent design-code, still in force</span></div>
+  <div class="kpi warn"><b>16</b><span>declared-invalid decisions where E-qaror shows legal expertise done</span></div>
+  <div class="kpi"><b>53</b><span>tests pass on the real cached files</span></div>
+  <div class="kpi warn"><b>0</b><span>flags reviewed by the lawyer yet</span></div>
+ </div>
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:436px;height:146px;padding:20px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+  <div><p class="lab">The answer</p><p style="font-size:15.5px">The gap is real and official: about <b>1 in 3</b> claims against a hokimlik decision is satisfied in court, after the harm.</p></div>
+  <div><p class="lab">My hero pick</p><p style="font-size:15.5px">The <b>Tashkent design-code</b>: adliya's stage is green, the Ombudsman says a mandatory step was missing.</p></div>
+  <div><p class="lab">Not proven yet</p><p style="font-size:15.5px">The "skipped stage predicts cancellation" number: E-qaror throttled us before the control set.</p></div>
+ </div>
+`);
+/* 2 core problem */
+const G=[["Answering questions","LexAI, Odil, Tuzuk"],["Drafting","E-huquqshunos"],["AI for law-making","KOISA project ($14.5M)"],["Pushing new laws to people","my.gov.uz, entrepreneur cabinets"],["Courts, enforcement","70 % automated from 2027"]];
+S.push(`${F("01 · the core problem","Adliya digitized every stage of a local decision except checking it")}
+ <div class="find" style="grid-template-columns:1.1fr 1fr">
+  <div class="glass"><p class="lab">who covers what today</p>
+   <table><tbody>${G.map(([a,b])=>`<tr><td style="width:46%"><b>${a}</b></td><td class="muted">${b}</td></tr>`).join("")}
+   <tr><td><b style="color:var(--amber)">Check every local decision against the law as it read that day</b></td><td style="color:var(--amber);font-weight:600">nobody: Mezon</td></tr></tbody></table>
+  </div>
+  <div class="glass"><p class="lab">the law already requires the check</p>
+   <ul class="ul"><li>Adliya order 3333: a local draft goes to adliya expertise, <b>2 working days</b> for a Kengash draft, <b>5</b> for a hokim draft, against 34,000+ acts.</li><li>Normative local drafts must go to public discussion. In our sample of 92 drafts, <b>87 got zero comments</b>.</li><li>Individual decisions (land, quotas) are never posted at all.</li></ul>
+   <p class="lab" style="margin-top:6px">so the one sentence</p>
+   <p style="font-size:15.5px">The law already requires every local decision to be checked. Nobody has the capacity. Mezon does the reading, adliya decides, and the people affected are protected before the harm.</p>
+  </div>
+ </div>
+`);
+/* 3 base rate chart */
+const Y=[["2021",5033,2184],["2022",4623,1700],["2023",3641,1371],["2024",2720,933],["2025",2043,611],["2026 H1",916,267]];
+S.push(`${F("02 · evidence · official","When a claim against a hokimlik decision reaches court, about 1 in 3 wins")}
+ <div class="find" style="grid-template-columns:1.35fr 1fr">
+  <div class="glass"><p class="lab">claims to declare a hokimlik decision invalid · claims heard vs satisfied</p>
+   <div style="display:grid;gap:13px;margin-top:6px">
+   ${Y.map(([y,h,s])=>`<div style="display:grid;grid-template-columns:70px 1fr 150px;gap:12px;align-items:center">
+    <span style="font:400 13px/1 var(--mono)">${y}</span>
+    <span style="position:relative;height:22px;border-radius:7px;background:rgba(15,22,48,.06)"><i style="position:absolute;left:0;top:0;bottom:0;width:${h/5033*100}%;border-radius:7px;background:rgba(28,126,105,.22)"></i><i style="position:absolute;left:0;top:0;bottom:0;width:${s/5033*100}%;border-radius:7px;background:var(--amber)"></i></span>
+    <span style="font:400 12.5px/1 var(--mono)"><b style="color:var(--amber)">${s.toLocaleString("en")}</b> / ${h.toLocaleString("en")} · ${(s/h*100).toFixed(1)} %</span></div>`).join("")}
+   </div>
+   <div style="display:flex;gap:14px;margin-top:10px"><span class="chip c-amber">claims satisfied</span><span class="chip">heard</span></div>
+  </div>
+  <div class="glass"><p class="lab">raw · research/scoreboard.md</p>
+   <div class="raw">| <span class="ok">All</span> | 18,976 | <span class="hl">7,066/18,976 = 37.2%</span> |</div>
+   <ul class="ul"><li>Source: stat.sud.uz quarterly files (4 downloads you approved). 2024 = 933 and 2025 = 611 / 2,043 match the brief exactly.</li><li>2025 top regions: Toshkent viloyati 104, Samarqand 80, Toshkent shahri 69.</li></ul>
+   <ul class="ul amber"><li>Claims fall every year (5,033 to 2,043). That can mean fewer bad decisions or fewer people going to court; the files don't say which.</li><li>Only cases that reached court. Adliya, prosecutor and self-cancellations come on top.</li></ul>
+  </div>
+ </div>
+`);
+/* 4 design-code */
+const ST=[["Qoralama",1],["Idoraviy kelishuv",0],["Tarkibiy bo‘linmalar",0],["Kengash kotibiyati",0],["Hokimlik yuriskonsulti",0],["Jamoatchilik muhokamasi",0],["Huquqiy ekspertiza",1],["E’lon qilish",1]];
+S.push(`${F("03 · the hero case · Tashkent design-code","Adliya's stage is green. The Ombudsman says a mandatory step was missing.")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:170px;height:118px;padding:16px 20px">
+  <p class="lab">E-qaror stage strip · VII-19-17-14-0-K/26 · 17.02.2026 · normative · in force</p>
+  <div class="stg">${ST.map(([n,d])=>`<div class="${d?"y":"n"}">${n}<br>${d?"done":"grey"}</div>`).join("")}</div>
+ </div>
+ <div style="position:absolute;left:52px;right:52px;top:302px;height:288px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+  <div class="glass" style="padding:18px 20px"><p class="lab">what it did</p><ul class="ul"><li>Facade, sign and colour rules citywide, 3 months to comply, business pays.</li><li><b>3,228 businesses</b> on 56 streets in the rollout.</li><li>Evos: about 20 mln so‘m per sign removed; Dodo: "100 mln in two months".</li></ul></div>
+  <div class="glass" style="padding:18px 20px"><p class="lab">who said what</p><ul class="ul"><li><b>Ombudsman, 25.04:</b> adopted without the mandatory Ombudsman agreement; undefined norms ("neutral colours").</li><li><b>Hokimlik, 21.08:</b> the objections were valid.</li><li><b>Adliya, Jul:</b> only that the Kengash had the power to adopt it.</li></ul></div>
+  <div class="glass" style="padding:18px 20px"><p class="lab">honest caveats</p><ul class="ul amber"><li>Public discussion <b>was held</b> (regulation.gov.uz d/111934), yet the strip shows it grey. The strip alone is not proof.</li><li>The law requiring Ombudsman agreement: article not yet cited. The lawyer must.</li><li>Decision still in force; no court ruling.</li></ul></div>
+ </div>
+`);
+/* 5 adliya passed */
+const AP=[["119-9-0-Q/24","Sirdaryo region","vacant farmland registered as state property; a court voided one plot"],["332-9-0-Q/23","Sirdaryo region","same kind; a court voided plots 344 and 348"],["228-9-0-Q/23","Sirdaryo, Sayxunobod","same; a court voided dozens of plots"],["VI-79-294-2-33-K/22","Vobkent Kengash","land auction start prices cut by up to 50 %; voided on appeal"],["VII-3-016-2-40-K/24","Romitan Kengash","district boundaries; a court invalidated it"],["191-2-39-Q/25","Peshku","plots owners gave up re-registered as vacant state land"]];
+S.push(`${F("04 · even adliya passed it","16 of 259 declared-invalid decisions show legal expertise done")}
+ <div class="find" style="grid-template-columns:1.45fr 1fr">
+  <div class="glass" style="padding:16px 18px"><p class="lab">examples · data/interim/adliya_passed_but_invalid.csv</p>
+   <table><thead><tr><th>Number</th><th>Body</th><th>What happened</th></tr></thead><tbody>
+   ${AP.map(([a,b,c])=>`<tr><td class="n">${a}</td><td>${b}</td><td class="muted">${c}</td></tr>`).join("")}</tbody></table>
+  </div>
+  <div class="glass"><p class="lab">who caught the 275 E-qaror invalidations</p>
+   <div class="raw">court     <span class="hl">138</span>
+hokim      50
+blank      45
+other      15
+kengash    11
+clerical   10
+adliya      6</div>
+   <ul class="ul amber"><li>Half are caught by a court, after harm. Adliya itself: 6.</li><li>In 2 of the 16, the basis line says "adopted without adliya expertise" although the stage is green. The strip is a signal, not proof.</li><li>E-qaror marks only 275 as invalid in total, so this is a small, partial picture.</li></ul>
+  </div>
+ </div>
+`);
+/* 6 scoreboard */
+const P=[["A1","Skipped stage (E-qaror)","275 declared invalid, 259 with a tracker","normative only: discussion grey 10/16, expertise grey 8/16","not measured: throttled","strong cases, no number"],
+["A2","Enters into force before discussion ends","297 open + 200 closed local drafts","open 2/297 = 0.7 %, closed 0/200","n/a","rare; 2 live demo drafts"],
+["A3","Duplicate / double repeal (lex.uz)","103 decisions, 12 bodies","5 flags, all Qarshi; the golden case found blind","n/a","precise, small reach"]];
+S.push(`${F("05 · the scoreboard","Three patterns measured. None is the one number yet.")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:166px;height:250px;padding:12px 20px">
+  <table><thead><tr><th style="width:44px">#</th><th style="width:210px">Pattern</th><th style="width:220px">N scanned</th><th>N flagged</th><th style="width:140px">Lift vs control</th><th style="width:150px">Verdict</th></tr></thead><tbody>
+  ${P.map(r=>`<tr><td class="n" style="color:var(--mint)">${r[0]}</td><td><b>${r[1]}</b></td><td class="muted">${r[2]}</td><td>${r[3]}</td><td class="muted">${r[4]}</td><td style="color:var(--amber)">${r[5]}</td></tr>`).join("")}</tbody></table>
+  <p class="muted" style="font-size:12.5px;margin-top:10px">Lawyer precision is empty for all three: 0 of the flags have been reviewed. "Lift" means how much more often a skip appears in bad decisions than in normal ones.</p>
+ </div>
+ <div style="position:absolute;left:52px;right:52px;top:430px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+  <div class="glass" style="padding:16px 18px"><p class="lab">A1 · live signal</p><p style="font-size:14px">Every E-qaror page shows 8 adoption stages. Mezon can rank all 907,624 documents by what they skipped, once we can compare with normal ones.</p></div>
+  <div class="glass" style="padding:16px 18px"><p class="lab">A2 · demo today</p><p style="font-size:14px">Draft 118221 (Andijon Kengash waste fees) enters into force 01.12, the day before its discussion ends 02.12. Open right now.</p></div>
+  <div class="glass" style="padding:16px 18px"><p class="lab">A3 · no LLM needed</p><p style="font-size:14px">231 copies 207 word for word (1.0), and 231, 269 and 311 each repeal 161-4-59-Q/23, which 207 had already repealed.</p></div>
+ </div>
+`);
+/* 7 more cases */
+const K=[["Yangiyo‘l land tax","Kengash set land-tax rates for every household with no public discussion; district adliya letter No. 2; cancelled and re-adopted with discussion done.","3 / 10","control pair"],
+["Qarshi school districts","231 copied 207 while 207 was in force, and repealed an act already repealed; cancelled on adliya representation.","7","found blind"],
+["Yakkabog‘ farm","A district hokim revoked a farm's land after PF-6243 had removed that power; a court declared it invalid.","2 / 1","competence"],
+["Sirdaryo zombie tax","Tax charged about 774 mln so‘m on a hokim decision a court had already cancelled; the Ombudsman won.","8","zombie"],
+["Hidden decisions","386 of 1,907 local decisions (20 %) hidden without grounds (Anti-Corruption Agency, Jan 2026).","3","scale"],
+["Minister, 2020","10,250 illegal decisions cancelled on adliya representations in about 2.5 years, about 2,000 hokimlik. \"Yurist qayerga qarayapti?\"","all","scale"]];
+S.push(`${F("06 · more authentic cases","Six more cases a jury can check themselves")}
+ <div style="position:absolute;left:52px;right:52px;top:166px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+  ${K.map(([t,d,c,tag])=>`<div class="glass" style="padding:18px 20px;height:205px;display:grid;grid-template-rows:auto 1fr auto;gap:8px"><h3>${t}</h3><p class="muted" style="font-size:13.5px;line-height:1.45">${d}</p><div style="display:flex;justify-content:space-between"><span class="chip">check ${c}</span><span class="chip c-amber">${tag}</span></div></div>`).join("")}
+ </div>
+ <p style="position:absolute;left:52px;bottom:78px;font:400 11px/1.4 var(--mono);color:var(--ink-3)">Sources with URLs and dates: docs/case_library.md and data/knowledge/case_library.csv (37 rows). Legality, not people: bodies are named, officials are not.</p>
+`);
+/* 8 what failed */
+S.push(`${F("07 · what failed or is not confirmed","Read this before you put any number on a slide")}
+ <div class="find">
+  <div class="glass"><p class="lab">failed or missing</p>
+   <ul class="ul amber"><li><b>No lift number.</b> E-qaror stopped returning stage data after about 700 page loads. We stopped; we did not work around it.</li><li><b>Lawyer review: 0.</b> Precision is unknown for every pattern.</li><li><b>Originals found: 15 of 35</b> (target 70 %). Many cancelled decisions are not on lex.uz at all.</li><li><b>7 scanned PDFs</b> need OCR; tesseract is not installed.</li><li><b>Drive D: 0.09 GB free.</b> The cache moved to the C: temp folder, which a reboot can clear (rebuildable).</li></ul>
+  </div>
+  <div class="glass"><p class="lab">signals, not proof</p>
+   <ul class="ul"><li>The E-qaror strip: the design-code shows discussion grey although it was held, and 2 decisions show expertise green although adopted without it. Cross-check every strip with regulation.gov.uz and the Asos line.</li><li>E-qaror "declared invalid" is under-filled: 275 in total vs 933 court invalidations in 2024 alone.</li><li>A2 is real but rare (2 of 297 open drafts).</li><li>The falling court numbers have no stated cause.</li></ul>
+  </div>
+ </div>
+`);
+/* 9 what was built */
+const B=[["research/textnorm.py","one form for 7 apostrophe styles + Cyrillic; clause splitter; duplicate scores"],["research/regnum.py","all 5 registration-number forms + region table"],["research/polite_http.py","cache-first, 1.2 s between requests, MEZON_CACHE"],["research/lexuz_crawl.py · label_cancellations.py · resolve_original.py","151 cancellations, 95.4 % text, labels 35 / 78 / 31"],["research/duplicates.py","A3: Qarshi found blind"],["research/regulation_window.py · statsud_rates.py","A2 on 497 drafts; official court rates"],["research/eqaror_stages.js · stage_lift.py","A1 stage reader (DOM only)"],["research/scoreboard.py → scoreboard.md","every number printed from data/interim"],["docs/case_library.md · docs/cases/designcode.md","37 sourced cases, talking points, deep dossier"],["CLAUDE.md","updated with every finding above"]];
+S.push(`${F("08 · what was built","Research scripts and evidence, all in D:\\10_projects\\mezon")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:166px;height:424px;padding:12px 20px">
+  <table><tbody>${B.map(([a,b])=>`<tr><td class="n" style="width:520px;color:var(--mint);font-size:12px">${a}</td><td class="muted">${b}</td></tr>`).join("")}</tbody></table>
+  <p class="muted" style="font-size:12.5px;margin-top:10px">53 tests pass (uv run pytest), ruff clean. Nothing committed: git commit goes on a feature branch when you say. Product code (checks, API, web) is written at the event.</p>
+ </div>
+`);
+/* 10 next */
+S.push(`${F("09 · next","Three decisions for you, and one email to send")}
+ <div style="position:absolute;left:52px;top:166px;width:520px;display:grid;gap:10px">
+  ${[["Pick the hero","My pick: the design-code (still in force, adliya green, Ombudsman: mandatory step missing) opened by the 7,066 satisfied claims. Qarshi and draft 118221 as beats 2 and 3."],["Lawyer, Thursday","Review 2 A2 flags, 5 A3 flags, the 16 adliya-passed cases and 31 REVIEW labels. Then precision is real."],["Free D: space","A few GB, so git and builds keep working. I don't delete your files."]].map(([q,d],i)=>`
+  <div class="glass" style="padding:16px 20px;border-radius:22px;display:grid;grid-template-columns:34px 1fr;gap:12px"><span style="font:400 14px/1 var(--mono);color:var(--mint);padding-top:3px">0${i+1}</span><div><b style="font-size:16px">${q}</b><p class="muted" style="font-size:13.5px;margin-top:2px">${d}</p></div></div>`).join("")}
+ </div>
+ <div class="glass mint-card" style="position:absolute;left:592px;right:52px;top:166px;height:424px;padding:24px 26px">
+  <p style="font:400 11.5px/1 var(--mono);letter-spacing:.16em;opacity:.85">EMAIL TO INFO@LEXLAB.UZ · DRAFT</p>
+  <p style="font-size:14.5px;line-height:1.6;margin-top:14px" id="pr">Assalomu alaykum! Biz LexHackathon 2026 ning 1-yo‘nalishi ishtirokchisi bo‘lgan jamoamiz. Tadbirdan oldin faqat ochiq manbalardan (lex.uz, regulation.gov.uz, stat.sud.uz) ma’lumot to‘plash va tadqiqot skriptlarini tayyorlashimiz mumkinmi? Mahsulotning asosiy qismini qoidalarga ko‘ra tadbir davomida yozamiz. Javobingiz uchun oldindan rahmat. Hurmat bilan, Murodjon, jamoa sardori.</p>
+  <button id="copy" style="all:unset;cursor:pointer;margin-top:18px;font:400 12px/1 var(--mono);color:#fff;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35)">Copy email</button><span id="copied" style="font:400 12px/1 var(--mono);margin-left:10px;opacity:.85"></span>
+  <p style="font-size:12.5px;opacity:.85;margin-top:16px">You send it yourself. Also on your list: the Ombudsman call and one district adliya expert interview.</p>
+ </div>
+`);
+
+const stage=document.getElementById("stage");
+stage.innerHTML=S.map((s,i)=>`<section class="slide" id="s${i+1}" aria-label="Slide ${i+1} of ${S.length}">${s}</section>`).join("")+
+ `<nav class="dock glass" aria-label="Slides"><button id="prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="dots">${S.map((_,i)=>`<button aria-label="Slide ${i+1}"></button>`).join("")}</div><span class="count" id="count"></span>
+  <button id="next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></nav>`;
+let cur=-1;const SL=[...document.querySelectorAll(".slide")],DT=[...document.querySelectorAll(".dots button")];
+function go(i,quiet){i=Math.max(0,Math.min(SL.length-1,i));if(i===cur)return;
+ SL.forEach((s,k)=>{s.classList.toggle("on",k===i);s.classList.toggle("back",k<i)});DT.forEach((d,k)=>d.classList.toggle("on",k===i));
+ document.getElementById("count").textContent=`${i+1} / ${SL.length}`;cur=i;if(!quiet)try{history.replaceState(null,"","#s"+(i+1))}catch(e){}}
+document.getElementById("prev").onclick=()=>go(cur-1);document.getElementById("next").onclick=()=>go(cur+1);
+DT.forEach((d,k)=>d.onclick=()=>go(k));
+addEventListener("keydown",e=>{const k=e.key;if(k==="ArrowRight"||k==="PageDown"||k===" "){e.preventDefault();go(cur+1)}else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();go(cur-1)}else if(k==="Home")go(0);else if(k==="End")go(SL.length-1)});
+let wl=0;addEventListener("wheel",e=>{const t=Date.now(),d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(t-wl<750||Math.abs(d)<24)return;wl=t;go(cur+(d>0?1:-1))},{passive:true});
+let px=null,py=null;addEventListener("pointerdown",e=>{px=e.clientX;py=e.clientY});
+addEventListener("pointerup",e=>{if(px===null)return;const dx=e.clientX-px,dy=e.clientY-py;px=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))});
+function fromHash(){const m=/^#s(\d+)$/.exec(location.hash);go(m?+m[1]-1:0,true)}
+addEventListener("hashchange",fromHash);
+function fit(){const s=Math.min(innerWidth/1200,innerHeight/675);stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+addEventListener("resize",fit);fit();fromHash();
+document.getElementById("copy").onclick=async()=>{const m=document.getElementById("copied"),t=document.getElementById("pr").textContent;
+ try{await navigator.clipboard.writeText(t);m.textContent="Copied"}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById("pr"));const s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent="Selected, press Ctrl+C"}};
+</script>

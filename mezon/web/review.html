@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mezon · Ekspert tekshiruvi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<style>
+:root{--paper:#f6f5f0;--card:#fffefb;--ink:#17181a;--muted:#6b6a64;--line:#e3e1d8;--teal:#0f6b5c;--teal-soft:#e3f0ec;
+  --ember:#b5402a;--ember-soft:#f6e6e1;--amber:#8a6a12;--amber-soft:#f4eedc;
+  --sans:"Onest",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,monospace;--serif:"Source Serif 4",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.brand{font-weight:700;font-size:22px;letter-spacing:-.02em}.brand span{color:var(--teal)}
+.who{display:flex;gap:6px}
+.who button,.tab{font:500 14px var(--sans);padding:8px 14px;border:1px solid var(--line);background:var(--card);border-radius:999px;cursor:pointer;color:var(--ink)}
+.who button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:6px 0 4px}.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.meta{font:13px var(--mono);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;margin:22px 0 14px}.tab.on{border-color:var(--ink);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.reg{font:600 22px var(--mono);letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14px;margin-top:2px}
+.rule{display:inline-block;margin-top:14px;font:600 13px var(--sans);padding:5px 10px;border-radius:8px;background:var(--ember-soft);color:var(--ember)}
+.rule.unclear{background:var(--amber-soft);color:var(--amber)}
+.lbl{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px}
+blockquote{margin:0;padding:12px 16px;border-left:3px solid var(--line);background:#fbfaf6;font:17px/1.55 var(--serif);border-radius:0 8px 8px 0;overflow-wrap:anywhere}
+blockquote.law{border-left-color:var(--teal)}
+.src{font:12.5px var(--mono);color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
+a{color:var(--teal)}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.v{font:600 16px var(--sans);padding:14px 10px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink)}
+.v kbd{font:500 12px var(--mono);color:var(--muted);margin-right:6px}
+.v.correct:hover,.v.correct.on{border-color:var(--teal);background:var(--teal-soft)}
+.v.wrong:hover,.v.wrong.on{border-color:var(--ember);background:var(--ember-soft)}
+.v.unclear:hover,.v.unclear.on{border-color:var(--amber);background:var(--amber-soft)}
+textarea,input[type=text]{width:100%;margin-top:12px;font:15px var(--sans);padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;resize:vertical}
+.nav{display:flex;justify-content:space-between;margin-top:14px;font-size:14px}.nav button{background:none;border:0;color:var(--muted);cursor:pointer;font:14px var(--sans)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+.q h3{margin:0 0 4px;font:600 16px/1.4 var(--sans)}.q .n{font:12.5px var(--mono);color:var(--muted)}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.opts button{font:500 14px var(--sans);padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)}
+.opts button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.done{text-align:center;padding:40px 20px}.big{font:700 56px var(--mono);letter-spacing:-.03em}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+.saved{font:12.5px var(--mono);color:var(--teal);min-height:18px;margin-top:8px}
+@media (max-width:560px){.actions{grid-template-columns:1fr}.reg{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Mezon<span>.</span> <span style="color:var(--muted);font-weight:500;font-size:15px">ekspert tekshiruvi</span></div>
+    <div class="who" id="who"></div>
+  </header>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="meta"><span id="count">Yuklanmoqda</span><span id="prec"></span></div>
+  <div class="tabs"><button class="tab on" data-t="flags">Belgilar (bittadan)</button><button class="tab" data-t="groups">5 ta umumiy savol</button></div>
+  <main id="main"></main>
+  <p class="note">Belgi qoidabuzarlik degani emas: bu ekspert ko'rib chiqishi kerak bo'lgan ehtimoliy holat. Klavishlar: 1 to'g'ri, 2 noto'g'ri, 3 noaniq, chap/o'ng strelka oldingi/keyingi.</p>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const el = (t, c, txt) => { const e = document.createElement(t); if (c) e.className = c; if (txt != null) e.textContent = txt; return e; };
+const REVIEWERS = [{name: "Bryusli", from: 1, to: 30}, {name: "Asila", from: 31, to: 60}];
+let sheet = null, verdicts = {}, me = REVIEWERS[0], idx = 0, tab = "flags";
+try { const s = localStorage.getItem("mezon-reviewer"); if (s) me = REVIEWERS.find(r => r.name === s) || me; } catch (e) {}
+const key = f => `${f.decision_id}|${f.check}`;
+const mine = () => sheet.flags.filter(f => f.n >= me.from && f.n <= me.to);
+const fmt = d => d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d.split("-").reverse().join(".") : (d || "");
+
+async function load() {
+  sheet = await (await fetch("/api/review-sheet")).json();
+  verdicts = (await (await fetch("/api/reviews")).json()).verdicts || {};
+  const first = mine().findIndex(f => !verdicts[key(f)]);
+  idx = first < 0 ? 0 : first;
+  renderWho(); render();
+}
+function renderWho() {
+  const w = $("#who"); w.replaceChildren();
+  for (const r of REVIEWERS) {
+    const b = el("button", r.name === me.name ? "on" : "", `${r.name} · ${r.from}-${r.to}`);
+    b.onclick = () => { me = r; try { localStorage.setItem("mezon-reviewer", r.name); } catch (e) {}
+      const first = mine().findIndex(f => !verdicts[key(f)]); idx = first < 0 ? 0 : first; renderWho(); render(); };
+    w.append(b);
+  }
+}
+async function progress() {
+  const list = mine(), done = list.filter(f => verdicts[key(f)]).length;
+  $("#prog").style.width = `${Math.round(100 * done / list.length)}%`;
+  $("#count").textContent = `${me.name}: ${done} / ${list.length} ko'rib chiqildi`;
+  const rv = await (await fetch("/api/reviews")).json(); const n = rv.total.correct + rv.total.wrong;
+  $("#prec").textContent = rv.precision == null ? "aniqlik: hali yo'q" : `jamoa aniqligi ${Math.round(rv.precision * 100)} % (N=${n})`;
+}
+function render() { progress(); tab === "flags" ? renderFlag() : renderGroups(); }
+
+async function renderFlag() {
+  const list = mine(), f = list[idx], main = $("#main"); main.replaceChildren();
+  if (!f) return;
+  if (list.every(x => verdicts[key(x)]) && idx === list.length) return;
+  const c = el("div", "card");
+  const top = el("div"); top.append(el("div", "reg", f.reg_number.replace("draft:", "Loyiha ")), el("div", "sub", `${f.body} · ${fmt(f.date)} · #${f.n}`));
+  c.append(top, el("span", "rule" + (f.status === "possible_violation" ? "" : " unclear"), f.rule_uz || f.check));
+  const ev = el("div"); c.append(ev);
+  const fill = (quotes, laws) => {
+    ev.replaceChildren();
+    ev.append(el("div", "lbl", "Qarordan"));
+    for (const q of quotes) ev.append(el("blockquote", null, q));
+    const open = el("div", "src"); const a = el("a", null, "Qarorni lex.uz da ochish"); a.href = f.url; a.target = "_blank"; a.rel = "noopener"; open.append(a); ev.append(open);
+    for (const l of laws) {
+      ev.append(el("div", "lbl", l.label));
+      ev.append(el("blockquote", "law", l.quote));
+      const s = el("div", "src", l.src + " ");
+      if (l.url) { const la = el("a", null, "manba"); la.href = l.url; la.target = "_blank"; la.rel = "noopener"; s.append(la); }
+      ev.append(s);
+    }
+  };
+  fill([f.evidence_quote], [{label: `Qonun (${fmt(f.date)} holatida)`, quote: f.law_quote, src: f.law, url: f.law_url}]);
+  if (f.decision_id && !f.decision_id.startsWith("draft:")) {
+    fetch(`/api/audit/${encodeURIComponent(f.decision_id)}`).then(r => r.ok ? r.json() : null).then(r => {
+      const fl = r && (r.flags || []).find(x => x.check === f.check);
+      if (!fl || list[idx] !== f) return;
+      const quotes = (fl.evidence || []).filter(e => e.source !== "lexuz" && e.quote).map(e => e.quote);
+      const laws = [...(fl.evidence || []).filter(e => e.source === "lexuz").map(e => ({label: "lex.uz izohi", quote: e.quote, src: e.locator, url: e.url})),
+        ...(fl.citations || []).map(ci => ({label: `Qonun (${fmt(ci.on_date)} holatida)`, quote: ci.quote, src: `${ci.act_title || ""}, ${ci.article || ""}`, url: ci.url}))];
+      if (quotes.length || laws.length) fill(quotes.length ? quotes : [f.evidence_quote], laws.length ? laws : [{label: "Qonun", quote: f.law_quote, src: f.law, url: f.law_url}]);
+    }).catch(() => {});
+  }
+  const acts = el("div", "actions"), note = el("input"); note.type = "text"; note.placeholder = "Izoh (ixtiyoriy): nima uchun?";
+  const cur = verdicts[key(f)];
+  const saved = el("div", "saved", cur ? `Saqlangan: ${({correct: "to'g'ri", wrong: "noto'g'ri", unclear: "noaniq"})[cur]}` : "");
+  [["correct", "1", "To'g'ri"], ["wrong", "2", "Noto'g'ri"], ["unclear", "3", "Noaniq"]].forEach(([v, k, t]) => {
+    const b = el("button", `v ${v}${cur === v ? " on" : ""}`); b.dataset.v = v; b.append(el("kbd", null, k), document.createTextNode(t));
+    b.onclick = () => save(f, v, note.value); acts.append(b);
+  });
+  const nav = el("div", "nav"), prev = el("button", null, "Oldingi"), next = el("button", null, "Keyingi");
+  prev.onclick = () => { if (idx > 0) { idx--; render(); } }; next.onclick = () => { if (idx < list.length - 1) { idx++; render(); } };
+  nav.append(prev, next);
+  c.append(acts, note, saved, nav); main.append(c);
+}
+async function save(f, v, note) {
+  if (!f.decision_id) { alertBox("Bu belgining qaror identifikatori topilmadi; izohga yozing."); return; }
+  const r = await fetch("/api/reviews", {method: "POST", headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({decision_id: f.decision_id, check: f.check, verdict: v, note: note || "", reviewer: me.name})});
+  if (!r.ok) { alertBox("Saqlanmadi. Server ishlayaptimi?"); return; }
+  verdicts[key(f)] = v;
+  const list = mine(), nextOpen = list.findIndex((x, i) => i > idx && !verdicts[key(x)]);
+  if (nextOpen >= 0) idx = nextOpen; else if (list.every(x => verdicts[key(x)])) { finished(); return; }
+  render();
+}
+function alertBox(t) { const s = document.querySelector(".saved"); if (s) { s.style.color = "var(--ember)"; s.textContent = t; } }
+async function finished() {
+  progress();
+  const rv = await (await fetch("/api/reviews")).json(); const main = $("#main"); main.replaceChildren();
+  const c = el("div", "card done");
+  c.append(el("div", "big", rv.precision == null ? "—" : `${Math.round(rv.precision * 100)} %`),
+    el("p", null, `${me.name}: hammasi ko'rib chiqildi. Jamoa aniqligi = to'g'ri / (to'g'ri + noto'g'ri), N=${rv.total.correct + rv.total.wrong}, noaniq ${rv.total.unclear}.`));
+  const back = el("button", "tab", "Belgilarga qaytish"); back.onclick = () => { idx = 0; renderFlag(); }; c.append(back);
+  main.append(c);
+}
+function renderGroups() {
+  const main = $("#main"); main.replaceChildren();
+  const ans = {}; for (const a of sheet.answers) if (a.reviewer === me.name) ans[a.question] = a;
+  for (const g of sheet.groups) {
+    const q = el("div", "q"); q.append(el("h3", null, `${g.question}. ${g.text}`), el("div", "n", `${g.flags} ta belgi shu javobga bog'liq`));
+    const opts = el("div", "opts"), note = el("input"); note.type = "text"; note.placeholder = "Agar \"bog'liq\" bo'lsa: nimaga?"; note.value = ans[g.question]?.note || "";
+    const saved = el("div", "saved", ans[g.question] ? "Saqlangan" : "");
+    [["applies", "3 oylik qoida qo'llanadi"], ["not_applies", "Qo'llanmaydi"], ["depends", "Bog'liq"]].forEach(([v, t]) => {
+      const b = el("button", ans[g.question]?.answer === v ? "on" : "", t);
+      b.onclick = async () => {
+        const r = await fetch("/api/group-answers", {method: "POST", headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({question: g.question, reviewer: me.name, answer: v, note: note.value})});
+        if (r.ok) { opts.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); saved.textContent = "Saqlangan";
+          sheet.answers = sheet.answers.filter(a => !(a.question === g.question && a.reviewer === me.name)).concat({question: g.question, reviewer: me.name, answer: v, note: note.value}); }
+        else { saved.style.color = "var(--ember)"; saved.textContent = "Saqlanmadi"; }
+      };
+      opts.append(b);
+    });
+    q.append(opts, note, saved); main.append(q);
+  }
+}
+document.querySelectorAll(".tab[data-t]").forEach(t => t.onclick = () => {
+  tab = t.dataset.t; document.querySelectorAll(".tab[data-t]").forEach(x => x.classList.toggle("on", x === t)); render(); });
+document.addEventListener("keydown", e => {
+  if (tab !== "flags" || e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  const f = mine()[idx]; if (!f) return;
+  const note = document.querySelector(".card input")?.value || "";
+  if (e.key === "1") save(f, "correct", note); else if (e.key === "2") save(f, "wrong", note); else if (e.key === "3") save(f, "unclear", note);
+  else if (e.key === "ArrowRight" && idx < mine().length - 1) { idx++; render(); } else if (e.key === "ArrowLeft" && idx > 0) { idx--; render(); }
+});
+load();
+</script>
+</body>
+</html>

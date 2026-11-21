@@ -1,0 +1,223 @@
+<title>Mezon Mentor Pitch Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap">
+<style>
+/* Layout: same 1200x675 slide stage as the app deck. Eye Run look: pale page, soft mint + blue light, white glass, mint mono numbers */
+@font-face{font-family:"Departure Mono";src:url("fonts/DepartureMono.woff2") format("woff2");font-display:swap}
+:root{
+  --page:#F2F4F8; --ink:#0F1630; --ink-2:#4B5470; --ink-3:#8A92AA; --line:#E6E9F1;
+  --mint:#1C7E69; --mint-s:rgba(28,126,105,.10);
+  --amber:#B45309; --amber-s:rgba(180,83,9,.10);
+  --blue:#2563EB; --blue-s:rgba(37,99,235,.09);
+  --violet:#7C3AED; --violet-s:rgba(124,58,237,.09);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Departure Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --r:28px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;overflow:hidden;color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1100px 620px at 12% -8%,#D9F0E6 0%,transparent 62%),radial-gradient(900px 560px at 92% 2%,#DDE6FB 0%,transparent 58%),radial-gradient(800px 500px at 60% 115%,#E1F2EC 0%,transparent 60%),var(--page)}
+.stage{position:fixed;left:50%;top:50%;width:1200px;height:675px;transform-origin:center}
+.glass{position:relative;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 1px 1px rgba(15,22,48,.04),0 10px 28px -14px rgba(15,22,48,.22),inset 0 1px 0 rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(22px) saturate(1.35);backdrop-filter:blur(22px) saturate(1.35);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 42%)}
+.glass>*{position:relative}
+.mint-card{background:linear-gradient(150deg,#1C7E69 0%,#23A06C 100%);border-color:rgba(255,255,255,.35);color:#fff;box-shadow:0 18px 36px -16px rgba(28,126,105,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.mint-card::before{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 45%)}
+.slide{position:absolute;inset:0;padding:40px 52px 96px;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1),visibility 0s .4s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1)}
+.slide.back{transform:translateX(-18px)}
+@media (prefers-reduced-motion:reduce){.slide,.slide.on{transition:opacity .15s;transform:none}}
+.eyebrow{font:400 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0}
+h1,h2,h3{font-family:var(--sans);margin:0;text-wrap:balance}
+h1{font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-.03em}
+h2{font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.025em}
+h3{font-weight:800;font-size:21px;line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+.muted{color:var(--ink-2)}
+.big{font:400 84px/.9 var(--mono);letter-spacing:-.045em;color:var(--mint)}
+.kpi{border-radius:18px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 22px -16px rgba(15,22,48,.3),inset 0 1px 0 rgba(255,255,255,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:16px 18px}
+.kpi b{display:block;font:400 30px/1 var(--mono);letter-spacing:-.03em}
+.kpi span{display:block;font:400 11.5px/1.4 var(--mono);color:var(--ink-2);margin-top:8px}
+.kpi.warn b{color:var(--amber)}
+.chip{display:inline-flex;align-items:center;gap:7px;font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:var(--s-soft,var(--mint-s));color:var(--s,var(--mint));white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s,var(--mint))}
+.c-amber{--s:var(--amber);--s-soft:var(--amber-s)}.c-blue{--s:var(--blue);--s-soft:var(--blue-s)}.c-violet{--s:var(--violet);--s-soft:var(--violet-s)}
+.lab{font:400 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ul li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.45}
+.ul li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.ul.amber li::before{background:var(--amber)}
+.raw{font:400 12.5px/1.55 var(--mono);background:rgba(15,22,48,.045);border-radius:14px;padding:14px 16px;color:var(--ink);white-space:pre;overflow:hidden}
+.raw .hl{color:var(--amber)}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:absolute;left:52px;right:52px;top:186px;height:400px}
+.find>.glass{padding:24px 26px;display:grid;align-content:start;gap:12px}
+.dock{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:7px 9px;border-radius:999px;z-index:5}
+.dock button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.dock button:hover{background:rgba(15,22,48,.05)}
+.dots{display:flex;gap:6px;align-items:center}
+.dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:99px;background:rgba(15,22,48,.16);transition:width .3s cubic-bezier(.23,1,.32,1),background .3s}
+.dots button.on{width:22px;background:var(--mint)}
+.count{font:400 12px/1 var(--mono);color:var(--ink-2);min-width:50px;text-align:center}
+button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+.bar{height:16px;border-radius:7px;background:rgba(15,22,48,.06);position:relative;overflow:hidden;box-shadow:inset 0 1px 2px rgba(15,22,48,.07)}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.bar i.now{background:var(--amber)}
+.bar i.goal{background:rgba(28,126,105,.22);border:1.5px dashed rgba(28,126,105,.6);box-shadow:none}
+.idea{padding:12px 14px;border-radius:18px;display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.idea b{font:400 13px/1.3 var(--mono);color:var(--mint)}
+.idea h4{margin:0;font-weight:600;font-size:14.5px;line-height:1.3}
+.idea p{font-size:12.5px;line-height:1.4;color:var(--ink-2);margin-top:3px}
+.node{position:absolute;padding:12px 14px;border-radius:18px;text-align:center}
+.node h4{margin:0;font-weight:800;font-size:15px}
+.node p{font:400 10.5px/1.4 var(--mono);color:var(--ink-2);margin-top:4px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:6px 9px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.35;vertical-align:top}
+th{font:400 10.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+td b{font-weight:600}
+</style>
+<style>
+.qa{padding:12px 16px;border-radius:18px;display:grid;gap:4px}
+.qa b{font-size:14px}.qa p{font-size:13px;line-height:1.45;color:var(--ink-2)}
+.crit{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);align-items:start}
+.crit:first-of-type{border-top:0}
+.crit span{font:400 13px/1.3 var(--mono);color:var(--mint);padding-top:2px}
+.crit p{font-size:13.5px;line-height:1.45}
+.src{font:400 10.5px/1.4 var(--mono);color:var(--ink-3)}
+</style>
+<main class="stage" id="stage" aria-roledescription="slide deck"></main>
+<script>
+const S=[];
+const F=(n,t)=>`<p class="eyebrow">${n}</p><h2 style="margin-top:12px">${t}</h2>`;
+const C=(id,txt)=>`<div class="crit"><span>${id}</span><p>${txt}</p></div>`;
+/* 1 */
+S.push(`
+ <div style="position:absolute;left:56px;top:56px;width:640px;display:grid;gap:18px">
+  <p class="eyebrow">Mezon · mentor pitch kit · 21 Nov 2026</p>
+  <h1>Every local decision, checked against the law as it read that day, before it hurts anyone.</h1>
+  <p class="muted" style="font-size:16px;max-width:52ch">Mentors score what we tell them. This kit gives each mentor the answer to all 5 of their criteria, with a proof behind every claim.</p>
+ </div>
+ <div style="position:absolute;left:730px;top:56px;width:418px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+  <div class="kpi warn"><b>933</b><span>hokim decisions courts cancelled as unlawful in 2024</span></div>
+  <div class="kpi warn"><b>1,371</b><span>hokimlik decisions cancelled by courts in 2023</span></div>
+  <div class="kpi warn"><b>10,250</b><span>illegal decisions cancelled on adliya representations in 2.5 years</span></div>
+  <div class="kpi warn"><b>101,358 ha</b><span>land under 2,541 land decisions found unlawful</span></div>
+ </div>
+ <p class="src" style="position:absolute;left:730px;top:400px;width:418px">Sources: Supreme Court press service via Daryo (933, 1,371); Kun.uz 25.11.2020 (10,250, Minister: "Where is the lawyer looking?"); Kun.uz 27.09.2022 (2,541 decisions, 101,358 ha).</p>
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:450px;height:130px;padding:20px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+  <div><p class="lab">The 3 mentors</p><p style="font-size:15px">Technical (T1-T5) · Business (B1-B5) · Legal (S1-S5), each 1-10.</p></div>
+  <div><p class="lab">The rule</p><p style="font-size:15px">Problem first and big, then proof, then the solution part by part.</p></div>
+  <div><p class="lab">Never say</p><p style="font-size:15px">"illegal" (say "possible violation, flagged for expert review") or a number without its source.</p></div>
+ </div>
+`);
+/* 2 problem */
+S.push(`${F("01 · the problem, told so a newcomer believes it","Bad local decisions are caught only after they hurt someone")}
+ <div class="find" style="top:170px;height:410px">
+  <div class="glass"><p class="lab">the story in 4 lines</p>
+   <ul class="ul amber"><li>Hokims and Kengashes sign thousands of decisions: land, fees, business rules. E-qaror holds <b>919,513</b> of them (counted today through its own API).</li>
+   <li>Before signing, a regional adliya lawyer has <b>2 working days (Kengash) or 5 (hokim)</b> to check a draft by hand (Adliya order No. 3333).</li>
+   <li>Public discussion rarely helps: in our random sample of 92 recent drafts, <b>87 got zero public proposals</b>.</li>
+   <li>So mistakes slip through and are cancelled later: <b>933</b> by courts in 2024 alone, after people already lost land, money or a business.</li></ul>
+  </div>
+  <div class="glass"><p class="lab">one real case to tell (public, already cancelled)</p>
+   <p style="font-size:15px"><b>Qarshi district, 2024.</b> Decision 231-4-59-Q/24 copied decision 207-4-59-Q/24 <b>word for word 15 days later</b>, while 207 was still in force, and "repealed" a decision that 207 had already repealed.</p>
+   <p style="font-size:15px">The district adliya sent representation No. 27-7/1-34; it was cancelled by 261-4-59-Q/24.</p>
+   <p style="font-size:15px"><b>Mezon flags a defect consistent with that representation</b> in seconds, from the text alone.</p>
+   <p class="src">lex.uz -6986157, -6961952, -7026714 · say "consistent with the representation", never "found the exact reason"</p>
+  </div>
+ </div>
+`);
+/* 3 solution */
+S.push(`${F("02 · the solution, part by part","Four parts, one job: a pre-filled adliya conclusion a human approves")}
+ <div style="position:absolute;left:52px;right:52px;top:170px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+ ${[["1","Law as of that day","Every lex.uz act with every edition and its dates (166,705 acts). A decision is checked against the law as it read on its own date, not today's.","why it matters: half of the hard questions trap models with today's wording"],
+ ["2","Rule engine","Deterministic checks, no AI: qaror vs farmoyish, public discussion, 3-month business rule, retroactive burden, duplicates, dead citations.","proof: 7 golden cases pass every time (demo_check)"],
+ ["3","Mezon-LM","Our own Uzbek legal model (Qwen 27B, trained on lex.uz) with 5 law tools, for open questions: conflicts, mandate drift.","proof: with our tools it ties Opus 5.5 (116 vs 115 of 118)"],
+ ["4","Citation verifier","Every flag must cite a real article, in force on that date, quoted word for word. Otherwise it is dropped and marked 'needs expert'.","Stanford 2024: top legal AIs invent citations on 17-33 % of queries"]].map(([n,t,d,p])=>`<div class="glass" style="padding:20px;height:410px;display:grid;grid-template-rows:auto auto 1fr auto;gap:10px"><b style="font:400 28px/1 var(--mono);color:var(--mint)">${n}</b><h3>${t}</h3><p class="muted" style="font-size:14px;line-height:1.5">${d}</p><p style="font-size:12.5px;font-weight:600;color:var(--mint)">${p}</p></div>`).join("")}</div>
+ <p class="muted" style="position:absolute;left:52px;top:594px;font-size:13.5px">Output: Adliya's own format (positive · positive with fixable defects · negative), every defect -> article -> quote. A human decides every flag (Adliya AI ethics rules No. 3787).</p>
+`);
+/* 4 technical */
+S.push(`${F("03 · technical mentor (T1-T5)","What to say, and the proof to show")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("T1","<b>Built, not slides:</b> law store with every edition by date, rule engine, citation verifier, 5 tools, web expert screen + review screen. <b>Show:</b> run one decision live; demo_check passes all golden cases.")}
+  ${C("T2","<b>MVP:</b> the audit runs end to end today on real decisions. The platform team connects chat + dashboard to our model served as an API. <b>Be honest</b> about what is local-only.")}
+  ${C("T3","<b>Innovation:</b> no Uzbek tool audits decisions against the law as of their date. Our own exams (hard v2.1, SWE-bench-style audit, 30 % secret questions) and a frontier baseline. <b>Show:</b> the scores slide.")}
+  ${C("T4","<b>Team knowledge:</b> explain in 3 sentences: law school (reads all law) -> internship (learns to use the tools) -> strict judge (+1 right, -1.5 confident wrong, so it stops guessing).")}
+  ${C("T5","<b>Stack:</b> Qwen 27B + LoRA training, vLLM serving, SQLite FTS5 + bge-m3 embeddings + reranker, FastAPI, all on our own GPUs. Data never goes to a foreign cloud in the product.")}
+ </div>
+`);
+/* 5 business */
+S.push(`${F("04 · business mentor (B1-B5)","Who pays, why, and how it grows")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("B1","<b>Problem:</b> 933 court cancellations in 2024, 10,250 on adliya representations in 2.5 years. 2025: courts found 743 of 1,593 tax-authority and 449 of 1,594 Cadastre Agency decisions unlawful: the same pain beyond hokims.")}
+  ${C("B2","<b>Model:</b> Ministry of Justice / regional adliya: annual license per region. Hokimlik legal services: per-seat subscription (pre-check before sending to adliya). Law firms, businesses: monitoring subscription. Citizens: free.")}
+  ${C("B3","<b>Edge:</b> LexAI answers questions; we check documents clause by clause, against the law of that date, with verified citations. With our tools a free 27B model ties Opus 5.5, so we do not depend on a foreign API.")}
+  ${C("B4","<b>Money:</b> 60 mln so'm plan (GPU in Uzbekistan 18, lawyer labelling 15, hardening 10, pilot 7, MChJ 4, reserve 6). Tranche 1: pilot live in 60 days, 300+ decisions, precision >= 80 %. Tranche 2: 1,000+ decisions, review time -50 % measured. <b>To add:</b> measured cost of one audit on one GPU.")}
+  ${C("B5","<b>Growth:</b> hokims + Kengashes (E-qaror 919,513 docs) -> ministries (E-qaror-respublika 60,762 docs) -> tax and cadastre decisions -> every region. Same engine.")}
+ </div>
+`);
+/* 6 legal */
+S.push(`${F("05 · legal mentor (S1-S5)","The law it encodes, and why it is safe")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("S1","<b>Relevance:</b> a local normative decision is valid only if it is a qaror, registered in E-qaror, has a positive adliya conclusion, had 15+ days of public discussion (NLA art. 24), gives business 3 months (art. 40), stays within competence, and is not retroactive (art. 41).")}
+  ${C("S2","<b>Depth:</b> hierarchy and conflicts (NLA art. 6, 18: higher force wins, later wins, doubt goes to the person). Who cancels: higher hokim, Kengash, prosecutor protest, adliya representation, court (O'RQ-457).")}
+  ${C("S3","<b>Practice:</b> output is Adliya's own conclusion format from order No. 3333, inside its 2-5 working-day deadline. Plan: time 5 reviews by hand vs with Mezon in the pilot.")}
+  ${C("S4","<b>Compliance:</b> a human decides every flag (rules No. 3787); citizens' names masked before any training; product runs on local servers; we never say 'illegal', only 'possible violation, flagged for expert review'.")}
+  ${C("S5","<b>Impact:</b> catches defects before signing, for every district; businesses and citizens get a plain explanation and the right channel (Business Ombudsman, adliya, court) pre-filled.")}
+ </div>
+`);
+/* 7 proof */
+S.push(`${F("06 · proof we can show today","Only numbers a script printed")}
+ <div style="position:absolute;left:52px;right:52px;top:166px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+  <div class="kpi"><b>7 / 7</b><span>golden demo cases give their promised verdict (demo_check)</span></div>
+  <div class="kpi"><b>116 vs 115</b><span>of 118: free Qwen 27B + our tools vs Claude Opus 5.5 + same tools</span></div>
+  <div class="kpi"><b>166,705</b><span>lex.uz acts in our store, with every edition</span></div>
+  <div class="kpi"><b>462</b><span>hard exam questions (138 secret), answers taken from the law text</span></div>
+  <div class="kpi"><b>174</b><span>audit tasks, SWE-bench style; one fake citation fails a task</span></div>
+  <div class="kpi"><b>1.01 -> 0.16</b><span>model error on unseen law lessons during today's internship training</span></div>
+ </div>
+ <p class="muted" style="position:absolute;left:52px;right:52px;top:420px;font-size:14.5px">Say what is not proven yet: "beats top models by 20 %" is our goal on the hard exam; the trained model's score on it comes today. A mentor trusts the team that says "not yet" plainly.</p>
+`);
+/* 8 hard questions */
+const Q=[["Why not just use ChatGPT / LexAI?","They answer questions; they do not know which edition was in force on the decision date, and they invent citations. Ours checks every quote against lex.uz."],
+["Is it legal to use AI here?","A human decides every flag (Adliya rules No. 3787); Mezon only pre-fills the conclusion."],
+["Where does the data come from?","Public official sources: lex.uz, E-qaror, regulation.gov.uz, court statistics."],
+["What if it is wrong?","Precision first: no flag without a valid article and quote; otherwise 'needs expert'. Wrong confident answers cost most in our scoring."],
+["Who pays after the grant?","Adliya license per region via E-qaror; hokimlik and law-firm subscriptions; citizens free."],
+["How big is the market?","919,513 decisions in E-qaror alone, plus 60,762 ministry acts; tax and cadastre next."],
+["Why you?","We built the law store, the engine and our own model, and measured them against Opus."],
+["What do you need?","One region's adliya for a 90-day pilot, data access, and the tranche funding."]];
+S.push(`${F("07 · hard questions, short answers","Practice these out loud")}
+ <div style="position:absolute;left:52px;right:52px;top:150px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+ ${Q.map(([q,a])=>`<div class="qa glass"><b>${q}</b><p>${a}</p></div>`).join("")}</div>
+`);
+/* 9 60 seconds */
+S.push(`${F("08 · the 60-second version","Say this when a mentor gives you one minute")}
+ <div class="glass mint-card" style="position:absolute;left:52px;right:52px;top:166px;height:410px;padding:34px 40px">
+  <p style="font-size:21px;line-height:1.6">"In 2024 courts cancelled 933 hokim decisions as unlawful, after they had already hurt someone. An adliya lawyer has 2 to 5 days to check each draft by hand.<br><br>
+  Mezon checks every local decision against the law as it read that day: a rule engine for procedure, our own Uzbek legal model for open questions, and a verifier that drops any citation that is not real, in force and word for word.<br><br>
+  With our tools, our free model already matches Claude Opus 5.5. A human always decides. We ask for a 90-day pilot in one region."</p>
+ </div>
+`);
+const stage=document.getElementById("stage");
+stage.innerHTML=S.map((s,i)=>`<section class="slide" id="s${i+1}" aria-label="Slide ${i+1} of ${S.length}">${s}</section>`).join("")+
+ `<nav class="dock glass" aria-label="Slides"><button id="prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="dots">${S.map((_,i)=>`<button aria-label="Slide ${i+1}"></button>`).join("")}</div><span class="count" id="count"></span>
+  <button id="next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></nav>`;
+let cur=-1;const SL=[...document.querySelectorAll(".slide")],DT=[...document.querySelectorAll(".dots button")];
+function go(i,quiet){i=Math.max(0,Math.min(SL.length-1,i));if(i===cur)return;
+ SL.forEach((s,k)=>{s.classList.toggle("on",k===i);s.classList.toggle("back",k<i)});DT.forEach((d,k)=>d.classList.toggle("on",k===i));
+ document.getElementById("count").textContent=`${i+1} / ${SL.length}`;cur=i;if(!quiet)try{history.replaceState(null,"","#s"+(i+1))}catch(e){}}
+document.getElementById("prev").onclick=()=>go(cur-1);document.getElementById("next").onclick=()=>go(cur+1);
+DT.forEach((d,k)=>d.onclick=()=>go(k));
+addEventListener("keydown",e=>{const k=e.key;if(k==="ArrowRight"||k==="PageDown"||k===" "){e.preventDefault();go(cur+1)}else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();go(cur-1)}else if(k==="Home")go(0);else if(k==="End")go(SL.length-1)});
+let wl=0;addEventListener("wheel",e=>{const t=Date.now(),d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(t-wl<750||Math.abs(d)<24)return;wl=t;go(cur+(d>0?1:-1))},{passive:true});
+let px=null,py=null;addEventListener("pointerdown",e=>{px=e.clientX;py=e.clientY});
+addEventListener("pointerup",e=>{if(px===null)return;const dx=e.clientX-px,dy=e.clientY-py;px=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))});
+function fromHash(){const m=/^#s(\d+)$/.exec(location.hash);go(m?+m[1]-1:0,true)}
+addEventListener("hashchange",fromHash);
+function fit(){const s=Math.min(innerWidth/1200,innerHeight/675);stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+addEventListener("resize",fit);fit();fromHash();
+</script>

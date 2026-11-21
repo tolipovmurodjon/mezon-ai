@@ -1,0 +1,4 @@
+2026-11-19 23:09:48 after 50 acts, 0.1 h | acts {'done': 81, 'missing': 2, 'todo': 3895} | editions 477 | files 31 | images 24 | free 10 GB
+2026-11-19 23:14:30 after 100 acts, 0.2 h | acts {'done': 131, 'missing': 2, 'todo': 4165} | editions 477 | files 41 | images 43 | free 10 GB
+STOP file found: pausing cleanly
+2026-11-19 23:15:37 final | acts {'done': 144, 'missing': 2, 'todo': 4176} | editions 477 | files 45 | images 43 | free 10 GB

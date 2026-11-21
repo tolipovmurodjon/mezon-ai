@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mezon UI kit 2.0</title>
+<meta name="description" content="Mezon UI kit: hukumat paneli, AI chat va AI vidjetlari. Qora tugmalar, oq yuzalar, bitta to'q sariq urg'u.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b0b0b'/%3E%3Cg fill='%23fff'%3E%3Crect x='7' y='7' width='3' height='18' rx='.8'/%3E%3Crect x='22' y='7' width='3' height='18' rx='.8'/%3E%3Crect x='10.5' y='10.5' width='3' height='3' rx='.8'/%3E%3Crect x='18.5' y='10.5' width='3' height='3' rx='.8'/%3E%3Crect x='14.5' y='14.5' width='3' height='3' rx='.8'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/kit.css">
+<script>
+  try {
+    var t = localStorage.getItem('mezon-theme');
+    if (t !== 'dark') t = 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></symbol>
+<symbol id="i-arrow-down-right" viewBox="0 0 24 24"><path d="m7 7 10 10" /> <path d="M17 7v10H7" /></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14" /> <path d="m19 12-7 7-7-7" /></symbol>
+<symbol id="i-arrow-left-right" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4" /> <path d="M4 7h16" /> <path d="m16 21 4-4-4-4" /> <path d="M20 17H4" /></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" /> <path d="M7 17 17 7" /></symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7" /> <path d="M12 19V5" /></symbol>
+<symbol id="i-at-sign" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /> <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-building-2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol>
+<symbol id="i-bus" viewBox="0 0 24 24"><path d="M8 6v6" /> <path d="M15 6v6" /> <path d="M2 12h19.6" /> <path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3" /> <circle cx="7" cy="18" r="2" /> <path d="M9 18h5" /> <circle cx="16" cy="18" r="2" /></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol>
+<symbol id="i-chart-column" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></symbol>
+<symbol id="i-chart-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="m19 9-5 5-4-4-3 3" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6" /></symbol>
+<symbol id="i-chevrons-up-down" viewBox="0 0 24 24"><path d="m7 15 5 5 5-5" /> <path d="m7 9 5-5 5 5" /></symbol>
+<symbol id="i-circle-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="1" /></symbol>
+<symbol id="i-circle-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /> <path d="M12 17h.01" /></symbol>
+<symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m15 9-6 6" /> <path d="m9 9 6 6" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-command" viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" /></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
+<symbol id="i-corner-down-left" viewBox="0 0 24 24"><polyline points="9 10 4 15 9 20" /> <path d="M20 4v7a4 4 0 0 1-4 4H4" /></symbol>
+<symbol id="i-corner-up-right" viewBox="0 0 24 24"><polyline points="15 14 20 9 15 4" /> <path d="M4 20v-7a4 4 0 0 1 4-4h12" /></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /> <path d="M3 5V19A9 3 0 0 0 21 19V5" /> <path d="M3 12A9 3 0 0 0 21 12" /></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="7 10 12 15 17 10" /> <line x1="12" x2="12" y1="15" y2="3" /></symbol>
+<symbol id="i-droplets" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" /> <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></symbol>
+<symbol id="i-ellipsis" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1" /> <circle cx="19" cy="12" r="1" /> <circle cx="5" cy="12" r="1" /></symbol>
+<symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6" /> <path d="M10 14 21 3" /> <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="m9 15 2 2 4-4" /></symbol>
+<symbol id="i-file-spreadsheet" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M8 13h2" /> <path d="M14 13h2" /> <path d="M8 17h2" /> <path d="M14 17h2" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /> <line x1="4" x2="4" y1="22" y2="15" /></symbol>
+<symbol id="i-folder-kanban" viewBox="0 0 24 24"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" /> <path d="M8 10v4" /> <path d="M12 10v2" /> <path d="M16 10v6" /></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4" /> <path d="M3.34 19a10 10 0 1 1 17.32 0" /></symbol>
+<symbol id="i-git-compare" viewBox="0 0 24 24"><circle cx="18" cy="18" r="3" /> <circle cx="6" cy="6" r="3" /> <path d="M13 6h3a2 2 0 0 1 2 2v7" /> <path d="M11 18H8a2 2 0 0 1-2-2V9" /></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></symbol>
+<symbol id="i-hash" viewBox="0 0 24 24"><line x1="4" x2="20" y1="9" y2="9" /> <line x1="4" x2="20" y1="15" y2="15" /> <line x1="10" x2="8" y1="3" y2="21" /> <line x1="16" x2="14" y1="3" y2="21" /></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /> <path d="M12 7v5l4 2" /></symbol>
+<symbol id="i-hospital" viewBox="0 0 24 24"><path d="M12 6v4" /> <path d="M14 14h-4" /> <path d="M14 18h-4" /> <path d="M14 8h-4" /> <path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" /> <path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" /></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22" /> <line x1="6" x2="6" y1="18" y2="11" /> <line x1="10" x2="10" y1="18" y2="11" /> <line x1="14" x2="14" y1="18" y2="11" /> <line x1="18" x2="18" y1="18" y2="11" /> <polygon points="12 2 20 7 4 7" /></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol>
+<symbol id="i-layout-dashboard" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1" /> <rect width="7" height="5" x="14" y="3" rx="1" /> <rect width="7" height="9" x="14" y="12" rx="1" /> <rect width="7" height="5" x="3" y="16" rx="1" /></symbol>
+<symbol id="i-life-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.93 4.93 4.24 4.24" /> <path d="m14.83 9.17 4.24-4.24" /> <path d="m14.83 14.83 4.24 4.24" /> <path d="m9.17 14.83-4.24 4.24" /> <circle cx="12" cy="12" r="4" /></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></symbol>
+<symbol id="i-list-checks" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4" /> <path d="m3 7 2 2 4-4" /> <path d="M13 6h8" /> <path d="M13 12h8" /> <path d="M13 18h8" /></symbol>
+<symbol id="i-loader" viewBox="0 0 24 24"><path d="M12 2v4" /> <path d="m16.2 7.8 2.9-2.9" /> <path d="M18 12h4" /> <path d="m16.2 16.2 2.9 2.9" /> <path d="M12 18v4" /> <path d="m4.9 19.1 2.9-2.9" /> <path d="M2 12h4" /> <path d="m4.9 4.9 2.9 2.9" /></symbol>
+<symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></symbol>
+<symbol id="i-maximize-2" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9" /> <polyline points="9 21 3 21 3 15" /> <line x1="21" x2="14" y1="3" y2="10" /> <line x1="3" x2="10" y1="21" y2="14" /></symbol>
+<symbol id="i-message-square" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" /> <path d="M19 10v2a7 7 0 0 1-14 0v-2" /> <line x1="12" x2="12" y1="19" y2="22" /></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></symbol>
+<symbol id="i-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></symbol>
+<symbol id="i-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M15 3v18" /></symbol>
+<symbol id="i-paperclip" viewBox="0 0 24 24"><path d="M13.234 20.252 21 12.3" /> <path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" /></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 17v5" /> <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z" /></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /> <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></symbol>
+<symbol id="i-refresh-cw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="M7 21h10" /> <path d="M12 3v18" /> <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></symbol>
+<symbol id="i-school" viewBox="0 0 24 24"><path d="M14 22v-4a2 2 0 1 0-4 0v4" /> <path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10" /> <path d="M18 5v17" /> <path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6" /> <path d="M6 5v17" /> <circle cx="12" cy="9" r="2" /></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-share-2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" /> <circle cx="6" cy="12" r="3" /> <circle cx="18" cy="19" r="3" /> <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" /> <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" /></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-sliders-horizontal" viewBox="0 0 24 24"><line x1="21" x2="14" y1="4" y2="4" /> <line x1="10" x2="3" y1="4" y2="4" /> <line x1="21" x2="12" y1="12" y2="12" /> <line x1="8" x2="3" y1="12" y2="12" /> <line x1="21" x2="16" y1="20" y2="20" /> <line x1="12" x2="3" y1="20" y2="20" /> <line x1="14" x2="14" y1="2" y2="6" /> <line x1="8" x2="8" y1="10" y2="14" /> <line x1="16" x2="16" y1="18" y2="22" /></symbol>
+<symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /> <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></symbol>
+<symbol id="i-square" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></symbol>
+<symbol id="i-table-2" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" /></symbol>
+<symbol id="i-thumbs-down" viewBox="0 0 24 24"><path d="M17 14V2" /> <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" /></symbol>
+<symbol id="i-thumbs-up" viewBox="0 0 24 24"><path d="M7 10v12" /> <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /></symbol>
+<symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol>
+<symbol id="i-trending-down" viewBox="0 0 24 24"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7" /> <polyline points="16 17 22 17 22 11" /></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /> <polyline points="16 7 22 7 22 13" /></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="17 8 12 3 7 8" /> <line x1="12" x2="12" y1="3" y2="15" /></symbol>
+<symbol id="i-user-check" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <polyline points="16 11 18 13 22 9" /></symbol>
+<symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <line x1="19" x2="19" y1="8" y2="14" /> <line x1="22" x2="16" y1="11" y2="11" /></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol>
+</svg>
+
+
+<header class="kit-top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mezon UI kit">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><g fill="var(--canvas)"><rect x="7" y="7" width="3" height="18" rx=".8"/><rect x="22" y="7" width="3" height="18" rx=".8"/><rect x="10.5" y="10.5" width="3" height="3" rx=".8"/><rect x="18.5" y="10.5" width="3" height="3" rx=".8"/><rect x="14.5" y="14.5" width="3" height="3" rx=".8"/></g></svg>
+      Mezon <small>UI kit 2.0</small>
+    </a>
+    <nav class="kit-nav" aria-label="Bo'limlar">
+      <a href="#foundations">Asoslar</a>
+      <a href="#controls">Boshqaruv</a>
+      <a href="#dashboard">Panel</a>
+      <a href="#chat">AI chat</a>
+      <a href="#widgets">AI vidjetlar</a>
+    </nav>
+    <div class="end">
+      <button class="btn btn-secondary btn-sm" id="themeBtn" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> <span id="themeLabel">Qorong'i</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+<section class="hero" aria-labelledby="h1">
+  <div>
+    <h1 id="h1">Mezon uchun sokin boshqaruv paneli.</h1>
+    <p>Qora tugmalar, oq yuzalar, bitta to'q sariq urg'u. To'q sariq faqat ehtimoliy buzilish va ogohlantirishni bildiradi. Hamma ob'ekt haqiqiy Mezon ma'lumoti bilan, nusxalash mumkin bo'lgan HTML bilan.</p>
+    <div class="row" style="margin-top:24px">
+      <a class="btn btn-primary" href="#dashboard">Panel ob'ektlari <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn btn-secondary" href="#chat">AI chat</a>
+    </div>
+  </div>
+  <div class="rules" role="list" aria-label="Qoidalar">
+    <div role="listitem"><span class="sw" style="background:var(--action)"></span><span><b>Qora</b> amal: asosiy tugma, tanlov, kursor<span class="muted">Barcha asosiy amallar bir xil</span></span></div>
+    <div role="listitem"><span class="sw" style="background:var(--surface);box-shadow:inset 0 0 0 1px var(--line-strong)"></span><span><b>Oq</b> yuza, xira chiziq<span class="muted">Soya o'rniga 1 px chiziq</span></span></div>
+    <div role="listitem"><span class="sw" style="background:var(--flag)"></span><span><b>To'q sariq</b> faqat ehtimoliy buzilish<span class="muted">Boshqa hech narsa to'q sariq emas</span></span></div>
+    <div role="listitem"><span class="sw" style="background:var(--good)"></span><span><b>Yashil</b> faqat holat: kuchda, ijobiy<span class="muted">Hech qachon ko'rsatkich rangi emas</span></span></div>
+  </div>
+</section>
+
+<!-- ======================================================= FOUNDATIONS -->
+<section class="sec" id="foundations" aria-labelledby="fdT">
+  <div class="sec-head"><h2 id="fdT">Asoslar</h2><span class="label">tokens.css</span></div>
+  <p class="sec-lead">Rang, shrift, oraliq va radius. Hammasi CSS o'zgaruvchi. Qorong'i mavzu alohida tanlangan qadamlar, teskari emas. Pastdagi kvadratlar sahifaning joriy mavzusidan o'qiladi.</p>
+
+  <h3 class="sub">Rang</h3>
+  <div class="swatches" data-swatches="canvas:Fon,surface:Yuza,surface-sunken:Cho'kkan yuza,line:Chiziq,line-strong:Kuchli chiziq,ink:Matn,ink-2:Matn 2,ink-3:Xira matn,action:Amal (qora),flag:Urg'u (to'q sariq),flag-ink:Urg'u matni,flag-soft:Urg'u foni,good:Kuchda,good-soft:Kuchda foni"></div>
+
+  <h3 class="sub">Shrift</h3>
+  <div class="panel"><div class="panel-body" style="padding-block:4px">
+    <div class="type-row"><div style="font-size:var(--text-display);font-weight:500;letter-spacing:var(--tracking-display);line-height:1.1">446,859 qaror</div><div class="spec">Display 40 / 1.1 / 500 / -0.035em<br>Geist</div></div>
+    <div class="type-row"><div style="font-size:var(--text-h1);font-weight:500;letter-spacing:var(--tracking-display)">Ehtimoliy buzilishlar</div><div class="spec">H1 28 / 500 / -0.035em</div></div>
+    <div class="type-row"><div style="font-size:var(--text-h3);font-weight:600;letter-spacing:-.01em">Yakkabog' tuman hokimi qarori</div><div class="spec">H3 16 / 600</div></div>
+    <div class="type-row"><div style="font-size:var(--text-lg)">Qaror 2025-yil 13-noyabrda qabul qilingan va lex.uz da e'lon qilingan.</div><div class="spec">Chat matni 15 / 1.6 / 400</div></div>
+    <div class="type-row"><div style="font-size:var(--text-md)">Jadval va forma matni, standart o'lcham.</div><div class="spec">UI 14 / 1.5 / 400</div></div>
+    <div class="type-row"><div class="mono" style="font-size:var(--text-sm)">355-4-68-Q/25 &nbsp; lex.uz -7981329</div><div class="spec">Geist Mono 13: raqam, id, kod</div></div>
+    <div class="type-row"><div class="label">Ehtimoliy buzilish</div><div class="spec">Yorliq 11 / Geist Mono / 0.06em</div></div>
+  </div></div>
+
+  <div class="g2">
+    <div>
+      <h3 class="sub">Oraliq (4 pt)</h3>
+      <div data-space></div>
+    </div>
+    <div>
+      <h3 class="sub">Radius</h3>
+      <div class="row" style="gap:16px;align-items:flex-end">
+        <div><div class="radius-box" style="border-radius:var(--radius-xs)">4</div></div>
+        <div><div class="radius-box" style="border-radius:var(--radius-sm)">6</div></div>
+        <div><div class="radius-box" style="border-radius:var(--radius-md)">8</div></div>
+        <div><div class="radius-box" style="border-radius:var(--radius-lg)">12</div></div>
+        <div><div class="radius-box" style="border-radius:var(--radius-xl)">16</div></div>
+      </div>
+      <p class="muted" style="font-size:var(--text-xs);margin-top:12px">Boshqaruv 8, panel 12, yozuv maydoni 16, pill 999.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= CONTROLS -->
+<section class="sec" id="controls" aria-labelledby="ctT">
+  <div class="sec-head"><h2 id="ctT">Boshqaruv elementlari</h2><span class="label">components.css</span></div>
+  <p class="sec-lead">Qora asosiy tugma bitta ekranda bitta. Qolganlari kontur yoki ghost. To'q sariq tugma yo'q: ogohlantirish rangi amalga emas, holatga tegishli.</p>
+
+  <div class="obj" data-name="Tugmalar" data-note="Asosiy qora, kontur, ghost, o'lcham, yuklanmoqda, o'chirilgan">
+    <div class="stage white">
+      <div class="stack">
+        <div class="row">
+          <button class="btn btn-primary" type="button">Ekspertga ochish</button>
+          <button class="btn btn-secondary" type="button">Asl PDF</button>
+          <button class="btn btn-ghost" type="button">Bekor qilish</button>
+          <button class="btn btn-primary" type="button" aria-busy="true"><span class="btn-label">Tekshirilmoqda</span></button>
+          <button class="btn btn-secondary" type="button" disabled>O'chirilgan</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary btn-lg" type="button"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg> Yuborish</button>
+          <button class="btn btn-primary btn-sm" type="button">Saqlash <span class="kbd">S</span></button>
+          <button class="btn btn-secondary btn-sm" type="button"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Eksport</button>
+          <button class="btn btn-secondary btn-icon btn-sm" type="button" aria-label="Nusxalash"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+          <button class="btn btn-ghost btn-icon" type="button" aria-label="Boshqa amallar"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="obj" data-name="Maydonlar" data-note="Matn, tanlov, xato holati">
+      <div class="stage white">
+        <div class="stack">
+          <div class="field"><label class="field-label" for="f1">Qaror raqami</label><input class="input mono" id="f1" value="355-4-68-Q/25"><span class="field-help">Masalan: 231-4-59-Q/24</span></div>
+          <div class="field"><label class="field-label" for="f2">Hudud</label><span class="select-wrap" style="display:flex"><select class="select" id="f2"><option>Qashqadaryo</option><option>Andijon</option><option>Toshkent shahar</option></select></span></div>
+          <div class="field"><label class="field-label" for="f3">Sana</label><input class="input" id="f3" value="2025-13-11" aria-invalid="true" aria-describedby="f3e"><span class="field-error" id="f3e"><svg class="icon" aria-hidden="true"><use href="#i-circle-alert"/></svg> Sana YYYY-OO-KK ko'rinishida bo'lsin</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="obj" data-name="Tanlov elementlari" data-note="Belgi, almashtirgich, segment, chip">
+      <div class="stage white">
+        <div class="stack">
+          <label class="row" style="gap:10px"><input class="check" type="checkbox" checked> Faqat matni bor qarorlar</label>
+          <label class="row" style="gap:10px"><input class="switch" type="checkbox" role="switch" checked> Kuchsiz moddalarni ajratish</label>
+          <div class="segmented" role="group" aria-label="Davr">
+            <button type="button" aria-pressed="true">30 kun</button><button type="button" aria-pressed="false">90 kun</button><button type="button" aria-pressed="false">Hammasi</button>
+          </div>
+          <div class="row">
+            <button class="chip" type="button" aria-pressed="true">Hokim qarori</button>
+            <button class="chip" type="button" aria-pressed="false">Kengash qarori</button>
+            <span class="chip">Qashqadaryo <button class="btn btn-ghost btn-icon btn-sm x" type="button" aria-label="Olib tashlash" style="--h:20px;width:20px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"/></svg></button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="obj" data-name="Holat yorliqlari" data-note="Faqat uch ohang: neytral, kuchda/ijobiy, ehtimoliy buzilish">
+      <div class="stage white"><div class="row">
+        <span class="badge" data-tone="flag">Ehtimoliy buzilish</span>
+        <span class="badge" data-tone="good">Kuchda</span>
+        <span class="badge" data-tone="good">Ijobiy</span>
+        <span class="badge">Muammo topilmadi</span>
+        <span class="badge">Matnsiz</span>
+        <span class="badge no-dot" data-tone="outline">Ekspert kutmoqda</span>
+      </div></div>
+    </div>
+    <div class="obj" data-name="Ogohlantirish, toast, tooltip" data-note="Ogohlantirish to'q sariq, toast qora">
+      <div class="stage white"><div class="stack">
+        <div class="alert" role="alert"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg><div><div class="alert-title">Bu xulosa emas</div><div class="alert-text">Ehtimoliy buzilish, ekspert ko'rib chiqadi.</div></div></div>
+        <div class="alert" data-tone="info"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><div><div class="alert-text">Matn lex.uz dagi PDF dan olingan.</div></div></div>
+        <div class="row"><div class="toast" role="status"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg> Nusxalandi <button class="btn btn-ghost btn-sm" type="button">Bekor</button></div><span class="tooltip" role="tooltip">Qoidalar mexanizmi</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= DASHBOARD -->
+<section class="sec" id="dashboard" aria-labelledby="dbT">
+  <div class="sec-head"><h2 id="dbT">Hukumat paneli ob'ektlari</h2><span class="label">operate</span></div>
+  <p class="sec-lead">Rahbar va ekspert uchun ekran. Raqam birinchi, rang faqat ehtimoliy buzilishda. Yuqoridagi raqamlar: 446,859 qaror = 326 + 884 + 445,649.</p>
+
+  <div class="obj" data-name="KPI plitkalari" data-note="To'rt raqam. Faqat ehtimoliy buzilish plitkasida to'q sariq chiziq">
+    <div class="stage tight">
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-label"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg> Jami qaror</div><div class="kpi-value">446,859</div><div class="kpi-foot">hokim va Kengash qarorlari</div></div>
+        <div class="kpi" data-tone="flag"><div class="kpi-label"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg> Ehtimoliy buzilish</div><div class="kpi-value">326</div><div class="kpi-foot">ekspert ko'rib chiqadi</div></div>
+        <div class="kpi"><div class="kpi-label"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg> Muammo topilmadi</div><div class="kpi-value">884</div><div class="kpi-foot">qoidalar bo'yicha</div></div>
+        <div class="kpi"><div class="kpi-label"><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg> Matnsiz</div><div class="kpi-value">445,649</div><div class="kpi-foot">tekshirish uchun matn yo'q</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Tarkib chizig'i" data-note="Bitta chiziq, uch qism, yoniga raqam. 2 px bo'shliq, uchlari yumaloq. Rang o'zgarmas tartibda">
+    <div class="stage white">
+      <div class="label" style="margin-bottom:12px">446,859 qaror tarkibi</div>
+      <div class="compbar" role="img" aria-label="446,859 qarordan 326 ehtimoliy buzilish, 884 muammo topilmadi, 445,649 matnsiz">
+        <i data-k="flag" style="flex:0 0 4px" title="Ehtimoliy buzilish: 326" tabindex="0" aria-label="Ehtimoliy buzilish 326"></i>
+        <i data-k="ok" style="flex:0 0 4px" title="Muammo topilmadi: 884" tabindex="0" aria-label="Muammo topilmadi 884"></i>
+        <i data-k="none" title="Matnsiz: 445,649" tabindex="0" aria-label="Matnsiz 445,649"></i>
+      </div>
+      <div class="legend">
+        <span class="legend-item"><span class="legend-sw" style="background:var(--flag)"></span>Ehtimoliy buzilish <b>326</b></span>
+        <span class="legend-item"><span class="legend-sw" style="background:var(--data-1)"></span>Muammo topilmadi <b>884</b></span>
+        <span class="legend-item"><span class="legend-sw" style="background:var(--seq-2)"></span>Matnsiz <b>445,649</b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Hudud jadvali" data-note="Saralanadigan sarlavha, ichki chiziq. Surat: 2026-11-19, 277 belgi">
+    <div class="stage tight">
+      <section class="panel" aria-labelledby="rgT">
+        <div class="panel-head"><div><div class="panel-title" id="rgT">Hududlar bo'yicha belgilangan qarorlar</div><div class="panel-sub">2026-11-19 surati, jami 277. KPI dagi joriy hisobdan farq qilishi mumkin.</div></div><div class="panel-actions"><button class="btn btn-secondary btn-sm" type="button"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> CSV</button></div></div>
+        <div class="table-wrap">
+          <table class="table" data-sortable>
+            <thead><tr>
+              <th scope="col"><button type="button" data-sort="0">Hudud</button></th>
+              <th scope="col" class="r"><button type="button" data-sort="1" data-num>Belgilangan</button></th>
+              <th scope="col" class="r"><button type="button" data-sort="2" data-num>Ehtimoliy buzilish</button></th>
+              <th scope="col" class="r"><button type="button" data-sort="3" data-num>Kuchsiz modda</button></th>
+              <th scope="col" style="width:200px"><span class="sr-only">Ulush</span></th>
+            </tr></thead>
+            <tbody>
+              <tr><td>Qashqadaryo</td><td class="r">40</td><td class="r">15</td><td class="r">14</td><td><div class="minibar"><span><i style="width:100%"></i></span></div></td></tr>
+              <tr><td>Surxondaryo</td><td class="r">39</td><td class="r">9</td><td class="r">8</td><td><div class="minibar"><span><i style="width:97.5%"></i></span></div></td></tr>
+              <tr><td>Farg'ona</td><td class="r">24</td><td class="r">12</td><td class="r">7</td><td><div class="minibar"><span><i style="width:60%"></i></span></div></td></tr>
+              <tr><td>Buxoro</td><td class="r">21</td><td class="r">7</td><td class="r">3</td><td><div class="minibar"><span><i style="width:52.5%"></i></span></div></td></tr>
+              <tr><td>Jizzax</td><td class="r">20</td><td class="r">4</td><td class="r">4</td><td><div class="minibar"><span><i style="width:50%"></i></span></div></td></tr>
+              <tr><td>Namangan</td><td class="r">20</td><td class="r">1</td><td class="r">1</td><td><div class="minibar"><span><i style="width:50%"></i></span></div></td></tr>
+              <tr><td>Xorazm</td><td class="r">19</td><td class="r">4</td><td class="r">3</td><td><div class="minibar"><span><i style="width:47.5%"></i></span></div></td></tr>
+              <tr><td>Toshkent shahar</td><td class="r">18</td><td class="r">8</td><td class="r">3</td><td><div class="minibar"><span><i style="width:45%"></i></span></div></td></tr>
+            </tbody>
+            
+          </table>
+        </div>
+        <div class="table-note">8 ta hudud ko'rsatildi, jami 14 tadan.</div>
+      </section>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Filtr paneli, yorliqlar va qaror qatorlari" data-note="Tab ichida son, qator butunlay bosiladi, holat chap chiziq va yorliqda (rang yolg'iz emas)">
+    <div class="stage tight">
+      <section class="panel" aria-label="Qarorlar ro'yxati">
+        <div class="tabs" role="tablist" aria-label="Qaror holati" style="padding:0 8px">
+          <button class="tab" role="tab" aria-selected="false" type="button">Barchasi <span class="count">446,859</span></button>
+          <button class="tab" role="tab" aria-selected="true" type="button">Ehtimoliy buzilish <span class="count" data-tone="flag">326</span></button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Muammo topilmadi <span class="count">884</span></button>
+          <button class="tab" role="tab" aria-selected="false" type="button">Matnsiz <span class="count">445,649</span></button>
+        </div>
+        <div class="filterbar" role="search">
+          <div class="input-wrap"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input class="input input-sm" type="search" placeholder="Raqam yoki sarlavha" aria-label="Qidirish"><span class="kbd">/</span></div>
+          <span class="select-wrap"><select class="select select-sm" aria-label="Hudud"><option>Barcha hududlar</option><option>Qashqadaryo</option></select></span>
+          <span class="select-wrap"><select class="select select-sm" aria-label="Qaror turi"><option>Hokim va Kengash</option><option>Hokim qarori</option><option>Kengash qarori</option></select></span>
+          <span class="select-wrap"><select class="select select-sm" aria-label="Tekshiruv"><option>Barcha qoidalar</option><option>Kuchsiz modda havolasi</option><option>Takroriy qaror</option><option>Muhokamasiz</option></select></span>
+          <span class="sep" aria-hidden="true"></span>
+          <button class="chip" type="button" aria-pressed="true" style="height:28px">Faqat matni bor</button>
+          <div class="end"><button class="btn btn-ghost btn-sm" type="button">Tozalash</button></div>
+        </div>
+        <ul class="case-list">
+          <li class="case-row" data-state="flag"><span class="rule"></span>
+            <div><h3 class="case-title"><a href="#">Yakkabog' tuman hokimining 2025-yil 28-oktabrdagi 343-4-68-Q/25-sonli qaroriga qo'shimcha va o'zgartirish kiritish to'g'risida</a></h3>
+            <div class="case-meta"><span class="mono">355-4-68-Q/25</span><span>Yakkabog' tumani hokimi</span><span>2025-11-13</span><span class="mono">lex.uz -7981329</span></div></div>
+            <span class="src-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield-check"/></svg> Qoidalar mexanizmi (AI emas)</span>
+            <div class="case-end"><span class="badge" data-tone="flag">Ehtimoliy buzilish</span></div></li>
+          <li class="case-row" data-state="flag"><span class="rule"></span>
+            <div><h3 class="case-title"><a href="#">Kengash qarori: er solig'i koeffitsientlari (0,7 dan 3,0 gacha, mahalla bo'yicha)</a></h3>
+            <div class="case-meta"><span class="mono">VI-76-4-10-146-K/24</span><span>Kengash qarori</span><span>2024-01-11</span></div></div>
+            <span class="src-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield-check"/></svg> Qoidalar mexanizmi (AI emas)</span>
+            <div class="case-end"><span class="badge" data-tone="flag">Ehtimoliy buzilish</span></div></li>
+          <li class="case-row" data-state="ok"><span class="rule"></span>
+            <div><h3 class="case-title"><a href="#">231-4-59-Q/24 qarori, 207-4-59-Q/24 bilan so'zma-so'z bir xil</a></h3>
+            <div class="case-meta"><span class="mono">231-4-59-Q/24</span><span>Qarshi tumani hokimi</span><span>adliya taqdimnomasi bilan bekor qilingan</span><span class="mono">lex.uz -6986157</span></div></div>
+            <span class="src-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield-check"/></svg> Qoidalar mexanizmi (AI emas)</span>
+            <div class="case-end"><span class="badge">Bekor qilingan</span></div></li>
+        </ul>
+        <div class="panel-foot"><span>1-3 / 326</span><div class="panel-actions"><button class="btn btn-secondary btn-sm" type="button" disabled><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg> Oldingi</button><button class="btn btn-secondary btn-sm" type="button">Keyingi</button></div></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="obj" data-name="Qonun kartasi (kuchda / kuchsiz)" data-note="Sana qaror sanasi bo'yicha. Kuchsiz holat to'q sariq, kuchda holat yashil">
+      <div class="stage">
+        <div class="stack">
+          <article class="law-card" data-status="weak">
+            <div class="law-head"><div><div class="law-title">"Mahalliy davlat hokimiyati to'g'risida"gi Qonun, 25-modda</div><div class="law-ref">lex.uz -112170</div></div><span class="badge" data-tone="flag">Kuchsiz</span></div>
+            <dl class="law-dates"><div><dt>Tekshiruv sanasi</dt><dd>2025-11-13</dd></div><div><dt>Kuchini yo'qotgan</dt><dd>2024-10-19</dd></div></dl>
+            <p class="law-note">Modda qaror qabul qilingan sanada kuchda emas edi.</p>
+          </article>
+          <article class="law-card">
+            <div class="law-head"><div><div class="law-title">"Normativ-huquqiy hujjatlar to'g'risida"gi Qonun, 41-modda</div><div class="law-ref">O'RQ-682</div></div><span class="badge" data-tone="good">Kuchda</span></div>
+            <dl class="law-dates"><div><dt>Tekshiruv sanasi</dt><dd>2025-11-13</dd></div><div><dt>Holat</dt><dd>kuchda</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="obj" data-name="Belgi kartasi" data-note="Manba yorlig'i doim ko'rinadi: kim topdi, qoida yoki AI">
+      <div class="stage">
+        <article class="flag-card" aria-labelledby="fcT">
+          <div class="flag-top"><span class="badge" data-tone="flag">Ehtimoliy buzilish</span><span class="src-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield-check"/></svg> Qoidalar mexanizmi (AI emas)</span><span class="label" style="margin-left:auto">R_basis</span></div>
+          <h3 class="flag-title" id="fcT">Kuchsiz moddaga havola</h3>
+          <p class="flag-why">355-4-68-Q/25 qarori "Mahalliy davlat hokimiyati to'g'risida"gi Qonunning 25-moddasiga tayanadi. Bu modda 2024-10-19 dan kuchsiz, qaror esa 2025-11-13 da qabul qilingan.</p>
+          <div class="flag-foot">
+            <span class="muted" style="font-size:var(--text-xs)">Ekspert ko'rib chiqadi</span>
+            <div class="end"><button class="btn btn-secondary btn-sm" type="button"><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg> Asl PDF</button><button class="btn btn-primary btn-sm" type="button">Ekspertga ochish</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Asl PDF paneli" data-note="Belgilangan joy ajratilgan. Hujjat varag'i har doim oq">
+    <div class="stage tight">
+      <section class="pdf-panel" aria-label="Asl hujjat">
+        <div class="pdf-bar"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-file-text"/></svg><span class="name">lex.uz/uz/docs/7981329 · 355-4-68-Q/25.pdf</span>
+          <div class="end"><span class="muted">1 / 2</span><button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Kattalashtirish"><svg class="icon" aria-hidden="true"><use href="#i-maximize-2"/></svg></button><a class="btn btn-ghost btn-icon btn-sm" href="#" aria-label="lex.uz da ochish"><svg class="icon" aria-hidden="true"><use href="#i-external-link"/></svg></a></div></div>
+        <div class="pdf-stage">
+          <div class="pdf-page">
+            <h4>Yakkabog' tuman hokimining qarori</h4>
+            <p>... texnik xatoliklarni tuzatish maqsadida O'zbekiston Respublikasining "Mahalliy davlat hokimiyati to'g'risida"gi Qonunining 6 va <mark>25-moddalariga</mark> asosan, qaror qilaman:</p>
+            <p>1. Yakkabog' tuman hokimining 2025-yil 28-oktabrdagi 343-4-68-Q/25-sonli qarorining 1, 2, 3-ilovalari ilovaga muvofiq o'zgartirilsin.</p>
+            <div class="ln" style="width:92%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:84%"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Bo'sh, yuklanmoqda, xato" data-note="Xato to'q sariq piktogramma bilan va qayta urinish tugmasi bilan">
+    <div class="stage tight">
+      <div class="g3" style="gap:16px">
+        <section class="panel state" aria-labelledby="stE">
+          <span class="state-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-search"/></svg></span><h3 class="state-title" id="stE">Qaror topilmadi</h3><p class="state-text">Bu filtrga mos qaror yo'q. Hududni yoki qoidani o'zgartirib ko'ring.</p><button class="btn btn-secondary btn-sm" type="button">Filtrni tozalash</button>
+        </section>
+        <section class="panel" aria-busy="true" aria-label="Yuklanmoqda">
+          <div class="skel-row"><span class="skeleton"></span><div class="stack" style="gap:8px"><span class="skeleton" style="width:80%"></span><span class="skeleton" style="width:50%;height:10px"></span></div><span class="skeleton" style="height:22px;border-radius:99px"></span></div>
+          <div class="skel-row"><span class="skeleton"></span><div class="stack" style="gap:8px"><span class="skeleton" style="width:70%"></span><span class="skeleton" style="width:40%;height:10px"></span></div><span class="skeleton" style="height:22px;border-radius:99px"></span></div>
+          <div class="skel-row"><span class="skeleton"></span><div class="stack" style="gap:8px"><span class="skeleton" style="width:86%"></span><span class="skeleton" style="width:55%;height:10px"></span></div><span class="skeleton" style="height:22px;border-radius:99px"></span></div>
+        </section>
+        <section class="panel state" data-kind="error" role="alert" aria-labelledby="stR">
+          <span class="state-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span><h3 class="state-title" id="stR">Ro'yxat yuklanmadi</h3><p class="state-text">lex.uz bilan aloqa uzildi. Ma'lumotlar o'zgarmagan.</p><button class="btn btn-primary btn-sm" type="button"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Qayta urinish</button>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= AI CHAT -->
+<section class="sec" id="chat" aria-labelledby="acT">
+  <div class="sec-head"><h2 id="acT">AI chat ob'ektlari</h2><span class="label">chat</span></div>
+  <p class="sec-lead">Chat javobi har doim manba bilan. Qonun holatini AI emas, qonun vositalari aytadi. Mezon-LM javobi to'q sariq yorliq bilan belgilanadi. Pastdagi oyna ishlaydi: fayl tashlang, rasm yoki matn joylang, "Qayta o'ynash" ni bosing.</p>
+
+  <div class="obj" data-name="To'liq suhbat" data-note="Yozuv maydoni, bubbl, qadamlar, vosita izi, yorliq, havola chiplari">
+    <div class="stage tight">
+      <section class="chat chat-demo" aria-label="Mezon AI">
+        <div class="chat-head">
+          <div class="model-wrap" style="position:relative">
+            <button class="model-select" type="button" aria-haspopup="menu" aria-expanded="false" data-model-btn><svg class="icon icon-sm" aria-hidden="true"><use href="#i-zap"/></svg> <span data-model-label>Mezon-LM</span> <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+            <div class="model-menu" role="menu" data-model-menu hidden style="position:absolute;top:38px;left:0;z-index:10">
+              <button class="model-opt" role="menuitemradio" aria-checked="true" type="button" data-model="Mezon-LM"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><b>Mezon-LM</b><span class="badge no-dot">GPU</span><small>Huquqiy model. O'z serverimizda, matn tashqariga chiqmaydi.</small></button>
+              <button class="model-opt" role="menuitemradio" aria-checked="false" type="button" data-model="Qwen + qonun vositalari"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><b>Qwen + qonun vositalari</b><span class="badge no-dot">vositalar</span><small>Umumiy model. Qonun holatini law_as_of va find_article orqali tekshiradi.</small></button>
+            </div>
+          </div>
+          <span class="muted" style="font-size:var(--text-xs)">Qaror 355-4-68-Q/25 haqida</span>
+          <div style="margin-left:auto" class="row"><button class="btn btn-ghost btn-sm" type="button" data-replay><svg class="icon icon-sm" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Qayta o'ynash</button></div>
+        </div>
+        <div class="chat-log" aria-live="polite" data-log>
+          <div class="msg msg-user"><div class="bubble">355-4-68-Q/25 qarori 25-moddaga tayanadi. Bu modda qaror sanasida kuchdami?</div></div>
+          <div class="msg msg-ai">
+            <div class="msg-avatar" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></div>
+            <div class="msg-main">
+              <ol class="steps" data-steps aria-label="Agent qadamlari">
+                <li class="step" data-state="done"><span class="step-mark"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg></span><span>Savol tahlil qilindi</span><span class="step-time">0,4 s</span></li>
+                <li class="step" data-state="done"><span class="step-mark"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg></span><span>Qaror matni olindi: lex.uz -7981329</span><span class="step-time">1,1 s</span></li>
+                <li class="step" data-state="run"><span class="step-mark"><span class="spinner"></span></span><span>Modda holati tekshirilmoqda</span><span class="step-time">...</span></li>
+                <li class="step" data-state="wait"><span class="step-mark"><span class="dot"></span></span><span>Javob tuzilmoqda</span><span class="step-time"></span></li>
+              </ol>
+              <div class="trace" aria-label="Vosita chaqiruvlari">
+                <div class="trace-row" data-res="ok"><span class="label">vosita</span><code>law_as_of("O'RQ-682", 41, "2025-11-13")</code><span><span class="arrow">&rarr;</span> <span class="res">kuchda</span> <span class="ms">&nbsp;0,2 s</span></span></div>
+                <div class="trace-row" data-res="weak"><span class="label">vosita</span><code>law_as_of("Mahalliy davlat hokimiyati", 25, "2025-11-13")</code><span><span class="arrow">&rarr;</span> <span class="res">kuchsiz, 2024-10-19 dan</span> <span class="ms">&nbsp;0,3 s</span></span></div>
+              </div>
+              <div class="msg-text" data-answer>
+                <p>Yo'q. 25-modda 2024-10-19 dan kuchsiz, qaror esa 2025-11-13 da qabul qilingan. Bu ehtimoliy buzilish, ekspert ko'rib chiqadi. <a class="cite" href="#" data-tone="weak"><span class="n">1</span>Qonun, 25-modda</a> <a class="cite" href="#"><span class="n">2</span>355-4-68-Q/25</a></p>
+              </div>
+              <div class="msg-meta"><span class="gpu-badge">Mezon-LM · GPU · 14 s</span><span>2025-11-13 holati bo'yicha</span>
+                <div class="msg-actions" style="margin-left:auto"><button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Nusxalash"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button><button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Foydali"><svg class="icon" aria-hidden="true"><use href="#i-thumbs-up"/></svg></button><button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Foydasiz"><svg class="icon" aria-hidden="true"><use href="#i-thumbs-down"/></svg></button></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-foot">
+          <form class="composer" data-composer>
+            <div class="composer-attach" data-attach></div>
+            <label class="sr-only" for="cmp1">Savol</label>
+            <textarea class="composer-input" id="cmp1" rows="1" placeholder="Qaror raqamini yozing yoki PDF tashlang..."></textarea>
+            <div class="composer-bar">
+              <button class="btn btn-ghost btn-icon btn-sm" type="button" aria-label="Fayl biriktirish" data-pick><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg></button>
+              <input type="file" hidden multiple accept=".pdf,.txt,image/*" data-file>
+              <span class="hint">PDF, rasm yoki matn tashlang yoki joylang</span>
+              <div class="end"><span class="kbd">Enter</span><button class="send" type="submit" aria-label="Yuborish" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="obj" data-name="Oqayotgan matn" data-note="Kursor yonib turadi, matn so'zma-so'z keladi. To'xtatish tugmasi bor">
+      <div class="stage white">
+        <div class="msg msg-ai"><div class="msg-avatar" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></div>
+          <div class="msg-main"><div class="msg-text" data-stream aria-live="polite" data-text="Qaror 2025-11-13 da qabul qilingan. 25-moddaga havola bor, lekin modda shu sanada kuchsiz edi">Qaror 2025-11-13 da qabul qilingan. 25-moddaga havola bor<span class="caret" aria-hidden="true"></span></div>
+          <div class="row"><button class="btn btn-secondary btn-sm" type="button"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-square"/></svg> To'xtatish</button><button class="btn btn-ghost btn-sm" type="button" data-stream-replay><svg class="icon icon-sm" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Qayta o'ynash</button></div></div></div>
+      </div>
+    </div>
+    <div class="obj" data-name="Qayta urinish holati" data-note="Xato xabari to'q sariq, qayta urinish tugmasi qora">
+      <div class="stage white"><div class="stack">
+        <div class="msg msg-user"><div class="bubble">231-4-59-Q/24 nima uchun belgilangan?</div></div>
+        <div class="msg-error" role="alert"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg><span><b>Javob olinmadi.</b> Mezon-LM serveri band. Savol saqlandi.</span><span class="end"><button class="btn btn-primary btn-sm" type="button"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Qayta urinish</button></span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="obj" data-name="Fayl tashlash maydoni" data-note="Alohida katta zona: bo'sh sahifa va PDF yuklash uchun">
+      <div class="stage white">
+        <div class="dropzone" data-drop tabindex="0" role="button" aria-label="Fayl tanlash yoki tashlash"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-upload"/></svg><b>PDF yoki rasmni shu yerga tashlang</b><span class="muted">yoki bosing, yoki Ctrl+V bilan joylang. 20 MB gacha.</span></div>
+        <div class="composer-attach" data-drop-list style="padding:12px 0 0"></div>
+      </div>
+    </div>
+    <div class="obj" data-name="Model tanlagich (ochiq)" data-note="Ikki variant: Mezon-LM va Qwen + qonun vositalari">
+      <div class="stage white">
+        <div class="model-menu" role="menu" style="width:100%">
+          <button class="model-opt" role="menuitemradio" aria-checked="true" type="button"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><b>Mezon-LM</b><span class="badge no-dot">GPU</span><small>Huquqiy model. O'z serverimizda, matn tashqariga chiqmaydi.</small></button>
+          <button class="model-opt" role="menuitemradio" aria-checked="false" type="button"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg><b>Qwen + qonun vositalari</b><span class="badge no-dot">vositalar</span><small>Umumiy model. Qonun holatini law_as_of va find_article orqali tekshiradi.</small></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= AI WIDGETS -->
+<section class="sec" id="widgets" aria-labelledby="awT">
+  <div class="sec-head"><h2 id="awT">AI vidjetlar</h2><span class="label">widgets</span></div>
+  <p class="sec-lead">Chat ichiga tushadigan kartalar. Har biri o'zi yetarli: manba, sana va "ekspert ko'rib chiqadi" belgisi bilan.</p>
+
+  <div class="widgets-grid">
+    <div class="obj" data-name="Qaror xulosa kartasi" data-note="Raqam, organ, sana, bir jumla">
+      <div class="stage">
+        <article class="widget">
+          <div class="widget-head"><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg><span class="widget-title">Qaror xulosasi</span><div class="end"><span class="badge" data-tone="flag">Ehtimoliy buzilish: 1</span></div></div>
+          <div class="widget-body">
+            <p style="font-size:var(--text-sm);color:var(--ink-2)">Qaror 2025-yil 28-oktabrdagi 343-4-68-Q/25-sonli qarorning 1, 2, 3-ilovalarini o'zgartiradi. Sabab: texnik xatoliklarni tuzatish.</p>
+            <dl class="facts">
+              <div><dt>Raqam</dt><dd class="mono">355-4-68-Q/25</dd></div>
+              <div><dt>Qabul qilingan</dt><dd class="mono">2025-11-13</dd></div>
+              <div><dt>Organ</dt><dd>Yakkabog' tumani hokimi</dd></div>
+            </dl>
+          </div>
+          <div class="widget-foot"><span class="src-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-shield-check"/></svg> Qoidalar mexanizmi (AI emas)</span><span style="margin-left:auto">lex.uz -7981329</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="obj" data-name="Aniqlangan ma'lumot" data-note="Hujjatdan ajratilgan maydonlar. Ekspert tasdiqlaydi">
+      <div class="stage">
+        <section class="found" aria-labelledby="fdB">
+          <div class="found-head"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-list-checks"/></svg><span id="fdB">Aniqlangan ma'lumot</span><span class="end">4 maydon</span></div>
+          <dl>
+            <dt>Qaror raqami</dt><dd><span class="mono">355-4-68-Q/25</span></dd>
+            <dt>Sana</dt><dd><span class="mono">2025-11-13</span></dd>
+            <dt>Asos</dt><dd>Qonunning 6 va 25-moddalari</dd>
+            <dt>Matn manbasi</dt><dd>lex.uz, PDF</dd>
+          </dl>
+          <div class="found-foot"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-info"/></svg> Maydonlarni ekspert tasdiqlaydi.</div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="obj" data-name="3333-format xulosa kartasi" data-note="Uch holat: ijobiy, tuzatiladigan kamchiliklar bilan, salbiy. Har kamchilik: modda va iqtibos. Bu loyiha, qaror ekspertniki">
+    <div class="stage">
+      <div class="g3" style="gap:16px;align-items:start">
+        <article class="verdict" data-verdict="ok">
+          <div class="verdict-head"><span class="verdict-mark"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg></span><div><div class="verdict-title">Ijobiy</div><div class="verdict-sub">Xulosa loyihasi, 3333-format</div></div></div>
+          <div class="verdict-scale" aria-hidden="true"><i></i><i></i><i></i></div>
+          <ul class="verdict-list"><li><span class="n">0</span><span>Qoidalar bo'yicha kamchilik topilmadi. Ekspert tasdig'i talab qilinadi.</span></li></ul>
+        </article>
+        <article class="verdict" data-verdict="fix">
+          <div class="verdict-head"><span class="verdict-mark"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span><div><div class="verdict-title">Tuzatiladigan kamchiliklar bilan ijobiy</div><div class="verdict-sub">Xulosa loyihasi, 3333-format</div></div></div>
+          <div class="verdict-scale" aria-hidden="true"><i></i><i></i><i></i></div>
+          <ul class="verdict-list"><li><span class="n">1</span><span><b>Kuchsiz moddaga havola</b><br><span class="muted">Qonun, 25-modda, 2024-10-19 dan kuchsiz</span><br><span class="cite" style="margin-top:6px">355-4-68-Q/25</span></span></li></ul>
+        </article>
+        <article class="verdict" data-verdict="neg">
+          <div class="verdict-head"><span class="verdict-mark"><svg class="icon" aria-hidden="true"><use href="#i-circle-x"/></svg></span><div><div class="verdict-title">Salbiy</div><div class="verdict-sub">Xulosa loyihasi, 3333-format</div></div></div>
+          <div class="verdict-scale" aria-hidden="true"><i></i><i></i><i></i></div>
+          <ul class="verdict-list"><li><span class="n">1</span><span><b>Takroriy qaror</b><br><span class="muted">231-4-59-Q/24 matni 207-4-59-Q/24 bilan bir xil, 207 kuchda</span></span></li><li><span class="n">2</span><span><b>Allaqachon bekor qilingan hujjatni bekor qilish</b><br><span class="muted">4-band: 161-4-59-Q/23</span></span></li></ul>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="widgets-grid">
+    <div class="obj" data-name="Iqtibos bloki" data-note="Moddaning o'zi, belgilangan joy, manba. Iqtibos asl matndan so'zma-so'z">
+      <div class="stage">
+        <blockquote class="quote">... texnik xatoliklarni tuzatish maqsadida O'zbekiston Respublikasining "Mahalliy davlat hokimiyati to'g'risida"gi Qonunining 6 va <mark>25-moddalariga</mark> asosan, qaror qilaman ...
+          <footer><span class="cite"><span class="n">2</span>355-4-68-Q/25</span><span>1-band oldidan</span><button class="btn btn-ghost btn-sm" type="button" style="margin-left:auto"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-copy"/></svg> Nusxalash</button></footer>
+        </blockquote>
+      </div>
+    </div>
+    <div class="obj" data-name="Taklif chiplari" data-note="Keyingi savol. Bosilsa yozuv maydoniga tushadi">
+      <div class="stage white">
+        <div class="suggest" role="group" aria-label="Tavsiya etilgan savollar">
+          <button class="chip" type="button">Modda hozir kuchdami?</button>
+          <button class="chip" type="button">Qaror sanasida kuchdami?</button>
+          <button class="chip" type="button">Shu hokimlikning boshqa qarorlari</button>
+          <button class="chip" type="button"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-file-text"/></svg> Asl PDF ni och</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="obj" data-name="Mos kelmaslik ogohlantirishi" data-note="Javob matni va vosita natijasi farq qilsa chiqadi. Vosita natijasi ustun">
+    <div class="stage white">
+      <div class="mismatch" role="alert"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg>
+        <div><b>Javob va vosita natijasi mos emas</b>
+          <div class="pair"><div><small>Javob matni</small>25-modda kuchda</div><div><small>law_as_of natijasi</small>kuchsiz, 2024-10-19 dan</div></div>
+          Mezon vosita natijasini ko'rsatadi. Ekspert ko'rib chiqadi.
+          <div class="actions"><button class="btn btn-primary btn-sm" type="button">Vosita natijasini qabul qilish</button><button class="btn btn-secondary btn-sm" type="button">Qayta so'rash</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="kit-foot"><span>Mezon UI kit 2.0</span><span>Geist, Geist Mono (Google Fonts)</span><span>Kontrast AA: matn 4.5:1, grafika 3:1</span><span>Piktogrammalar: assets/icons.svg</span></footer>
+</div>
+</main>
+
+<div class="toast-host" id="toastHost" aria-live="polite"></div>
+<script src="js/kit.js"></script>
+</body>
+</html>

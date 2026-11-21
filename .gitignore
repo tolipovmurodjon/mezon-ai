@@ -1,0 +1,72 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Data: raw downloads and caches stay local; data/labels/ is committed
+data/raw/
+data/cache/
+data/*.zip
+data/*.pdf
+
+# Web / Android
+node_modules/
+.next/
+build/
+.gradle/
+.idea/
+local.properties
+
+# Secrets and private notes
+.env
+.env.*
+*.pem
+*.jks
+*.keystore
+google-services.json
+serviceAccount*.json
+*.local.md
+
+# Built stores (rebuild with the ingest scripts)
+data/store/
+data/cache_root.txt
+gemini/
+
+# --- First-push hygiene (21 Nov 2026) ---
+# Private benchmark splits: never publish (only hashes are public)
+data/bench/private/
+.claude/
+*.stackdump
+gemini/
+logs/
+# Training data and weights stay local
+data/train/*.jsonl
+*.safetensors
+*.pt
+*.bin
+*.gguf
+*.ckpt
+# Secrets by name
+*secret*
+*token*
+*password*
+*credential*
+*.pem
+*.key
+.env*
+rclone.conf
+*.tmp
+# Files that contain private-split items or gold (found by id scan before first push)
+data/bench/audit_v1/runs/
+data/bench/mezonbench_v2.jsonl
+# Ops guides with server addresses (keep local)
+docs/HANDOFF_virginia.md
+docs/L40S_GUIDE.md
+
+# internal notes, never public
+CLAUDE.md
+docs/brain/
+gemini/
+docs/PROOF_PLAN.md

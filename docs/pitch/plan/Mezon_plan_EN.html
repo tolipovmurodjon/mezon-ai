@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mezon Team Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="plan.css">
+<style>@page { @bottom-left { content: "MEZON  ·  TEAM PLAN  ·  19.11.2026"; } }</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="band"></div>
+  <div class="inner">
+    <div class="top">
+      <div class="mark">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="7" fill="#14151a"/><path d="M18 8v20M11 28h14M9 12h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 12l-4 8h8zM27 12l-4 8h8z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Mezon</span>
+      </div>
+      <span>LexHackathon 2026 · Track 1</span>
+    </div>
+
+    <div class="word">Mezon<span>.</span></div>
+    <h1>Every local decision, checked against the law of its day</h1>
+    <p class="lead">An AI auditor of hokim and Kengash decisions in Uzbekistan. It watches lex.uz, E-qaror and regulation.gov.uz every day, checks each decision against the law exactly as it read on that date, shows every step, and gives an adliya expert a pre-filled conclusion to sign. Free for citizens and businesses. Runs on our own GPU.</p>
+
+    <div class="dates">
+      <div><b>Fri 20 Nov</b><span>build, after 12:30</span></div>
+      <div><b>Sat 21 Nov</b><span>feature freeze 10:00</span></div>
+      <div><b>Sat 21 Nov</b><span>deadline 17:55</span></div>
+      <div><b>Sun 22 Nov</b><span>finals</span></div>
+    </div>
+
+    <div class="toc">
+      <div><i>01</i>The problem</div>
+      <div><i>02</i>What works today</div>
+      <div><i>03</i>How it works</div>
+      <div><i>04</i>Step by step: expert, business, citizen</div>
+      <div><i>05</i>Raw data</div>
+      <div><i>06</i>Our own model: Mezon-LM</div>
+      <div><i>07</i>Next to LexAI and Tuzuk.ai</div>
+      <div><i>08</i>Checklist with owners</div>
+      <div><i>09</i>Rules we never break · links</div>
+    </div>
+
+    <div class="keys">
+      <div><b>354/354</b><span>citations found verbatim in the edition of that day</span></div>
+      <div><b>10/20</b><span>later-cancelled decisions flagged blind, without knowing the outcome (5 high confidence)</span></div>
+      <div><b>68</b><span>decisions in 13 regions resting on an article that had lost force</span></div>
+    </div>
+    <p class="status">Team plan · status as of 19.11.2026 · numbers from Mezon's own scripts and the cited public sources</p>
+  </div>
+</section>
+
+<!-- ============ 1 PROBLEM ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">1</div><div>
+    <div class="eb">The problem</div>
+    <h2>Local decisions slip past a manual review, and laws keep changing under them</h2>
+    <p class="one">Hokims and local Kengashes adopt decisions every day. A person checks each one by hand, under a deadline, against laws that are amended almost every week.</p>
+  </div></div>
+
+  <div class="facts">
+    <div class="fact"><b>611</b><p>of 2,043 challenged hokimlik decisions were found unlawful by courts in 2025.</p><small>Supreme Court summary, anhor.uz 21.01.2026</small></div>
+    <div class="fact"><b>2-5 days</b><p>for an adliya expert to review one draft by hand.</p><small>Adliya order No. 3333</small></div>
+    <div class="fact"><b>~1/week</b><p>a new edition of our 38 core laws (193 since 2023); nobody re-reads old decisions.</p><small>Mezon law store</small></div>
+    <div class="fact"><b>87/92</b><p>sampled drafts got zero public comments.</p><small>our random sample, regulation.gov.uz</small></div>
+  </div>
+
+  <div class="chart">
+    <h4>2025: decisions challenged in court, and the share found unlawful</h4>
+    <p class="small muted" style="margin:0 0 3mm">Bars drawn to scale. The dark part is what the court found unlawful.</p>
+    <svg viewBox="0 0 680 158" role="img" aria-label="Court results 2025: hokimlik 611 of 2043, tax authority 743 of 1593, Cadastre Agency 449 of 1594">
+      <g font-size="13" fill="#14151a">
+        <text x="0" y="31" font-weight="600">Hokimlik decisions</text>
+        <text x="0" y="81" font-weight="600">Tax authority</text>
+        <text x="0" y="131" font-weight="600">Cadastre Agency</text>
+      </g>
+      <g>
+        <rect x="160" y="16" width="360" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="16" width="107.7" height="22" rx="3" fill="#c2361a"/>
+        <rect x="160" y="66" width="280.7" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="66" width="130.9" height="22" rx="3" fill="#c2361a"/>
+        <rect x="160" y="116" width="280.9" height="22" rx="3" fill="#f3d5cc"/><rect x="160" y="116" width="79.1" height="22" rx="3" fill="#c2361a"/>
+      </g>
+      <g style="font-family:'Geist Mono',monospace" font-size="12.5" fill="#14151a">
+        <text x="532" y="32">611 / 2,043</text><text x="680" y="32" text-anchor="end" font-weight="600" fill="#c2361a">30%</text>
+        <text x="452" y="82">743 / 1,593</text><text x="680" y="82" text-anchor="end" font-weight="600" fill="#c2361a">47%</text>
+        <text x="452" y="132">449 / 1,594</text><text x="680" y="132" text-anchor="end" font-weight="600" fill="#c2361a">28%</text>
+      </g>
+      <g font-size="10.5" fill="#7a7f8a"><text x="160" y="156">0</text><text x="520" y="156" text-anchor="end">2,043 challenged</text></g>
+    </svg>
+    <div class="src">Source: Supreme Court 2025 summary via anhor.uz, 21.01.2026. Percentages computed from these counts. Mezon audits the first row; tax and cadastre are on the roadmap.</div>
+  </div>
+
+  <p class="callout t" style="margin-top:6mm">What Mezon changes: the check happens on the day a decision appears, against the law as it read that day, and a person still signs. Flagged is not illegal: a flag is a possible violation for an expert to review.</p>
+</section>
+
+<!-- ============ 2 WHAT WORKS ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">2</div><div>
+    <div class="eb">What works today</div>
+    <h2>Built and measured, with real cases</h2>
+    <p class="one">Everything in this table runs on the laptop today. The right column is the proof we can show.</p>
+  </div></div>
+
+  <table>
+    <thead><tr><th style="width:27%">Part</th><th>What it does</th><th style="width:31%">Proof</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Law store by date</td><td>38 core acts, every edition; answers "what did article X say on day D"</td><td><span class="pill ok">354/354</span> citations verbatim in that day's edition</td></tr>
+      <tr><td class="k">14 checks</td><td>Basis, form, discussion, expertise, 3-month rule, retroactivity, duplicates, double repeals, tax timing and more</td><td><span class="pill ok">10/20</span> cancelled decisions flagged (5 high confidence)</td></tr>
+      <tr><td class="k">Dead-article finder</td><td>Decisions resting on an article that had lost force</td><td><span class="pill ok">68</span> decisions in 13 regions, each with lex.uz's own note</td></tr>
+      <tr><td class="k">Law-change watch</td><td>When an article changes, list decisions in force that cite it</td><td><span class="pill ok">13</span> decisions for LSP art. 6 (changed 12.11.2026)</td></tr>
+      <tr><td class="k">Expertise types</td><td>Legal + anti-corruption (O'RQ-860, 29 factors) + linguistic (VMQ-662)</td><td>6/29 factors automatic; 112 decisions with mixed-script words</td></tr>
+      <tr><td class="k">Agent with visible steps</td><td>Reads, calls tools, verifies every quote; model slot ready for Qwen</td><td>Trace on every audit ("Agent yo'li")</td></tr>
+      <tr><td class="k">For adliya</td><td>Queue per region, Monday report, draft conclusion (opens in Word)</td><td>Golden cases: Qarshi <span class="reg">231/269</span>, Xatirchi <span class="reg">VII-3-1-5-77-K/25</span></td></tr>
+      <tr><td class="k">Mezon AI</td><td>Citizen / business / expert answers, search by place or topic</td><td>114 tests pass</td></tr>
+    </tbody>
+  </table>
+  <p class="small muted" style="margin-top:2.5mm">LSP = the Law on Local State Power. O'RQ-860 = the anti-corruption expertise law. VMQ-662 = the Cabinet resolution on linguistic expertise.</p>
+
+  <figure class="fig-narrow" style="margin-top:5mm">
+    <img src="img/08_numbers.jpg" alt="Mezon numbers screen">
+    <figcaption><i>SCREEN</i><span>"Raqamlar" (Numbers): each figure is computed by a script from a public source. Flag precision stays blank until the expert has reviewed the flags.</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 3 HOW IT WORKS ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">3</div><div>
+    <div class="eb">How it works</div>
+    <h2>AI proposes. The verifier checks. A person signs.</h2>
+    <p class="one">Data flows down the page. Nothing reaches a citizen or an expert without passing the verifier, and nothing becomes a conclusion without a signature.</p>
+  </div></div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 680 560" role="img" aria-label="Mezon pipeline">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b505c"/></marker>
+        <marker id="av" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5a3fe0"/></marker>
+      </defs>
+      <!-- sources -->
+      <g font-size="13">
+        <rect x="20" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="95" y="28" text-anchor="middle" font-weight="600">lex.uz</text><text x="95" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">laws, local decisions</text>
+        <rect x="183" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="258" y="28" text-anchor="middle" font-weight="600">E-qaror</text><text x="258" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">adoption stages</text>
+        <rect x="346" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="421" y="28" text-anchor="middle" font-weight="600">regulation.gov.uz</text><text x="421" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">drafts in discussion</text>
+        <rect x="509" y="8" width="150" height="46" rx="6" fill="#fff" stroke="#9aa0a8"/>
+        <text x="584" y="28" text-anchor="middle" font-weight="600">Court data</text><text x="584" y="45" text-anchor="middle" font-size="10.5" fill="#4b505c">stat.sud.uz, rulings</text>
+      </g>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)">
+        <path d="M95 54 C95 68 250 66 260 84"/><path d="M258 54 L300 84"/><path d="M421 54 L380 84"/><path d="M584 54 C584 68 430 66 420 84"/>
+      </g>
+      <!-- sync -->
+      <rect x="190" y="86" width="300" height="40" rx="6" fill="#14151a"/>
+      <text x="340" y="104" text-anchor="middle" fill="#fff" font-size="13.5" font-weight="600">Sync 24/7</text>
+      <text x="340" y="119" text-anchor="middle" fill="#c9ccd2" font-size="10.5">polite: 1 request per second, every response cached</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M290 126 L215 154"/><path d="M390 126 L465 154"/></g>
+      <!-- stores -->
+      <rect x="90" y="156" width="240" height="48" rx="6" fill="#e3f0ed" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="210" y="176" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0b5c54">Law store</text>
+      <text x="210" y="193" text-anchor="middle" font-size="10.5" fill="#14151a">every edition of every article, by date</text>
+      <rect x="350" y="156" width="240" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <text x="470" y="176" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0b5c54">Change log</text>
+      <text x="470" y="193" text-anchor="middle" font-size="10.5" fill="#14151a">added · changed · removed, every day</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M210 204 L285 236"/><path d="M470 204 L395 236"/></g>
+      <!-- agent + tools -->
+      <rect x="190" y="238" width="240" height="58" rx="8" fill="#5a3fe0"/>
+      <text x="310" y="259" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Agent</text>
+      <text x="310" y="275" text-anchor="middle" fill="#fff" font-size="10.5">reads the decision, calls tools, cites</text>
+      <text x="310" y="289" text-anchor="middle" fill="#ddd6ff" font-size="10.5">Qwen on our GPU (slot ready)</text>
+      <rect x="490" y="240" width="170" height="54" rx="6" fill="#ecE8fd" stroke="#5a3fe0" stroke-width="1.2"/>
+      <text x="575" y="261" text-anchor="middle" font-size="13" font-weight="600" fill="#5a3fe0">Tools</text>
+      <text x="575" y="277" text-anchor="middle" font-size="10.5">rules · law lookup</text>
+      <text x="575" y="290" text-anchor="middle" font-size="10.5">search · parent act</text>
+      <g stroke="#5a3fe0" stroke-width="1.3" fill="none"><path d="M432 258 L486 258" marker-end="url(#av)"/><path d="M488 278 L434 278" marker-end="url(#av)"/></g>
+      <path d="M310 296 L310 332" stroke="#4b505c" stroke-width="1.2" marker-end="url(#ar)"/>
+      <!-- verifier -->
+      <rect x="190" y="334" width="240" height="50" rx="6" fill="#0b5c54"/>
+      <text x="310" y="355" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Verifier</text>
+      <text x="310" y="373" text-anchor="middle" fill="#d6ebe7" font-size="10.5">quote verbatim · edition of that day</text>
+      <rect x="470" y="330" width="190" height="60" rx="6" fill="#fbe9e3" stroke="#c2361a" stroke-dasharray="4 3"/>
+      <text x="565" y="350" text-anchor="middle" font-size="11" fill="#c2361a" font-weight="600">no valid source?</text>
+      <text x="565" y="366" text-anchor="middle" font-size="10.5" fill="#14151a">flag dropped, or "unclear,</text>
+      <text x="565" y="380" text-anchor="middle" font-size="10.5" fill="#14151a">needs expert"</text>
+      <path d="M430 359 L466 359" stroke="#c2361a" stroke-width="1.2" marker-end="url(#ar)"/>
+      <path d="M310 384 L310 418" stroke="#4b505c" stroke-width="1.2" marker-end="url(#ar)"/>
+      <!-- expert -->
+      <rect x="190" y="420" width="240" height="50" rx="6" fill="#14151a"/>
+      <text x="310" y="441" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Expert signs</text>
+      <text x="310" y="459" text-anchor="middle" fill="#c9ccd2" font-size="10.5">conclusion in Adliya order 3333 format</text>
+      <g stroke="#4b505c" stroke-width="1.2" fill="none" marker-end="url(#ar)"><path d="M270 470 L205 502"/><path d="M350 470 L455 502"/></g>
+      <!-- outputs -->
+      <rect x="90" y="504" width="230" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="205" y="524" text-anchor="middle" font-size="13" font-weight="600" fill="#0b5c54">Adliya queue</text>
+      <text x="205" y="541" text-anchor="middle" font-size="10.5">region report · draft conclusion</text>
+      <rect x="350" y="504" width="230" height="48" rx="6" fill="#fff" stroke="#0b5c54" stroke-width="1.4"/>
+      <text x="465" y="524" text-anchor="middle" font-size="13" font-weight="600" fill="#0b5c54">Mezon AI</text>
+      <text x="465" y="541" text-anchor="middle" font-size="10.5">citizen · business · expert</text>
+      <!-- side labels -->
+      <g style="font-family:'Geist Mono',monospace" font-size="10" letter-spacing="1">
+        <text x="20" y="263" fill="#5a3fe0" font-weight="600">AI PROPOSES</text>
+        <text x="20" y="363" fill="#0b5c54" font-weight="600">VERIFIER CHECKS</text>
+        <text x="20" y="449" fill="#14151a" font-weight="600">A PERSON SIGNS</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#e3f0ed;box-shadow:inset 0 0 0 1.2px #0b5c54"></i>built and running</span>
+      <span><i style="background:#fff;border:1.2px dashed #0b5c54"></i>being built this week</span>
+      <span><i style="background:#5a3fe0"></i>the agent (model connects on Friday)</span>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="v"><h4>1 · AI proposes</h4><p>The agent reads a decision and calls tools: the 14 rule checks, a lookup of the law as it read on the decision date, a search, the parent act. Every step is written to a trace the expert can open.</p></div>
+    <div><h4>2 · The verifier checks</h4><p>Every quote must appear verbatim in the edition in force that day. No article, no quote, no edition: no flag. If nothing can be cited, the status is "unclear, needs expert".</p></div>
+    <div class="k"><h4>3 · A person signs</h4><p>The expert gets a draft conclusion in Adliya's own format (positive · positive with fixable defects · negative) and decides each flag. Mezon sends nothing by itself.</p></div>
+  </div>
+</section>
+
+<!-- ============ 4 STEP BY STEP ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">4</div><div>
+    <div class="eb">Step by step</div>
+    <h2>What an expert, a business owner and a citizen see</h2>
+    <p class="one">Real screens of the running platform (http://127.0.0.1:8090), taken on 19.11.2026. The interface is in Uzbek; the captions say what each part means.</p>
+  </div></div>
+
+  <table class="who3" style="margin-bottom:8mm">
+    <thead><tr><th style="width:17%">Who</th><th style="width:24%">Starts in</th><th style="width:33%">Gets</th><th>Then</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Adliya expert</td><td>"Adliya navbati" (queue) and "Qaror auditi" (audit)</td><td>flags with both quotes, the agent's trace, a draft conclusion in order 3333 format</td><td>decides each flag, edits and signs</td></tr>
+      <tr><td class="k">Business owner</td><td>"Mezon AI", Tadbirkor (Business) mode</td><td>what the decision means for the business and its possible defects</td><td>Business Ombudsman or district adliya, with a ready appeal text</td></tr>
+      <tr><td class="k">Citizen</td><td>"Mezon AI", Fuqaro (Citizen) mode</td><td>one plain sentence, the proof one tap away</td><td>district (city) adliya office, with a ready appeal text</td></tr>
+    </tbody>
+  </table>
+
+  <div class="persona"><b>The adliya expert</b><span>reviews decisions for one region and signs the conclusions</span></div>
+
+  <div class="st"><div class="d">1</div><div>
+    <h4>Sees which drafts are in public discussion right now</h4>
+    <p>"Jonli nazorat" (Live watch) compares every open local draft on regulation.gov.uz with the 15-day minimum in the law. On the right, the article itself, word for word, with a lex.uz link.</p>
+    <figure><img src="img/01_live.jpg" alt="Live watch screen"><figcaption><i>01</i><span>12 of 94 open local drafts (budget allocations aside) are in a discussion shorter than the legal 15 days. Right: the article of the NLA Law that sets the 15 days, quoted from lex.uz.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">2</div><div>
+    <h4>Opens the queue: what changed, and what is flagged</h4>
+    <p>"Adliya navbati" (Adliya queue). The top panel, "Qonun o'zgardi" (The law changed), lists decisions in force whose article was amended later. That is not a violation: it means the decision should be re-read against the new edition. Below it, the flagged decisions, riskiest and newest first.</p>
+    <figure><img src="img/02_queue.jpg" alt="Adliya queue screen"><figcaption><i>02</i><span>13 decisions rest on article 6 of the Law on Local State Power, which changed on 12.11.2026. Below: 279 flagged decisions, each with a proposed conclusion and its flags.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">3</div><div class="side tall">
+    <div>
+      <h4>Opens one decision: the dead-article flag</h4>
+      <p><span class="reg">355-4-68-Q/25</span>, Yakkabog' district hokim, 13.11.2025. Mezon ran 9 checks. Seven found nothing, one did not apply, and one raised a flag (the pink tile).</p>
+      <p>The decision says it is adopted "on the basis of articles 6 and 25" of the Law on Local State Power. Article 25 had lost force under O'RQ-976 of 17.10.2024, more than a year earlier.</p>
+      <p>Left, in ember: the quote from the decision. Right, in teal: lex.uz's own note on article 25, and the rule that applies (NLA Law O'RQ-682, art. 18 part 3, as it read on 13.11.2025).</p>
+      <p class="callout">Status: "possible violation, flagged for expert review". Under the flag the expert presses To'g'ri / Noto'g'ri / Noaniq (correct / wrong / unclear).</p>
+    </div>
+    <figure><img src="img/03_audit.jpg" alt="Audit of 355-4-68-Q/25"><figcaption><i>03</i><span>One flag, two sources side by side: the decision and the law on that date.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st"><div class="d">4</div><div>
+    <h4>Gets a draft conclusion to edit and sign</h4>
+    <p>"Xulosa loyihasi" (Draft conclusion) is written in the format of Adliya order No. 3333. Proposed result: "positive with fixable defects". Each defect carries the quote from the decision, the lex.uz status and the legal basis, followed by the 29-factor anti-corruption checklist (O'RQ-860) and blank fields for the expert's decision and signature. "Word'da ochish" opens the same text in Word.</p>
+    <figure><img src="img/04_conclusion.jpg" alt="Draft conclusion"><figcaption><i>04</i><span>The top of the draft conclusion for 355-4-68-Q/25. The expert ticks "tasdiqlanadi" (confirmed) or "rad etiladi" (rejected) for each defect.</span></figcaption></figure>
+  </div></div>
+
+  <div class="st agent"><div class="d">5</div><div class="side narrow">
+    <div>
+      <h4>Asks Mezon AI as an expert and sees how the agent checked</h4>
+      <p>In "Mezon AI" the expert picks "Adliya eksperti" and asks about the decision. The answer gives the same flag with both quotes, and "Mezon qanday tekshirdi" (How Mezon checked) lists the 8 steps the agent took.</p>
+      <p>Each step is a tool call with its result: read the decision text, ran 9 rules, checked whether article 6 was in force on 13.11.2025 (yes), then article 25 (no: lost force).</p>
+      <p class="callout v">Today these answers come from the rules and the law store; the local language model is still off. Connecting Qwen is Friday's job.</p>
+    </div>
+    <figure><img src="img/07_expert.jpg" alt="Mezon AI expert answer"><figcaption><i>05</i><span>Expert mode: the top of the answer and the agent's trace. The side-by-side quotes between them (as in step 3) are cut out here.</span></figcaption></figure>
+  </div></div>
+
+  <div class="persona alt" style="margin-top:4mm"><b>The business owner</b><span>wants to know if a decision puts a new burden on the business</span></div>
+
+  <div class="st"><div class="d">1</div><div class="side narrow">
+    <div>
+      <h4>Types the decision number, picks "Tadbirkor" (Business)</h4>
+      <p>Example: <span class="reg">101-14-0-Q/25</span>, Tashkent city hokim, 14.02.2025, about markets and trade complexes in the city.</p>
+      <h4 style="margin-top:4mm">Reads what it means for the business</h4>
+      <p>The headline says it plainly: a new obligation for businesses takes effect less than 3 months after the decision, so a business would face a new requirement or fee without the preparation period the law gives. Mezon found 2 possible defects.</p>
+      <h4 style="margin-top:4mm">Knows where to go</h4>
+      <p>The black box names the channel: the Business Ombudsman (and the district adliya), with a ready appeal text to copy. The owner sends it; Mezon sends nothing automatically.</p>
+      <p class="callout">Each defect is marked "Ehtimoliy" (possible). The screen says in so many words: this does not mean the decision is unlawful.</p>
+    </div>
+    <figure><img src="img/05_business.jpg" alt="Mezon AI business answer"><figcaption><i>06</i><span>Business mode: what it means, two possible defects, and the Business Ombudsman as the channel.</span></figcaption></figure>
+  </div></div>
+
+  <div class="persona alt2" style="margin-top:4mm"><b>The citizen</b><span>heard about a decision and wants to know what it means for them</span></div>
+
+  <div class="st"><div class="d">1</div><div class="side narrow">
+    <div>
+      <h4>Asks in plain words</h4>
+      <p>"355-4-68-Q/25 menga nima degani" ("what does 355-4-68-Q/25 mean for me"), with "Fuqaro" (Citizen) selected. Latin or Cyrillic both work.</p>
+      <h4 style="margin-top:4mm">Gets a short, plain answer</h4>
+      <p>"This decision relies on article 25 of the law, but that article lost force under O'RQ-976 of 17 October 2024. So an expert should check the decision's legal basis."</p>
+      <h4 style="margin-top:4mm">Gets one next step</h4>
+      <p>The district (city) adliya office, which oversees the lawfulness of local decisions, with the appeal text ready to copy. The side-by-side quotes and the agent's steps are one tap away.</p>
+    </div>
+    <figure><img src="img/06_citizen.jpg" alt="Mezon AI citizen answer"><figcaption><i>07</i><span>Citizen mode: one sentence, one channel, the proof behind a tap.</span></figcaption></figure>
+  </div></div>
+</section>
+
+<!-- ============ 5 RAW DATA ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">5</div><div>
+    <div class="eb">Raw data</div>
+    <h2>What we hold and what we still need</h2>
+    <p class="one">All sources are public. We crawl politely (1 request per second, cached), use already-redacted documents only, and ask the owners for exports where a crawl is not the right way.</p>
+  </div></div>
+  <table>
+    <thead><tr><th style="width:20%">Source</th><th style="width:27%">What</th><th style="width:27%">Size</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="k">lex.uz laws</td><td>Core acts with every edition (point in time)</td><td class="n">38 acts · 193 editions since 2023</td><td><span class="pill gap">Tax Code 2020-25 gap (disk)</span></td></tr>
+      <tr><td class="k">lex.uz local decisions</td><td>Hokim and Kengash decisions with text</td><td class="n">1,066 adopted with text · 1,985 records</td><td><span class="pill plan">~2,727 cite LSP: crawl the rest</span></td></tr>
+      <tr><td class="k">Cancellations</td><td>Cancelling acts that name the trigger (adliya, prosecutor, court)</td><td class="n">287 positive labels</td><td><span class="pill ok">labelled</span></td></tr>
+      <tr><td class="k">regulation.gov.uz</td><td>Draft pages, discussion windows</td><td class="n">40,383 drafts, 31,390 local (portal)</td><td><span class="pill ok">live feed</span></td></tr>
+      <tr><td class="k">E-qaror</td><td>Adoption tracker, "declared invalid"</td><td class="n">907,624 documents</td><td><span class="pill plan">ask Adliya for an export</span></td></tr>
+      <tr><td class="k">Courts</td><td>stat.sud.uz counts; public.sud.uz rulings</td><td class="n">3,182 of 9,320 claims satisfied since 2023</td><td><span class="pill plan">rulings need an export</span></td></tr>
+    </tbody>
+  </table>
+  <div class="legend" style="margin-top:3mm">
+    <span><i class="ok" style="background:#e3f0ed"></i>in hand</span>
+    <span><i style="background:#fbe9e3"></i>a gap we know about</span>
+    <span><i style="background:#fff;box-shadow:inset 0 0 0 1px #9aa0a8"></i>next step planned</span>
+  </div>
+
+  <div class="three" style="margin-top:9mm">
+    <div><h4>Labels are the exam</h4><p>The 287 positive labels come from the text of the cancelling act: an adliya representation, a prosecutor's protest, a court ruling, or E-qaror "declared invalid". We score Mezon on them; we do not train on them.</p></div>
+    <div><h4>Recall needs text</h4><p>Most "declared invalid" rows in E-qaror have stages but no text, so text rules are scored only on positives that have text. We always print both N.</p></div>
+    <div class="k"><h4>Samples are samples</h4><p>"87 of 92" is our random sample of recent drafts, said as a sample, never as an official statistic.</p></div>
+  </div>
+</section>
+
+<!-- ============ 6 MODEL ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">6</div><div>
+    <div class="eb">Our own model: Mezon-LM</div>
+    <h2>Train up to date X, take everything after X from a daily change log</h2>
+  </div></div>
+
+  <div class="idea">
+    <div class="eb">The key idea</div>
+    <p>The model is trained on all data up to date X and learns how to work. Every change after X is written to a daily change log; before answering, the agent checks the log and the lex.uz link first, and the newest information always wins. Every 2-3 months (or monthly) the log is folded in and the model is re-trained.</p>
+  </div>
+
+  <div class="timeline">
+    <svg viewBox="0 0 680 150" role="img" aria-label="Train up to date X, then a daily change log, then re-train">
+      <defs><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c2361a"/></marker></defs>
+      <rect x="0" y="34" width="380" height="30" rx="4" fill="#0b5c54"/>
+      <text x="14" y="54" fill="#fff" font-size="13" font-weight="600">Trained on everything up to date X</text>
+      <line x1="386" y1="20" x2="386" y2="80" stroke="#14151a" stroke-width="2"/>
+      <text x="386" y="14" text-anchor="middle" style="font-family:'Geist Mono',monospace" font-weight="600" font-size="14">X</text>
+      <g fill="#e3f0ed" stroke="#0b5c54" stroke-width="1">
+        <rect x="394" y="34" width="12" height="30" rx="2"/><rect x="410" y="34" width="12" height="30" rx="2"/><rect x="426" y="34" width="12" height="30" rx="2"/><rect x="442" y="34" width="12" height="30" rx="2"/><rect x="458" y="34" width="12" height="30" rx="2"/><rect x="474" y="34" width="12" height="30" rx="2"/><rect x="490" y="34" width="12" height="30" rx="2"/><rect x="506" y="34" width="12" height="30" rx="2"/><rect x="522" y="34" width="12" height="30" rx="2"/><rect x="538" y="34" width="12" height="30" rx="2"/><rect x="554" y="34" width="12" height="30" rx="2"/><rect x="570" y="34" width="12" height="30" rx="2"/><rect x="586" y="34" width="12" height="30" rx="2"/><rect x="602" y="34" width="12" height="30" rx="2"/><rect x="618" y="34" width="12" height="30" rx="2"/>
+      </g>
+      <rect x="634" y="34" width="12" height="30" rx="2" fill="#0b5c54"/>
+      <text x="640" y="26" text-anchor="middle" style="font-family:'Geist Mono',monospace" font-size="11" fill="#0b5c54">today</text>
+      <text x="394" y="82" font-size="11.5" fill="#4b505c">daily change log: added · changed · removed</text>
+      <path d="M560 92 C 560 132, 386 132, 386 92" fill="none" stroke="#c2361a" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#am)"/>
+      <text x="473" y="146" text-anchor="middle" font-size="11.5" fill="#c2361a" font-weight="600">re-train every 2-3 months (or monthly): X moves forward</text>
+      <text x="0" y="96" font-size="11.5" fill="#4b505c">An answer = the model + the newest log entry + the lex.uz link.</text>
+      <text x="0" y="112" font-size="11.5" fill="#4b505c">The newest information always wins.</text>
+    </svg>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div><h4>Exam first</h4><p>A public benchmark of real questions with lawyer-checked answers: point-in-time articles, real cancelled decisions, law changes. Nothing is "better" until it beats this.</p></div></div>
+    <div class="step"><div><h4>Baseline with no training</h4><p>Qwen 27B plus the tools and the verifier. Pick embeddings (bge-m3 or multilingual-e5) by a 20-question Uzbek test.</p></div></div>
+    <div class="step"><div><h4>Train up to date X</h4><p>LoRA on lex.uz laws and decisions, court rulings and official statistics (the parts whose license we checked); then on lawyer-confirmed flags and signed conclusions. Kept only if it beats the baseline on the exam.</p></div></div>
+    <div class="step"><div><h4>Daily change log</h4><p>Every day a fast algorithm diffs the new editions on lex.uz: added, changed and removed articles go into a history store. The agent checks that store before answering and gives the lex.uz link.</p></div></div>
+    <div class="step"><div><h4>Refresh every 2-3 months (or monthly)</h4><p>Re-train with the changes in the log; run the exam again. Date X moves forward.</p></div></div>
+    <div class="step"><div><h4>Quantize for any office</h4><p>4-bit or FP8, so a regional server can run it. Decision text never leaves government machines.</p></div></div>
+    <div class="step"><div><h4>Open it</h4><p>Weights and the benchmark on Hugging Face, so anyone can check there is no hidden cloud API. Datasets only after the terms are agreed with lex.uz's owner.</p></div></div>
+  </div>
+
+  <div class="sub" style="margin-top:9mm"><h3>How long it takes on the RTX PRO 6000 (96 GB)</h3></div>
+  <table>
+    <thead><tr><th style="width:38%">Job</th><th style="width:34%">Size (estimate)</th><th>Time (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Monthly re-train (QLoRA) on the month's new documents</td><td class="n">a few million tokens</td><td class="n"><span class="big">~1-2 h</span></td></tr>
+      <tr><td class="k">Instruction tuning (QLoRA), 27B</td><td class="n">10,000 examples × 2,000 tokens ≈ 20M tokens</td><td class="n"><span class="big">~3-5 h</span>per epoch</td></tr>
+      <tr><td class="k">Continued training (QLoRA): all lex.uz text</td><td class="n">~250M tokens</td><td class="n"><span class="big">~2-3 days</span></td></tr>
+      <tr><td class="k">Full fine-tuning, 27B</td><td class="n">~430 GB of memory needed</td><td>does not fit in 96 GB: LoRA / QLoRA only</td></tr>
+      <tr><td class="k">4-bit quantization (AWQ / GPTQ)</td><td class="n">one model</td><td class="n"><span class="big">~1-2 h</span></td></tr>
+    </tbody>
+  </table>
+  <p class="note">All times are estimates, to be confirmed with a 1% pilot run on the real data before any long job. The GPU is shared with a chat model (about 55% of the card), so every training run needs the owner's go-ahead: Murodjon decides when to pause it.</p>
+
+  <div class="sub" style="margin-top:9mm"><h3>Karpathy's recipe, applied to us</h3></div>
+  <p class="small muted" style="margin-top:-1mm">From Andrej Karpathy, "A Recipe for Training Neural Networks" (2019).</p>
+  <table>
+    <thead><tr><th style="width:30%">Step</th><th>What we do in Mezon</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Become one with the data</td><td>Read 100 decisions and their cancellation reasons by hand; write down the patterns</td></tr>
+      <tr><td class="k">Skeleton and a dumb baseline</td><td>An end-to-end pipeline + the exam; record what untrained Qwen scores</td></tr>
+      <tr><td class="k">Overfit a tiny set first</td><td>Make sure the model fully learns 50 examples: proof the pipeline works</td></tr>
+      <tr><td class="k">Then scale up</td><td>Grow the data step by step, measure every step on the exam</td></tr>
+      <tr><td class="k">Don't be a hero</td><td>A ready model (Qwen), a ready method (LoRA), ready tools; we innovate only in the data and the evaluation</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 7 NEXT TO WHAT EXISTS ============ -->
+<section class="sec flow">
+  <div class="sh"><div class="no">7</div><div>
+    <div class="eb">Next to LexAI and Tuzuk.ai</div>
+    <h2>Different jobs, made to fit together</h2>
+    <p class="one">LexAI and Tuzuk.ai answer when someone asks. Mezon starts on its own, the day a decision appears.</p>
+  </div></div>
+  <table>
+    <thead><tr><th style="width:16%"></th><th style="width:30%">LexAI (Adliya, ai.lex.uz)</th><th style="width:24%">Tuzuk.ai</th><th>Mezon</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Starts when</td><td>someone asks</td><td>a lawyer asks or drafts</td><td><strong>a decision appears, 24/7</strong></td></tr>
+      <tr><td class="k">Law used</td><td>lex.uz (in our 19.11 test it asked us to check the date's edition ourselves)</td><td>not stated</td><td><strong>the edition in force on the decision date</strong></td></tr>
+      <tr><td class="k">Output</td><td>an answer</td><td>documents, answers</td><td><strong>a conclusion in Adliya's format, to sign</strong></td></tr>
+      <tr><td class="k">Price</td><td>paid after free questions</td><td>390,000-590,000 so'm/month</td><td><strong>free for people; pilot for Adliya</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="callout t" style="margin-top:5mm">ai.lex.uz lists "Hujjat loyihalari ekspertizasi" (expertise of draft documents) as in progress. Mezon can be its module for hokim and Kengash decisions. We speak about LexAI with respect: it is Adliya's own product, and the comparison above is only what we saw in our test.</p>
+</section>
+
+<!-- ============ 8 CHECKLIST ============ -->
+<section class="sec list">
+  <div class="sh"><div class="no">8</div><div>
+    <div class="eb">Checklist</div>
+    <h2>What is left, and who does it</h2>
+    <p class="one small">Tick the box by hand when it is done; write the date or a short note on the line.</p>
+  </div></div>
+
+  <div class="day"><h3>Tonight, Thursday 19 November <small>4 tasks</small></h3>
+    <div class="taskhead" style="margin-top:1.5mm"><span></span><span>Task</span><span>Owner</span><span>Date / note</span></div>
+    <div class="task"><div class="box"></div><div>Buy the domain (mezonlex.com free; check mezonlex.uz)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Send the letter to info@adolatmarkazi.uz (test access + meeting)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Send the lawyer the 60-flag sheet and 5 group questions</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Free disk on D: (for the Tax Code editions and the crawl)</div><div class="who">Murodjon</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>Friday 20 November <small>7 tasks</small></h3>
+    <div class="task"><div class="box"></div><div>Start the box; run the 20-question Uzbek legal test; choose the model and the embeddings</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Connect Qwen to the agent: conflict with higher law (check 4), mandate drift (check 5)</div><div class="who">Murodjon<br>Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Build the daily change log (added / changed / removed)</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Re-check flagged decisions on lex.uz (freshness, region 4 first)</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Fetch the missing Tax Code editions; rebuild; re-audit</div><div class="who">Dev 2</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Deck down to 10 slides; landing page on the domain</div><div class="who">Dev 3</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Lawyer reviews the flags; stopwatch test on 5 reviews</div><div class="who">Lawyer</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>Saturday 21 November <small>freeze 10:00 · deadline 17:55</small></h3>
+    <div class="task"><div class="box"></div><div>Before 10:00: run demo_check, stage_numbers, eval; freeze</div><div class="who">Murodjon</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Record the 60-second film from the frozen numbers</div><div class="who">Dev 3</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Rehearse the 5-minute demo three times; submit by 17:55</div><div class="who">Team</div><div class="fill"></div></div>
+  </div>
+
+  <div class="day"><h3>After the hackathon <small>3 tasks</small></h3>
+    <div class="task"><div class="box"></div><div>Full polite lex.uz crawl on AWS; daily sync of laws and decisions</div><div class="who">Team</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>Benchmark, LoRA fine-tune, quantize, publish on Hugging Face</div><div class="who">Team</div><div class="fill"></div></div>
+    <div class="task"><div class="box"></div><div>One-region pilot with Adliya; E-qaror and court exports</div><div class="who">Murodjon</div><div class="fill"></div></div>
+  </div>
+</section>
+
+<!-- ============ 9 RULES + LINKS ============ -->
+<section class="sec">
+  <div class="sh"><div class="no">9</div><div>
+    <div class="eb">Rules we never break</div>
+    <h2>Six lines that hold the whole project</h2>
+  </div></div>
+  <div class="rules">
+    <div class="rule"><i>01</i><span>Flagged is not illegal. We say "possible violation, flagged for expert review".</span></div>
+    <div class="rule"><i>02</i><span>A human decides every flag (Adliya AI ethics rules No. 3787).</span></div>
+    <div class="rule"><i>03</i><span>No flag without an article, a verbatim quote and the edition of that day.</span></div>
+    <div class="rule"><i>04</i><span>Decision text never goes to a cloud AI. Everything runs on our machines.</span></div>
+    <div class="rule"><i>05</i><span>No endorsement claims from Adliya or the Ombudsman unless in writing.</span></div>
+    <div class="rule"><i>06</i><span>Polite crawling only: 1 request per second, public pages, no bot-check bypass.</span></div>
+  </div>
+
+  <div class="sub" style="margin-top:12mm"><h3>Links</h3></div>
+  <div class="links">
+    <div><b>System map</b><span>claude.ai/artifact/7Fp9paNzSM77DmehjN4CBo</span></div>
+    <div><b>Explained simply</b><span>claude.ai/artifact/G483aFCeZk5pisYxFELY1V</span></div>
+    <div><b>Pitch deck</b><span>claude.ai/artifact/J8SVZbZcTxVFy2MSuwn8jL</span></div>
+    <div><b>Uzbek version of this document</b><span>docs/pitch/plan/Mezon_reja_UZ.pdf</span></div>
+    <div><b>The demo screen (on the laptop)</b><span>http://127.0.0.1:8090</span></div>
+    <div><b>Build spec and plan</b><span>docs/MEZON_brief_2026-11-18.md · docs/PLAN.md</span></div>
+  </div>
+
+  <p class="endnote">Numbers come from Mezon's own scripts (eval/report.md, research/*) and the cited public sources, as of 19.11.2026. Sample figures are samples, not official statistics. Training times are estimates. Screens were taken from the running platform on 19.11.2026; the numbers on them change as the daily sync runs.</p>
+</section>
+
+</body>
+</html>

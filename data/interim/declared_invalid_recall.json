@@ -1,0 +1,29 @@
+{
+ "n_with_text": 259,
+ "n_audit_errors": 0,
+ "n_flagged_any": 34,
+ "share_flagged_any": 0.1313,
+ "n_flagged_possible_violation": 27,
+ "share_flagged_possible_violation": 0.1042,
+ "flags_by_rule_docs_any": {
+  "R_competence_land": 22,
+  "R_business_3m": 9,
+  "R_corruption_factor": 3,
+  "R_expertise": 2,
+  "R_basis": 2,
+  "R_discussion": 2,
+  "R_tax_timing": 1
+ },
+ "flags_by_rule_docs_possible_violation": {
+  "R_competence_land": 22,
+  "R_expertise": 2,
+  "R_business_3m": 2,
+  "R_basis": 2
+ },
+ "verdicts": {
+  "positive_with_fixable_defects": 10,
+  "negative": 24,
+  "positive": 225
+ },
+ "note": "N = declared-invalid decisions (E-qaror release=200) with downloaded text; ~90% are individual decisions, so procedure rules cannot catch them."
+}

@@ -1,0 +1,54 @@
+{
+ "seconds": 10.1,
+ "files": 1017297,
+ "by_kind": {
+  "doc": 173487,
+  "docs": 1,
+  "edition": 185049,
+  "actinfo_revhis": 244403,
+  "actinfo_respondents": 46960,
+  "actinfo_correspondents": 46980,
+  "actinfo_card2": 42052,
+  "actinfo_card1": 166683,
+  "actinfo_basrev": 42049,
+  "file": 27258,
+  "files": 17,
+  "pdfs": 42046
+ },
+ "gigabytes_by_kind": {
+  "doc": 22.12,
+  "docs": 0.0,
+  "edition": 73.88,
+  "actinfo_revhis": 0.74,
+  "actinfo_respondents": 0.33,
+  "actinfo_correspondents": 0.32,
+  "actinfo_card2": 0.15,
+  "actinfo_card1": 1.16,
+  "actinfo_basrev": 0.08,
+  "file": 21.41,
+  "files": 0.01,
+  "pdfs": 0.14
+ },
+ "zero_byte_by_kind": {
+  "doc": 5578,
+  "edition": 6493,
+  "file": 5474,
+  "files": 2,
+  "pdfs": 35061
+ },
+ "acts_with_editions": 45393,
+ "editions_per_act_hist_cap10": {
+  "1": 6128,
+  "2": 13707,
+  "3": 7558,
+  "4": 5192,
+  "5": 3562,
+  "6": 2562,
+  "7": 1831,
+  "8": 1193,
+  "9": 845,
+  "10": 2815
+ },
+ "ocr_documents": 312,
+ "ocr_pages": 2634
+}

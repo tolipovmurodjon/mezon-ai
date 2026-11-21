@@ -1,0 +1,30 @@
+{
+ "frozen": "2026-11-21 Tashkent",
+ "version": "v2.0 (38-act store)",
+ "items": {
+  "mezonbench_v2.jsonl": {
+   "n": 463,
+   "sha256_16": "e3486541e300d330",
+   "families": {
+    "ask_noaddr": 60,
+    "dead_cite": 60,
+    "chain": 60,
+    "ru_cyr": 60,
+    "cancel_trigger": 28,
+    "conflict_pair": 60,
+    "multi_hop": 60,
+    "noaniq": 75
+   }
+  }
+ },
+ "code_sha256_16": {
+  "research/mezonbench_v2.py": "7e601ba00912d4d6",
+  "research/mezonbench.py": "259e13b893453ef2",
+  "research/mezonbench_where.py": "069263698d2cf2bb",
+  "mezon/tools.py": "1da350e0a5037576",
+  "mezon/lawstore/store.py": "6a081a85adfe4f6a"
+ },
+ "law_store_sha256_16": "e43b39606c7b49ce",
+ "decision_store_sha256_16": "88931e7d0a1290f4",
+ "rules": "Never train on v2. Changing an item, the grader, a tool or the store = v2.1 and every model re-runs. Rebuild on laws_full.sqlite = a different exam (v3), not v2.0."
+}

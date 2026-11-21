@@ -1,0 +1,39 @@
+{
+ "frozen": "2026-11-21 08:00 Tashkent",
+ "items": {
+  "mezonbench_v1_1.jsonl": {
+   "n": 396,
+   "sha256_16": "a5175df37811c7a9"
+  },
+  "mezonbench_where_v1.jsonl": {
+   "n": 60,
+   "sha256_16": "a477281399e109b2"
+  }
+ },
+ "excluded_from_v1": [
+  "flip-017",
+  "flip-028",
+  "flip-098",
+  "flip-114"
+ ],
+ "code_sha256_16": {
+  "research/mezonbench.py": "259e13b893453ef2",
+  "research/mezonbench_where.py": "069263698d2cf2bb",
+  "research/bench_tools_run.py": "b7561894ff567374",
+  "research/bench_run.py": "c908b01e17e29fdb",
+  "mezon/tools.py": "f14e6722b27ef3a7",
+  "mezon/lawstore/store.py": "99b5c2a7f5d64f2f"
+ },
+ "law_store_sha256_16": "e43b39606c7b49ce",
+ "rules": "Every reported number names the file + this manifest. Changing an item, a grader or a tool = a new version, all models re-run.",
+ "changelog": [
+  {
+   "when": "2026-11-21 09:00",
+   "file": "mezon/lawstore/store.py",
+   "change": "find_act: a bare type word in parentheses ((Kodeks), (Qonun)) no longer title-matches a random code; acts missing from the store now return 'not in the law store' instead of another act's text",
+   "old_sha256_16": "99b5c2a7f5d64f2f",
+   "new_sha256_16": "6a081a85adfe4f6a",
+   "effect_on_v1_1": "none expected: every v1.1 act is in the store, so the fallback never runs; results before 09:00 are kept and labelled"
+  }
+ ]
+}

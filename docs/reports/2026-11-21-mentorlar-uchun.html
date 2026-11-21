@@ -1,0 +1,223 @@
+<title>Mezon Mentorlar Uchun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap">
+<style>
+/* Layout: same 1200x675 slide stage as the app deck. Eye Run look: pale page, soft mint + blue light, white glass, mint mono numbers */
+@font-face{font-family:"Departure Mono";src:url("fonts/DepartureMono.woff2") format("woff2");font-display:swap}
+:root{
+  --page:#F2F4F8; --ink:#0F1630; --ink-2:#4B5470; --ink-3:#8A92AA; --line:#E6E9F1;
+  --mint:#1C7E69; --mint-s:rgba(28,126,105,.10);
+  --amber:#B45309; --amber-s:rgba(180,83,9,.10);
+  --blue:#2563EB; --blue-s:rgba(37,99,235,.09);
+  --violet:#7C3AED; --violet-s:rgba(124,58,237,.09);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Departure Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --r:28px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;overflow:hidden;color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1100px 620px at 12% -8%,#D9F0E6 0%,transparent 62%),radial-gradient(900px 560px at 92% 2%,#DDE6FB 0%,transparent 58%),radial-gradient(800px 500px at 60% 115%,#E1F2EC 0%,transparent 60%),var(--page)}
+.stage{position:fixed;left:50%;top:50%;width:1200px;height:675px;transform-origin:center}
+.glass{position:relative;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 1px 1px rgba(15,22,48,.04),0 10px 28px -14px rgba(15,22,48,.22),inset 0 1px 0 rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(22px) saturate(1.35);backdrop-filter:blur(22px) saturate(1.35);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 42%)}
+.glass>*{position:relative}
+.mint-card{background:linear-gradient(150deg,#1C7E69 0%,#23A06C 100%);border-color:rgba(255,255,255,.35);color:#fff;box-shadow:0 18px 36px -16px rgba(28,126,105,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.mint-card::before{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 45%)}
+.slide{position:absolute;inset:0;padding:40px 52px 96px;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1),visibility 0s .4s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1)}
+.slide.back{transform:translateX(-18px)}
+@media (prefers-reduced-motion:reduce){.slide,.slide.on{transition:opacity .15s;transform:none}}
+.eyebrow{font:400 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0}
+h1,h2,h3{font-family:var(--sans);margin:0;text-wrap:balance}
+h1{font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-.03em}
+h2{font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.025em}
+h3{font-weight:800;font-size:21px;line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+.muted{color:var(--ink-2)}
+.big{font:400 84px/.9 var(--mono);letter-spacing:-.045em;color:var(--mint)}
+.kpi{border-radius:18px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 22px -16px rgba(15,22,48,.3),inset 0 1px 0 rgba(255,255,255,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:16px 18px}
+.kpi b{display:block;font:400 30px/1 var(--mono);letter-spacing:-.03em}
+.kpi span{display:block;font:400 11.5px/1.4 var(--mono);color:var(--ink-2);margin-top:8px}
+.kpi.warn b{color:var(--amber)}
+.chip{display:inline-flex;align-items:center;gap:7px;font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:var(--s-soft,var(--mint-s));color:var(--s,var(--mint));white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s,var(--mint))}
+.c-amber{--s:var(--amber);--s-soft:var(--amber-s)}.c-blue{--s:var(--blue);--s-soft:var(--blue-s)}.c-violet{--s:var(--violet);--s-soft:var(--violet-s)}
+.lab{font:400 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ul li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.45}
+.ul li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.ul.amber li::before{background:var(--amber)}
+.raw{font:400 12.5px/1.55 var(--mono);background:rgba(15,22,48,.045);border-radius:14px;padding:14px 16px;color:var(--ink);white-space:pre;overflow:hidden}
+.raw .hl{color:var(--amber)}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:absolute;left:52px;right:52px;top:186px;height:400px}
+.find>.glass{padding:24px 26px;display:grid;align-content:start;gap:12px}
+.dock{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:7px 9px;border-radius:999px;z-index:5}
+.dock button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.dock button:hover{background:rgba(15,22,48,.05)}
+.dots{display:flex;gap:6px;align-items:center}
+.dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:99px;background:rgba(15,22,48,.16);transition:width .3s cubic-bezier(.23,1,.32,1),background .3s}
+.dots button.on{width:22px;background:var(--mint)}
+.count{font:400 12px/1 var(--mono);color:var(--ink-2);min-width:50px;text-align:center}
+button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+.bar{height:16px;border-radius:7px;background:rgba(15,22,48,.06);position:relative;overflow:hidden;box-shadow:inset 0 1px 2px rgba(15,22,48,.07)}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.bar i.now{background:var(--amber)}
+.bar i.goal{background:rgba(28,126,105,.22);border:1.5px dashed rgba(28,126,105,.6);box-shadow:none}
+.idea{padding:12px 14px;border-radius:18px;display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.idea b{font:400 13px/1.3 var(--mono);color:var(--mint)}
+.idea h4{margin:0;font-weight:600;font-size:14.5px;line-height:1.3}
+.idea p{font-size:12.5px;line-height:1.4;color:var(--ink-2);margin-top:3px}
+.node{position:absolute;padding:12px 14px;border-radius:18px;text-align:center}
+.node h4{margin:0;font-weight:800;font-size:15px}
+.node p{font:400 10.5px/1.4 var(--mono);color:var(--ink-2);margin-top:4px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:6px 9px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.35;vertical-align:top}
+th{font:400 10.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+td b{font-weight:600}
+</style>
+<style>
+.qa{padding:12px 16px;border-radius:18px;display:grid;gap:4px}
+.qa b{font-size:14px}.qa p{font-size:13px;line-height:1.45;color:var(--ink-2)}
+.crit{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);align-items:start}
+.crit:first-of-type{border-top:0}
+.crit span{font:400 13px/1.3 var(--mono);color:var(--mint);padding-top:2px}
+.crit p{font-size:13.5px;line-height:1.45}
+.src{font:400 10.5px/1.4 var(--mono);color:var(--ink-3)}
+</style>
+<main class="stage" id="stage" aria-roledescription="slide deck"></main>
+<script>
+const S=[];
+const F=(n,t)=>`<p class="eyebrow">${n}</p><h2 style="margin-top:12px">${t}</h2>`;
+const C=(id,txt)=>`<div class="crit"><span>${id}</span><p>${txt}</p></div>`;
+/* 1 */
+S.push(`
+ <div style="position:absolute;left:56px;top:56px;width:640px;display:grid;gap:18px">
+  <p class="eyebrow">Mezon · mentorlar uchun taqdimot · 21-noyabr 2026</p>
+  <h1>Har bir mahalliy qaror o'sha kundagi qonun bo'yicha tekshiriladi: odamlarga zarar yetkazmasdan oldin.</h1>
+  <p class="muted" style="font-size:16px;max-width:52ch">Mentorlar biz aytganimizni baholaydi. Bu yerda har bir mentorning 5 ta mezoniga javob bor, har bir gapning isboti bilan.</p>
+ </div>
+ <div style="position:absolute;left:730px;top:56px;width:418px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+  <div class="kpi warn"><b>933</b><span>2024-yilda sudlar qonunga zid deb bekor qilgan hokim qarorlari</span></div>
+  <div class="kpi warn"><b>1,371</b><span>2023-yilda sudlar bekor qilgan hokimlik qarorlari</span></div>
+  <div class="kpi warn"><b>10,250</b><span>2,5 yilda adliya taqdimnomalari bilan bekor qilingan qonunga zid qarorlar</span></div>
+  <div class="kpi warn"><b>101,358 ha</b><span>qonunga zid deb topilgan 2 541 ta yer qarori bo'yicha yer</span></div>
+ </div>
+ <p class="src" style="position:absolute;left:730px;top:400px;width:418px">Manbalar: Oliy sud matbuot xizmati, Daryo (933, 1 371); Kun.uz 25.11.2020 (10 250, vazir: "Yurist qayerga qarayapti?"); Kun.uz 27.09.2022 (2 541 qaror, 101 358 ga).</p>
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:450px;height:130px;padding:20px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+  <div><p class="lab">3 ta mentor</p><p style="font-size:15px">Texnik (T1-T5) · Biznes (B1-B5) · Huquqiy (S1-S5), har biri 1-10 ball.</p></div>
+  <div><p class="lab">Qoida</p><p style="font-size:15px">Avval muammo, katta va aniq; keyin isbot; keyin yechim, qismma-qism.</p></div>
+  <div><p class="lab">Hech qachon aytmang</p><p style="font-size:15px">"noqonuniy" (ayting: "ehtimoliy buzilish, ekspert ko'rib chiqishi uchun belgilandi") yoki manbasiz raqam.</p></div>
+ </div>
+`);
+/* 2 problem */
+S.push(`${F("01 · muammo: yangi odam ham ishonadigan qilib","Xato mahalliy qarorlar faqat zarar yetkazgandan keyin aniqlanadi")}
+ <div class="find" style="top:170px;height:410px">
+  <div class="glass"><p class="lab">4 qatorda hikoya</p>
+   <ul class="ul amber"><li>Hokimlar va Kengashlar minglab qaror imzolaydi: yer, to'lovlar, biznes qoidalari. E-qarorda ulardan <b>919 513</b> tasi bor (bugun saytning o'z API'si orqali sanaldi).</li>
+   <li>Imzolashdan oldin hududiy adliya yuristida loyihani qo'lda tekshirish uchun <b>2 ish kuni (Kengash) yoki 5 ish kuni (hokim)</b> bor (Adliya vazirligining 3333-son buyrug'i).</li>
+   <li>Jamoatchilik muhokamasi kam yordam beradi: tasodifiy tanlangan 92 ta yangi loyihadan <b>87 tasiga bitta ham taklif kelmagan</b>.</li>
+   <li>Shuning uchun xatolar o'tib ketadi va keyin bekor qilinadi: faqat 2024-yilda sudlar <b>933</b> tasini bekor qildi, odamlar yer, pul yoki biznesini yo'qotgandan keyin.</li></ul>
+  </div>
+  <div class="glass"><p class="lab">aytib beriladigan bitta haqiqiy holat (ochiq, allaqachon bekor qilingan)</p>
+   <p style="font-size:15px"><b>Qarshi tumani, 2024.</b> 231-4-59-Q/24 qarori 207-4-59-Q/24 qarorini <b>15 kundan keyin so'zma-so'z ko'chirgan</b>, 207 hali amalda bo'lgan; yana 207 allaqachon bekor qilgan qarorni qayta "bekor qilgan".</p>
+   <p style="font-size:15px">Tuman adliya bo'limi 27-7/1-34-son taqdimnoma kiritdi; qaror 261-4-59-Q/24 bilan bekor qilindi.</p>
+   <p style="font-size:15px"><b>Mezon shu taqdimnomaga mos kamchilikni</b> soniyalarda, faqat matndan belgilaydi.</p>
+   <p class="src">lex.uz -6986157, -6961952, -7026714 · "taqdimnomaga mos" deng, hech qachon "aniq sababni topdi" demang</p>
+  </div>
+ </div>
+`);
+/* 3 solution */
+S.push(`${F("02 · yechim, qismma-qism","To'rt qism, bitta ish: inson tasdiqlaydigan, oldindan to'ldirilgan adliya xulosasi")}
+ <div style="position:absolute;left:52px;right:52px;top:170px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+ ${[["1","O'sha kundagi qonun","lex.uz dagi har bir hujjat, har bir tahriri va sanalari bilan (166 705 hujjat). Qaror bugungi emas, o'z sanasidagi qonun bo'yicha tekshiriladi.","nega muhim: qiyin savollarning yarmi modelni bugungi tahrir bilan aldaydi"],
+ ["2","Qoidalar mexanizmi","Sun'iy intellektsiz aniq tekshiruvlar: qaror yoki farmoyish, jamoatchilik muhokamasi, biznes uchun 3 oy qoidasi, orqaga qaytuvchi yuk, takrorlar, kuchini yo'qotgan moddaga havola.","isbot: 7 ta oltin holat har safar o'tadi (demo_check)"],
+ ["3","Mezon-LM","O'zimizning o'zbek huquqiy modelimiz (Qwen 27B, lex.uz da o'qitilgan) 5 ta qonun vositasi bilan, ochiq savollar uchun: ziddiyatlar, topshiriqdan chetlashish.","isbot: vositalarimiz bilan Opus 5.5 ga teng (118 tadan 116 va 115)"],
+ ["4","Iqtibos tekshiruvchisi","Har bir belgi haqiqiy, o'sha sanada amalda bo'lgan moddaga so'zma-so'z iqtibos keltirishi shart. Aks holda olib tashlanadi va «ekspert kerak» deb belgilanadi.","Stanford 2024: eng yaxshi huquqiy AI'lar so'rovlarning 17-33 % ida iqtibos o'ylab topadi"]].map(([n,t,d,p])=>`<div class="glass" style="padding:20px;height:410px;display:grid;grid-template-rows:auto auto 1fr auto;gap:10px"><b style="font:400 28px/1 var(--mono);color:var(--mint)">${n}</b><h3>${t}</h3><p class="muted" style="font-size:14px;line-height:1.5">${d}</p><p style="font-size:12.5px;font-weight:600;color:var(--mint)">${p}</p></div>`).join("")}</div>
+ <p class="muted" style="position:absolute;left:52px;top:594px;font-size:13.5px">Natija: Adliyaning o'z shakli (ijobiy · tuzatiladigan kamchiliklar bilan ijobiy · salbiy), har bir kamchilik -> modda -> iqtibos. Har bir belgini inson hal qiladi (Adliyaning AI etikasi qoidalari, 3787-son).</p>
+`);
+/* 4 technical */
+S.push(`${F("03 · texnik mentor (T1-T5)","Nima deyish va qaysi isbotni ko'rsatish")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("T1","<b>Slayd emas, qurilgan:</b> har bir tahririni sanasi bilan saqlaydigan qonun bazasi, qoidalar mexanizmi, iqtibos tekshiruvchisi, 5 ta vosita, ekspert ekrani va ko'rib chiqish ekrani. <b>Ko'rsating:</b> bitta qarorni jonli tekshiring; demo_check barcha oltin holatlardan o'tadi.")}
+  ${C("T2","<b>MVP:</b> audit bugun haqiqiy qarorlarda boshidan oxirigacha ishlaydi. Platforma jamoasi chat va dashboardni API sifatida ishga tushirilgan modelimizga ulaydi. Faqat lokal ishlayotgan qismlarni <b>ochiq ayting</b>.")}
+  ${C("T3","<b>Yangilik:</b> qarorlarni o'z sanasidagi qonun bo'yicha tekshiradigan o'zbek vositasi yo'q. O'z imtihonlarimiz (qiyin v2.1, SWE-bench uslubidagi audit, 30 % maxfiy savollar) va eng kuchli modellar bilan solishtiruv. <b>Ko'rsating:</b> natijalar slaydi.")}
+  ${C("T4","<b>Jamoa bilimi:</b> 3 jumlada tushuntiring: qonun maktabi (butun qonunni o'qiydi) -> amaliyot (vositalardan foydalanishni o'rganadi) -> qattiq hakam (+1 to'g'ri, -1,5 ishonch bilan xato, shuning uchun taxmin qilishni to'xtatadi).")}
+  ${C("T5","<b>Texnologiyalar:</b> Qwen 27B + LoRA trening, vLLM bilan ishga tushirish, SQLite FTS5 + bge-m3 embeddinglar + reranker, FastAPI, hammasi o'z GPU'larimizda. Mahsulotda ma'lumot hech qachon chet el bulutiga chiqmaydi.")}
+ </div>
+`);
+/* 5 business */
+S.push(`${F("04 · biznes mentor (B1-B5)","Kim to'laydi, nega va qanday o'sadi")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("B1","<b>Muammo:</b> 2024-yilda sud 933 ta qarorni bekor qildi, 2,5 yilda adliya taqdimnomalari bilan 10 250 ta. 2025: sudlar soliq organlarining 1 593 qaroridan 743 tasini, Kadastr agentligining 1 594 tasidan 449 tasini qonunga zid deb topdi: hokimlardan tashqarida ham xuddi shu muammo.")}
+  ${C("B2","<b>Model:</b> Adliya vazirligi / hududiy adliya: har bir hudud uchun yillik litsenziya. Hokimlik yuridik xizmati: har bir xodim uchun obuna (adliyaga yuborishdan oldin tekshiruv). Yuridik firmalar va biznes: monitoring obunasi. Fuqarolar: bepul.")}
+  ${C("B3","<b>Ustunlik:</b> LexAI savollarga javob beradi; biz hujjatni bandma-band, o'sha sanadagi qonun bo'yicha, tekshirilgan iqtiboslar bilan tekshiramiz. Vositalarimiz bilan bepul 27B model Opus 5.5 ga teng, shuning uchun chet el API'siga bog'liq emasmiz.")}
+  ${C("B4","<b>Pul:</b> 60 mln so'm rejasi (O'zbekistondagi GPU 18, yurist belgilashi 15, xavfsizlik 10, pilot 7, MChJ 4, zaxira 6). 1-tranzh: 60 kunda pilot, 300+ qaror, aniqlik >= 80 %. 2-tranzh: 1 000+ qaror, ko'rib chiqish vaqti -50 % (o'lchangan). <b>Qo'shiladi:</b> bitta GPU'da bitta auditning o'lchangan narxi.")}
+  ${C("B5","<b>O'sish:</b> hokimlar + Kengashlar (E-qaror 919 513 hujjat) -> vazirliklar (E-qaror-respublika 60 762 hujjat) -> soliq va kadastr qarorlari -> har bir hudud. Mexanizm bitta.")}
+ </div>
+`);
+/* 6 legal */
+S.push(`${F("05 · huquqiy mentor (S1-S5)","U qaysi qonunni qo'llaydi va nega xavfsiz")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:14px 26px">
+  ${C("S1","<b>Dolzarblik:</b> mahalliy normativ qaror faqat shunda haqiqiy: u qaror (farmoyish emas), E-qarorda ro'yxatdan o'tgan, adliyaning ijobiy xulosasi bor, kamida 15 kun jamoatchilik muhokamasidan o'tgan (NHH 24-modda), biznesga 3 oy beradi (40-modda), vakolat doirasida va orqaga qaytuvchi kuchga ega emas (41-modda).")}
+  ${C("S2","<b>Chuqurlik:</b> ierarxiya va ziddiyatlar (NHH 6, 18-moddalar: yuqori kuchdagisi ustun, keyingisi ustun, shubha shaxs foydasiga). Kim bekor qiladi: yuqori hokim, Kengash, prokuror protesti, adliya taqdimnomasi, sud (O'RQ-457).")}
+  ${C("S3","<b>Amaliyot:</b> natija 3333-son buyruqdagi Adliyaning o'z xulosa shaklida, 2-5 ish kunlik muddat ichida. Reja: pilotda 5 ta ko'rib chiqishni qo'lda va Mezon bilan vaqtini o'lchash.")}
+  ${C("S4","<b>Muvofiqlik:</b> har bir belgini inson hal qiladi (3787-son qoidalar); treningdan oldin fuqarolar ismi yashiriladi; mahsulot mahalliy serverlarda ishlaydi; hech qachon «noqonuniy» demaymiz, faqat «ehtimoliy buzilish, ekspert ko'rib chiqishi uchun».")}
+  ${C("S5","<b>Ta'sir:</b> kamchilikni imzodan oldin, har bir tumanda topadi; biznes va fuqarolar oddiy tushuntirish va to'g'ri kanalni (Biznes ombudsmani, adliya, sud) tayyor to'ldirilgan holda oladi.")}
+ </div>
+`);
+/* 7 proof */
+S.push(`${F("06 · bugun ko'rsata oladigan isbotlar","Faqat dastur chiqargan raqamlar")}
+ <div style="position:absolute;left:52px;right:52px;top:166px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+  <div class="kpi"><b>7 / 7</b><span>oltin demo holatlari va'da qilingan xulosani beradi (demo_check)</span></div>
+  <div class="kpi"><b>116 vs 115</b><span>118 tadan: bepul Qwen 27B + vositalarimiz va Claude Opus 5.5 + o'sha vositalar</span></div>
+  <div class="kpi"><b>166,705</b><span>bazamizdagi lex.uz hujjatlari, har bir tahriri bilan</span></div>
+  <div class="kpi"><b>462</b><span>qiyin imtihon savollari (138 tasi maxfiy), javoblar qonun matnidan olingan</span></div>
+  <div class="kpi"><b>174</b><span>SWE-bench uslubidagi audit vazifalari; bitta soxta iqtibos vazifani yiqitadi</span></div>
+  <div class="kpi"><b>26.5 % vs 19.0 %</b><span>yopiq kitob, bir xil 147 qiyin savol: Mezon-LM vs Opus 5.5 (+7,5 ball, p &lt; 0,05); bazaviy Qwen 14.3 %</span></div><div class="kpi" style="display:none"><b>1.01 -> 0.16</b><span>bugungi amaliyot treningida ko'rilmagan qonun darslaridagi model xatosi</span></div>
+ </div>
+ <p class="muted" style="position:absolute;left:52px;right:52px;top:420px;font-size:14.5px">Hali isbotlanmaganini ochiq ayting: "eng kuchli modellardan 20 % ustun" qiyin imtihondagi maqsadimiz; o'qitilgan modelning natijasi bugun chiqadi. Mentor "hali emas" deb to'g'ri aytgan jamoaga ishonadi.</p>
+`);
+/* 8 hard questions */
+const Q=[["Nega shunchaki ChatGPT yoki LexAI emas?","Ular savolga javob beradi; qaror sanasida qaysi tahrir amalda bo'lganini bilmaydi va iqtibos o'ylab topadi. Bizniki har bir iqtibosni lex.uz bilan tekshiradi."],
+["Bu yerda AI ishlatish qonuniymi?","Har bir belgini inson hal qiladi (Adliyaning 3787-son qoidalari); Mezon faqat xulosani oldindan to'ldiradi."],
+["Ma'lumot qayerdan?","Ochiq rasmiy manbalar: lex.uz, E-qaror, regulation.gov.uz, sud statistikasi."],
+["Agar xato qilsa-chi?","Avval aniqlik: haqiqiy modda va iqtibossiz belgi yo'q; aks holda «ekspert kerak». Ishonch bilan xato javob baholashimizda eng qimmat turadi."],
+["Grantdan keyin kim to'laydi?","E-qaror orqali har bir hudud uchun Adliya litsenziyasi; hokimlik va yuridik firmalar obunasi; fuqarolar bepul."],
+["Bozor qanchalik katta?","Faqat E-qarorda 919 513 qaror, yana 60 762 vazirlik hujjati; keyin soliq va kadastr."],
+["Nega aynan siz?","Qonun bazasini, mexanizmni va o'z modelimizni qurdik va ularni Opus bilan solishtirib o'lchadik."],
+["Sizga nima kerak?","Bitta hudud adliyasida 90 kunlik pilot, ma'lumotlarga kirish va tranzh moliyalashtirish."]];
+S.push(`${F("07 · qiyin savollar, qisqa javoblar","Bularni ovoz chiqarib mashq qiling")}
+ <div style="position:absolute;left:52px;right:52px;top:150px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+ ${Q.map(([q,a])=>`<div class="qa glass"><b>${q}</b><p>${a}</p></div>`).join("")}</div>
+`);
+/* 9 60 seconds */
+S.push(`${F("08 · 60 soniyalik variant","Mentor bir daqiqa bersa, shuni ayting")}
+ <div class="glass mint-card" style="position:absolute;left:52px;right:52px;top:166px;height:410px;padding:34px 40px">
+  <p style="font-size:21px;line-height:1.6">"2024-yilda sudlar 933 ta hokim qarorini qonunga zid deb bekor qildi, ular allaqachon kimgadir zarar yetkazgandan keyin. Adliya yuristida har bir loyihani qo'lda tekshirish uchun 2-5 kun bor.<br><br>
+  Mezon har bir mahalliy qarorni o'sha kundagi qonun bo'yicha tekshiradi: tartib uchun qoidalar mexanizmi, ochiq savollar uchun o'zimizning o'zbek huquqiy modelimiz va haqiqiy, amalda va so'zma-so'z bo'lmagan har qanday iqtibosni olib tashlaydigan tekshiruvchi.<br><br>
+  Vositalarimiz bilan bepul modelimiz Claude Opus 5.5 ga allaqachon teng. Har doim inson hal qiladi. Biz bitta hududda 90 kunlik pilot so'raymiz."</p>
+ </div>
+`);
+const stage=document.getElementById("stage");
+stage.innerHTML=S.map((s,i)=>`<section class="slide" id="s${i+1}" aria-label="Slide ${i+1} of ${S.length}">${s}</section>`).join("")+
+ `<nav class="dock glass" aria-label="Slides"><button id="prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="dots">${S.map((_,i)=>`<button aria-label="Slide ${i+1}"></button>`).join("")}</div><span class="count" id="count"></span>
+  <button id="next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></nav>`;
+let cur=-1;const SL=[...document.querySelectorAll(".slide")],DT=[...document.querySelectorAll(".dots button")];
+function go(i,quiet){i=Math.max(0,Math.min(SL.length-1,i));if(i===cur)return;
+ SL.forEach((s,k)=>{s.classList.toggle("on",k===i);s.classList.toggle("back",k<i)});DT.forEach((d,k)=>d.classList.toggle("on",k===i));
+ document.getElementById("count").textContent=`${i+1} / ${SL.length}`;cur=i;if(!quiet)try{history.replaceState(null,"","#s"+(i+1))}catch(e){}}
+document.getElementById("prev").onclick=()=>go(cur-1);document.getElementById("next").onclick=()=>go(cur+1);
+DT.forEach((d,k)=>d.onclick=()=>go(k));
+addEventListener("keydown",e=>{const k=e.key;if(k==="ArrowRight"||k==="PageDown"||k===" "){e.preventDefault();go(cur+1)}else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();go(cur-1)}else if(k==="Home")go(0);else if(k==="End")go(SL.length-1)});
+let wl=0;addEventListener("wheel",e=>{const t=Date.now(),d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(t-wl<750||Math.abs(d)<24)return;wl=t;go(cur+(d>0?1:-1))},{passive:true});
+let px=null,py=null;addEventListener("pointerdown",e=>{px=e.clientX;py=e.clientY});
+addEventListener("pointerup",e=>{if(px===null)return;const dx=e.clientX-px,dy=e.clientY-py;px=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))});
+function fromHash(){const m=/^#s(\d+)$/.exec(location.hash);go(m?+m[1]-1:0,true)}
+addEventListener("hashchange",fromHash);
+function fit(){const s=Math.min(innerWidth/1200,innerHeight/675);stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+addEventListener("resize",fit);fit();fromHash();
+</script>

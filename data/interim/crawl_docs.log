@@ -1,0 +1,33 @@
+'qarorini bekor qilish': total 142, got 142, local 97
+'farmoyishini bekor qilish': total 0, got 0, local 0
+'qarorlarini bekor qilish': total 142, got 142, local 97
+'bandini bekor qilish': total 5, got 5, local 1
+'qismini bekor qilish': total 1, got 1, local 1
+'oʻz kuchini yoʻqotgan deb hisoblash': total 568, got 568, local 7
+'qarorini oʻz kuchini yoʻqotgan': total 858, got 858, local 50
+'haqiqiy emas deb': total 11, got 11, local 0
+'taqdimnomasi': total 9, got 9, local 5
+'protesti': total 8, got 8, local 0
+'eskirgan va oʻz ahamiyatini yoʻqotgan': total 80, got 80, local 79
+'қарорини бекор қилиш': total 142, got 142, local 97
+'фармойишини бекор қилиш': total 0, got 0, local 0
+'қарорларини бекор қилиш': total 142, got 142, local 97
+unique local cancellation titles: 249
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\10_projects\mezon\research\lexuz_crawl.py", line 223, in <module>
+    (INTERIM / "cancel_docs.json").write_text(json.dumps(metas, ensure_ascii=False, indent=1), encoding="utf-8")
+    ^^^^^^
+  File "D:\10_projects\mezon\research\lexuz_crawl.py", line 212, in main
+    print(f"unique local cancellation titles: {len(rows)}", flush=True)
+                         ^^^^^^^^^^^^^^^^^^
+  File "D:\10_projects\mezon\research\lexuz_crawl.py", line 179, in fetch_doc
+    text = zip_text(doc_id, fid)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\10_projects\mezon\research\lexuz_crawl.py", line 154, in zip_text
+    target.write_bytes(z.read(name))
+  File "C:\Users\Murodjon\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1037, in write_bytes
+    return f.write(view)
+           ^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device

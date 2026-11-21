@@ -1,0 +1,165 @@
+{
+ "seconds": 687.6,
+ "documents_extracted": 1964,
+ "source_kinds": {
+  "html": 1230,
+  "pdf_text": 497,
+  "ocr": 208,
+  "html_fallback": 29
+ },
+ "levels": {
+  "national": 1014,
+  "local": 950
+ },
+ "act_types": {
+  "pq": 138,
+  "vmq": 324,
+  "law": 119,
+  "ministry_order": 91,
+  "other": 248,
+  "court": 17,
+  "code": 8,
+  "pf": 44,
+  "local_kengash_qaror": 392,
+  "local_hokim_qaror": 558,
+  "constitution": 2,
+  "chamber_resolution": 23
+ },
+ "status": {
+  "lost_force": 403,
+  "in_force": 1366,
+  "not_yet_in_force": 5,
+  "unknown": 190
+ },
+ "lang_script": {
+  "uz-Latn": 940,
+  "ru-Cyrl": 136,
+  "uz-Cyrl": 870,
+  "en-Latn": 17,
+  "unknown-Latn": 1
+ },
+ "meta_conflicts": 2,
+ "by_stratum": {
+  "edge": {
+   "docs": 164,
+   "kept_by_filters": 118,
+   "words_total": 12020391,
+   "words_median": 1899,
+   "words_mean": 73295,
+   "chars_median": 17416
+  },
+  "local_pdf": {
+   "docs": 700,
+   "kept_by_filters": 672,
+   "words_total": 452411,
+   "words_median": 278,
+   "words_mean": 646,
+   "chars_median": 2619
+  },
+  "national": {
+   "docs": 600,
+   "kept_by_filters": 594,
+   "words_total": 4001987,
+   "words_median": 2819,
+   "words_mean": 6670,
+   "chars_median": 24730
+  },
+  "ocr": {
+   "docs": 200,
+   "kept_by_filters": 89,
+   "words_total": 265485,
+   "words_median": 660,
+   "words_mean": 1327,
+   "chars_median": 6444
+  },
+  "ru_en": {
+   "docs": 100,
+   "kept_by_filters": 98,
+   "words_total": 68918,
+   "words_median": 112,
+   "words_mean": 689,
+   "chars_median": 810
+  },
+  "sensitive": {
+   "docs": 200,
+   "kept_by_filters": 196,
+   "words_total": 112454,
+   "words_median": 652,
+   "words_mean": 562,
+   "chars_median": 6163
+  }
+ },
+ "cpt_chunks_by_tier": {
+  "A": 4754,
+  "B": 3095,
+  "C": 790
+ },
+ "cpt_words_by_tier": {
+  "A": 3898880,
+  "B": 11210558,
+  "C": 371530
+ },
+ "amendment_docs": 6998,
+ "lesson_rows": 102927,
+ "pii_totals": {
+  "email": 109,
+  "account": 14,
+  "stir": 15,
+  "phone": 52,
+  "pinfl": 19,
+  "house": 10572,
+  "name_trigger": 38,
+  "name_initials": 189,
+  "name_rare_pair": 37,
+  "name_patronymic": 165,
+  "passport": 118,
+  "plate": 86
+ },
+ "docs_with_masks_by_level": {
+  "national": 51,
+  "local": 128
+ },
+ "leak_events": {
+  "unit_blocklist": 1126,
+  "seen_overlap": 492,
+  "unseen_ngram_removed": 222
+ },
+ "canary": {
+  "n": 20,
+  "failed": 0,
+  "passed": true,
+  "short_unseen_answers_not_coverable_by_13gram": 3,
+  "unseen_items": 167
+ },
+ "eval_flags": {
+  "none": 1898,
+  "bench_family": 46,
+  "golden": 8,
+  "cancelling_act": 4,
+  "time_cut": 8
+ },
+ "drops": {
+  "too_short": 26,
+  "script_impure": 56,
+  "held_out_golden": 4,
+  "held_out_cancelling_act": 2,
+  "repetition": 2,
+  "held_out_time_cut": 8,
+  "ocr_oov": 110,
+  "exact_duplicate": 20
+ },
+ "population_by_level_lang": {
+  "national": {
+   "ru": 45879,
+   "en": 8745,
+   "uz_cyrl": 38499,
+   "uz_latn": 38334
+  },
+  "local": {
+   "uz_cyrl": 17853,
+   "uz_latn": 17107,
+   "ru": 265
+  }
+ },
+ "output_hashes": "77cb6f92c11e191d79ecd740a9a0dc84c1c7d045"
+}

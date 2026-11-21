@@ -1,0 +1,400 @@
+decision_id,reg_number,role,label,check,severity,status,verdict,title,url
+draft:100205,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/100205
+draft:106281,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/106281
+draft:108818,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/108818
+draft:110854,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/110854
+draft:111275,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/111275
+draft:111775,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/111775
+draft:112209,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/112209
+draft:114304,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/114304
+draft:114829,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/114829
+draft:117978,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/117978
+draft:118016,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118016
+draft:118029,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118029
+draft:118086,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118086
+draft:118087,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118087
+draft:118110,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118110
+draft:118160,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118160
+draft:118198,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118198
+draft:118204,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118204
+draft:118221,,draft,none,R_business_3m,high,unclear_needs_expert,negative,A business burden takes effect in under 3 months,https://regulation.gov.uz/oz/d/118221
+draft:118221,,draft,none,R_draft_window,high,possible_violation,negative,The draft takes effect before its public discussion ends,https://regulation.gov.uz/oz/d/118221
+draft:118224,,draft,none,R_discussion_short,medium,unclear_needs_expert,positive_with_fixable_defects,Public discussion shorter than 15 days,https://regulation.gov.uz/oz/d/118224
+eq:0359410d8dc14676a90ba2e37fdac16b,VI-31-13-5-76-K/21,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/0359410d8dc14676a90ba2e37fdac16b
+eq:0359410d8dc14676a90ba2e37fdac16b,VI-31-13-5-76-K/21,adopted,POSITIVE,R_expertise,medium,unclear_needs_expert,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://e-qaror.gov.uz/doc/0359410d8dc14676a90ba2e37fdac16b
+eq:10cf325e9d9b41f19810574aefbba3bd,VI-68-28-11-163-K/23,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/10cf325e9d9b41f19810574aefbba3bd
+eq:60fa562738b74df4902330503f68cd2e,603-6-83-Q/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/60fa562738b74df4902330503f68cd2e
+eq:60fa562738b74df4902330503f68cd2e,603-6-83-Q/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://e-qaror.gov.uz/doc/60fa562738b74df4902330503f68cd2e
+eq:9628aada934647d8adb11ede624cd5d2,479-6-83-Q/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/9628aada934647d8adb11ede624cd5d2
+eq:9628aada934647d8adb11ede624cd5d2,479-6-83-Q/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://e-qaror.gov.uz/doc/9628aada934647d8adb11ede624cd5d2
+eq:9727f311a4b747a89691d5bfb1c33e68,VI-45-126-4-68-K/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/9727f311a4b747a89691d5bfb1c33e68
+eq:9727f311a4b747a89691d5bfb1c33e68,VI-45-126-4-68-K/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://e-qaror.gov.uz/doc/9727f311a4b747a89691d5bfb1c33e68
+eq:dfe8e159920548f49bcac112bf1a3d62,454-13-191-Q/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/dfe8e159920548f49bcac112bf1a3d62
+eq:dfe8e159920548f49bcac112bf1a3d62,454-13-191-Q/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://e-qaror.gov.uz/doc/dfe8e159920548f49bcac112bf1a3d62
+eq:e41f554c20df41bc9a07ee0af7051a93,VII-19-17-14-0-K/26,adopted,none,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/e41f554c20df41bc9a07ee0af7051a93
+eq:fe30fa66f6434142b48cfd1d3f7420e9,488-4-63-Q/21,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/doc/fe30fa66f6434142b48cfd1d3f7420e9
+eq:obs:VI-76-4-10-146-K/24,VI-76-4-10-146-K/24,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://e-qaror.gov.uz/search?decision_number=VI-76-4-10-146-K%2F24
+lex:5441188,27-141,cancelling,EXCLUDE,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/-5441188
+lex:5441188,27-141,cancelling,EXCLUDE,R_business_3m,high,unclear_needs_expert,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-5441188
+lex:5695543,362-4-61-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5695543
+lex:5808784,245-4-67-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5808784
+lex:5808787,140-4-209-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5808787
+lex:5808791,536-4-68-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5808791
+lex:5808808,628-4-66-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5808808
+lex:5809429,543-4-58-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5809429
+lex:5809454,490-4-63-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5809454
+lex:5809700,555-4-60-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5809700
+lex:5849609,VI-39-2-3-49-K/22,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5849609
+lex:5849609,VI-39-2-3-49-K/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://lex.uz/uz/docs/5849609
+lex:5849609,VI-39-2-3-49-K/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://lex.uz/uz/docs/5849609
+lex:5887103,79-5-73-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5887103
+lex:5890619,112-9-131-Q/21,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5890619
+lex:5895277,161-14-207-Q/21,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5895277
+lex:5897699,VI-40-46-4-56-K/21,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-5897699
+lex:5897699,VI-40-46-4-56-K/21,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://lex.uz/uz/docs/-5897699
+lex:5897699,VI-40-46-4-56-K/21,adopted,POSITIVE,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/-5897699
+lex:5897786,VI-49-101-7-103-K/21,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/5897786
+lex:5903720,VII-34-14-5-74-K/22,cancelling,REVIEW,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-5903720
+lex:5903727,VI-42-7-11-154-K/22,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5903727
+lex:5903727,VI-42-7-11-154-K/22,adopted,none,R_corruption_factor,medium,unclear_needs_expert,negative,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/5903727
+lex:5903816,VII-34-13-5-74-K/22,cancelling,REVIEW,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/-5903816
+lex:5906230,VI-79-54-12-174-K/22,adopted,POSITIVE,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/-5906230
+lex:5906230,VI-79-54-12-174-K/22,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,positive_with_fixable_defects,No public discussion recorded for a normative decision,https://lex.uz/uz/docs/-5906230
+lex:5906230,VI-79-54-12-174-K/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://lex.uz/uz/docs/-5906230
+lex:5907126,102-9-131-Q/21,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5907126
+lex:5908047,27-11-0-Q/22,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5908047
+lex:5911067,VI-48-131-7-100-K/21,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5911067
+lex:5934123,VI-79-62-12-174-K/22,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/5934123
+lex:5934123,VI-79-62-12-174-K/22,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VI-79-54-12-174-K/22, which is still in force",https://lex.uz/uz/docs/5934123
+lex:5979948,II-55-45-14-203-K/22,cancelling,REVIEW,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals II-50-57-14-203-K/21, which was already repealed",https://lex.uz/uz/docs/-5979948
+lex:5979948,II-55-45-14-203-K/22,cancelling,REVIEW,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals II-47-52-14-203-K/21, which was already repealed",https://lex.uz/uz/docs/-5979948
+lex:5986576,VI-58-78-7-103-K/22,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/5986576
+lex:6036241,201-11-0-Q/22,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6036241
+lex:6036926,170-4-61-Q/22,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6036926
+lex:6073646,241-11-0-Q/22,cancelling,REVIEW,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6073646
+lex:6095096,VI-61-69-4-66-K/22,adopted,POSITIVE,R_expertise,medium,possible_violation,positive_with_fixable_defects,No adliya legal expertise recorded for a normative decision,https://lex.uz/uz/docs/-6095096
+lex:6154803,308-4-56-Q/22,cancelling,EXCLUDE,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 206-4-56-Q/21, which was already repealed",https://lex.uz/uz/docs/-6154803
+lex:6276553,352-14-207-Q/22,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6276553
+lex:6305062,416-4-57-Q/22,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of 407-4-57-Q/22, which is still in force",https://lex.uz/uz/docs/-6305062
+lex:6313301,281-9-131-Q/22,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6313301
+lex:6348502,VI-45-1-3-43-K/23,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/6348502
+lex:6375684,II-71-14-14-205-K/23,cancelling,POSITIVE,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals II-49-2-14-205-K/22, which was already repealed",https://lex.uz/uz/docs/-6375684
+lex:6375766,II-71-15-14-205-K/23,cancelling,POSITIVE,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals II-49-4-14-205-K/22, which was already repealed",https://lex.uz/uz/docs/-6375766
+lex:6626817,222-10-136-Q/23,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6626817
+lex:6700455,231-14-207-Q/23,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6700455
+lex:6747423,3-14-0-Q/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6747423
+lex:6778367,VI-65-1-8-112-K/24,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/-6778367
+lex:6784040,VI-70-1-13-194-K/24,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/-6784040
+lex:6801207,99-14-0-Q/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6801207
+lex:6817275,40-9-131-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/6817275
+lex:6832596,VI-76-21-10-146-K/24,cancelling,POSITIVE,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/-6832596
+lex:6844886,93-8-119-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6844886
+lex:6856760,198-14-0-Q/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6856760
+lex:6866738,215-14-0-Q/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-6866738
+lex:6986157,231-4-59-Q/24,adopted,POSITIVE,R_discussion,medium,unclear_needs_expert,negative,No public discussion recorded for a normative decision,https://lex.uz/uz/docs/-6986157
+lex:6986157,231-4-59-Q/24,adopted,POSITIVE,R_expertise,medium,possible_violation,negative,No adliya legal expertise recorded for a normative decision,https://lex.uz/uz/docs/-6986157
+lex:6986157,231-4-59-Q/24,adopted,POSITIVE,R_duplicate,high,possible_violation,negative,"Near-copy of 207-4-59-Q/24, which is still in force",https://lex.uz/uz/docs/-6986157
+lex:6986157,231-4-59-Q/24,adopted,POSITIVE,R_double_repeal,medium,possible_violation,negative,"Repeals 161-4-59-Q/23, which was already repealed",https://lex.uz/uz/docs/-6986157
+lex:7033819,269-4-59-Q/24,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of 207-4-59-Q/24, which is still in force",https://lex.uz/uz/docs/-7033819
+lex:7033819,269-4-59-Q/24,adopted,none,R_double_repeal,medium,possible_violation,negative,"Repeals 161-4-59-Q/23, which was already repealed",https://lex.uz/uz/docs/-7033819
+lex:7041752,311-4-59-Q/24,adopted,none,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 161-4-59-Q/23, which was already repealed",https://lex.uz/uz/docs/-7041752
+lex:7127231,401-4-68-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7127231
+lex:7168716,461-4-59-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7168716
+lex:7173113,109-5-75-Q/24,adopted,POSITIVE,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7173113
+lex:7189019,402-8-121-Қ/24,adopted,none,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/-7189019
+lex:7189019,402-8-121-Қ/24,adopted,none,R_business_3m,high,unclear_needs_expert,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7189019
+lex:7189098,773-14-0-Қ/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7189098
+lex:7192263,367-11-169-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7192263
+lex:7239126,399-11-169-Q/24,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2024-11-26",https://lex.uz/uz/docs/-7239126
+lex:7249287,312-14-207-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7249287
+lex:7254947,514-4-68-Q/24,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2024-12-03",https://lex.uz/uz/docs/-7254947
+lex:7261546,918-14-0-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7261546
+lex:7282087,VII-4-024-14-0-K/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7282087
+lex:7282087,VII-4-024-14-0-K/24,adopted,none,R_corruption_factor,medium,unclear_needs_expert,negative,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/-7282087
+lex:7302240,VII-4-027-13-194-K/24,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7302240
+lex:7316654,552-4-68-Q/24,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7316654
+lex:7316654,552-4-68-Q/24,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2024-12-27",https://lex.uz/uz/docs/-7316654
+lex:7326620,VII-3-1-5-77-K/25,adopted,POSITIVE,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/-7326620
+lex:7354201,54-14-0-Q/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7354201
+lex:7354201,54-14-0-Q/25,adopted,none,R_basis,medium,possible_violation,negative,"Cites article 25 of lsp, which was not in force on 2025-01-30",https://lex.uz/uz/docs/-7354201
+lex:7374326,78-14-0-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-02-10",https://lex.uz/uz/docs/-7374326
+lex:7385356,101-14-0-Q/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/-7385356
+lex:7385356,101-14-0-Q/25,adopted,none,R_basis,medium,possible_violation,negative,"Cites article 25 of lsp, which was not in force on 2025-02-14",https://lex.uz/uz/docs/-7385356
+lex:7494887,266-8-0-Q/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7494887
+lex:7494887,266-8-0-Q/25,adopted,none,R_basis,medium,possible_violation,negative,"Cites article 25 of lsp, which was not in force on 2025-04-24",https://lex.uz/uz/docs/7494887
+lex:7507782,131-4-60-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/7507782
+lex:7512522,VII-6-29-6-219-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7512522
+lex:7531319,106-11-163-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-04-29",https://lex.uz/uz/docs/7531319
+lex:7534007,VII-14-48-12-175-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7534007
+lex:7538323,216-6-80-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-05-01",https://lex.uz/uz/docs/7538323
+lex:7545211,91-4-209-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-05-12",https://lex.uz/uz/docs/7545211
+lex:7545403,73-3-53-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-05-14",https://lex.uz/uz/docs/7545403
+lex:7545426,VII-8-107-1-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7545426
+lex:7545825,178-4-69-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-05-15",https://lex.uz/uz/docs/7545825
+lex:7545978,VII-9-69-8-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7545978
+lex:7546246,VII-12-59-2-33-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7546246
+lex:7546795,307-8-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7546795
+lex:7546851,VII-9-74-12-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7546851
+lex:7546970,VII-10-54-4-67-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7546970
+lex:7546995,VII-9-77-8-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7546995
+lex:7547360,VI-10-64-10-138-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-05-21",https://lex.uz/uz/docs/7547360
+lex:7549538,VII-7-62-5-72-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7549538
+lex:7549618,VII-13-70-10-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7549618
+lex:7550584,VII-8-77-4-63-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7550584
+lex:7550584,VII-8-77-4-63-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 144 of budgetcode, which was not in force on 2025-05-29",https://lex.uz/uz/docs/7550584
+lex:7569713,116-5-79-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-05",https://lex.uz/uz/docs/7569713
+lex:7569817,105-1-19-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-05",https://lex.uz/uz/docs/7569817
+lex:7571149,94-12-218-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7571149
+lex:7572410,263-12-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7572410
+lex:7572466,VII-13-61-2-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7572466
+lex:7572642,VII-8-64-1-17-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 146 of budgetcode, which was not in force on 2025-06-12",https://lex.uz/uz/docs/7572642
+lex:7572667,VII-8-53-11-163-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-12",https://lex.uz/uz/docs/7572667
+lex:7580224,181-4-60-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/7580224
+lex:7580224,181-4-60-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7580224
+lex:7586920,150-12-172-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-18",https://lex.uz/uz/docs/7586920
+lex:7597335,VII-13-78-10-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7597335
+lex:7597950,195-10-212-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7597950
+lex:7599638,121-3-47-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-23",https://lex.uz/uz/docs/7599638
+lex:7599692,VII-09-68-8-211-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7599692
+lex:7599692,VII-09-68-8-211-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7599692
+lex:7601225,241-4-64-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-24",https://lex.uz/uz/docs/7601225
+lex:7601245,142-11-153-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-25",https://lex.uz/uz/docs/7601245
+lex:7603414,218-11-161-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-06-26",https://lex.uz/uz/docs/7603414
+lex:7603506,VII-16-107-9-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7603506
+lex:7612050,219-11-161-Q/25,adopted,none,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 82-11-161-Q/24, which was already repealed",https://lex.uz/uz/docs/7612050
+lex:7614566,VII-7-68-1-16-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 146 of budgetcode, which was not in force on 2025-07-01",https://lex.uz/uz/docs/7614566
+lex:7614756,143-3-52-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-01",https://lex.uz/uz/docs/7614756
+lex:7615200,253-8-111-Q/25,adopted,none,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/7615200
+lex:7615200,253-8-111-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7615200
+lex:7615200,253-8-111-Q/25,adopted,none,R_basis,medium,possible_violation,negative,"Cites article 25 of lsp, which was not in force on 2025-06-12",https://lex.uz/uz/docs/7615200
+lex:7617374,VII-9-85-10-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7617374
+lex:7617740,257-10-212-Q/25,adopted,none,R_competence_land,medium,unclear_needs_expert,positive_with_fixable_defects,A district or city hokim allocates or grants land after 01.08.2021,https://lex.uz/uz/docs/7617740
+lex:7617958,264-9-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7617958
+lex:7621919,VII-13-113-4-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7621919
+lex:7623315,165-5-71-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-09",https://lex.uz/uz/docs/7623315
+lex:7637422,VII-11-102-8-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7637422
+lex:7637605,161-9-123-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-14",https://lex.uz/uz/docs/7637605
+lex:7638204,170-12-178-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-16",https://lex.uz/uz/docs/7638204
+lex:7642899,203-4-58-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-19",https://lex.uz/uz/docs/7642899
+lex:7643700,VII-15-72-2-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7643700
+lex:7645140,VII-10-65-2-36-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7645140
+lex:7645229,174-10-138-Q/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of 113-10-138-Q/25, which is still in force",https://lex.uz/uz/docs/7645229
+lex:7645229,174-10-138-Q/25,adopted,none,R_double_repeal,medium,possible_violation,negative,"Repeals 201-10-138-Q/23, which was already repealed",https://lex.uz/uz/docs/7645229
+lex:7646957,173-11-163-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-25",https://lex.uz/uz/docs/7646957
+lex:7648233,116-1-17-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-26",https://lex.uz/uz/docs/7648233
+lex:7653031,VII-11-103-12-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7653031
+lex:7671675,282-4-64-Q/25,adopted,none,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 226-4-64-Q/24, which was already repealed",https://lex.uz/uz/docs/7671675
+lex:7671675,282-4-64-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-04",https://lex.uz/uz/docs/7671675
+lex:7682855,VII-8-89-8-116-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7682855
+lex:7683183,225-4-58-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-11",https://lex.uz/uz/docs/7683183
+lex:7695770,213-4-61-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-15",https://lex.uz/uz/docs/7695770
+lex:7696206,VII-9-105-4-63-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7696206
+lex:7696206,VII-9-105-4-63-K/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 144 of budgetcode, which was not in force on 2025-08-20",https://lex.uz/uz/docs/7696206
+lex:7701467,140-3-50-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-25",https://lex.uz/uz/docs/7701467
+lex:7711586,234-11-156-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/7711586
+lex:7711586,234-11-156-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7711586
+lex:7711680,224-1-15-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-28",https://lex.uz/uz/docs/7711680
+lex:7712241,VII-14-110-2-37-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7712241
+lex:7713813,223-1-29-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-08-29",https://lex.uz/uz/docs/7713813
+lex:7716282,198-8-118-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-09-03",https://lex.uz/uz/docs/7716282
+lex:7718579,236-7-101-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-09-04",https://lex.uz/uz/docs/7718579
+lex:7726024,VII-12-102-8-211-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7726024
+lex:7726024,VII-12-102-8-211-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7726024
+lex:7727888,205-7-99-Q/25,adopted,none,R_competence_land,high,possible_violation,negative,A district or city hokim revokes land rights after 01.08.2021,https://lex.uz/uz/docs/7727888
+lex:7731083,VII-13-128-11-0-K/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7731083
+lex:7733329,VII-13-129-11-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7733329
+lex:7735318,256-9-125-Q/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of 241-9-125-Q/25, which is still in force",https://lex.uz/uz/docs/7735318
+lex:7736167,VII-15-133-12-179-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7736167
+lex:7742065,VII-17-91-2-0-K/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7742065
+lex:7743281,266-11-161-Q/25,adopted,none,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 82-11-161-Q/24, which was already repealed",https://lex.uz/uz/docs/7743281
+lex:7743281,266-11-161-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-07-31",https://lex.uz/uz/docs/7743281
+lex:7744567,VII-15-94-2-39-K/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VII-12-65-2-39-K/25, which is still in force",https://lex.uz/uz/docs/7744567
+lex:7744590,VII-17-109-5-0-K/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7744590
+lex:7744617,VII-17-108-5-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7744617
+lex:7744660,225-3-43-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-09-25",https://lex.uz/uz/docs/7744660
+lex:7753239,332-4-64-Q/25,adopted,none,R_double_repeal,medium,possible_violation,positive_with_fixable_defects,"Repeals 226-4-64-Q/24, which was already repealed",https://lex.uz/uz/docs/7753239
+lex:7753239,332-4-64-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-09-30",https://lex.uz/uz/docs/7753239
+lex:7753305,265-4-60-Q/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7753305
+lex:7761547,132-1-24-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7761547
+lex:7761673,256-11-156-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-07",https://lex.uz/uz/docs/7761673
+lex:7763932,253-1-29-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-09",https://lex.uz/uz/docs/7763932
+lex:7763961,252-1-29-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-09",https://lex.uz/uz/docs/7763961
+lex:7763996,251-1-29-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-09",https://lex.uz/uz/docs/7763996
+lex:7764031,250-1-29-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-09",https://lex.uz/uz/docs/7764031
+lex:7764066,VII-21-174-9-0-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 18: to'lovlar miqdorlarining noaniqligi,https://lex.uz/uz/docs/7764066
+lex:7764135,223-8-117-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-10",https://lex.uz/uz/docs/7764135
+lex:7764160,VII-14-81-7-106-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7764160
+lex:7773670,VII-14-94-11-159-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7773670
+lex:7773714,VII-14-93-11-159-K/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VII-10-62-11-159-K/25, which is still in force",https://lex.uz/uz/docs/7773714
+lex:7773852,307-11-152-Q/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of 285-11-152-Q/25, which is still in force",https://lex.uz/uz/docs/7773852
+lex:7774947,308-3-48-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7774947
+lex:7775096,VII-17-91-7-97-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7775096
+lex:7775307,VII-15-124-2-40-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7775307
+lex:7775397,313-12-171-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7775397
+lex:7775987,VII-13-125-8-108-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7775987
+lex:7776082,VII-22-110-10-133-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7776082
+lex:7792694,VII-8-96-1-23-K/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VII-5-48-1-23-K/25, which is still in force",https://lex.uz/uz/docs/7792694
+lex:7793532,175-13-194-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7793532
+lex:7793563,141-5-75-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7793563
+lex:7793838,III-19-150-14-205-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7793838
+lex:7793936,183-12-217-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7793936
+lex:7795952,VII-14-150-7-95-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7795952
+lex:7802619,III-22-121-14-203-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7802619
+lex:7802730,VII-16-172-14-0-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/7802730
+lex:7804738,VII-18-116-7-92-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7804738
+lex:7804857,VII-16-159-3-52-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7804857
+lex:7804964,VII-15-97-8-110-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7804964
+lex:7805007,VII-16-145-8-119-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805007
+lex:7805155,VII-12-93-11-166-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805155
+lex:7805263,VII-14-117-7-99-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805263
+lex:7805749,VII-116-113-7-101-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805749
+lex:7805874,VII-14-127-9-126-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805874
+lex:7805985,221-4-209-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7805985
+lex:7806057,VII-12-89-11-164-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7806057
+lex:7806194,VI-15-135-9-129-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7806194
+lex:7806357,294-4-58-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7806357
+lex:7806826,343-4-68-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-28",https://lex.uz/uz/docs/7806826
+lex:7807345,488-6-88-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7807345
+lex:7807359,202-8-113-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7807359
+lex:7807581,VII-14-123-4-57-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7807581
+lex:7807667,261-5-78-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7807667
+lex:7807936,181-5-79-Q/25,adopted,none,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/7807936
+lex:7807936,181-5-79-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7807936
+lex:7807978,VII-12-100-11-157-K/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VII-7-51-11-157-K/25, which is still in force",https://lex.uz/uz/docs/7807978
+lex:7808024,VII-12-99-11-157-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7808024
+lex:7808082,264-12-173-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7808082
+lex:7808123,706-6-90-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7808123
+lex:7808337,VII-13-127-3-54-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7808337
+lex:7808748,264-5-74-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7808748
+lex:7809156,VII-13-91-2-36-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7809156
+lex:7809462,VII-16-171-13-191-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7809462
+lex:7809803,209-10-196-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7809803
+lex:7809960,VII-18-118-7-105-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7809960
+lex:7810045,VII-14-141-9-131-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7810045
+lex:7810593,254-1-15-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7810593
+lex:7810852,247-4-224-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7810852
+lex:7810852,247-4-224-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-30",https://lex.uz/uz/docs/7810852
+lex:7811099,VII-16-115-13-190-K/25,adopted,none,R_duplicate,high,possible_violation,negative,"Near-copy of VII-13-92-13-190-K/25, which is still in force",https://lex.uz/uz/docs/7811099
+lex:7811265,VII-14-92-13-181-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7811265
+lex:7812993,312-11-165-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7812993
+lex:7813834,243-10-135-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7813834
+lex:7813879,VII-15-146-6-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7813879
+lex:7813907,VII-13-137-3-48-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7813907
+lex:7813981,228-11-163-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7813981
+lex:7814277,244-4-63-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7814277
+lex:7814327,429-1-26-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7814327
+lex:7814493,247-10-133-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7814493
+lex:7814493,247-10-133-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-10-30",https://lex.uz/uz/docs/7814493
+lex:7814605,293-2-34-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7814605
+lex:7814979,228-7-102-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7814979
+lex:7815054,VII-20-110-7-93-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815054
+lex:7815089,271-5-71-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815089
+lex:7815134,301-12-179-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815134
+lex:7815240,526-10-141-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815240
+lex:7815282,VII-17-141-9-125-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815282
+lex:7815917,VII-12-72-11-167-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7815917
+lex:7816389,VII-16-134-7-104-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7816389
+lex:7816459,108-5-210-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7816459
+lex:7816569,232-10-149-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7816569
+lex:7816579,237-8-118-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7816579
+lex:7816821,VII-15-127-7-96-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7816821
+lex:7817179,267-4-66-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7817179
+lex:7817681,333-4-62-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7817681
+lex:7817723,345-4-68-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7817723
+lex:7852914,VII-12-150-3-44-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7852914
+lex:7852927,VII-13-165-3-45-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7852927
+lex:7856942,255-8-117-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-11-14",https://lex.uz/uz/docs/7856942
+lex:7861661,VII-15-106-3-53-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7861661
+lex:7862176,VII-10-135-3-47-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7862176
+lex:7897322,316-2-36-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7897322
+lex:7897401,294-2-36-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7897401
+lex:7897583,311-2-38-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7897583
+lex:7897632,VII-14-100-2-36-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7897632
+lex:7953879,616-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7953879
+lex:7959848,353-8-119-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7959848
+lex:7963877,374-8-108-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7963877
+lex:7963939,VII-15-107-5-77-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/7963939
+lex:7963969,517-6-82-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7963969
+lex:7964014,VII-15-129-3-51-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7964014
+lex:7967155,615-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967155
+lex:7967187,613-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967187
+lex:7967232,612-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967232
+lex:7967404,619-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967404
+lex:7967446,618-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967446
+lex:7967497,617-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7967497
+lex:7970323,325-4-58-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-12-05",https://lex.uz/uz/docs/7970323
+lex:7970640,VII-17-173-6-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7970640
+lex:7971356,609-2-0-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-12-12",https://lex.uz/uz/docs/7971356
+lex:7971464,VII-12-66-6-219-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7971464
+lex:7973854,683-8-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7973854
+lex:7973905,198-5-70-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7973905
+lex:7974369,444-6-86-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7974369
+lex:7974444,509-6-80-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7974444
+lex:7974566,VII-16-135-8-109-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7974566
+lex:7975821,VII-19-174-6-90-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7975821
+lex:7975841,VII-14-91-6-91-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7975841
+lex:7975907,VII-14-133-6-80-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7975907
+lex:7975941,VII-17-172-6-0-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7975941
+lex:7976280,VII-16-128-6-83-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7976280
+lex:7976349,VII-14-150-6-88-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7976349
+lex:7976393,VII-14-76-6-219-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7976393
+lex:7978694,611-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978694
+lex:7978721,610-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978721
+lex:7978748,602-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978748
+lex:7978775,609-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978775
+lex:7978819,608-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978819
+lex:7978846,604-4-0-Q/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7978846
+lex:7980899,VII-20-116-7-107-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7980899
+lex:7981329,355-4-68-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-11-13",https://lex.uz/uz/docs/7981329
+lex:7981499,VII-13-122-8-116-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7981499
+lex:7982969,VII-14-104-6-87-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7982969
+lex:7983650,VII-14-85-6-91-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7983650
+lex:7983908,VII-17-165-6-0-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/7983908
+lex:7990209,VII-16-153-12-0-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/7990209
+lex:7990516,VII-21-146-2-33-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7990516
+lex:7991429,VII-14-161-8-112-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/7991429
+lex:8003024,VII-15-1-8-112-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8003024
+lex:8003048,VII-15-2-8-112-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8003048
+lex:8003099,VII-14-4-8-112-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8003099
+lex:8007811,VII-21-1-12-179-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8007811
+lex:8007948,VII-15-7-8-108-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8007948
+lex:8007977,VII-15-8-8-108-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8007977
+lex:8008015,III-23-1-14-205-K/26,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8008015
+lex:8008054,VII-17-125-12-173-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8008054
+lex:8008143,II-24-142-14-220-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8008143
+lex:8021981,19-2-35-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-01-16",https://lex.uz/uz/docs/8021981
+lex:8022015,III-17-96-14-201-K/25,adopted,none,R_tax_timing,medium,unclear_needs_expert,positive_with_fixable_defects,A tax-rate change takes effect before the first day of the next month,https://lex.uz/uz/docs/8022015
+lex:8022518,22-3-48-Q/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8022518
+lex:8029716,VII-18-127-13-194-K/25,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8029716
+lex:8111104,VII-25-41-12-179-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8111104
+lex:8138925,191-8-0-Q/26,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8138925
+lex:8138951,VII-25-23-10-140-K/26,adopted,none,R_retroactive,high,possible_violation,negative,A burden takes effect before the decision was adopted,https://lex.uz/uz/docs/8138951
+lex:8138951,VII-25-23-10-140-K/26,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8138951
+lex:8144151,VII-27-97-3-0-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8144151
+lex:8144239,85-8-108-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-04-08",https://lex.uz/uz/docs/8144239
+lex:8144298,74-8-211-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-04-06",https://lex.uz/uz/docs/8144298
+lex:8144776,VII-19-67-3-55-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8144776
+lex:8144776,VII-19-67-3-55-K/26,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 24: tadbirlarni amalga oshirish usullarining murakkabligi va ularni moliyalashtirish manbalarining noaniqligi,https://lex.uz/uz/docs/8144776
+lex:8144805,94-3-0-Q/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8144805
+lex:8158839,64-3-49-Q/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8158839
+lex:8162477,126-8-117-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-04-15",https://lex.uz/uz/docs/8162477
+lex:8162819,103-8-112-Q/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8162819
+lex:8177115,VII-25-31-2-35-K/26,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8177115
+lex:8177194,VII-26-41-2-35-K/26,adopted,none,R_business_3m,high,possible_violation,negative,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8177194
+lex:8188113,137-2-38-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-05-01",https://lex.uz/uz/docs/8188113
+lex:8213072,III-20-140-14-197-K/25,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8213072
+lex:8213072,III-20-140-14-197-K/25,adopted,none,R_corruption_factor,medium,unclear_needs_expert,positive_with_fixable_defects,Possible corruption-inducing factor 4: diskretsion vakolatlarning kengligi,https://lex.uz/uz/docs/8213072
+lex:8231842,135-8-121-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-05-08",https://lex.uz/uz/docs/8231842
+lex:8243640,160-3-52-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-05-06",https://lex.uz/uz/docs/8243640
+lex:8243690,VII-29-144-3-0-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8243690
+lex:8343717,288-10-136-Q/25,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2025-11-01",https://lex.uz/uz/docs/8343717
+lex:8457833,VII-24-101-8-0-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8457833
+lex:8457867,167-8-112-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-05-22",https://lex.uz/uz/docs/8457867
+lex:8458021,203-8-112-Q/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8458021
+lex:8498636,253-12-177-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-06-09",https://lex.uz/uz/docs/8498636
+lex:8519448,VII-24-68-8-111-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8519448
+lex:8563128,65-1-28-Q/26,adopted,none,R_basis,medium,possible_violation,positive_with_fixable_defects,"Cites article 25 of lsp, which was not in force on 2026-02-24",https://lex.uz/uz/docs/8563128
+lex:8563214,VII-21-58-8-114-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8563214
+lex:8573909,VII-26-80-8-211-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8573909
+lex:8589325,VII-45-110-12-175-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8589325
+lex:8589652,VII-33-90-2-35-K/26,adopted,none,R_business_3m,high,unclear_needs_expert,positive_with_fixable_defects,A business burden takes effect in under 3 months,https://lex.uz/uz/docs/8589652

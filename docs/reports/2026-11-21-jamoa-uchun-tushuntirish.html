@@ -1,0 +1,249 @@
+<title>Mezon jamoa uchun tushuntirish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap">
+<style>
+/* Layout: same 1200x675 slide stage as the app deck. Eye Run look: pale page, soft mint + blue light, white glass, mint mono numbers */
+@font-face{font-family:"Departure Mono";src:url("fonts/DepartureMono.woff2") format("woff2");font-display:swap}
+:root{
+  --page:#F2F4F8; --ink:#0F1630; --ink-2:#4B5470; --ink-3:#8A92AA; --line:#E6E9F1;
+  --mint:#1C7E69; --mint-s:rgba(28,126,105,.10);
+  --amber:#B45309; --amber-s:rgba(180,83,9,.10);
+  --blue:#2563EB; --blue-s:rgba(37,99,235,.09);
+  --violet:#7C3AED; --violet-s:rgba(124,58,237,.09);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Departure Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --r:28px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;overflow:hidden;color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1100px 620px at 12% -8%,#D9F0E6 0%,transparent 62%),radial-gradient(900px 560px at 92% 2%,#DDE6FB 0%,transparent 58%),radial-gradient(800px 500px at 60% 115%,#E1F2EC 0%,transparent 60%),var(--page)}
+.stage{position:fixed;left:50%;top:50%;width:1200px;height:675px;transform-origin:center}
+.glass{position:relative;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 1px 1px rgba(15,22,48,.04),0 10px 28px -14px rgba(15,22,48,.22),inset 0 1px 0 rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(22px) saturate(1.35);backdrop-filter:blur(22px) saturate(1.35);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 42%)}
+.glass>*{position:relative}
+.mint-card{background:linear-gradient(150deg,#1C7E69 0%,#23A06C 100%);border-color:rgba(255,255,255,.35);color:#fff;box-shadow:0 18px 36px -16px rgba(28,126,105,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.mint-card::before{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 45%)}
+.slide{position:absolute;inset:0;padding:40px 52px 96px;opacity:0;visibility:hidden;transform:translateX(18px);transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1),visibility 0s .4s}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .4s ease,transform .45s cubic-bezier(.23,1,.32,1)}
+.slide.back{transform:translateX(-18px)}
+@media (prefers-reduced-motion:reduce){.slide,.slide.on{transition:opacity .15s;transform:none}}
+.eyebrow{font:400 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0}
+h1,h2,h3{font-family:var(--sans);margin:0;text-wrap:balance}
+h1{font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-.03em}
+h2{font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.025em}
+h3{font-weight:800;font-size:21px;line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+.muted{color:var(--ink-2)}
+.big{font:400 84px/.9 var(--mono);letter-spacing:-.045em;color:var(--mint)}
+.kpi{border-radius:18px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 22px -16px rgba(15,22,48,.3),inset 0 1px 0 rgba(255,255,255,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:16px 18px}
+.kpi b{display:block;font:400 30px/1 var(--mono);letter-spacing:-.03em}
+.kpi span{display:block;font:400 11.5px/1.4 var(--mono);color:var(--ink-2);margin-top:8px}
+.kpi.warn b{color:var(--amber)}
+.chip{display:inline-flex;align-items:center;gap:7px;font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:var(--s-soft,var(--mint-s));color:var(--s,var(--mint));white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s,var(--mint))}
+.c-amber{--s:var(--amber);--s-soft:var(--amber-s)}.c-blue{--s:var(--blue);--s-soft:var(--blue-s)}.c-violet{--s:var(--violet);--s-soft:var(--violet-s)}
+.lab{font:400 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ul li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.45}
+.ul li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.ul.amber li::before{background:var(--amber)}
+.raw{font:400 12.5px/1.55 var(--mono);background:rgba(15,22,48,.045);border-radius:14px;padding:14px 16px;color:var(--ink);white-space:pre;overflow:hidden}
+.raw .hl{color:var(--amber)}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:absolute;left:52px;right:52px;top:186px;height:400px}
+.find>.glass{padding:24px 26px;display:grid;align-content:start;gap:12px}
+.dock{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:7px 9px;border-radius:999px;z-index:5}
+.dock button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.dock button:hover{background:rgba(15,22,48,.05)}
+.dots{display:flex;gap:6px;align-items:center}
+.dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:99px;background:rgba(15,22,48,.16);transition:width .3s cubic-bezier(.23,1,.32,1),background .3s}
+.dots button.on{width:22px;background:var(--mint)}
+.count{font:400 12px/1 var(--mono);color:var(--ink-2);min-width:50px;text-align:center}
+button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+.bar{height:16px;border-radius:7px;background:rgba(15,22,48,.06);position:relative;overflow:hidden;box-shadow:inset 0 1px 2px rgba(15,22,48,.07)}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.bar i.now{background:var(--amber)}
+.bar i.goal{background:rgba(28,126,105,.22);border:1.5px dashed rgba(28,126,105,.6);box-shadow:none}
+.idea{padding:12px 14px;border-radius:18px;display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.idea b{font:400 13px/1.3 var(--mono);color:var(--mint)}
+.idea h4{margin:0;font-weight:600;font-size:14.5px;line-height:1.3}
+.idea p{font-size:12.5px;line-height:1.4;color:var(--ink-2);margin-top:3px}
+.node{position:absolute;padding:12px 14px;border-radius:18px;text-align:center}
+.node h4{margin:0;font-weight:800;font-size:15px}
+.node p{font:400 10.5px/1.4 var(--mono);color:var(--ink-2);margin-top:4px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:6px 9px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.35;vertical-align:top}
+th{font:400 10.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+td b{font-weight:600}
+</style>
+
+<main class="stage" id="stage" aria-roledescription="slide deck"></main>
+
+<script>
+const S=[];
+const F=(n,t)=>`<p class="eyebrow">${n}</p><h2 style="margin-top:12px">${t}</h2>`;
+const T=(eb,title,analogy,pic,big,bigT,tag)=>`${F(eb,title)}
+ <div style="position:absolute;left:52px;right:52px;top:172px;height:416px;display:grid;grid-template-columns:318px 1fr 252px;gap:14px">
+  <div class="glass" style="padding:22px"><p class="lab">oddiy o'xshatish</p><p style="font-size:17px;line-height:1.5">${analogy}</p></div>
+  <div class="glass" style="padding:20px 22px;display:grid;align-content:center">${pic}</div>
+  <div class="glass mint-card" style="padding:22px;display:grid;align-content:center;gap:10px"><p style="font:400 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85">${tag||"bizning loyihadan"}</p><b style="font:400 34px/1.05 var(--mono);letter-spacing:-.04em">${big}</b><p style="font-size:14px;line-height:1.45;opacity:.95">${bigT}</p></div>
+ </div>`;
+const box=(t,s,x="")=>`<div class="glass" style="border-radius:16px;padding:10px 14px;text-align:center;${x}"><b style="font-size:15px">${t}</b>${s?`<p style="font:400 10.5px/1.4 var(--mono);color:var(--ink-2);margin-top:3px">${s}</p>`:""}</div>`;
+const arr=`<span style="font:400 22px/1 var(--mono);color:var(--mint);align-self:center;text-align:center">&rarr;</span>`;
+const chip=(t,c="")=>`<span class="chip ${c}">${t}</span>`;
+
+/* 1 */
+S.push(`
+ <div style="position:absolute;left:56px;top:56px;width:640px;display:grid;gap:20px">
+  <p class="eyebrow">Mezon-LM · jamoa uchun tushuntirish · 21-noyabr 2026</p>
+  <h1>Mezon hokim va Kengash qarorlarini qonunga solishtiradi va shubhali joyni mutaxassisga ko'rsatadi.</h1>
+  <p class="muted" style="font-size:16.5px;max-width:50ch">Bu to'plam sun'iy intellektni bilmaydiganlar uchun: har slaydda bitta fikr, bitta o'xshatish, bitta rasm va loyihamizdan bitta haqiqiy raqam. Natijalar &laquo;natija&raquo;, rejalar &laquo;maqsad&raquo; deb belgilangan.</p>
+ </div>
+ <div style="position:absolute;left:730px;top:56px;width:418px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+  <div class="kpi"><b>166 705</b><span>lex.uz dagi hujjat, hammasi yuklangan</span></div>
+  <div class="kpi"><b>919 513</b><span>E-qaror hujjati topilgan</span></div>
+  <div class="kpi"><b>462</b><span>qiyin imtihon savoli (138 tasi maxfiy)</span></div>
+  <div class="kpi"><b>13</b><span>slayd, oxirida lug'at</span></div>
+ </div>
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:408px;height:176px;padding:16px 26px">
+  <p class="lab">Mezon qanday ishlaydi, bir qatorda</p>
+  <div style="display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr;gap:6px;margin-top:10px">
+   ${box("Hokim qarori","E-qaror dan keladi")}${arr}${box("Mezon","qonun bilan solishtiradi")}${arr}${box("Dalil","qonun + modda + iqtibos","border:1.5px solid rgba(28,126,105,.5)")}${arr}${box("Yurist","qaror qiladi: inson")}
+  </div>
+  <p class="muted" style="font-size:14px;margin-top:14px;max-width:100ch">Mezon &laquo;noqonuniy&raquo; demaydi. U &laquo;ehtimoliy buzilish: mutaxassis ko'rsin&raquo; deydi va har gapini lex.uz dagi moddaga bog'laydi. Dalil topilmasa, &laquo;noaniq&raquo; deb halol aytadi.</p>
+ </div>
+`);
+/* 2 */
+S.push(T("01 · til modeli nima","Til modeli: keyingi so'zni taxmin qiladigan mashina",
+ "Telefondagi klaviaturani bilasiz: &laquo;Salom, qa&hellip;&raquo; deb yozsangiz, &laquo;qalaysiz&raquo; deb taklif qiladi. Til modeli xuddi shu, faqat butun internet va kitoblarni o'qib, juda kuchli bo'lgan.<br><br>U so'zni emas, <b>token</b> deb ataladigan bo'laklarni ko'radi.",
+ `<p class="lab">token = so'z bo'lagi</p>
+  <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">${["Qonun","hujjat","lari","ning","mo","dda","si"].map(x=>`<span style="font:400 15px/1 var(--mono);padding:9px 11px;border-radius:10px;background:var(--mint-s);color:var(--mint)">${x}</span>`).join("")}</div>
+  <p class="muted" style="font-size:13px;margin:6px 0 16px">O'zbekcha so'z uzun, shuning uchun ko'p bo'lakka bo'linadi (bo'linish misol uchun).</p>
+  <p class="lab">keyingi token qaysi? (taxmin ishonchi)</p>
+  <div style="display:grid;gap:9px">
+  ${[["Soliq hisoboti muddati ... oyning",88,"mint"],["... yilning",42,"amber"],["... banan",4,"amber"]].map(([n,w,c])=>`<div style="display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center"><span style="font-size:14px">${n}</span><span class="bar"><i style="width:${w}%;background:var(--${c})"></i></span></div>`).join("")}</div>
+  <p class="muted" style="font-size:12.5px;margin-top:8px">Chiziq uzunligi faqat rasm uchun, o'lchangan son emas.</p>`,
+ "&asymp; 4","token: o'zbekcha bitta so'z taxminan shuncha bo'lakka bo'linadi. Shuning uchun o'zbekcha matn qimmatroq va sekinroq."));
+/* 3 */
+const dots=Array.from({length:180},(_,i)=>`<i style="width:9px;height:9px;border-radius:50%;background:${i%7===0?"var(--mint)":"rgba(15,22,48,.14)"}"></i>`).join("");
+S.push(T("02 · Qwen 27B nima","Qwen 27B: 27 milliard tugmachali ochiq model",
+ "Radio qabul qilgichni tasavvur qiling: ichida 27 milliard burama tugmacha bor. Har biri bir oz burilgan, hammasi birga &laquo;til bilish&raquo; ni beradi.<br><br>Bu tugmachalar <b>parametr</b> deyiladi. Ko'p tugmacha, odatda, ko'p bilim, lekin ko'p xotira ham.",
+ `<p class="lab">har nuqta bitta tugmacha (rasmda 180 ta, haqiqatda 27 000 000 000)</p>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;max-width:520px">${dots}</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:20px">
+   ${box("Bepul","litsenziya narxi yo'q")}${box("O'z serverimizda","matn tashqariga chiqmaydi")}${box("O'zgartirsa bo'ladi","uni o'qitamiz")}</div>`,
+ "27 mlrd","parametr. Qonun matnlari bulutdagi tashqi AI ga yuborilmaydi: hammasi o'z mashinalarimizda."));
+/* 4 */
+S.push(T("03 · trening nima","Trening: xato, tuzatish, takror",
+ "Maktabda diktant yozasiz. Ustoz xatoni qizil qalamda belgilaydi, siz tuzatasiz va yana yozasiz. Model ham shunday: u taxmin qiladi, xatosi o'lchanadi, tugmachalar ozgina buriladi.<br><br>Xato o'lchovi &laquo;<b>loss</b>&raquo; deyiladi. Kichik loss: kam xato.",
+ `<div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:4px;align-items:center">${box("Taxmin","model javob beradi")}${arr}${box("Xato","loss o'lchanadi")}${arr}${box("Tuzatish","tugmachalar buriladi")}${arr}${box("Takror","yana va yana")}</div>
+  <p class="lab" style="margin-top:22px">loss: boshida (amber) va oxirida (yashil), natija</p>
+  ${[["Qonun darslari: matnni o'qish xatosi",0.887,0.273],["Bugungi amaliyot",1.01,0.16]].map(([n,a,b])=>`<div style="margin-top:12px"><p style="font-size:14px;font-weight:600">${n}</p>
+   <div style="display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;margin-top:5px"><span style="font:400 12px/1 var(--mono)">${a}</span><span class="bar"><i style="width:${a/1.1*100}%;background:var(--amber)"></i></span></div>
+   <div style="display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;margin-top:5px"><span style="font:400 12px/1 var(--mono);color:var(--mint)">${b}</span><span class="bar"><i style="width:${b/1.1*100}%;background:var(--mint)"></i></span></div></div>`).join("")}`,
+ "0.887 &rarr; 0.273","qonun darslarida loss tushdi. Amaliyotda 1.01 &rarr; 0.16. Kichik son: model o'qigan matnni yaxshiroq &laquo;taxmin qiladi&raquo;.","natija"));
+/* 5 */
+S.push(T("04 · LoRA nima","LoRA: butun miyani yozmasdan, qo'shimcha daftar o'rgatish",
+ "Qalin darslikni qayta yozish o'rniga, uning chetiga yupqa qo'shimcha daftar qo'shamiz. Asosiy kitob o'zgarmaydi, yangi bilim daftarda.<br><br>Shu sabab bitta GPU yetadi va xato qilsak, daftarni tashlab, kitobga qaytamiz.",
+ `<div style="display:grid;grid-template-columns:1fr 120px;gap:0;align-items:end;height:200px;max-width:520px;margin:0 auto">
+   <div style="height:200px;border-radius:20px 0 0 20px;background:rgba(15,22,48,.08);display:grid;place-items:center;text-align:center;border:1px solid var(--line)"><div><b style="font-size:20px">Qwen 27B</b><p style="font:400 11px/1.4 var(--mono);color:var(--ink-2);margin-top:6px">muzlatilgan: o'zgarmaydi</p></div></div>
+   <div style="height:70px;border-radius:0 16px 16px 0;background:linear-gradient(150deg,#1C7E69,#23A06C);color:#fff;display:grid;place-items:center;text-align:center;padding:6px"><div><b style="font-size:14px">LoRA</b><p style="font:400 10px/1.3 var(--mono);margin-top:2px">o'qitiladi</p></div></div></div>
+  <p class="muted" style="font-size:13px;text-align:center;margin-top:12px">Rasmda daftar kattaroq chizilgan, ko'rinsin deb. Haqiqatda u 27B ning juda kichik qismi.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">${box("Arzon","bitta GPU")}${box("Tez","kichik qism o'qitiladi")}${box("Xavfsiz","asl model saqlanadi")}</div>`,
+ "1 GPU","yetadi. Daftar aniq necha foiz ekani slaydga qo'yilmadi: uni o'lchab, keyin yozamiz."));
+/* 6 */
+S.push(T("05 · qonun maktabi (CPT)","Qonun maktabi: butun lex.uz ni o'qib chiqish",
+ "Yurist bo'lishdan oldin talaba qonunlarni o'qiydi. Biz modelga butun lex.uz ni o'qitamiz. Muhim: bir moddani bir marta emas, 5-10 xil shaklda ko'rsatamiz, xuddi talaba konspektni qayta yozgani kabi.",
+ `<div style="display:grid;grid-template-columns:150px 30px 1fr;gap:8px;align-items:center">
+   ${box("lex.uz","166 705 hujjat, barcha tahrirlar")}${arr}
+   <div class="glass" style="border-radius:16px;padding:12px 14px"><b style="font-size:14px">Bitta modda, ko'p shakl</b>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">${["asl matn","savol-javob","qisqa mazmun","sanaga qarab tahrir","qaysi qonun yuqori"].map(x=>chip(x)).join("")}</div>
+    <p class="muted" style="font-size:12px;margin-top:8px">Shakllar misol uchun; aniq to'plam ma'lumot qatlamida.</p></div></div>
+  <p class="lab" style="margin-top:20px">natija (v1 sinov): qonun matnidagi xato</p>
+  <div style="display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center"><span style="font:400 12px/1 var(--mono)">0.887</span><span class="bar"><i style="width:80%;background:var(--amber)"></i></span></div>
+  <div style="display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;margin-top:6px"><span style="font:400 12px/1 var(--mono);color:var(--mint)">0.273</span><span class="bar"><i style="width:25%;background:var(--mint)"></i></span></div>`,
+ "49.9 mln","token: katta qonun maktabi (v2) ma'lumoti tayyor. Maqsad: uni GPU da o'qitish (taxminan 22 GPU-soat, taxmin)."));
+/* 7 */
+S.push(T("06 · amaliyot (SFT)","Amaliyot: ish qanday bajarilishini ko'rsatish",
+ "Qonunni bilgan talaba hali yaxshi yurist emas. Amaliyotchiga katta yurist yonida ish qanday qilinishini ko'rsatadi: &laquo;mana bu savolda avval lex.uz ga qarang, keyin moddani keltirib javob bering&raquo;.<br><br>SFT shu: namunaviy ishlarni ko'rib o'rganish.",
+ `<p class="lab">793 namunadan biri (soddalashtirilgan)</p>
+  <div style="display:grid;gap:8px">
+   ${[["Savol","Qaror 407-9-0-Q/25 Yer kodeksiga tayanadi. O'sha kuni modda kuchdami?","var(--ink-2)"],["Model o'ylaydi","Sanani aniq bilmayman, lex.uz dan so'rayman.","var(--amber)"],["Vosita","law_as_of(Yer kodeksi, modda, 30.09.2025)","var(--blue)"],["Javob","Ha, kuchda. Mana moddaning aynan matni: ...","var(--mint)"]].map(([a,b,c])=>`<div style="display:grid;grid-template-columns:120px 1fr;gap:10px;padding:9px 12px;border-radius:12px;background:rgba(15,22,48,.045)"><span style="font:400 11px/1.4 var(--mono);color:${c};text-transform:uppercase">${a}</span><span style="font-size:14px">${b}</span></div>`).join("")}</div>`,
+ "793","namunaviy ish: qachon lex.uz ga qarash va qanday javob berish. Hozir o'qitilmoqda (natija hali yo'q)."));
+/* 8 */
+S.push(T("07 · qattiq hakam (RL)","Qattiq hakam: to'g'ri bo'lsa mukofot, ishonib xato qilsa jazo",
+ "Yaxshi yurist &laquo;bilmayman, tekshiraman&raquo; deyishdan uyalmaydi. 10 ta ishdan 1 tasida ishonch bilan xato qilgan yurist, 5 tasida &laquo;tekshiraman&raquo; degandan xavfliroq.<br><br>Shuning uchun hakam xatoni og'irroq jazolaydi.",
+ `<p class="lab">ball: har javobga</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+   <div class="kpi"><b style="color:var(--mint)">+1</b><span>to'g'ri</span></div>
+   <div class="kpi"><b>0</b><span>&laquo;noaniq&raquo;: halol &laquo;bilmayman&raquo;</span></div>
+   <div class="kpi warn"><b>-1.5</b><span>ishonch bilan xato</span></div></div>
+  <p style="font-size:14.5px;margin-top:16px">Model bir savolga bir necha javob beradi; hakam ballaydi; yaxshi javoblar saqlanib, model shulardan yana o'qiydi (expert iteration, RL ning sodda turi). Shunda model taxmin qilishdan ko'ra tekshirishni o'rganadi.</p>
+  <p class="muted" style="font-size:13px;margin-top:8px">Hakam 1 530 savol bilan qurilgan, GPU ni kutmoqda. Natija: hali yo'q.</p>`,
+ "37 va 8","ishonch bilan xato, kitobsiz: qonun maktabi v1.1 (37) va Opus (8). Hakamning maqsadi shu 37 ni kamaytirish.","natija va maqsad"));
+/* 9 */
+S.push(T("08 · vositalar (tools)","Vositalar: modelning lex.uz kutubxonasi",
+ "Eng yaxshi yurist ham hamma moddani yoddan bilmaydi: u kutubxonaga boradi. Biz modelga shu kutubxonani beramiz va yoddan taxmin qilishni emas, ochib o'qishni o'rgatamiz.",
+ `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+   ${[["law_as_of","modda shu kuni qanday edi?"],["search_law","qonun ichidan qidirish"],["verify_quote","iqtibos haqiqatan shu moddadami?"]].map(([a,b])=>box(`<span style="font:400 13px/1 var(--mono);color:var(--blue)">${a}</span>`,b)).join("")}</div>
+  <p class="lab" style="margin-top:18px">embedding = ma'no barmoq izi · reranker = saralovchi</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+   <div class="glass" style="border-radius:16px;padding:12px 14px"><p style="font-size:13.5px"><b>Embedding.</b> Har gap raqamli &laquo;iz&raquo; ga aylanadi. Ma'nosi o'xshash gaplarning izi yaqin bo'ladi, so'zlari boshqacha bo'lsa ham.</p></div>
+   <div class="glass" style="border-radius:16px;padding:12px 14px"><p style="font-size:13.5px"><b>Reranker.</b> Qidiruv ko'p natija topadi, reranker ularni savolga qanchalik mosligiga ko'ra qayta tartiblaydi.</p></div></div>`,
+ "116 / 118","natija: vositalar bilan Qwen 27B to'g'ri javob berdi. Opus 5.5 xuddi shu vositalar bilan: 115."));
+/* 10 */
+S.push(T("09 · imtihon (benchmark)","Imtihon: modelni xolis sinash",
+ "Imtihon adolatli bo'lishi uchun: savollarni o'quvchi emas, darslikning o'zi beradi; javob kaliti darslikdan nusxa; va bir qismi yopiq konvertda turadi, hech kim oldindan ko'rolmaydi.",
+ `<div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:4px;align-items:center">${box("Qonun matni","haqiqiy modda")}${arr}${box("Savol","skript yasaydi")}${arr}${box("Kalit","qonundan nusxa, AI emas")}${arr}${box("Ball","qattiq: +1 / 0 / -1.5")}</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px">
+   <div class="glass" style="border-radius:16px;padding:14px 16px"><p class="lab">30 % maxfiy</p><p style="font-size:14px">Maxfiy savollar hech qachon o'qitishga kirmaydi. Skript buni tekshiradi.</p></div>
+   <div class="glass" style="border-radius:16px;padding:14px 16px"><p class="lab">muzlatilgan</p><p style="font-size:14px">Fayl barmoq izi (hash) bilan qulflanadi. Bitta harf o'zgarsa, yangi versiya bo'ladi.</p></div></div>
+  <p class="muted" style="font-size:13px;margin-top:12px">Har natija savollar soni (N) bilan beriladi.</p>`,
+ "462","savol: qiyin imtihon v2.1. 324 tasi ochiq, 138 tasi maxfiy; javob kaliti o'zini 100 % to'g'ri baholaydi."));
+/* 11 */
+const M=[["Qwen + vositalar",116],["Opus 5.5 + vositalar",115]];
+S.push(T("10 · natijalar","118 savol: vositalar bilan tenglashdik, kitobsiz hali yo'q",
+ "Ochiq kitob imtihonida ikkalamiz ham deyarli hammasini topdik. Yopiq kitobda esa Opus &laquo;bilmayman&raquo; deyishni yaxshi biladi, bizning model esa taxmin qilib ishonch bilan xato qildi.",
+ `<p class="lab">ochiq kitob (vositalar bilan), 118 savol</p>
+  ${M.map(([n,r])=>`<div style="display:grid;grid-template-columns:170px 1fr 50px;gap:10px;align-items:center;margin-bottom:8px"><span style="font-size:14px;font-weight:600">${n}</span><span class="bar" style="height:18px"><i style="width:${r/118*100}%;background:var(--mint)"></i></span><span style="font:400 13px/1 var(--mono)">${r}</span></div>`).join("")}
+  <p class="lab" style="margin-top:14px">yopiq kitob (vositasiz): qat'iy ball</p>
+  ${[["Opus 5.5",0.373,"8 ta ishonchli xato"],["Bizning qonun maktabi v1.1",0.021,"37 ta ishonchli xato"]].map(([n,s,t])=>`<div style="display:grid;grid-template-columns:200px 1fr 50px;gap:10px;align-items:center"><span style="font-size:14px;font-weight:600">${n}</span><span class="bar" style="height:18px"><i style="width:${s/0.45*100}%;background:${s>0.3?"var(--mint)":"var(--amber)"}"></i></span><span style="font:400 13px/1 var(--mono)">${s.toFixed(3)}</span></div><p class="muted" style="font-size:12px;margin:2px 0 8px 210px">${t}</p>`).join("")}
+  <p class="muted" style="font-size:13px;margin-top:4px">Maqsad: qiyin imtihonda (v2.1) Opus dan yuqori ball. Hozircha o'sha imtihonda bizning natijamiz yo'q.</p>`,
+ "0.373 / 0.021","qat'iy ball, kitobsiz (Opus / bizniki). Sabab: bizning model 37 marta taxmin qildi. Buni qattiq hakam to'g'rilaydi (maqsad).","natija"));
+/* 12 */
+S.push(T("11 · GPU va xarajat","GPU: modelni o'qitadigan va ishlatadigan mashina",
+ "GPU: minglab oddiy hisoblagichlar bir vaqtda ishlaydigan videokarta. Model uchun u oshxonadagi katta plita: ko'p kastryulni bir vaqtda qaynatadi. Katta model uchun plita ham, ish stoli ham (xotira) katta bo'lishi kerak.",
+ `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+   <div class="glass" style="border-radius:16px;padding:14px 16px"><p class="lab">bizda</p><p style="font-size:14.5px"><b>RTX PRO 6000</b>, 96 GB xotira. AWS kreditlari hisobiga ishlaydi.</p></div>
+   <div class="glass" style="border-radius:16px;padding:14px 16px"><p class="lab">ikki vazifa</p><p style="font-size:14.5px">O'qitish, keyin javob berish (serving).</p></div></div>
+  <div class="glass" style="border-radius:16px;padding:16px 18px;margin-top:14px;border:1.5px dashed rgba(180,83,9,.5)"><p class="lab" style="color:var(--amber)">maqsad, hali o'lchanmagan</p><p style="font-size:15px">&laquo;Bitta GPU butun Adliya uchun xizmat qila oladi&raquo;: bu hozircha gap, isbot emas. Nechta so'rovga chidashini, javob tezligini va narxini <b>o'lchaymiz</b>, shundan keyin raqam aytamiz.</p></div>`,
+ "96 GB","bitta GPU xotirasi. Boshqa raqam (so'rov/soat, narx) hozircha yo'q: o'lchaymiz."));
+/* 13 */
+const G=[["Token","so'z bo'lagi; model matnni shunday ko'radi"],["Parametr","modelning bitta &laquo;tugmachasi&raquo;; Qwen da 27 milliard"],["Loss","xato o'lchovi; kichigi yaxshi"],["LoRA","kichik qo'shimcha qatlam o'qitish, butun modelni emas"],["CPT","qonun maktabi: katta matnni o'qib davom ettirish"],["SFT","amaliyot: namunaviy ishlarga qarab o'rganish"],["RL","mukofot va jazo orqali o'rganish"],["Benchmark","savollar to'plami + javob kaliti"],["Embedding","gapning ma'no &laquo;barmoq izi&raquo;"],["Reranker","topilgan natijalarni mosligiga qarab qayta saralaydi"],["Hallucination","model o'ylab topgan, lekin ishonchli ko'ringan noto'g'ri javob"],["Strict score","+1 to'g'ri, 0 noaniq, -1.5 ishonchli xato; N ga bo'linadi"],["Held-out","maxfiy savollar: o'qitishga kirmagan"],["McNemar","ikki modelni bir xil savollarda juft-juft solishtiradigan test"]];
+S.push(`${F("12 · lug'at","14 so'z, bir qatorda")}
+ <div class="glass" style="position:absolute;left:52px;right:52px;top:150px;height:440px;padding:8px 22px;display:grid;grid-template-columns:1fr 1fr;column-gap:34px">
+  ${[G.slice(0,7),G.slice(7)].map(c=>`<table><tbody>${c.map(([a,b])=>`<tr><td style="width:120px;padding:10px 6px"><b style="color:var(--mint)">${a}</b></td><td class="muted" style="font-size:13.5px;padding:10px 6px">${b}</td></tr>`).join("")}</tbody></table>`).join("")}
+ </div>`);
+
+const stage=document.getElementById("stage");
+stage.innerHTML=S.map((s,i)=>`<section class="slide" id="s${i+1}" aria-label="Slide ${i+1} of ${S.length}">${s}</section>`).join("")+
+ `<nav class="dock glass" aria-label="Slides"><button id="prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="dots">${S.map((_,i)=>`<button aria-label="Slide ${i+1}"></button>`).join("")}</div><span class="count" id="count"></span>
+  <button id="next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button></nav>`;
+let cur=-1;const SL=[...document.querySelectorAll(".slide")],DT=[...document.querySelectorAll(".dots button")];
+function go(i,quiet){i=Math.max(0,Math.min(SL.length-1,i));if(i===cur)return;
+ SL.forEach((s,k)=>{s.classList.toggle("on",k===i);s.classList.toggle("back",k<i)});DT.forEach((d,k)=>d.classList.toggle("on",k===i));
+ document.getElementById("count").textContent=`${i+1} / ${SL.length}`;cur=i;if(!quiet)try{history.replaceState(null,"","#s"+(i+1))}catch(e){}}
+document.getElementById("prev").onclick=()=>go(cur-1);document.getElementById("next").onclick=()=>go(cur+1);
+DT.forEach((d,k)=>d.onclick=()=>go(k));
+addEventListener("keydown",e=>{const k=e.key;if(k==="ArrowRight"||k==="PageDown"||k===" "){e.preventDefault();go(cur+1)}else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();go(cur-1)}else if(k==="Home")go(0);else if(k==="End")go(SL.length-1)});
+let wl=0;addEventListener("wheel",e=>{const t=Date.now(),d=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(t-wl<750||Math.abs(d)<24)return;wl=t;go(cur+(d>0?1:-1))},{passive:true});
+let px=null,py=null;addEventListener("pointerdown",e=>{px=e.clientX;py=e.clientY});
+addEventListener("pointerup",e=>{if(px===null)return;const dx=e.clientX-px,dy=e.clientY-py;px=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1))});
+function fromHash(){const m=/^#s(\d+)$/.exec(location.hash);go(m?+m[1]-1:0,true)}
+addEventListener("hashchange",fromHash);
+function fit(){const s=Math.min(innerWidth/1200,innerHeight/675);stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+addEventListener("resize",fit);fit();fromHash();
+</script>

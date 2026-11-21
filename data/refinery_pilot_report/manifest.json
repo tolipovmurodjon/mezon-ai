@@ -1,0 +1,55 @@
+{
+ "config": {
+  "TIME_CUT": "2026-10-01",
+  "SEED": 20261121,
+  "MIN_CHARS": 150,
+  "NEAR_DUP_JACCARD": 0.8,
+  "LEAK_NGRAM": 13,
+  "MAX_CHUNK_WORDS": 1000
+ },
+ "stages": {
+  "01_extract": {
+   "in": 1964,
+   "out": 1964,
+   "errors": {},
+   "unit_rows": 122097,
+   "seconds": 5.6
+  },
+  "03_norm": {
+   "vocab_words": 41761,
+   "ocr_words_corrected": 33080,
+   "docs": 1964,
+   "homoglyph_fixed_words": 10652
+  },
+  "04_dedup": {
+   "twin_pairs": 342,
+   "twin_verdicts": {
+    "twin": 342
+   },
+   "exact_groups": 20,
+   "exact_dropped": 20,
+   "clusters": 7,
+   "cluster_members": 15,
+   "cluster_dropped": 0,
+   "boilerplate_clauses_dropped": 0
+  },
+  "07_train": {
+   "cpt_chunks": 8639,
+   "original_edition_chunks": 4598,
+   "amendment_docs": 6998,
+   "status_docs": 281,
+   "lesson_rows": 102927,
+   "held_out": 14
+  }
+ },
+ "drops": {
+  "too_short": 26,
+  "script_impure": 56,
+  "held_out_golden": 4,
+  "held_out_cancelling_act": 2,
+  "repetition": 2,
+  "held_out_time_cut": 8,
+  "ocr_oov": 110,
+  "exact_duplicate": 20
+ }
+}

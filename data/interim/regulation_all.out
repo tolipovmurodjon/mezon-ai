@@ -1,0 +1,34 @@
+2026-11-19 02:13:58 start: newest id 118259, 60 ids already done, 23200 to go (first 118259..105000, then ..95000), cache C:\Users\Murodjon\AppData\Local\Temp\claude\a0fb17fc03dae9db\99028eb2-3054-45ce-aebb-447ce51685f9\scratchpad\mezon_cache
+2026-11-19 02:14:08 id 118000: 200 done this run, local 200, 74805 ids/h, ETA 0.3 h for 23000 ids
+2026-11-19 02:17:02 id 117800: 400 done this run, local 400, 7839 ids/h, ETA 2.9 h for 22800 ids
+2026-11-19 02:23:41 id 117600: 600 done this run, local 600, 3705 ids/h, ETA 6.1 h for 22600 ids
+2026-11-19 02:34:25 id 117400: 800 done this run, local 797, 2348 ids/h, ETA 9.5 h for 22400 ids
+2026-11-19 02:44:16 id 117200: 1000 done this run, local 997, 1980 ids/h, ETA 11.2 h for 22200 ids
+2026-11-19 02:54:51 id 117000: 1200 done this run, local 1197, 1762 ids/h, ETA 12.5 h for 22000 ids
+2026-11-19 03:05:57 id 116800: 1400 done this run, local 1396, 1616 ids/h, ETA 13.5 h for 21800 ids
+2026-11-19 03:07:47 error at 116797: https://regulation.gov.uz/oz/d/116797: Server error '504 Gateway Time-out' for url 'https://regulation.gov.uz/oz/d/116797'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+2026-11-19 03:09:00 error at 116796: https://regulation.gov.uz/oz/d/116796: Server error '504 Gateway Time-out' for url 'https://regulation.gov.uz/oz/d/116796'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+2026-11-19 03:10:41 error at 116794: https://regulation.gov.uz/oz/d/116794: Server error '504 Gateway Time-out' for url 'https://regulation.gov.uz/oz/d/116794'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+2026-11-19 03:11:54 error at 116793: https://regulation.gov.uz/oz/d/116793: Server error '500 Internal Server Error' for url 'https://regulation.gov.uz/oz/d/116793'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2026-11-19 03:40:03 id 116596: 1600 done this run, local 1595, 1115 ids/h, ETA 19.4 h for 21600 ids
+2026-11-19 03:55:55 id 116396: 1800 done this run, local 1794, 1059 ids/h, ETA 20.2 h for 21400 ids
+2026-11-19 04:20:10 error at 116266: https://regulation.gov.uz/oz/d/116266: Server error '500 Internal Server Error' for url 'https://regulation.gov.uz/oz/d/116266'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2026-11-19 04:24:06 error at 116253: https://regulation.gov.uz/oz/d/116253: Server error '504 Gateway Time-out' for url 'https://regulation.gov.uz/oz/d/116253'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+2026-11-19 04:34:20 id 116194: 2000 done this run, local 1994, 855 ids/h, ETA 24.8 h for 21200 ids
+2026-11-19 04:45:25 id 115994: 2200 done this run, local 2194, 872 ids/h, ETA 24.1 h for 21000 ids
+2026-11-19 04:52:21 error at 115944: https://regulation.gov.uz/oz/d/115944: Server error '504 Gateway Time-out' for url 'https://regulation.gov.uz/oz/d/115944'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+2026-11-19 05:06:17 id 115793: 2400 done this run, local 2393, 836 ids/h, ETA 24.9 h for 20800 ids
+2026-11-19 05:16:16 id 115593: 2600 done this run, local 2592, 856 ids/h, ETA 24.1 h for 20600 ids
+2026-11-19 05:26:11 id 115393: 2800 done this run, local 2791, 874 ids/h, ETA 23.3 h for 20400 ids
+2026-11-19 05:41:53 id 115193: 3000 done this run, local 2990, 866 ids/h, ETA 23.3 h for 20200 ids
+2026-11-19 05:54:43 id 114993: 3200 done this run, local 3189, 870 ids/h, ETA 23.0 h for 20000 ids
+2026-11-19 06:06:19 id 114793: 3400 done this run, local 3388, 878 ids/h, ETA 22.6 h for 19800 ids
+2026-11-19 06:18:07 low disk (cache 0.97 GB, store 3.59 GB), exiting
+2026-11-19 06:18:07 end of run: 3550 ids this run; database 3572 drafts, 3572 local

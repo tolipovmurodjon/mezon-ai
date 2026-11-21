@@ -1,0 +1,49 @@
+{
+ "frozen": "2026-11-21 Tashkent",
+ "version": "v2.1 (38-act store; v2.0 items redrawn after generator fixes)",
+ "items": {
+  "mezonbench_v2_1.jsonl": {
+   "split": "public",
+   "n": 324,
+   "sha256_16": "b10c0b6efee76d88",
+   "families": {
+    "ask_noaddr": 42,
+    "dead_cite": 42,
+    "chain": 42,
+    "ru_cyr": 42,
+    "cancel_trigger": 19,
+    "conflict_pair": 42,
+    "multi_hop": 42,
+    "noaniq": 53
+   }
+  },
+  "mezonbench_v2_1_private.jsonl": {
+   "split": "private",
+   "n": 138,
+   "sha256_16": "899a8f7375713d1f",
+   "families": {
+    "ask_noaddr": 18,
+    "dead_cite": 18,
+    "chain": 18,
+    "ru_cyr": 18,
+    "cancel_trigger": 8,
+    "conflict_pair": 18,
+    "multi_hop": 18,
+    "noaniq": 22
+   }
+  }
+ },
+ "grader_sha256_16": "6a7c585432ad03f0",
+ "code_sha256_16": {
+  "research/mezonbench_v2.py": "6ba20530761e8b29",
+  "research/mezonbench.py": "259e13b893453ef2",
+  "research/mezonbench_where.py": "069263698d2cf2bb",
+  "mezon/tools.py": "1da350e0a5037576",
+  "mezon/lawstore/store.py": "6a081a85adfe4f6a",
+  "mezon/rules/basis.py": "76ab598da206c014"
+ },
+ "law_store_sha256_16": "e43b39606c7b49ce",
+ "decision_store_sha256_16": "88931e7d0a1290f4",
+ "v2_0_files_untouched": true,
+ "rules": "Never train on v2.1. The private part is never shared or shown to a model; it is scored only by the grader. Changing an item, the grader, a tool or the store = v2.2 and every model re-runs. Rebuild on laws_full.sqlite = a different exam (v3)."
+}

@@ -1,0 +1,103 @@
+{
+ "version": "audit_v1",
+ "built": "2026-11-21",
+ "splits": {
+  "real": {
+   "n": 11,
+   "public": 7,
+   "private": 4,
+   "families": {
+    "real": 11
+   }
+  },
+  "smith": {
+   "n": 141,
+   "public": 98,
+   "private": 43,
+   "families": {
+    "form_farmoyish": 34,
+    "business_3m": 3,
+    "dead_citation": 34,
+    "duplicate_clause": 34,
+    "retroactive": 2,
+    "double_repeal": 34
+   }
+  },
+  "clean": {
+   "n": 22,
+   "public": 20,
+   "private": 2,
+   "families": {
+    "clean": 22
+   }
+  },
+  "live": {
+   "n": 0,
+   "public": 0,
+   "private": 0,
+   "families": {}
+  }
+ },
+ "private_hashes": {
+  "a1-9dd6940a6b": "5bfb731ace52b3543766a2f2ee404639",
+  "a1-8e4c7c487e": "451bb2e7f241037a22642f593c5571df",
+  "a1-cbe8f0c349": "dc60b5d40e1501ab24b28955e361c09d",
+  "a1-61129cba67": "fd2d1afa87c5ead269e877c8f9d8dfbb",
+  "a1-c2847c4102": "8453f67008adcf1360d82bf91e82331c",
+  "a1-7c0bce47bb": "a478e1b5cd5194c425e51d991b6f1b26",
+  "a1-856b8f8aa7": "cc41c5847e075e4a54651faa6600bb35",
+  "a1-35753a2c0a": "8e25b5c123947d472e5e0de0c7a4c8f9",
+  "a1-d72381c63a": "2e2bd6f88f18328cd357dd33314339c5",
+  "a1-dfc6e0f2a4": "481bdd7fdcd4f61e0a9b686950dcd514",
+  "a1-eb3503393e": "cb13600e3d7fc707b23eff4d61874efc",
+  "a1-3b39146d85": "d311868918246627d0a2c91a33862e0e",
+  "a1-fd2211cff7": "e2cb2dd8de400f3e032306a2511117f8",
+  "a1-2cb092e061": "e848cebc3b8c42ca1eb3db8b0ff1a2b0",
+  "a1-580124f46f": "197740416284faf0850e3f8ae927b9d5",
+  "a1-b01523400f": "abc1978600ec80100c2ddef96547a67d",
+  "a1-d656cc8ef7": "5b52f5bbea2c7e15859f8074734e411f",
+  "a1-bae43bac56": "f59ae4f33c1852e0b2e37438949765b0",
+  "a1-87871f9f4f": "d664bf8d88e48d5cf8bff3b4977e0985",
+  "a1-26d5009b0a": "d56a29dfa0314cc31caaa68d5278d00c",
+  "a1-745b526154": "c88f7f86103529034c56b212c06c3b59",
+  "a1-624d4f125e": "fe96dd830f3970de3bf5f126530ccbb7",
+  "a1-1a1da84967": "1826988ad4f9b62b3f40ed6ec40f9842",
+  "a1-ad5bf99b68": "78af623933f8f53b416bb6bff819fc00",
+  "a1-b98d857c6f": "95d955bc0d41f95cbca3b97d3c08487b",
+  "a1-e1928149f8": "464cfeaf5caeffa778811247541356cc",
+  "a1-be478657b2": "f8c6d951b8e32d782393bd9152b7dfd3",
+  "a1-e3450faa73": "32b173de6cbbce9f35d64c8bde4218f2",
+  "a1-96b6b9d444": "432caf30637bbf74a2abf56a3774e670",
+  "a1-182c18fda2": "8233840242665474eea67409deecf118",
+  "a1-edb4b87a01": "764d570b960a78b7aa000aed92aa4b32",
+  "a1-7fa8af8350": "d6ff8c751c4edc4beed37e682ef3918a",
+  "a1-6f81996c7c": "d19ace4a82b3da9e50a796f3d82c10ee",
+  "a1-cbe0a3c625": "6e458467da3d7e7c06492548e1a7f7a9",
+  "a1-fec6bd6675": "b10916086aa91b32ca9a0917560b68f2",
+  "a1-e0e625573e": "e6dff106b5d2bde6838bbb2f01ca29a0",
+  "a1-a8f2fe18e9": "48e406a15679b9456d25721f57bb52e7",
+  "a1-172500b07a": "ebdc583d17d4d5dc87ada65f2002cc80",
+  "a1-0e2f104481": "77a234bbc6f1d85abac7b7f501aacf2a",
+  "a1-d6a6f66ff8": "a95203f1a59d6ae663958a7f8a123357",
+  "a1-6e9eb05102": "45b7a6bf3ea7dedf6ea23d1fdb70bec0",
+  "a1-147b1b4550": "54f5192200b71bacf3204c93745ae17b",
+  "a1-bd3e44641a": "7954458a9b683808fb41a50a3e60e975",
+  "a1-8862501eee": "d00c30db71e4965ca374c2f0472773e5",
+  "a1-a745124450": "2ac5fa4fe442537d0fa44268ac497305",
+  "a1-6145b96f58": "c479d949c33d1623d9c17d2319362a24",
+  "a1-13c496dea6": "4fe5b2f937fee74a7f9ceeb6a2ce862f",
+  "a1-af03a8db06": "db47c1447478b9b57ef17fe201bdf762",
+  "a1-83ac543015": "81c43a94f71785ef97d71110000f9d50"
+ },
+ "stats": {
+  "smith_pool": 800,
+  "smith_inapplicable_tried": {
+   "form_farmoyish": 284,
+   "business_3m": 607,
+   "dead_citation": 13,
+   "duplicate_clause": 190,
+   "retroactive": 691,
+   "double_repeal": 528
+  }
+ }
+}

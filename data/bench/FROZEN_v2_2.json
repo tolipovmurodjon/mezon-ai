@@ -1,0 +1,67 @@
+{
+ "frozen": "2026-11-21 Tashkent",
+ "version": "v2.2 (v2.1 answer-key fixes + edition_timeline, two_hop, conflict_dated)",
+ "items": {
+  "mezonbench_v2_2.jsonl": {
+   "split": "public",
+   "n": 427,
+   "sha256_16": "ffad52cf429a50e8",
+   "families": {
+    "ask_noaddr": 42,
+    "dead_cite": 42,
+    "chain": 42,
+    "ru_cyr": 42,
+    "cancel_trigger": 19,
+    "conflict_pair": 42,
+    "multi_hop": 42,
+    "noaniq": 50,
+    "edition_timeline": 42,
+    "two_hop": 42,
+    "conflict_dated": 22
+   }
+  },
+  "mezonbench_v2_2_private.jsonl": {
+   "split": "private",
+   "n": 186,
+   "sha256_16": "243e6ad01cea293b",
+   "families": {
+    "ask_noaddr": 18,
+    "dead_cite": 18,
+    "chain": 18,
+    "ru_cyr": 18,
+    "cancel_trigger": 8,
+    "conflict_pair": 18,
+    "multi_hop": 18,
+    "noaniq": 25,
+    "edition_timeline": 18,
+    "two_hop": 18,
+    "conflict_dated": 9
+   }
+  }
+ },
+ "grader_sha256_16": "e3f4e5439465ce3d",
+ "code_sha256_16": {
+  "research/mezonbench_v22.py": "f1438b38704631c9",
+  "research/mezonbench_v2.py": "6ba20530761e8b29",
+  "mezon/tools.py": "167210506a5824a6",
+  "mezon/lawstore/store.py": "6a081a85adfe4f6a"
+ },
+ "law_store_sha256_16": "e43b39606c7b49ce",
+ "decision_store_sha256_16": "88931e7d0a1290f4",
+ "changelog_v2_1_to_v2_2": {
+  "cancel_trigger: kept, text retrievable by get_decision": 27,
+  "conflict_pair: different-force pairs now accept art. 6 or 18": 30,
+  "noaniq: future item DROPPED (act has a stored edition after today)": 14,
+  "noaniq: act_not_in_store kept (find_act None)": 25,
+  "noaniq: edition_gap DROPPED (law_as_of returns a text for the date)": 25,
+  "noaniq: future item kept, reference date stated in the question": 11,
+  "noaniq: replacement act_not_in_store items added (unlisted acts, find_act None)": 39,
+  "new family items (all splits)": {
+   "edition_timeline": 60,
+   "two_hop": 60,
+   "conflict_dated": 31
+  },
+  "v2.1 items in / kept": "462 / 423"
+ },
+ "rules": "Never train on v2.2. Private part never shared. New families were drawn a priori from the store; no item was selected by any model's answer. Changing an item/grader/tool/store = v2.3."
+}
