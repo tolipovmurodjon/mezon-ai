@@ -39,17 +39,9 @@
 
 ## 🎤 Presentations
 
-**All slides (Google Drive): [open the presentation folder](https://drive.google.com/drive/folders/1vlvdWLO9li2ta54eF_KZQzbrpsEaUt0m?usp=sharing)**
+<h2><a href="https://drive.google.com/drive/folders/1vlvdWLO9li2ta54eF_KZQzbrpsEaUt0m?usp=sharing">▶ Open all presentations (Google Drive)</a></h2>
 
-| Deck | For | File |
-|---|---|---|
-| **Technical** (18 slides, English) | data, cleaning, LoRA, training ladder, live training, benchmark, results | [**PDF**](presentations/Mezon_Technical_Presentation.pdf) · [HTML](presentations/technical.html) |
-| **Legal** | legal mentors: validity rules, real cases, 3333-format conclusion | [`presentations/legal.html`](presentations/legal.html) |
-| **Business** (14 slides, Uzbek) | business mentors: problem, customer, model, cost, plan | [`presentations/business.html`](presentations/business.html) |
-| Business appendix | extra slides: competitors, scale, phases | [`presentations/business-appendix.html`](presentations/business-appendix.html) |
-| UI kit | the platform's design system (dashboard, AI chat, widgets) | [`docs/ui-kit/index.html`](docs/ui-kit/index.html) |
-
-Download a deck and open it in a browser; use the arrow keys to move between slides.
+Technical, legal and business decks for the mentors and the jury. A PDF copy of the technical deck: [`presentations/Mezon_Technical_Presentation.pdf`](presentations/Mezon_Technical_Presentation.pdf).
 
 ---
 
